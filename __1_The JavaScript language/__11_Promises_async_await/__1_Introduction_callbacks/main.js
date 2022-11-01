@@ -6,7 +6,7 @@ label01: {
     script.src = src;
     document.head.append(script);
   }
-  // loadScript("./script_1.js");
+  // loadScript("./script1.js");
 }
 
 label02: {
@@ -15,7 +15,7 @@ label02: {
     script.src = src;
     document.head.append(script);
   }
-  // loadScript("./script_1.js");
+  // loadScript("./script1.js");
   // print("2. Something here...");
 }
 
@@ -25,7 +25,7 @@ label03: {
     script.src = src;
     document.head.append(script);
   }
-  // loadScript("./script_2.js");
+  // loadScript("./script2.js");
 
   // try {
   //   newFunction();  // no such function why????
@@ -46,7 +46,7 @@ label04: {
     document.head.append(script);
   }
 
-  loadScript("script_2.js", function () {
+  loadScript("script2.js", function () {
     // the callback runs after the script is loaded
     newFunction();  // so now it works
   });
