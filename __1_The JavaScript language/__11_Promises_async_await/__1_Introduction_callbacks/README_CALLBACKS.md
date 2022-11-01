@@ -83,3 +83,23 @@ loadScript("./script/js", function() {
   newFunction();  // so now it works
 });
 ```
+
+That's the idea: the second argument is a function (usually anonymous) that runs when the action is completed.
+
+Here's a runnable example with a real script:
+
+```javascript
+function loadScript(src, callback) {
+  const script = document.createElement("script");
+  script.src = src;
+  script.onload = function() {
+    callback(script);
+  }
+  document.head.append(script);
+}
+
+loadScript("https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.2.0/lodash.js", function(script) {
+  alert(`Cool, the script ${script.src} is loaded`);
+  alert(_); // _ is a function declared in the loaded script
+});
+```
