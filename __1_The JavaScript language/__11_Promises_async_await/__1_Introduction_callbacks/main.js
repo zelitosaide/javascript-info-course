@@ -46,8 +46,24 @@ label04: {
     document.head.append(script);
   }
 
-  loadScript("script2.js", function () {
-    // the callback runs after the script is loaded
-    newFunction();  // so now it works
+  // loadScript("script2.js", function () {
+  //   // the callback runs after the script is loaded
+  //   newFunction();  // so now it works
+  // });
+}
+
+label05: {
+  const loadScript = function (src, callback) {
+    const script = document.createElement("script");
+    script.src = src;
+    script.onload = function () {
+      callback(script);
+    }
+    document.head.append(script);
+  }
+
+  loadScript("./script3.js", function (script) {
+    print(`Cool, the script ${script.src} is loaded`);
+    print(_.toString());
   });
 }
