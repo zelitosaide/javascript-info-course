@@ -55,3 +55,20 @@ loadScript("./script.js");  // the script has "function newFunction() { ... }"
 
 newFunction();  // no such function!
 ```
+
+Naturally, the browser probably didn't have time to load the script. As of now, the `loadScript` function doesn't provide a way to track the load completion. The script loads and eventually runs, that's all. But we'd like to know when it happens, to use new functions and variables frorm that script.
+
+Let's add a `callback` function as a second argument to `loadScript` that should execute when the script loads:
+
+```javascript
+function loadScript(src, callback) {
+  const script = document.createElement("script");
+  script.src = src;
+
+  script.onload = function() {
+    callback(script);
+  }
+
+  document.head.append(script);
+}
+```
