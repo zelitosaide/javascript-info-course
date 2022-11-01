@@ -45,3 +45,13 @@ loadScript("./script.js");
 // doesn't wait for the script loading to finish
 // ...
 ```
+
+Let's say we need to use the new script as soon as it loads. It declares new functions, and we want to run them.
+
+But if we do that immediately after the `loadScript(...)` call, that wouldn't work:
+
+```javascript
+loadScript("./script.js");  // the script has "function newFunction() { ... }"
+
+newFunction();  // no such function!
+```
