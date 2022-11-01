@@ -34,3 +34,14 @@ We can use this functions like this:
 // load and execute the script at the given path
 loadScript("./script");
 ```
+
+The script is executed "aynchronously", as it starts loading now, but runs later, when the function has already finished.
+
+If there's any code below `loadScript(...)`, it doesn't wait until the script loading finishes.
+
+```javascript
+loadScript("./script.js");
+// the code below loadScript
+// doesn't wait for the script loading to finish
+// ...
+```
