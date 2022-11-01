@@ -25,11 +25,29 @@ label03: {
     script.src = src;
     document.head.append(script);
   }
-  loadScript("./script_2.js");
+  // loadScript("./script_2.js");
 
-  try {
-    newFunction();  // no such function why????
-  } catch (error) {
-    print(error.message);
+  // try {
+  //   newFunction();  // no such function why????
+  // } catch (error) {
+  //   print(error.message);
+  // }
+}
+
+label04: {
+  const loadScript = function (src, callback) {
+    const script = document.createElement("script");
+    script.src = src;
+
+    script.onload = function () {
+      callback(script);
+    }
+
+    document.head.append(script);
   }
+
+  loadScript("script_2.js", function () {
+    // the callback runs after the script is loaded
+    newFunction();  // so now it works
+  });
 }
