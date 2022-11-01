@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <title>Callbacks</title>
+</head>
+
+<body>
+  <script>
+    const { log: print } = console;
+    label02: {
+      const loadScript = function (src) {
+        const script = document.createElement("script");
+        script.src = src;
+        document.head.append(script);
+      }
+      // loadScript("script.js");
+      // The script is executed “asynchronously”
+      // If there’s any code below loadScript(…), 
+      // it doesn’t wait until the script loading finishes.
+      // print("Waiting");
+    }
+
+    label02: {
+      // Let’s say we need to use the new script as soon 
+      // as it loads. It declares new functions, and we 
+      // want to run them.
+      const loadScript = function (src) {
+        const script = document.createElement("script");
+        script.src = src;
+        document.head.append(script);
+      }
+
+      // the script has "function newFunction() {…}"
+      // loadScript("script.js");
+
+      // newFunction(); // no such function!
+    }
+
+    label03: {
+      const loadScript = function (src, callback) {
+        const script = document.createElement("script");
+        script.src = src;
+        script.onload = function () {
+          callback(script);
+        }
+        document.head.append(script);
+      }
+
+      loadScript("script.js", function (file) {
+        // the callback runs after the script is loaded
+        newFunction(); // so now it works
+        console.log(file);
+      });
+    }
+  </script>
+</body>
+
+</html>
