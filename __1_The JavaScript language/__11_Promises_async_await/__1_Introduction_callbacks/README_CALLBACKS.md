@@ -72,3 +72,14 @@ function loadScript(src, callback) {
   document.head.append(script);
 }
 ```
+
+The `onload` event is described in the article [Resource loading: onload and onerror](https://javascript.info/onload-onerror#loading-a-script), it basically executes a function after the script is loaded and executed.
+
+Now if we want to call new functions from the script, we should write that in the callback:
+
+```javascript
+loadScript("./script/js", function() {
+  // the callback runs after the script is loaded
+  newFunction();  // so now it works
+});
+```
