@@ -259,3 +259,59 @@ In the code above:
 1. We load `script1.js`, then if there's no error...
 2. We load `script2.js`, then if there's no error...
 3. We load `script3.js`, then if there's no error - do something else `(*)`.
+
+As calls become more nested, the code becomes deeper and increasingly more dificult to manage, especially if we have real code instead of `...` that may include more loops, conditional statements and so on.
+
+That's sometimes called "`callback hell`" or "`pyramid of doom`".
+
+The "`pyramid`" of nested calls grows to the right with every asynchronous action. Soon it spirals out of control.
+
+So this way of coding isn't very good.
+
+We can try to alleviate the problem by making every action a standalone function, like this:
+
+```javascript
+function handleError(error) {
+  console.log(error.message);
+}
+
+function loadScript(src, callback) {
+  const script = document.createElement("script");
+  script.src = src;
+  script.onload = function() {
+    callback(null, script);
+  }
+  script.onerror = function() {
+    callback(new Error(`Script load error for ${src}`));
+  }
+  document.head.append(script);
+}
+
+loadScript("./script1.js", step1);
+
+function step1(error, script) {
+  if (error) {
+    handleError(error);
+  } else {
+    // ...
+    loadScript("./script2.js", step2);
+  }
+}
+
+function step2(error, script) {
+  if (error) {
+    handleError(error);
+  } else {
+    // ...
+    loadScript("./script3.js", step3);
+  }
+}
+
+function step3(error, script) {
+  if (error) {
+    handleError(error);
+  } else {
+    // ...continue after all scripts are loaded (*)
+  }
+}
+```
