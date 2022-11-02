@@ -202,4 +202,36 @@ label10: {
     }
     document.head.append(script);
   }
+
+  loadScript("./script1.js", step1);
+
+  function step1(error, result) {
+    if (error) {
+      handleError(error);
+    } else {
+      print(`Cool, the ${result.src} is loaded.`);
+
+      loadScript("./script2.js", step2);
+    }
+  }
+
+  function step2(error, result) {
+    if (error) {
+      handleError(error);
+    } else {
+      print(`Cool, the ${result.src} is loaded.`);
+      newFunction();
+
+      loadScript("./script3.js", step3);
+    }
+  }
+
+  function step3(error, result) {
+    if (error) {
+      handleError(error);
+    } else {
+      print(`Cool, the ${result.src} is loaded.`);
+      print(firstName);
+    }
+  }
 }
