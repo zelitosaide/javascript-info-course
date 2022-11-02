@@ -98,19 +98,43 @@ label07: {
     document.head.append(script);
   }
 
-  loadScript("./script1.js", function (script) {
-    print(`Cool, the ${script.src} is loaded, let's load one more`);
+  // loadScript("./script1.js", function (script) {
+  //   print(`Cool, the ${script.src} is loaded, let's load one more`);
 
-    loadScript("./script2.js", function (script) {
-      print(`Cool, the second script is loaded`);
-      newFunction();
+  //   loadScript("./script2.js", function (script) {
+  //     print(`Cool, the second script is loaded`);
+  //     newFunction();
 
-      loadScript("./script3.js", function (script) {
-        print(`Cool, the third script is loaded`);
-        print(firstName);
-      });
+  //     loadScript("./script3.js", function (script) {
+  //       print(`Cool, the third script is loaded`);
+  //       print(firstName);
+  //     });
 
-    });
+  //   });
 
+  // });
+}
+
+label08: {
+  const loadScript = function (src, callback) {
+    const script = document.createElement("script");
+    script.src = src;
+
+    script.onload = function () {
+      callback(null, script);
+    }
+    script.onerror = function () {
+      callback(new Error(`Script load error for ${src}`));
+    }
+
+    document.head.append(script);
+  }
+
+  loadScript("./script1.js", function (error, script) {
+    if (error) {
+      print(error.message);
+    } else {
+      print(`Cool, the ${script.src} is loaded, let's load one more`);
+    }
   });
 }
