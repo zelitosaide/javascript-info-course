@@ -162,3 +162,26 @@ loadScript("./script1.js", function(script) {
 ```
 
 So, every new action is inside a callback. That's fine for few actions, but not good for many, so we'll see other variants soon.
+
+## Handling errors
+
+In the above examples we didn't consider errors. What if the script loading fails? Our callback should be able to react on that.
+
+Here's an improved version of `loadScript` that tracks loading errors:
+
+```javascript
+function loadScript(src, callback) {
+  const script = document.createElement("script");
+  script.src = src;
+
+  script.onload = function() {
+    callback(null, script);
+  }
+  script.onerror = function() {
+    callback(new Error(`Script load error for ${src}`));
+  }
+
+  document.head.append(script);
+}
+```
+
