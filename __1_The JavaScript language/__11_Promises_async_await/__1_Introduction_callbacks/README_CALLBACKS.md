@@ -110,3 +110,27 @@ Here we did it in `loadScript`, but of course it's a general approach.
 
 ## Callback in callback
 
+How can we load two scripts sequentially: the first one, and then the second one after it?
+
+The natural solution would be to put the second `loadScript` call inside the callback, like this:
+
+```javascript
+function loadScript(src, callback) {
+  const script = document.createElement("script");
+  script.src = src;
+  script.onload = function() {
+    callback(script);
+  }
+  document.head.append(script);
+}
+
+loadScript("./script1.js", function(script) {
+
+  alert(`Cool, the ${script.src} is loaded, let's load one more`);
+
+  loadScript("./script2.js", function(script) {
+    alert(`Cool, the second script is loaded`);
+  });
+});
+```
+
