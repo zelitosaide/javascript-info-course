@@ -207,3 +207,55 @@ The convention is:
 2. The second argument (and the next ones if needed) are for the successful result. Then `callback(null, result1, result2, ...)` is called.
 
 So the single `callback` function is used both for reporting errors and passing back results.
+
+## Pyramid of Doom
+
+At first glance, it looks like a viable approach to asynchronous coding. And indeed it is. For one or maybe two nested calls it looks fine.
+
+But for multiple asynchronous actions that follow one after another, we'll have code like this:
+
+```javascript
+function handleError(error) {
+  console.log(error.message);
+}
+
+function loadScript(src, callback) {
+  const script = document.createElement("script");
+  script.src = src;
+  script.onload = function() {
+    callback(null, script);
+  }
+  script.onerror = function() {
+    callback(new Error(`Script load error for ${src}`));
+  }
+  document.head.append(script);
+}
+
+loadScript("./script1.js", function(error, script) {
+  if (error) {
+    handleError(error);
+  } else {
+    // ...
+    loadScript("./script2.js", function(error, script) {
+      if (error) {
+        handleError(error);
+      } else {
+        // ...
+        loadScript("./script3.js", function(error, script) {
+          if (error) {
+            handleError(error);
+          } else {
+            // ...continue after all scripts are loaded (*)
+          }
+        });
+      }
+    });
+  }
+});
+```
+
+In the code above:
+
+1. We load `script1.js`, then if there's no error...
+2. We load `script2.js`, then if there's no error...
+3. We load `script3.js`, then if there's no error - do something else `(*)`.
