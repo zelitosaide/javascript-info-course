@@ -185,3 +185,25 @@ function loadScript(src, callback) {
 }
 ```
 
+It calls `callback(null, script)` for successful load and `callback(error)` otherwise.
+
+The usage:
+
+```javascript
+loadScript("./script1.js", function(error, script) {
+  if (error) {
+    // handle error
+  } else {
+    // script loaded successfully
+  }
+});
+```
+
+Once again, the recipe that we used for `loadScript` is actually quite common. It's called the "error-first callback" style.
+
+The convention is:
+
+1. The first argument of the `callback` is reserved for an error if it occurs. Then `callback(err)` is called.
+2. The second argument (and the next ones if needed) are for the successful result. Then `callback(null, result1, result2, ...)` is called.
+
+So the single `callback` function is used both for reporting errors and passing back results.
