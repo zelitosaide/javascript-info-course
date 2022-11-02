@@ -134,3 +134,31 @@ loadScript("./script1.js", function(script) {
 });
 ```
 
+After the outer `loadScript` is complete, the callback initiates the inner one.
+
+What if we want one more script...?
+
+```javascript
+function loadScript(src, callback) {
+  const script = document.createElement("script");
+  script.src = src;
+  script.onload = function() {
+    callback(script);
+  } 
+  document.head.append(script);
+}
+
+loadScript("./script1.js", function(script) {
+  
+  loadScript("./script2.js", function(script) {
+
+    loadScript("./script3.js", function(script) {
+      // ...continue after all scripts are loaded
+    });
+
+  });
+
+});
+```
+
+So, every new action is inside a callback. That's fine for few actions, but not good for many, so we'll see other variants soon.
