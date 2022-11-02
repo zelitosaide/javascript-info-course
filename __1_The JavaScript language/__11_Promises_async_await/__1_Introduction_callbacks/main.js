@@ -130,11 +130,14 @@ label08: {
     document.head.append(script);
   }
 
-  loadScript("./script1.js", function (error, script) {
+  loadScript("./script.js", function (error, script) {
     if (error) {
       print(error.message);
     } else {
       print(`Cool, the ${script.src} is loaded, let's load one more`);
     }
+    // print("Testing...");
   });
+
+  // setTimeout(function () { print("After 5s."); }, 5000);
 }
