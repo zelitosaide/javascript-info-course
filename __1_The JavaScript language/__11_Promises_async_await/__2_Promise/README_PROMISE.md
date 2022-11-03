@@ -212,3 +212,15 @@ promise.then(
   function(error) { print(error.message); } // show "Whoops!" after 1 second
 );
 ```
+
+If we're interested only in successful completions, then we can provide only one function argument to `.then`:
+
+```javascript
+const { log: print } = console;
+
+const promise = new Promise(function(resolve, reject) {
+  setTimeout(function() { resolve("done!"); }, 1000);
+});
+
+promise.then(print); // shows "done!" after 1 second
+```
