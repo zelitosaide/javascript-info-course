@@ -96,3 +96,23 @@ The call to `reject(...)` moves the promise object to `"rejected` state:
 To summarize, the executor should perform a job (usually something that takes time) and then call `resolve` or `reject` to change the state of the corresponding promise object.
 
 A promise that is either resolved or rejected is called `"settled"`, as opposed to an initially "pending" promise.
+
+> ### There can be only a single result or an error
+> 
+> The executor should call only one `resolve` or one `reject`. Any state change is final.
+> 
+> All further calls of `resolve` and `reject` are ignored:
+> 
+> ```javascript
+> const promise = new Promise(function(resolve, reject) {
+>   resolve("done");
+> 
+>   reject(new Error("Error happened...")); // ignored  
+>   setTimeout(function() { resolve("OK"); }, 1000);  // ignored
+> });
+> ```
+> 
+> The idea is that a job done by the executor may have only one result or an error.
+> 
+> Also, `resolve` / `reject` expect only one argument (or none) and will ignore additional aguments.
+
