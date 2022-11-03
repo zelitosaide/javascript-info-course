@@ -309,3 +309,11 @@ new Promise(function(resolve, reject) {
 
 3. A `finally` handler also shouldn't return anything. If it does, the returned value s silently ignored.
    4. The only exception to this rule is when a `finally` handler throws an error. Then this error goes to the next handler, instead of any previous outcome.
+
+To summarize:
+
+* A `finally` handler doesn't get the outcome of the previous handler (it has no arguments). This outcome is passed through instead, to the next suitable handler.
+* If a `finally` handler returns something, it's ignored.
+* When `finally` throws an error, then the execution goes to the nearest error handler.
+
+These features are helpful and make things work just the right way if we use `finally` how it's supposed to be used: for generic cleanup procedures.
