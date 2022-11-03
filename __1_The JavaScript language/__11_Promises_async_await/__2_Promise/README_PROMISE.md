@@ -120,3 +120,19 @@ A promise that is either resolved or rejected is called `"settled"`, as opposed 
 > ### Reject with `Error` object
 > 
 > In case something goes wrong, the executor should call `reject`. That can be done with any type of argument (just like `resolve`). But it is recommended to use `Error` objects (or objects that inherit from `Error`). The reasoning for that will soon become apparent.
+
+
+> ### Immediately calling `resolve` / `reject`
+> 
+> In practice, an executor usually does something asynchronously and calls `resolve`/`reject` after some time, but it doesn't have to. We also can call `resolve` or `reject` immediately, like this:
+> 
+> ```javascript
+> const promise = new Promise(function(resolve, reject) {
+>   // not taking our time to do the job
+>   resolve(123); // immediately give the result: 123
+> });
+> ```
+> 
+> For instance, this might happen when we start to do a job but then see that everything has already been completed and cached.
+> 
+> That's fine. We immediately have a resolved promise.
