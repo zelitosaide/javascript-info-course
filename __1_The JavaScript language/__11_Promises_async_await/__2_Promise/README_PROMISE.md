@@ -71,3 +71,24 @@ After one second of "processing", the executor calls `resolve("done)` to produce
 ![Resolve](resolve.svg)
 
 <br>
+
+That was an example of a successful job completion, a "fulfilled promise".
+
+And now an example of the executor rejecting the promise with an error:
+
+```javascript
+const promise = new Promise(function(resolve, reject) {
+  // after 1 second signal that job is finished with an error
+  setTimeout(function() { 
+    reject(new Error("Whoops!")); 
+  }, 1000);
+});
+```
+
+The call to `reject(...)` moves the promise object to `"rejected` state:
+
+<br>
+
+![Resolve](reject.svg)
+
+<br>
