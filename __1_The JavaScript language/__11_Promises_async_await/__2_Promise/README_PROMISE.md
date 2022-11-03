@@ -40,7 +40,11 @@ The `promise` object returned by the `new Promise` constructor has these interna
 
 So the executor eventually moves `promise` to one of these states:
 
-![Promise](../../../assets/promise.jpg)
+<div style="font-family: Arial, Helvetica, sans-serif;padding-left: 2rem;">
+
+![Promise](index.svg)
+
+</div>
 
 Later we'll see how "fans" can subscribe to these changes.
 
@@ -61,7 +65,7 @@ We can see two things by running the code above:
 2. The executor receives two arguments: `resolve` and `reject`. These functions are pre-defined by the JavaScript engine, so we don't need to create them. We should only call one of them when ready.
 
 
-<div style="font-family: Arial, Helvetica, sans-serif;">
+<div style="font-family: Arial, Helvetica, sans-serif;padding-left: 2rem;">
 
 ![Promise](index.svg)
 
