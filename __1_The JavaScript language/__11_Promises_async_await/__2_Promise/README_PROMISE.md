@@ -21,3 +21,12 @@ const promise = new Promise(function(resolve, reject) {
   // executar (the producing code, "singer")
 });
 ```
+
+The function passed to `new Promise` is called the `executor`. When `new Promise` is created, the executor runs automatically. It contains the producing code which should eventually produce the result. In terms of the analogy above: the executor is the "singer".
+
+Its arguments `resolve` and `reject` are callbacks provided by JavaScript itself. Our code is only inside the executor.
+
+When the executor obtains the result, be it soon or late, doesn't matter, it should call one of these callbacks:
+
+* `resolve(value)` - if the job is finished successfully, with result `value`.
+* `reject(error)` - if an error occurred, `error` is the error object.
