@@ -136,3 +136,7 @@ A promise that is either resolved or rejected is called `"settled"`, as opposed 
 > For instance, this might happen when we start to do a job but then see that everything has already been completed and cached.
 > 
 > That's fine. We immediately have a resolved promise.
+
+> ### The `state` and `result` are internal
+> 
+> The properties `state` and `result` of the Promise object are internal. We can't directly access then. We can use the methods `.then` / `.catch` / `.finally` for that. They are described below.
