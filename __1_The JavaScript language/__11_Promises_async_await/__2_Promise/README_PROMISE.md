@@ -290,3 +290,18 @@ new Promise(function(resolve, reject) {
   .finally(function() { print("Promise ready"); })  // triggers first
   .then(function(result) { print(result); }); // .then shows "value"
 ```
+
+As you can see, the `value` returned by the first promise is passed through `finally` to the next `then`.
+
+That's very convenient, because `finally` is not meant to process a promise result. As said, it's a place to do generic cleanup, no matter what the outcome was.
+
+And here's an example of an error, for us to see how it's passed through `finally` to `catch`:
+
+```javascript
+const { log: print } = console;
+
+new Promise(function(resolve, reject) {
+  throw new Error("Whoops!... Error");
+})
+  .finally(function() { print("Promise ready"); });
+```
