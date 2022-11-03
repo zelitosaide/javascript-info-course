@@ -92,3 +92,7 @@ The call to `reject(...)` moves the promise object to `"rejected` state:
 ![Resolve](reject.svg)
 
 <br>
+
+To summarize, the executor should perform a job (usually something that takes time) and then call `resolve` or `reject` to change the state of the corresponding promise object.
+
+A promise that is either resolved or rejected is called `"settled"`, as opposed to an initially "pending" promise.
