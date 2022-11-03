@@ -42,3 +42,12 @@ label04: {
     print(error.message);
   });
 }
+
+label05: {
+  const promise = new Promise(function (resolve, reject) {
+    // not taking our time to do the job
+    resolve(123); // immediately give the result: 123
+  });
+
+  promise.then(function (data) { print(data); });
+}
