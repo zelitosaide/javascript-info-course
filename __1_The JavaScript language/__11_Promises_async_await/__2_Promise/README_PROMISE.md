@@ -317,3 +317,5 @@ To summarize:
 * When `finally` throws an error, then the execution goes to the nearest error handler.
 
 These features are helpful and make things work just the right way if we use `finally` how it's supposed to be used: for generic cleanup procedures.
+
+> ### We can attach handlers to settled promises
