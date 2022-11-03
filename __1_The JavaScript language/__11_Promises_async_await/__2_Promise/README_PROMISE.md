@@ -38,4 +38,19 @@ The `promise` object returned by the `new Promise` constructor has these interna
 * `state` - initially `"pending"`, then changes to either `"fulfilled"` when `resolve` is called or `"rejected"` when `reject` is called.
 * `result` - initially `undefined`, then changes to `value` when `resolve(value)` is called or `error` when `reject(error)` is called.
 
+So the executor eventually moves `promise` to one of these states:
+
 ![Promise](../../../assets/promise.jpg)
+
+Later we'll see how "fans" can subscribe to these changes.
+
+Here's an example of a promise constructor and a simple executor function with "producing code" that takes time (via `setTimeout`):
+
+```javascript
+const promise = new Promise(function(resolve, reject) {
+  // the function is executed automatically when the promise is constructed
+
+  // after 1 second signal that the job is done with the result "done"
+  setTimeout(function() { resolve("done"); }, 1000);
+});
+```
