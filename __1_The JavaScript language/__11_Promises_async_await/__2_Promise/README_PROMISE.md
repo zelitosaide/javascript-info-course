@@ -239,3 +239,7 @@ const promise = new Promise(function(resolve, reject) {
 // .catch(f) is the same as promise.then(null, f);
 promise.catch(print); // shows an Error object after 1 second
 ```
+
+The call `.catch(f)` is a complete analog of `.then(null, f)`, it's just a shorthand.
+
+## Cleanup: finally
