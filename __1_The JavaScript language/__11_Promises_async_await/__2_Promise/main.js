@@ -167,3 +167,19 @@ label15: {
     .finally(function () { print("Promise ready"); })
     .catch(function (error) { print(error.message); });
 }
+
+label16: {
+  const promise = new Promise(function (resolve, reject) {
+    setTimeout(function () {
+      resolve({ status: 200 })
+    }, 14000);
+  });
+
+  promise
+    .finally(function () {
+      throw new Error("From Finally");
+    })
+    .catch(function (error) {
+      print(error.message);
+    });
+}
