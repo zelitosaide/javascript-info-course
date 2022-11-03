@@ -319,3 +319,26 @@ To summarize:
 These features are helpful and make things work just the right way if we use `finally` how it's supposed to be used: for generic cleanup procedures.
 
 > ### We can attach handlers to settled promises
+> 
+> If a promise is pending, `.then/catch/finally` handlers wait for its outcome.
+> 
+> Sometimes, it ight be that a promise is already settled when we add a handler to it.
+> 
+> In such case, these handlers just run immediately:
+> 
+> ```javascript
+> const { log: print } = console;
+> 
+> // the promise becomes resolved immediately upon creation
+> const promise = new Promise(function(resolve) {
+>   resolve("done!");
+> });
+> 
+> promise.then(print);  // done! (shows up right now)
+> ```
+> 
+> Note that this makes promises more powerful than the real life "subscription list" scenarion. If the singer has already released their song and then a person signs up on the subscription list, they probably won't receive that song. Subscription in real life must be done prior to the event.
+> 
+> Promises are more flexible. We can add handlers any time: if the result is already there, they just execute.
+
+## Example: loadScript
