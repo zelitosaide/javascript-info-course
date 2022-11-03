@@ -77,3 +77,11 @@ label07: {
     function (error) { print(error.message); } // shows "Whoops!" after 5 second
   );
 }
+
+label08: {
+  const promise = new Promise(function (resolve, reject) {
+    setTimeout(function () { resolve("done!") }, 3000);
+  });
+
+  promise.then(print); // shows "done!" after 3 second
+}
