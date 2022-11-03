@@ -174,3 +174,25 @@ promise.then(
   }
 );
 ```
+
+The first argument of `.then` is a function that runs when the promise is resolved and receives the result.
+
+The second argument of `.then` is a function that runs when the promise is rejected and receives the error.
+
+For instance, here's a reaction to a successfully resolved promise:
+
+```javascript
+const { log: print } = console;
+
+const promise = ne Promise(function(resolve, reject) {
+  setTimeout(function() { resolve("done"); }, 1000);
+});
+
+// resolve runs the first function in .then
+promise.then(
+  function(result) { print(result); }, // shows "done" after 1 second
+  function(error) { print(error.message); } // doen't run
+);
+```
+
+The first function was executed.
