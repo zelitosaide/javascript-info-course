@@ -38,4 +38,4 @@ The `promise` object returned by the `new Promise` constructor has these interna
 * `state` - initially `"pending"`, then changes to either `"fulfilled"` when `resolve` is called or `"rejected"` when `reject` is called.
 * `result` - initially `undefined`, then changes to `value` when `resolve(value)` is called or `error` when `reject(error)` is called.
 
-![Promise](../../../../w3schools-javascript-course/__01_JS%20Tutorial/assets/promise.jpg)
+![Promise](../../../assets/promise.jpg)
