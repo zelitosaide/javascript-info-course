@@ -61,8 +61,9 @@ We can see two things by running the code above:
 2. The executor receives two arguments: `resolve` and `reject`. These functions are pre-defined by the JavaScript engine, so we don't need to create them. We should only call one of them when ready.
 
 
-
-![AwsDiagram](index.svg)
+<div style="font-family: Arial, Helvetica, sans-serif;">
+![Promise](index.svg)
+</div>
 
 <!-- <svg width="100" height="100">
   <circle cx="50" cy="50" r="40" stroke="green" stroke-width="4" fill="yellow" />
