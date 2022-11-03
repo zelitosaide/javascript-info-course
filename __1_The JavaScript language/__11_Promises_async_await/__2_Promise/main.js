@@ -83,5 +83,15 @@ label08: {
     setTimeout(function () { resolve("done!") }, 3000);
   });
 
-  promise.then(print); // shows "done!" after 3 second
+  // promise.then(print); // shows "done!" after 3 second
+}
+
+label09: {
+  const promise = new Promise(function (resolve, reject) {
+    setTimeout(function () {
+      reject(new Error("Whoops!"));
+    }, 500);
+  });
+
+  promise.then(null, print);  // shows an Error object
 }
