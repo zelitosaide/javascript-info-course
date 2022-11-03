@@ -125,3 +125,35 @@ label12: {
 
   myFunction();
 }
+
+label13: {
+  const promise = new Promise(function (resolve, reject) {
+    setTimeout(function () {
+      resolve("value");
+    }, 10000);
+  });
+
+  promise
+    .finally(function () {
+      print("Promise ready");
+    })
+    .then(function (result) {
+      print(result);
+    });
+}
+
+label13: {
+  const promise = new Promise(function (resolve, reject) {
+    setTimeout(function () {
+      resolve("value");
+    }, 12000);
+  });
+
+  promise
+    .then(function (result) {
+      print(result);
+    })
+    .finally(function () {
+      print("Promise ready");
+    });
+}
