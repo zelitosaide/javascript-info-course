@@ -271,3 +271,22 @@ promise
     function(error) { /* show error */  }
   );
 ```
+
+Please note that `finally(f)` isn't exactly an alias of `then(f, f)` though.
+
+There are important differences:
+
+1. A `finally` handler has no arguments. In `finally` we don't know whether the promise is successful or not. That's all right, as our task is usually to perform "general" finalizing procedures.
+   1. Please take a look at the example above: as you can see, the `finally` handler has no arguments, and the promise outcome is handled by the next handler.
+2. A `finally` handler "passes through" the result or error to the next suitable handler.
+   1. For instance, here the result is passed through `finally` to `then`:
+
+```javascript
+const { log: print } = console;
+
+new Promise(function(resolve, reject) {
+  setTimeout(function() { resolve("value"); }, 2000);
+})
+  .finally(function() { print("Promise ready"); })  // triggers first
+  .then(function(result) { print(result); }); // .then shows "value"
+```
