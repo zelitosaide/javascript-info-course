@@ -28,7 +28,17 @@ label03: {
     resolve("done", "OK");  // what is the result???
   });
 
-  promise.then(function (data) {
-    print(data);
+  // promise.then(function (data) {
+  //   print(data);
+  // });
+}
+
+label04: {
+  const promise = new Promise(function (resolve, reject) {
+    reject(new Error("Whoops!")); // use Error object
+  });
+
+  promise.then(null, function (error) {
+    print(error.message);
   });
 }
