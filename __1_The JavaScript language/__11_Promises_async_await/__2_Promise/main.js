@@ -100,8 +100,20 @@ label10: {
   const promise = new Promise(function (resolve, reject) {
     setTimeout(function () {
       reject(new Error("Whoops!"));
+      // print("settled");
     }, 6000);
   });
 
   promise.catch(print);  // shows an Error object
+}
+
+label11: {
+  const promise = new Promise(function (resolve, reject) {
+    setTimeout(function () {
+      return resolve("OK");
+      print("settled");
+    }, 8000);
+  });
+
+  promise.then(print);
 }
