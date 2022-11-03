@@ -95,3 +95,13 @@ label09: {
 
   promise.then(null, print);  // shows an Error object
 }
+
+label10: {
+  const promise = new Promise(function (resolve, reject) {
+    setTimeout(function () {
+      reject(new Error("Whoops!"));
+    }, 6000);
+  });
+
+  promise.catch(print);  // shows an Error object
+}
