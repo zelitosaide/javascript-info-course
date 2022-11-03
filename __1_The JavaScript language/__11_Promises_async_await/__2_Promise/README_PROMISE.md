@@ -196,3 +196,19 @@ promise.then(
 ```
 
 The first function was executed.
+
+And in the case of a rejection, the second one:
+
+```javascript
+const { log: print } = console;
+
+const promise = new Promise(function(resolve, reject) {
+  setTimeout(function() { reject(new Error("Whoops!")); }, 1000);
+});
+
+// reject runs the second function in .then
+promise.then(
+  function(result) { print(result); }, // doesn't run
+  function(error) { print(error.message); } // show "Whoops!" after 1 second
+);
+```

@@ -58,8 +58,22 @@ label06: {
   });
 
   // resolve runs the first function in .then
+  // promise.then(
+  //   function (result) { print(result); }, // shows "done!" after 1 second
+  //   function (error) { print(error.message); } // doesn't run
+  // );
+}
+
+label07: {
+  const promise = new Promise(function (resolve, reject) {
+    setTimeout(function () {
+      reject(new Error("Whoops!"));
+    }, 5000);
+  });
+
+  // reject runs the second function in .then
   promise.then(
-    function (result) { print(result); }, // shows "done!" after 1 second
-    function (error) { print(error.message); } // doesn't run
+    function (result) { print(result); }, // doesn't run
+    function (error) { print(error.message); } // shows "Whoops!" after 5 second
   );
 }
