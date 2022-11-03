@@ -60,17 +60,25 @@ We can see two things by running the code above:
 1. The executor is called automatically and immediately (by `new Promise`).
 2. The executor receives two arguments: `resolve` and `reject`. These functions are pre-defined by the JavaScript engine, so we don't need to create them. We should only call one of them when ready.
 
+![Promise](index.svg)
 
+<details> 
+<summary>SVG code</summary>
 
-![AwsDiagram](index.svg)
-
-@sample.svg
-![AwsDiagram](index.svg)
-@sample.svg
-
-
-<!-- 
+```html
 <svg xmlns="http://www.w3.org/2000/svg" width="512" height="246" viewBox="0 0 512 246">
+  <defs>
+    <style>
+      @import url(https://fonts.googleapis.com/css?family=Open+Sans:bold,italic,bolditalic%7CPT+Mono);
+
+      @font-face {
+        font-family: 'PT Mono';
+        font-weight: 700;
+        font-style: normal;
+        src: local('PT MonoBold'), url(/font/PTMonoBold.woff2) format('woff2'), url(/font/PTMonoBold.woff) format('woff'), url(/font/PTMonoBold.ttf) format('truetype')
+      }
+    </style>
+  </defs>
   <g id="promise" fill="none" fill-rule="evenodd" stroke="none" stroke-width="1">
     <g id="promise-resolve-reject.svg">
       <path id="Rectangle-1" fill="#252732" stroke="#4b4e65" stroke-width="2" d="M1 91h182v70H1z" /><text
@@ -107,4 +115,6 @@ We can see two things by running the code above:
       </text>
     </g>
   </g>
-</svg> -->
+</svg>
+```
+</details>
