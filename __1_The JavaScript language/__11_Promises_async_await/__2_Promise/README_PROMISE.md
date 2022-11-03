@@ -61,4 +61,4 @@ We can see two things by running the code above:
 2. The executor receives two arguments: `resolve` and `reject`. These functions are pre-defined by the JavaScript engine, so we don't need to create them. We should only call one of them when ready.
 
 
-Ola <em>word</em>
+<em>word</em>
