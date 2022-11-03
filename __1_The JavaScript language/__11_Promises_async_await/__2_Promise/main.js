@@ -142,7 +142,7 @@ label13: {
     });
 }
 
-label13: {
+label14: {
   const promise = new Promise(function (resolve, reject) {
     setTimeout(function () {
       resolve("value");
@@ -156,4 +156,14 @@ label13: {
     .finally(function () {
       print("Promise ready");
     });
+}
+
+label15: {
+  const promise = new Promise(function (resolve, reject) {
+    throw new Error("Whoops!...Error!!!!");
+  });
+
+  promise
+    .finally(function () { print("Promise ready"); })
+    .catch(function (error) { print(error.message); });
 }

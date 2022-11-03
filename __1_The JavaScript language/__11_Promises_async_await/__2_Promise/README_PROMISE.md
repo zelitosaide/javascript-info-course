@@ -303,5 +303,6 @@ const { log: print } = console;
 new Promise(function(resolve, reject) {
   throw new Error("Whoops!... Error");
 })
-  .finally(function() { print("Promise ready"); });
+  .finally(function() { print("Promise ready"); })  // triggers first
+  .catch(function(error) { print(error.message); });  // .catch show the error
 ```
