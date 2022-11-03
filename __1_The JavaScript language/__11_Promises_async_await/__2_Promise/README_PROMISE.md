@@ -306,3 +306,6 @@ new Promise(function(resolve, reject) {
   .finally(function() { print("Promise ready"); })  // triggers first
   .catch(function(error) { print(error.message); });  // .catch show the error
 ```
+
+3. A `finally` handler also shouldn't return anything. If it does, the returned value s silently ignored.
+   4. The only exception to this rule is when a `finally` handler throws an error. Then this error goes to the next handler, instead of any previous outcome.
