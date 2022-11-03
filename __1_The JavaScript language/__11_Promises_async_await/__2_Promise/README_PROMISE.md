@@ -116,3 +116,7 @@ A promise that is either resolved or rejected is called `"settled"`, as opposed 
 > 
 > Also, `resolve` / `reject` expect only one argument (or none) and will ignore additional aguments.
 
+
+> ### Reject with `Error` object
+> 
+> In case something goes wrong, the executor should call `reject`. That can be done with any type of argument (just like `resolve`). But it is recommended to use `Error` objects (or objects that inherit from `Error`). The reasoning for that will soon become apparent.
