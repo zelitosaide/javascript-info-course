@@ -48,6 +48,8 @@ So the executor eventually moves `promise` to one of these states:
 
 </div>
 
+<br>
+
 Later we'll see how "fans" can subscribe to these changes.
 
 Here's an example of a promise constructor and a simple executor function with "producing code" that takes time (via `setTimeout`):
@@ -73,3 +75,5 @@ We can see two things by running the code above:
 ![Promise](index.svg)
 
 </div>
+
+<br>
