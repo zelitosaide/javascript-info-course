@@ -226,3 +226,16 @@ promise.then(print); // shows "done!" after 1 second
 ```
 
 ### catch
+
+If we're interested only in errors, then we can use `null` as the first argument: `.then(null, errorHandlingFunction)`. Or we can use `.catch(errorHanlingFunction)`, which is axactly the same:
+
+```javascript
+const { log: print } = console;
+
+const promise = new Promise(function(resolve, reject) {
+  setTimeout(function() { reject(new Error("Whoops!")); }, 1000);
+});
+
+// .catch(f) is the same as promise.then(null, f);
+promise.catch(print); // shows an Error object after 1 second
+```
