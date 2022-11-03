@@ -42,11 +42,7 @@ So the executor eventually moves `promise` to one of these states:
 
 <br>
 
-<div style="font-family: Arial, Helvetica, sans-serif;">
-
 ![Promise](index.svg)
-
-</div>
 
 <br>
 
@@ -72,10 +68,6 @@ After one second of "processing", the executor calls `resolve("done)` to produce
 
 <br>
 
-<!-- <div style="font-family: Arial, Helvetica, sans-serif;"> -->
-
 ![Resolve](resolve.svg)
-
-<!-- </div> -->
 
 <br>
