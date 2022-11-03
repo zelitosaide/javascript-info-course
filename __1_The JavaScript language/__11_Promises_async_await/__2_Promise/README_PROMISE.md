@@ -68,11 +68,13 @@ We can see two things by running the code above:
 1. The executor is called automatically and immediately (by `new Promise`).
 2. The executor receives two arguments: `resolve` and `reject`. These functions are pre-defined by the JavaScript engine, so we don't need to create them. We should only call one of them when ready.
 
+After one second of "processing", the executor calls `resolve("done)` to produce the result. This changes the state of the `promise` object:
+
 <br>
 
 <div style="font-family: Arial, Helvetica, sans-serif;">
 
-![Promise](index.svg)
+![Resolve](resolve.svg)
 
 </div>
 
