@@ -72,10 +72,10 @@ After one second of "processing", the executor calls `resolve("done)` to produce
 
 <br>
 
-<div style="font-family: Arial, Helvetica, sans-serif;">
+<!-- <div style="font-family: Arial, Helvetica, sans-serif;"> -->
 
 ![Resolve](resolve.svg)
 
-</div>
+<!-- </div> -->
 
 <br>
