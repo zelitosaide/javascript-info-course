@@ -117,3 +117,11 @@ label11: {
 
   promise.then(print);
 }
+
+label12: {
+  const myFunction = function () {
+    return print("Hello!");
+  }
+
+  myFunction();
+}

@@ -244,3 +244,30 @@ The call `.catch(f)` is a complete analog of `.then(null, f)`, it's just a short
 
 ## Cleanup: finally
 
+Just like there's a `finally(f)` clause in a regular `try {...} catch {...}`, there's `finally` in promises.
+
+The call `finally(f)` is similar to `.then(f, f)` in the sense that `f` runs always, when the promise is settled: be it resolve or reject.
+
+The idea of `finally` is to set up a handler for performing cleanup/finalizing after the previous operations are complete.
+
+E.g. stopping loading indicators, closing no longer needed connections, etc.
+
+Think of it as a party finisher. No matter was a party good or bad, how many friends were in it, we still need (or at least should) do a cleanup after it.
+
+The code may look like this:
+
+```javascript
+const promise = new Promise(function(resolve, reject) {
+  // do something that takes time, and the call resolve or
+  // maybe reject
+});
+
+promise
+  // runs when the promise is settled, doesn't matter successfully or not
+  .finally(function() { /* stop loading indicator */})
+  // so the loading indicator is stopped before we go on
+  .then(
+    function(result) { /* show result */ },
+    function(error) { /* show error */  }
+  );
+```
