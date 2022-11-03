@@ -40,7 +40,9 @@ The `promise` object returned by the `new Promise` constructor has these interna
 
 So the executor eventually moves `promise` to one of these states:
 
-<div style="font-family: Arial, Helvetica, sans-serif;margin-left: 4rem;">
+<br>
+
+<div style="font-family: Arial, Helvetica, sans-serif;">
 
 ![Promise](index.svg)
 
@@ -64,8 +66,9 @@ We can see two things by running the code above:
 1. The executor is called automatically and immediately (by `new Promise`).
 2. The executor receives two arguments: `resolve` and `reject`. These functions are pre-defined by the JavaScript engine, so we don't need to create them. We should only call one of them when ready.
 
+<br>
 
-<div style="font-family: Arial, Helvetica, sans-serif;margin-left: 4rem;">
+<div style="font-family: Arial, Helvetica, sans-serif;">
 
 ![Promise](index.svg)
 
