@@ -140,3 +140,37 @@ A promise that is either resolved or rejected is called `"settled"`, as opposed 
 > ### The `state` and `result` are internal
 > 
 > The properties `state` and `result` of the Promise object are internal. We can't directly access then. We can use the methods `.then` / `.catch` / `.finally` for that. They are described below.
+
+## Consumers: then, catch
+
+A promise object serves as a link between the executor (the "producing code" or "singer") and the consuming functions (the "fans"), which will receive the result or error. Consuming functions can be registered (subscribed) using the methods `.then` and `.catch`.
+
+### then
+
+The most important, fundamental one is `.then`.
+
+The syntax is:
+
+```javascript
+const { log: print } = console;
+
+const promise = new Promise(function(resolve, reject) {
+  let x = 0;
+  if (x === 0) {
+    reject(new Error("Whoops!... Error"));
+  } else {
+    resolve({ statusCode: 200 });
+  }
+});
+
+promise.then(
+  function(result) { 
+    // handle a successful result
+    print(result); 
+  },
+  function(error) { 
+    // handle an error
+    print(error.message); 
+  }
+);
+```
