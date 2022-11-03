@@ -49,5 +49,17 @@ label05: {
     resolve(123); // immediately give the result: 123
   });
 
-  promise.then(function (data) { print(data); });
+  // promise.then(function (data) { print(data); });
+}
+
+label06: {
+  const promise = new Promise(function (resolve, reject) {
+    setTimeout(function () { resolve("done!") }, 1000);
+  });
+
+  // resolve runs the first function in .then
+  promise.then(
+    function (result) { print(result); }, // shows "done!" after 1 second
+    function (error) { print(error.message); } // doesn't run
+  );
 }
