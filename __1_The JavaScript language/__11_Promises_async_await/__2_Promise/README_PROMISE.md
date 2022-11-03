@@ -224,3 +224,5 @@ const promise = new Promise(function(resolve, reject) {
 
 promise.then(print); // shows "done!" after 1 second
 ```
+
+### catch
