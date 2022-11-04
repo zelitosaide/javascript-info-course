@@ -360,3 +360,40 @@ function loadScript(src, callback) {
   document.head.append(script);
 }
 ```
+
+Let's rewrite it using Promises.
+
+The new function `loadScript` will not require a callback. Instead, it will create and return a Promise object that resolves when the loading is complete. The outer code can add handlers (subscribing functions) to it using `.then`:
+
+```javascript
+function loadScript(src) {
+  return new Promise(function(resolve, reject) {
+    const script = document.createElement("script");
+    script.src = src;
+
+    script.onload = function() {
+      resolve(script);
+    }
+    script.onerror = function() {
+      reject(new Error(`Script load error for ${src}`));
+    }
+
+    document.head.append(script);
+  });
+}
+```
+
+Usage:
+
+```javascript
+const { log: print } = console;
+
+const promise = loadScript("./script.js");
+
+promise.then(
+  function(script) { print(`${script.src} is loaded!`); },
+  function(error) { print(`Error: ${error.message}`); }
+);
+
+promise.then(function(script) { print("Another handler..."); });
+```
