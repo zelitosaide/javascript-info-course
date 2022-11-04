@@ -408,3 +408,29 @@ We can immediately see a few benefits over the callback-based pattern:
 So promises give us better code flow and flexibility. But there's more. We'll see that in the next chapters.
 
 ## Tasks
+
+### Re-resolve a promise?
+
+What's the output of the code below?
+
+```javascript
+const { log: print } = console;
+
+const promise = new Promise(function(resolve, reject) {
+  resolve(1);
+
+  setTimeout(function() { resolve(2); }, 1000);
+});
+
+promise.then(print);
+```
+
+<details>
+  <summary>Solution</summary>
+
+  <br>
+
+  The output is: `1`.
+
+  The second call to `resolve` is ignored, because only the first call of `reject/resolve` is taken into account. Further calls are ignored.
+</details>
