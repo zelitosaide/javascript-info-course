@@ -183,3 +183,37 @@ label16: {
       print(error.message);
     });
 }
+
+label17: {
+  const loadScript = function (src) {
+    return new Promise(function (resolve, reject) {
+      const script = document.createElement("script");
+      script.src = src;
+
+      script.onload = function () {
+        resolve(script);
+      }
+      script.onerror = function () {
+        reject(new Error(`Script load error for ${src}`));
+      }
+
+      document.head.append(script);
+    });
+  }
+
+  const promise = loadScript("./script.js");
+
+  promise.then(
+    function (script) { print(`${script.src} is loaded!`); },
+    function (error) { print(`Error: ${error.message}`); }
+  );
+
+  promise.then(function (script) {
+    print("Another handler...", script);
+  });
+
+  promise.then(function (script) {
+    print("Another handler...", script);
+    sayHello();
+  });
+}
