@@ -463,14 +463,12 @@ delay(3000).then(function() {
 
   function delay(ms) {
     return new Promise(function(resolve, reject) {
-      setTimeout(function () {
-        resolve("done!");
-      }, ms);
+      setTimeout(resolve, ms);
     });
   }
 
-  delay(3000).then(function(result) {
-    print(`runs after 3 seconds: ${result}`);
+  delay(3000).then(function() {
+    print("runs after 3 seconds");
   });
   ```
 </details>
