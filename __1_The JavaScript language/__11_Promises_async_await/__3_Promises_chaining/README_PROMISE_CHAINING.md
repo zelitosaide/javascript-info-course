@@ -43,3 +43,9 @@ Here the flow is:
 4. ...and so on.
 
 As the result is passed along the chain of handlers, we can see a sequence of `print` calls: `1` -> `2` -> `4`.
+
+<br>
+
+![Resolve](chain.svg)
+
+<br>
