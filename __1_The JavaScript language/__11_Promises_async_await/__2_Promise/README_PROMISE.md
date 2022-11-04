@@ -397,3 +397,14 @@ promise.then(
 
 promise.then(function(script) { print("Another handler..."); });
 ```
+
+We can immediately see a few benefits over the callback-based pattern:
+
+| Promises                                                                                                                                                                                                                                                    | Callbacks                                                                                                                                                                           |
+| ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Promises allow us to do things in the natural order. First, we run `loadScript(src)`, and `.then` we write what to do with the result.                                                                                                                      | We must have a `callback` function at our disposal when calling `loadScript(src, callback)`. In other words, we must know what to do with the result before `loadScript` is called. |
+| We can call `.then` on a Promise as many times as we want. Each time, we're adding a new "fan", a new subscribing function, to the "subscription list". More about this in the next chapter: [Promises chaining](https://javascript.info/promise-chaining). | There can be only one callback.                                                                                                                                                     |
+
+So promises give us better code flow and flexibility. But there's more. We'll see that in the next chapters.
+
+## Tasks
