@@ -474,3 +474,7 @@ delay(3000).then(function() {
 
   Please note that in this task `resolve` is called without arguments. We don't return any value from `delay`, just ensure the delay.
 </details>
+
+### Animated circle with promise ????
+
+* [Not finished](https://javascript.info/promise-basics#tasks)
