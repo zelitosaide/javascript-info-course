@@ -46,6 +46,47 @@ As the result is passed along the chain of handlers, we can see a sequence of `p
 
 <br>
 
-![Resolve](chain.svg)
+  ![Resolve](chain.svg)
+
+<br>
+
+The whole thing works, because every call to a `.then` return a new promise, so that we can call the next `.then` on it.
+
+When a handler returns a value, it becomes the result of that promise, so the next `.then` is called with it.
+
+**A classic newbie error: technically we can also add many** `.then` **to a single promise.  This is not chaining.**
+
+For example:
+
+```javascript
+const { log: print } = console;
+
+const promise = new Promise(function(resolve, reject) {
+  setTimeout(function() { resolve(1); }, 1000);
+});
+
+promise.then(function(result) {
+  print(result);  // 1
+  return result * 2;
+});
+
+promise.then(function(result) {
+  print(result);  // 1
+  return result * 2;
+});
+
+promise.then(function(result) {
+  print(result);  // 1
+  return result * 2;
+});
+```
+
+What we did here is just several handlers to one promise. They don't pass the result to each other; instead they process it independently.
+
+Here's the picture (compare it with the chaining above):
+
+<br>
+
+  ![Resolve](not_chaining.svg)
 
 <br>
