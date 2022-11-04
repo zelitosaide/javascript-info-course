@@ -114,44 +114,99 @@ label05: {
     document.head.append(script);
   });
 
-  promise
-    .then(function (script) {
-      one();
-      print(script);
+  // promise
+  //   .then(function (script) {
+  //     one();
+  //     print(script);
 
-      return new Promise(function (resolve, reject) {
-        const script = document.createElement("script");
-        script.src = "./script2.js";
-        script.onload = function () {
-          resolve(script);
-        }
-        script.onerror = function () {
-          reject(new Error(`Script load error for ./script2.js`));
-        }
-        document.head.append(script);
-      });
-    })
-    .then(function (script) {
-      two();
-      print(script);
+  //     return new Promise(function (resolve, reject) {
+  //       const script = document.createElement("script");
+  //       script.src = "./script2.js";
+  //       script.onload = function () {
+  //         resolve(script);
+  //       }
+  //       script.onerror = function () {
+  //         reject(new Error(`Script load error for ./script2.js`));
+  //       }
+  //       document.head.append(script);
+  //     });
+  //   })
+  //   .then(function (script) {
+  //     two();
+  //     print(script);
 
-      return new Promise(function (resolve, reject) {
-        const script = document.createElement("script");
-        script.src = "./script3.js";
-        script.onload = function () {
-          resolve(script);
-        }
-        script.onerror = function () {
-          reject(new Error(`Script load error for ./script3.js`));
-        }
-        document.head.append(script);
-      });
-    })
-    .then(function (script) {
+  //     return new Promise(function (resolve, reject) {
+  //       const script = document.createElement("script");
+  //       script.src = "./script3.js";
+  //       script.onload = function () {
+  //         resolve(script);
+  //       }
+  //       script.onerror = function () {
+  //         reject(new Error(`Script load error for ./script3.js`));
+  //       }
+  //       document.head.append(script);
+  //     });
+  //   })
+  //   .then(function (script) {
 
-      three();
-      print(script);
+  //     three();
+  //     print(script);
 
-    });
+  //   });
 }
 
+label04_1: {
+  const loadScript = function (src) {
+    return new Promise(function (resolve, reject) {
+      const script = document.createElement("script");
+      script.src = src;
+      script.onload = function () {
+        resolve(script);
+      }
+      script.onerror = function () {
+        reject(new Error(`Script load error for ${src}`));
+      }
+      document.head.append(script);
+    });
+  }
+
+  // loadScript("./script1.js")
+  //   .then(function (script) {
+  //     return loadScript("./script2.js");
+  //   })
+  //   .then(function (script) {
+  //     return loadScript("./script3.js");
+  //   })
+  //   .then(function (script) {
+  //     one();
+  //     two();
+  //     three();
+  //   });
+}
+
+
+label04_1: {
+  const loadScript = function (src) {
+    return new Promise(function (resolve, reject) {
+      const script = document.createElement("script");
+      script.src = src;
+      script.onload = function () {
+        resolve(script);
+      }
+      script.onerror = function () {
+        reject(new Error(`Script load error for ${src}`));
+      }
+      document.head.append(script);
+    });
+  }
+
+  loadScript("./script1.js")
+    .then(script => loadScript("./script2.js"))
+    .then(script => loadScript("./script3.js"))
+    .then(script => {
+      // scripts are loaded, we can use functions declared there
+      one();
+      two();
+      three();
+    });
+}
