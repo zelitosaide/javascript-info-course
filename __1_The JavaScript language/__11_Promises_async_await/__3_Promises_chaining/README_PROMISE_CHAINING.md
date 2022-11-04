@@ -90,3 +90,45 @@ Here's the picture (compare it with the chaining above):
   ![Resolve](not_chaining.svg)
 
 <br>
+
+All `.then` on the same promise get the same result - the result of that promise. So in the code above all `print` show the same: `1`.
+
+In practice we rarely need multiple handlers for one promise. Chaining is used much more often.
+
+## Returning promises
+
+A handler, used in `.then(handler)` may create and return a promise.
+
+In that case further handlers wait until it settles, and then get its result.
+
+For instance:
+
+```javascript
+const { log: print } = console;
+
+new Promise(function(resolve, reject) {
+  
+  setTimeout(function() { resolve(1); }, 1000);
+
+}).then(function(result) {
+
+  print(result);  // 1
+
+  return new Promise(function(resolve, reject) {  // (*)
+    setTimeout(function() { resolve(result * 2); }, 1000);
+  });
+
+}).then(function(result) {  // (**)
+
+  print(result);  // 2
+
+  return new Promise(function(resolve, reject) {
+    setTimeout(function() { resolve(result * 2); }, 1000);
+  });
+
+}).then(function(result) {
+
+  print(result);  // 4
+  
+});
+```
