@@ -138,3 +138,5 @@ Here the first `.then` show `1` and returns `new Promise(...)` in the line `(*)`
 So the output is the same as in the previous example: `1` -> `2` -> `4`, but now with 1 second delay between `print` calls.
 
 Returning promises allows us to build chains of asynchronous actions.
+
+## Example: loadScript
