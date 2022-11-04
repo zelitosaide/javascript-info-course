@@ -342,3 +342,21 @@ These features are helpful and make things work just the right way if we use `fi
 > Promises are more flexible. We can add handlers any time: if the result is already there, they just execute.
 
 ## Example: loadScript
+
+Next, let's see more practical examples of how promises can help us write asynchronous code.
+
+We've got the `loadScrpt` function for loading a script from the previous chapter.
+
+Here's the callback-based variant, just to remind us of it:
+
+```javascript
+function loadScript(src, callback) {
+  const script = document.createElement("script");
+  script.src = src;
+
+  script.onload = function() { callback(null, script); }
+  script.onerror = function() { callback(new Error(`Script load error for ${src}`)); }
+
+  document.head.append(script);
+}
+```
