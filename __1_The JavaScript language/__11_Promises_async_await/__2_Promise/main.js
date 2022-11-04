@@ -201,19 +201,43 @@ label17: {
     });
   }
 
-  const promise = loadScript("./script.js");
+  // const promise = loadScript("./script.js");
 
-  promise.then(
-    function (script) { print(`${script.src} is loaded!`); },
-    function (error) { print(`Error: ${error.message}`); }
-  );
+  // promise.then(
+  //   function (script) { print(`${script.src} is loaded!`); },
+  //   function (error) { print(`Error: ${error.message}`); }
+  // );
 
-  promise.then(function (script) {
-    print("Another handler...", script);
+  // promise.then(function (script) {
+  //   print("Another handler...", script);
+  // });
+
+  // promise.then(function (script) {
+  //   print("Another handler...", script);
+  //   sayHello();
+  // });
+}
+
+label18: {
+  const delay = function (ms) {
+    return new Promise(function (resolve) {
+      setTimeout(resolve, ms);
+    });
+  }
+
+  delay(3000).then(function () {
+    print("runs after 3 seconds");
   });
+}
 
-  promise.then(function (script) {
-    print("Another handler...", script);
-    sayHello();
+label19: {
+  const delay = function (ms) {
+    return new Promise(function (_, reject) {
+      setTimeout(reject, ms);
+    });
+  }
+
+  delay(18000).catch(function (error) {
+    print(error === undefined);
   });
 }
