@@ -223,9 +223,9 @@ function loadScript(src) {
   });
 }
 
-loadScript("./script1.js").then(function(script) {
-  loadScript("./script2.js").then(function(script) {
-    loadScript("./script3.js").then(function(script) {
+loadScript("./script1.js").then(function(script1) {
+  loadScript("./script2.js").then(function(script2) {
+    loadScript("./script3.js").then(function(script3) {
       // this functions has access to variables script1, script2 and script3
       one();
       two();
@@ -234,3 +234,9 @@ loadScript("./script1.js").then(function(script) {
   });
 });
 ```
+
+This code does the same: loads 3 scripts in sequence. But it "grows to the right". So we have the same problem as with callbacks.
+
+People who start to use promises sometimes don't know about chaining, so they write it this way. Generally, chaining is preferred.
+
+Sometimes it's ok to write `.then` directly, because the nested function has access to the outer scope. In the example above the most nested callback has access to all variables `script1`, `script2`, `script3`. But that's an exception rather than a rule.
