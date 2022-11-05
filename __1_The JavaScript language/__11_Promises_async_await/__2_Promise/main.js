@@ -5,7 +5,9 @@ label01: {
     resolve("done");
 
     reject(new Error("Error happened!")); // ignored
-    setTimeout(function () { resolve("OK"); }, 1000); // ignored
+    setTimeout(function () {
+      resolve("OK");
+    }, 1000); // ignored
   });
 
   // promise.then(
@@ -15,7 +17,7 @@ label01: {
 
 label02: {
   const promise = new Promise(function (resolve, reject) {
-    resolve();  // what is the result???
+    resolve(); // what is the result???
   });
 
   // promise.then(function (data) {
@@ -25,7 +27,7 @@ label02: {
 
 label03: {
   const promise = new Promise(function (resolve, reject) {
-    resolve("done", "OK");  // what is the result???
+    resolve("done", "OK"); // what is the result???
   });
 
   // promise.then(function (data) {
@@ -54,7 +56,9 @@ label05: {
 
 label06: {
   const promise = new Promise(function (resolve, reject) {
-    setTimeout(function () { resolve("done!") }, 1000);
+    setTimeout(function () {
+      resolve("done!");
+    }, 1000);
   });
 
   // resolve runs the first function in .then
@@ -73,14 +77,20 @@ label07: {
 
   // reject runs the second function in .then
   promise.then(
-    function (result) { print(result); }, // doesn't run
-    function (error) { print(error.message); } // shows "Whoops!" after 5 second
+    function (result) {
+      print(result);
+    }, // doesn't run
+    function (error) {
+      print(error.message);
+    } // shows "Whoops!" after 5 second
   );
 }
 
 label08: {
   const promise = new Promise(function (resolve, reject) {
-    setTimeout(function () { resolve("done!") }, 3000);
+    setTimeout(function () {
+      resolve("done!");
+    }, 3000);
   });
 
   // promise.then(print); // shows "done!" after 3 second
@@ -93,7 +103,7 @@ label09: {
     }, 500);
   });
 
-  promise.then(null, print);  // shows an Error object
+  promise.then(null, print); // shows an Error object
 }
 
 label10: {
@@ -104,7 +114,7 @@ label10: {
     }, 6000);
   });
 
-  promise.catch(print);  // shows an Error object
+  promise.catch(print); // shows an Error object
 }
 
 label11: {
@@ -121,7 +131,7 @@ label11: {
 label12: {
   const myFunction = function () {
     return print("Hello!");
-  }
+  };
 
   myFunction();
 }
@@ -164,14 +174,18 @@ label15: {
   });
 
   promise
-    .finally(function () { print("Promise ready"); })
-    .catch(function (error) { print(error.message); });
+    .finally(function () {
+      print("Promise ready");
+    })
+    .catch(function (error) {
+      print(error.message);
+    });
 }
 
 label16: {
   const promise = new Promise(function (resolve, reject) {
     setTimeout(function () {
-      resolve({ status: 200 })
+      resolve({ status: 200 });
     }, 14000);
   });
 
@@ -192,14 +206,14 @@ label17: {
 
       script.onload = function () {
         resolve(script);
-      }
+      };
       script.onerror = function () {
         reject(new Error(`Script load error for ${src}`));
-      }
+      };
 
       document.head.append(script);
     });
-  }
+  };
 
   // const promise = loadScript("./script.js");
 
@@ -223,7 +237,7 @@ label18: {
     return new Promise(function (resolve) {
       setTimeout(resolve, ms);
     });
-  }
+  };
 
   delay(3000).then(function () {
     print("runs after 3 seconds");
@@ -235,7 +249,7 @@ label19: {
     return new Promise(function (_, reject) {
       setTimeout(reject, ms);
     });
-  }
+  };
 
   delay(18000).catch(function (error) {
     print(error === undefined);

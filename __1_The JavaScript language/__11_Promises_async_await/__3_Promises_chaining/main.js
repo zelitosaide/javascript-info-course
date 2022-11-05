@@ -23,7 +23,9 @@ label01: {
 
 label02: {
   const promise = new Promise(function (resolve) {
-    setTimeout(function () { resolve(1); }, 1000);
+    setTimeout(function () {
+      resolve(1);
+    }, 1000);
   });
 
   // promise.then(function (result) {
@@ -44,7 +46,9 @@ label02: {
 
 label03: {
   const promise = new Promise(function (resolve) {
-    setTimeout(function () { resolve(1); }, 1000);
+    setTimeout(function () {
+      resolve(1);
+    }, 1000);
   });
 
   promise
@@ -52,20 +56,22 @@ label03: {
       print(result);
 
       return new Promise(function (resolve) {
-        setTimeout(function () { resolve(result * 2); }, 1000);
+        setTimeout(function () {
+          resolve(result * 2);
+        }, 1000);
       });
     })
     .then(function (result) {
       print(result);
 
       return new Promise(function (resolve) {
-        setTimeout(function () { resolve(result * 2); }, 1000);
+        setTimeout(function () {
+          resolve(result * 2);
+        }, 1000);
       });
     })
     .then(function (result) {
-
       print(result);
-
     });
 }
 
@@ -76,13 +82,13 @@ label04: {
       script.src = src;
       script.onload = function () {
         resolve(script);
-      }
+      };
       script.onerror = function () {
         reject(new Error(`Script load error for ${src}`));
-      }
+      };
       document.head.append(script);
     });
-  }
+  };
 
   // loadScript("./script1.js")
   //   .then(function (script) {
@@ -107,10 +113,10 @@ label05: {
     script.src = "./script1.js";
     script.onload = function () {
       resolve(script);
-    }
+    };
     script.onerror = function () {
       reject(new Error(`Script load error for ./script1.js`));
-    }
+    };
     document.head.append(script);
   });
 
@@ -162,13 +168,13 @@ label04_1: {
       script.src = src;
       script.onload = function () {
         resolve(script);
-      }
+      };
       script.onerror = function () {
         reject(new Error(`Script load error for ${src}`));
-      }
+      };
       document.head.append(script);
     });
-  }
+  };
 
   // loadScript("./script1.js")
   //   .then(function (script) {
@@ -184,7 +190,6 @@ label04_1: {
   //   });
 }
 
-
 label04_1: {
   const loadScript = function (src) {
     return new Promise(function (resolve, reject) {
@@ -192,18 +197,18 @@ label04_1: {
       script.src = src;
       script.onload = function () {
         resolve(script);
-      }
+      };
       script.onerror = function () {
         reject(new Error(`Script load error for ${src}`));
-      }
+      };
       document.head.append(script);
     });
-  }
+  };
 
   loadScript("./script1.js")
-    .then(script => loadScript("./script2.js"))
-    .then(script => loadScript("./script3.js"))
-    .then(script => {
+    .then((script) => loadScript("./script2.js"))
+    .then((script) => loadScript("./script3.js"))
+    .then((script) => {
       // scripts are loaded, we can use functions declared there
       one();
       two();
