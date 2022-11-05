@@ -140,3 +140,64 @@ So the output is the same as in the previous example: `1` -> `2` -> `4`, but now
 Returning promises allows us to build chains of asynchronous actions.
 
 ## Example: loadScript
+
+Let's use this feature with the promisified `loadScript`, defined in the [previous chapter](https://javascript.info/promise-basics#loadscript), to load scripts one by one, in sequence:
+
+```javascript
+function loadScript(src) {
+  return new Promise(function(resolve, reject) {
+    const script = document.createElement("script");
+    script.src = src;
+    script.onload = function() {
+      resolve(script);
+    }
+    script.onerror = function() {
+      reject(new Error(`Script load error for ${src}`));
+    }
+    document.head.append(script);
+  });
+}
+
+loadScript("./script1.js")
+  .then(function(script) {
+    return loadScript("./script2.js");
+  })
+  .then(function(script) {
+    return loadScript("./script3.js")
+  })
+  .then(function(script) {
+    // use functions declared in scripts
+    // to show that they indeed loaded
+    one();
+    two();
+    three();
+  });
+```
+
+This code can be made bit shorter with arrow functions:
+
+```javascript
+function loadScript(src) {
+  return new Promise(function(resolve, reject) {
+    const script = document.createElement("script");
+    script.src = src;
+    script.onload = function() {
+      resolve(script);
+    }
+    script.onerror = function() {
+      reject(`Script load error for ${src}`);
+    }
+    document.head.append(script);
+  });
+}
+
+loadScript("./script1.js")
+  .then(script => loadScript("./script2.js"))
+  .then(script => loadScript("./script3.js"))
+  .then(script => {
+    // scripts are loaded, we can use functions declared there
+    one();
+    two();
+    three();
+  });
+```
