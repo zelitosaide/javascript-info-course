@@ -215,3 +215,30 @@ label04_1: {
       three();
     });
 }
+
+label5: {
+  const loadScript = function (src) {
+    return new Promise(function (resolve, reject) {
+      const script = document.createElement("script");
+      script.src = src;
+      script.onload = function () {
+        resolve(script);
+      };
+      script.onerror = function () {
+        reject(new Error(`Script load error for ${src}`));
+      };
+      document.head.append(script);
+    });
+  };
+
+  loadScript("./script1.js").then(function (script1) {
+    loadScript("./script2.js").then(function (script2) {
+      loadScript("./script3.js").then(function (script3) {
+        one();
+        two();
+        three();
+        print(script1, script2, script3);
+      });
+    });
+  });
+}
