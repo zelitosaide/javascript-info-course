@@ -281,3 +281,5 @@ Sometimes it's ok to write `.then` directly, because the nested function has acc
 > JavaScript checks the object returned by the `.then` handler in line `(*)`: if it has a callable method named `then`, then it calls that method providing native functions `resolve`, `reject` as arguments (similar to an executor) and waits until one of them is called. In the example above `resolve(2)` is called after 1 second `(**)`. Then the result is passed further down the chain.
 > 
 > This feature allows us to integrate objects with promise chains without having to inherit from `Promise`.
+
+## Bigger example: fetch
