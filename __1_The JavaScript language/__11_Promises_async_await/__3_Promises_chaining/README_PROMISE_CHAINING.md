@@ -309,6 +309,41 @@ fetch("./user.json")
   })
   .then(function(text) {
     // ...and here's the content of the remote file
-    print(text);  // { "id": "1", "firstName": "zelito", "lastName": "abdala", "age": 12 }
+    print(text);  // { "id": "1", "firstName": "zelito", "lastName": "abdala", "username": "zelitosaide", "age": 12 }
+  });
+```
+
+The `response` object returned from `fetch` also includes the method `response.json()` that reads the remote data and parses it as JSON. In our case that's even more convenient, so let's switch to it.
+
+We'll also use arrow functions for brevity:
+
+```javascript
+// same as above, but response.json() parses the remote content as JSON
+fetch("./user.json")
+  .then(response => response.json())
+  .then(user => console.log(user.firstName)); // zelito, got user firstName
+```
+
+Now let's do something with the loaded user.
+
+For instance, we can make one more request to GitHub, load the user profile and show the avatar:
+
+```javascript
+// Make a request for user.json
+fetch("./user.json")
+  // Load it as json
+  .then(response => response.json())
+  // Make a request to GitHub
+  .then(user => fetch(`https://api.github.com/users/${user.name}`))
+  // Load the response as json
+  .then(response => response.json())
+  // Show the avatar image (githubUser.avatar_url) for 3 seconds (maybe animate it)
+  .then(githubUser => {
+    const img = document.createElement("img");
+    img.src = githubUser.avatar_url;
+    img.className = "promise-avatar-example";
+    document.body.append(img);
+
+    setTimeout(function() { img.remove(); }, 3000); // (*)
   })
 ```
