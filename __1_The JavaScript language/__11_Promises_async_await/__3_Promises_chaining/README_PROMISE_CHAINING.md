@@ -283,3 +283,32 @@ Sometimes it's ok to write `.then` directly, because the nested function has acc
 > This feature allows us to integrate objects with promise chains without having to inherit from `Promise`.
 
 ## Bigger example: fetch
+
+In frontend programming, promises are often used for network requests. So let's see an  extended example of that.
+
+We'll use the [fetch](https://javascript.info/fetch) method to load the information about the user from the remote server. It has a lot of optional parameters covered in [separate chapter](https://javascript.info/fetch), but the basic syntax is quite simple:
+
+```javascript
+const promise = fetch(url);
+```
+
+This makes a network request to the `url` and returns a promise. The promise resolves with a `response` object when the remote server responds with headers, but before the full response is downloaded.
+
+To read the full response, we should call the method `response.text()`: it returns a promise that resolves when the full text is downloaded from the remote server, with that text as a result.
+
+The code below makes a request to `user.json` and loads its text from the server:
+
+```javascript
+const { log: print } = console;
+
+fetch("./user.json")
+  // .then below runs when the remote server responds
+  .then(function(response) {
+    // response.text() returns a new promise that resolves with the full response text when it load
+    return response.text();
+  })
+  .then(function(text) {
+    // ...and here's the content of the remote file
+    print(text);  // { "id": "1", "firstName": "zelito", "lastName": "abdala", "age": 12 }
+  })
+```
