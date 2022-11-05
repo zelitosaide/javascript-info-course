@@ -264,4 +264,16 @@ Sometimes it's ok to write `.then` directly, because the nested function has acc
 >     }, 1000);
 >   }
 > }
+> 
+> const promise = new Promise(function(resolve, reject) {
+>   setTimeout(function() {
+>     resolve(1);
+>   }, 1000);
+> });
+> 
+> promise
+>   .then(function(result) { 
+>     return new Thenable(result); // (*) 
+>   })
+>   .then(print); // shows 2 after 1000ms
 > ```
