@@ -185,7 +185,7 @@ function loadScript(src) {
       resolve(script);
     }
     script.onerror = function() {
-      reject(`Script load error for ${src}`);
+      reject(new Error(`Script load error for ${src}`));
     }
     document.head.append(script);
   });
@@ -200,4 +200,37 @@ loadScript("./script1.js")
     two();
     three();
   });
+```
+
+Here each `loadScript` call returns a promise, and the next `.then` runs when it resolves. Then it initiates the loading of the next script. So scrips are loaded one after another.
+
+We can add more asynchronous actions to the chain. Please note that the code is still "flat" - it grows down, not to the right. There are no signs of the "pyramid of doom".
+
+Technically, we could add `.then` directly to each `loadScript`, like this:
+
+```javascript
+function loadScript(src) {
+  return new Promise(function(resolve, reject) {
+    const script = document.createElement("script");
+    script.src = src;
+    script.onload = function() {
+      resolve(script);
+    }
+    script.onerror = function() {
+      reject(new Error(`Script load error for ${src}`));
+    }
+    document.head.append(script);
+  });
+}
+
+loadScript("./script1.js").then(function(script) {
+  loadScript("./script2.js").then(function(script) {
+    loadScript("./script3.js").then(function(script) {
+      // this functions has access to variables script1, script2 and script3
+      one();
+      two();
+      three();
+    });
+  });
+});
 ```
