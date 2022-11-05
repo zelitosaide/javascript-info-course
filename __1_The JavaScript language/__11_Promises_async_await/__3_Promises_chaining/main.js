@@ -286,3 +286,21 @@ label07: {
       print(result);
     });
 }
+
+label08: {
+  fetch("./user.json")
+    .then(function (result) {
+      return result.json();
+    })
+    .then(function (result) {
+      print(result);
+    });
+}
+
+label09: {
+  (async function () {
+    const response = await fetch("./user.json");
+    const json = await response.json();
+    print(json);
+  })();
+}
