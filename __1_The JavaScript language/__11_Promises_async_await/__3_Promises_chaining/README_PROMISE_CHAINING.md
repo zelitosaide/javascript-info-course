@@ -240,3 +240,28 @@ This code does the same: loads 3 scripts in sequence. But it "grows to the right
 People who start to use promises sometimes don't know about chaining, so they write it this way. Generally, chaining is preferred.
 
 Sometimes it's ok to write `.then` directly, because the nested function has access to the outer scope. In the example above the most nested callback has access to all variables `script1`, `script2`, `script3`. But that's an exception rather than a rule.
+
+> ### Thenables
+> 
+> To be precise, a handler may return not exactly a promise, but a so-called "thenable" object - an arbitrary object that has a method `.then`. It will be treated the same way as a promise.
+> 
+> The idea is that 3rd-party libraries may implement "promise-compatible" objects of their own. They can have an extended set of methods, but also be compatible with native promises, because they implement `.then`.
+> 
+> Here's an example of a thenable object:
+> 
+> ```javascript
+> const { log: print } = console;
+> 
+> class Thenable {
+>   constructor(num) {
+>     this.num = num;
+>   }
+>   then(resolve, reject) {
+>     print(resolve); // function() { native code }
+>     // resolve with this.num * 2 after the 1 second
+>     setTimeout(function() {
+>       resolve(this.num * 2);
+>     }, 1000);
+>   }
+> }
+> ```
