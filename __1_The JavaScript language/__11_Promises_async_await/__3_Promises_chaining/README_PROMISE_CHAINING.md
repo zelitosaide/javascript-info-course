@@ -476,4 +476,8 @@ promise.then(f1, f2);
   ```javascript
   promise.then(f1, f2);
   ```
+
+  That's because an error is passed down the chain, and in the second code piece there's no chain below `f1`.
+
+  In other words, `.then` passes results/errors to the next `.then/catch`. So in the first example, there's a `catch` below, and in the second one there isn't, so the error is unhandled.
 </details>
