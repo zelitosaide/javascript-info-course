@@ -341,9 +341,49 @@ fetch("./user.json")
   .then(githubUser => {
     const img = document.createElement("img");
     img.src = githubUser.avatar_url;
-    img.className = "promise-avatar-example";
+    img.style.width = "100px";
     document.body.append(img);
 
     setTimeout(function() { img.remove(); }, 3000); // (*)
   })
+```
+
+The code works; see comments about the details. However, there's a potential problem in it, a typical error for those who begin to use promises.
+
+Look at the line `(*)`: how can we do something after the avatar has finished showing and gets removed? For instance, we'd like to show a form for editing that user or something else. As of now, there's no way.
+
+To make the chain extendable, we need to return a promise that resolves when the avatar finishes showing.
+
+Like this:
+
+```javascript
+const { log: print } = console;
+
+fetch("./user.json")
+  .then(function(response) {
+    return response.json();
+  })
+  .then(function(user) {
+    return fetch(`https://api.github.com/users/${user.username}`);
+  })
+  .then(function(response) {
+    return response.json();
+  })
+  .then(function(githubUser) {
+    return new Promise(function(resolve, reject) { // (*)
+      const img = document.createElement("img");
+      img.src = githubUser.avatar_url;
+      img.style.width = "100px";
+      document.body.append(img);
+
+      setTimeout(function() {
+        img.remove();
+        resolve(githubUser); // (**)
+      }, 3000);
+    });
+  })
+  // triggers after 3 seconds
+  .then(function(githubUser) {
+    print(`Finished showing ${githubUser.name}`);
+  });
 ```
