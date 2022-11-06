@@ -462,6 +462,18 @@ promise.then(f1, f2);
   <summary>solution</summary>
 
   <br>
-  
+
   The short answer is: **no, they are not equal:**
+
+  The difference is that if an error happens in `f1`, then it is handled by `.catch` here:
+
+  ```javascript
+  promise.then(f1).catch(f2);
+  ```
+
+  ...But not here:
+
+  ```javascript
+  promise.then(f1, f2);
+  ```
 </details>
