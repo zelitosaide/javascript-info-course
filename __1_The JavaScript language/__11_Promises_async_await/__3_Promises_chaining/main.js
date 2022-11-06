@@ -356,30 +356,64 @@ label11: {
 }
 
 label12: {
-  fetch("user.json")
-    .then(function (response) {
+  // fetch("user.json")
+  //   .then(function (response) {
+  //     return response.json();
+  //   })
+  //   .then(function (user) {
+  //     return fetch(`https://api.github.com/users/${user.username}`);
+  //   })
+  //   .then(function (response) {
+  //     return response.json();
+  //   })
+  //   .then(function (githubUser) {
+  //     return {
+  //       then(resolve, reject) {
+  //         const img = document.createElement("img");
+  //         img.src = githubUser.avatar_url;
+  //         img.style.width = "100px";
+  //         document.body.append(img);
+  //         setTimeout(function () {
+  //           img.remove();
+  //           resolve(githubUser);
+  //         }, 3000);
+  //       },
+  //     };
+  //   })
+  //   .then(function (githubUser) {
+  //     print(`Finished showing ${githubUser.name}`);
+  //   });
+}
+
+label13: {
+  const loadJson = function (url) {
+    return fetch(url).then(function (response) {
       return response.json();
-    })
+    });
+  };
+
+  class Thenable {
+    constructor(user) {
+      this.user = user;
+    }
+    then(resolve, _) {
+      const img = document.createElement("img");
+      img.src = this.user.avatar_url;
+      img.style.width = "100px";
+      document.body.append(img);
+      setTimeout(() => {
+        img.remove();
+        resolve(this.user);
+      }, 3000);
+    }
+  }
+
+  loadJson("user.json")
     .then(function (user) {
-      return fetch(`https://api.github.com/users/${user.username}`);
-    })
-    .then(function (response) {
-      return response.json();
+      return loadJson(`https://api.github.com/users/${user.username}`);
     })
     .then(function (githubUser) {
-      return {
-        then(resolve, reject) {
-          const img = document.createElement("img");
-          img.src = githubUser.avatar_url;
-          img.style.width = "100px";
-          document.body.append(img);
-
-          setTimeout(function () {
-            img.remove();
-            resolve(githubUser);
-          }, 3000);
-        },
-      };
+      return new Thenable(githubUser);
     })
     .then(function (githubUser) {
       print(`Finished showing ${githubUser.name}`);
