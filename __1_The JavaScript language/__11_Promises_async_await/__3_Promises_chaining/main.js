@@ -261,46 +261,69 @@ label07: {
     }, 1000);
   });
 
-  promise
-    .then(function (result) {
-      return {
-        then(resolve, reject) {
-          print(result);
-          setTimeout(function () {
-            resolve(Math.pow(result, 2));
-          }, 1000);
-        },
-      };
-    })
-    .then(function (result) {
-      return {
-        then(resolve, reject) {
-          print(result);
-          setTimeout(function () {
-            resolve(Math.pow(result, 2));
-          }, 1000);
-        },
-      };
-    })
-    .then(function (result) {
-      print(result);
-    });
+  // promise
+  //   .then(function (result) {
+  //     return {
+  //       then(resolve, reject) {
+  //         print(result);
+  //         setTimeout(function () {
+  //           resolve(Math.pow(result, 2));
+  //         }, 1000);
+  //       },
+  //     };
+  //   })
+  //   .then(function (result) {
+  //     return {
+  //       then(resolve, reject) {
+  //         print(result);
+  //         setTimeout(function () {
+  //           resolve(Math.pow(result, 2));
+  //         }, 1000);
+  //       },
+  //     };
+  //   })
+  //   .then(function (result) {
+  //     print(result);
+  //   });
 }
 
 label08: {
-  fetch("./user.json")
-    .then(function (result) {
-      return result.json();
-    })
-    .then(function (result) {
-      print(result);
-    });
+  fetch("./user.json");
+  // .then(function (result) {
+  //   return result.json();
+  // })
+  // .then(function (result) {
+  //   print(result);
+  // });
 }
 
 label09: {
-  (async function () {
-    const response = await fetch("./user.json");
-    const json = await response.json();
-    print(json);
-  })();
+  // (async function () {
+  //   const response = await fetch("./user.json");
+  //   const json = await response.json();
+  //   print(json);
+  // })();
+}
+
+label10: {
+  fetch("user.json")
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (user) {
+      return fetch(`https://api.github.com/users/${user.username}`);
+    })
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (githubUser) {
+      const img = document.createElement("img");
+      img.src = githubUser.avatar_url;
+      img.style.width = "100px";
+      document.body.append(img);
+
+      setTimeout(function () {
+        img.remove();
+      }, 3000);
+    });
 }
