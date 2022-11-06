@@ -419,3 +419,46 @@ label13: {
       print(`Finished showing ${githubUser.name}`);
     });
 }
+
+label14: {
+  const promise = new Promise(function (resolve, reject) {
+    setTimeout(function () {
+      resolve(1);
+    }, 4000);
+  });
+
+  promise
+    .then(function (result) {
+      print(result);
+      return {
+        then(_, reject) {
+          reject(new Error("Whoops!"));
+        },
+      };
+    })
+    .catch(function (error) {
+      print(error.message);
+    });
+}
+
+label15: {
+  const promise = new Promise(function (resolve, reject) {
+    setTimeout(function () {
+      resolve(2);
+    }, 6000);
+  });
+
+  promise.then(
+    function (result) {
+      print(result);
+      return {
+        then(_, reject) {
+          reject(new Error("Whoops!"));
+        },
+      };
+    },
+    function (error) {
+      print(error.message);
+    }
+  );
+}
