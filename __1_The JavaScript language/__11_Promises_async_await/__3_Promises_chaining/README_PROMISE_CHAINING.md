@@ -387,3 +387,45 @@ fetch("./user.json")
     print(`Finished showing ${githubUser.name}`);
   });
 ```
+
+That is, the `.then` handler in line `(*)` now returns `new Promise`, that becomes settled only after the call of `resolve(githubUser)` in `setTimeout()` `(**)`. The next `.then` in the chain will wait for that.
+
+As a good practice, an asynchronous action should always return a promise. That makes it possible to plan actions after it; even if we don't plan to extend the chain now, we may need it later.
+
+Finally, we can split the code into reusable functions:
+
+```javascript
+const { log: print } = console;
+
+function loadJson(url) {
+  return fetch(url).then(function(response) {
+    return response.json();
+  });
+}
+
+function loadGithubUser(username) {
+  return loadJson(`https://api.github.com/users/${username}`);
+}
+
+function showAvatar(githubUser) {
+  return new Promise(function(resolve, reject) {
+    const img = document.createElement("img");
+    img.src = githubUser.avatar_url;
+    img.style.width = "100px";
+    document.body.append(img);
+
+    setTimeout(function() {
+      img.remove();
+      resolve(githubUser);
+    }, 3000);
+  });
+}
+
+// Use them:
+loadJson("user.json")
+  .then(function(user) { return loadGithubUser(user.username); })
+  .then(showAvatar)
+  .then(function(githubUser) {
+    print(`Finished showing ${githubUser.name}`);
+  });
+```
