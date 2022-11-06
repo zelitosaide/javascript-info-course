@@ -306,6 +306,28 @@ label09: {
 }
 
 label10: {
+  // fetch("user.json")
+  //   .then(function (response) {
+  //     return response.json();
+  //   })
+  //   .then(function (user) {
+  //     return fetch(`https://api.github.com/users/${user.username}`);
+  //   })
+  //   .then(function (response) {
+  //     return response.json();
+  //   })
+  //   .then(function (githubUser) {
+  //     const img = document.createElement("img");
+  //     img.src = githubUser.avatar_url;
+  //     img.style.width = "100px";
+  //     document.body.append(img);
+  //     setTimeout(function () {
+  //       img.remove();
+  //     }, 3000);
+  //   });
+}
+
+label11: {
   fetch("user.json")
     .then(function (response) {
       return response.json();
@@ -317,13 +339,19 @@ label10: {
       return response.json();
     })
     .then(function (githubUser) {
-      const img = document.createElement("img");
-      img.src = githubUser.avatar_url;
-      img.style.width = "100px";
-      document.body.append(img);
+      return new Promise(function (resolve, reject) {
+        const img = document.createElement("img");
+        img.src = githubUser.avatar_url;
+        img.style.width = "100px";
+        document.body.append(img);
 
-      setTimeout(function () {
-        img.remove();
-      }, 3000);
+        setTimeout(function () {
+          img.remove();
+          resolve(githubUser);
+        }, 3000);
+      });
+    })
+    .then(function (githubUser) {
+      print(`Finished showing ${githubUser.name}`);
     });
 }
