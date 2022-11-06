@@ -461,5 +461,6 @@ promise.then(f1, f2);
 <details>
   <summary>solution</summary>
 
+  <br>
   The short answer is: **no, they are not equal:**
 </details>
