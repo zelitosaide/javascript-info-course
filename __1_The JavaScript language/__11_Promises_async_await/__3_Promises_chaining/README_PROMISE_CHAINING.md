@@ -441,3 +441,25 @@ Here's a full picture:
   ![Resolve](summary.svg)
 
 <br>
+
+## Tasks
+
+### Promise: then versus catch
+
+Are these code fragments equals? In other words, do they behave the same way in any circumstances, for any handler functions?
+
+```javascript
+promise.then(f1).catch(f2);
+```
+
+Versus:
+
+```javascript
+promise.then(f1, f2);
+```
+
+<details>
+  <summary>solution</summary>
+
+  The short answer is: **no, they are not equal:**
+</details>
