@@ -24,9 +24,20 @@ label02: {
     // print(todo);
   });
 
-  // .then(function (todo) {
-  //   return todo;
-  // });
+  print(todo instanceof Promise);
+}
 
-  print(todo);
+label03: {
+  const myFunction = async function () {
+    const response = await fetch(
+      "https://jsonplaceholder.typicode.com/todos/1"
+    );
+    const todo = await response.json();
+    print(todo);
+    return todo; // If need
+  };
+
+  myFunction().then(function (result) {
+    print(result);
+  });
 }
