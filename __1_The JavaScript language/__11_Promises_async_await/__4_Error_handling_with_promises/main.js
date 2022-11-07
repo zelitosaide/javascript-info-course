@@ -41,3 +41,39 @@ label03: {
     print(result);
   });
 }
+
+label04: {
+  fetch("./user.json")
+    .then(function (response) {
+      // JSON.parse: unexpected non-whitespace character
+      // after JSON data at line 9 column 1 of the JSON data
+      return response.json();
+    })
+    .then(function (user) {
+      return fetch(`https://api.github.com/users/${user.username}`);
+    })
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (githubUser) {
+      return {
+        then(resolve, reject) {
+          const img = document.createElement("img");
+          img.src = githubUser.avatar_url;
+          img.style.width = "100px";
+          document.body.append(img);
+
+          setTimeout(function () {
+            img.remove();
+            resolve(githubUser);
+          }, 3000);
+        },
+      };
+    })
+    .then(function (githubUser) {
+      print(githubUser.name);
+    })
+    .catch(function (error) {
+      print(error.message);
+    });
+}
