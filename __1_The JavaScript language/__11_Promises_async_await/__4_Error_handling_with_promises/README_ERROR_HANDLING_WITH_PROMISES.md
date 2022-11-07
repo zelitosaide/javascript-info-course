@@ -55,7 +55,7 @@ Normally, such `.catch` doesn't trigger at all. But if any of the promises above
 
 ## Implicit try...catch
 
-The code of a promise executor and promise handlers has an "invisible" `try...catch` around it. If an exception happens, it gets caught and treated as a rejection.
+The code of a promise executor and promise handlers has an "invisible" `try..catch` around it. If an exception happens, it gets caught and treated as a rejection.
 
 For instance, this code:
 
@@ -72,3 +72,29 @@ new Promise(function(resolve, reject) {
   reject(new Error("Whoops!"));
 }).catch(console.log);  // Error: Whoops!
 ```
+
+The "invisible `try..catch`" around the executor automatically catches the error and turns it into rejected promise.
+
+This happens not only in the executor function, but in its handlers as well. If we `throw` inside a `.then` handler, that means a rejected promise, so the control jumps to the nearest error handler.
+
+Here's an example:
+
+```javascript
+new Promise(function(resolve, reject) {
+  resolve("OK");
+}).then(function(result) {
+  throw new Error("Whoops!"); // rejects the promise
+}).catch(console.log);  // Error: Whoops!
+```
+
+This happens for all errors, not just those caused by the `throw` statement. For example, a programming error:
+
+```javascript
+new Promise(function(resolve, reject) {
+  resolve("OK");
+}).then(function(result) {
+  blabla(); // no such function
+}).catch(console.log);  // ReferenceError: blabla is not defined
+```
+
+The final `.catch` not only catches explicit rejections, but also accidental errors in the handlers above.
