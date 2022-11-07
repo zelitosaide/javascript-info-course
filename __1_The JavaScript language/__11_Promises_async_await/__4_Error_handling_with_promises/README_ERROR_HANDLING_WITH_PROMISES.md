@@ -98,3 +98,5 @@ new Promise(function(resolve, reject) {
 ```
 
 The final `.catch` not only catches explicit rejections, but also accidental errors in the handlers above.
+
+## Rethrowing
