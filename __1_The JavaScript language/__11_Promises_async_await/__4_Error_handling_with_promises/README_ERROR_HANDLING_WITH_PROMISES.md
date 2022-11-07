@@ -54,3 +54,21 @@ fetch("./user.json")
 Normally, such `.catch` doesn't trigger at all. But if any of the promises above rejects (a network problem or invalid json or whatever), then it would catch it.
 
 ## Implicit try...catch
+
+The code of a promise executor and promise handlers has an "invisible" `try...catch` around it. If an exception happens, it gets caught and treated as a rejection.
+
+For instance, this code:
+
+```javascript
+new Promise(function(resolve, reject) {
+  throw new Error("Whoops!");
+}).catch(console.log);  // Error: Whoops!
+```
+
+...Works exactly the same as this:
+
+```javascript
+new Promise(function(resolve, reject) {
+  reject(new Error("Whoops!"));
+}).catch(console.log);  // Error: Whoops!
+```
