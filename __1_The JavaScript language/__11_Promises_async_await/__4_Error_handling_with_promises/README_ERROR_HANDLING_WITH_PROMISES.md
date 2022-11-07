@@ -20,5 +20,37 @@ As you can see, the `.catch` doesn't have to be immediate. It may appear after o
 Or, maybe, everything is all right with the site, but the response is not valid JSON. The easiest way to catch all errors is to append `.catch` to the end of chain:
 
 ```javascript
+fetch("./user.json")
+  .then(function (response) {
+    return response.json();
+  })
+  .then(function (user) {
+    return fetch(`https://api.github.com/users/${user.username}`)
+  })
+  .then(function (response) {
+    return response.json();
+  })
+  .then(function (githubUser) {
+    return new Promise(function(resolve, reject) {
+      const img = document.createElement("img");
+      img.src = githubUser.avatar_url;
+      img.style.width = "100px";
+      document.body.append(img);
 
+      setTimeout(function() {
+        img.remove();
+        resolve(githubUser);
+      }, 3000);
+    });
+  })
+  .then(function (githubUser) {
+    console.log(githubUser);
+  })
+  .catch(function (error) {
+    console.log(error.message);
+  });
 ```
+
+Normally, such `.catch` doesn't trigger at all. But if any of the promises above rejects (a network problem or invalid json or whatever), then it would catch it.
+
+## Implicit try...catch
