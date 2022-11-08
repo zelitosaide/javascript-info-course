@@ -181,5 +181,13 @@ The JavaScript engine tracks such rejections and generates a global error in tha
 In the browser we can catch such errors using the event `unhandledrejection`:
 
 ```javascript
-window.addEventListener();
+window.addEventListener("unhandledrejections", function(event) {
+  // the event object has two special properties:
+  console.log(event.promise); // [object Promise] - the promise that generated the error
+  console.log(event.reason);  // Error: Whoops! - the unhandled error object
+});
+
+new Promise(function() {
+  throw new Error("Whoops!");
+}); // no catch to handle the error
 ```
