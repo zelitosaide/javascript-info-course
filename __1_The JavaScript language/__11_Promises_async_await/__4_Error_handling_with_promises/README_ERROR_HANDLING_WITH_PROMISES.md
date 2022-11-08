@@ -159,3 +159,27 @@ new Promise(function(resolve, reject) {
 The execution jumps from the first `.catch` `(*)` to the next one `(**)` down the chain.
 
 ## Unhandled rejections
+
+What happens when an error is not handled? For instance, we forgot to append `.catch` to the end of the chain, like here:
+
+```javascript
+new Promise(function(resolve, reject) {
+  noSuchFunction();   // Error here (no such function)
+}).then(function(result) {
+  // successful promise handlers, one or more
+});   // without .catch at the end!
+```
+
+In case of an error, the promise becomes rejected, and the execution should jump to the closest rejection handler. But there is none. So the error gets "stuck". There's no code to handle it.
+
+In practice, just like with regular unhandled errors in code, it means that something has gone terribly wrong.
+
+What happens when a regular error occurs and is not caught by `try..catch`? The script dies with a message in the console. A similar thing happens with unhandled promise rejections.
+
+The JavaScript engine tracks such rejections and generates a global error in that case. You can see it in the console if you run the example above.
+
+In the browser we can catch such errors using the event `unhandledrejection`:
+
+```javascript
+window.addEventListener();
+```
