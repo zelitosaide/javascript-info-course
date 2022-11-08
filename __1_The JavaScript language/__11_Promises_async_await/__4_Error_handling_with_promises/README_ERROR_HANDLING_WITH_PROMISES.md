@@ -207,3 +207,24 @@ In non-browser environments like Nodes.js there are other ways to track unhandle
 * We should place `.catch` exactly in places where we want to handle errors and know how to handle them. The handler should analyze errors (custom error classes help) and rethrow unknown ones (maybe they are programming mistakes).
 * It's ok not to use `.catch` at all, if there's no way to recover from an error.
 * In any case we should have the `unhandledrejection` event handler (for browsers, and analogs for other environments) to track unhandled errors and inform the user (and probably our server) about them, so that our app never "just dies".
+
+## Tasks
+
+### Error in setTimeout
+
+What do you think? Will the `.catch` trigger? Explain your answer.
+
+```javascript
+new Promise(function(resolve, reject) {
+  setTimeout(function() {
+    throw new Error("Whoops!");
+  }, 1000);
+}).catch(console.log);
+```
+
+<details>
+  <summary>solution</summary>
+
+  <br>
+  
+</details>
