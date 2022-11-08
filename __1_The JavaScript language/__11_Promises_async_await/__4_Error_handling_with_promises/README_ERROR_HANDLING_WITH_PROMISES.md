@@ -125,3 +125,7 @@ new Promise(function(resolve, reject) {
 
 });
 ```
+
+Here the `.catch` block finishes normally. So the next successful `.then` handler is called.
+
+In the example below we see the other situation with `.catch`. The handler `(*)` catches the error and just can't handle it (e.g. it only knows how to handle `URIError`), so it throws it again:

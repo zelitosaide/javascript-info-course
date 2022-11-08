@@ -89,3 +89,6 @@ label05: {
       console.log("Next successful handler runs", result);
     });
 }
+
+label06: {
+}
