@@ -120,3 +120,23 @@ label07: {
     throw new Error("Opa...");
   });
 }
+
+label08: {
+  new Promise(function (resolve, reject) {
+    setTimeout(function () {
+      throw new Error("Whoops!...");
+    }, 3000);
+  }).catch(console.log);
+}
+
+label09: {
+  new Promise(function (resolve, reject) {
+    setTimeout(function () {
+      try {
+        throw new Error("Whoops!...");
+      } catch {
+        console.log("Error inside asynchronous actions");
+      }
+    }, 3000);
+  }).catch(console.log);
+}
