@@ -155,3 +155,5 @@ new Promise(function(resolve, reject) {
 
 });
 ```
+
+The execution jumps from the first `.catch` `(*)` to the next one `(**)` down the chain.
