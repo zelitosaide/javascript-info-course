@@ -108,3 +108,20 @@ In a regular `try..catch` we can analyze the error and maybe rethrow it if it ca
 If we `throw` inside `.catch`, then the control goes to the next closest error handler. And if we handle the error and finish normally, then it continues to the next closest successful `.then` handler.
 
 In the example below the `.catch` successfully handles the error:
+
+```javascript
+// the execution: catch -> then
+new Promise(function(resolve, reject) {
+
+  throw new Error("Whoops!");
+
+}).catch(function(error) {
+
+  console.log("The error is handled, continue normally");
+
+}).then(function() {
+
+  console.log("Next successful handler runs");
+
+});
+```
