@@ -33,12 +33,12 @@ label03: {
       "https://jsonplaceholder.typicode.com/todos/1"
     );
     const todo = await response.json();
-    print(todo);
+    // print(todo);
     return todo; // If need
   };
 
   myFunction().then(function (result) {
-    print(result);
+    // print(result);
   });
 }
 
@@ -75,5 +75,18 @@ label04: {
     })
     .catch(function (error) {
       print(error.message);
+    });
+}
+
+label05: {
+  new Promise(function (resolve, reject) {
+    throw new Error("Whoops!");
+  })
+    .catch(function (error) {
+      print("The error is handled, continue normally");
+      return 2;
+    })
+    .then(function (result) {
+      console.log("Next successful handler runs", result);
     });
 }
