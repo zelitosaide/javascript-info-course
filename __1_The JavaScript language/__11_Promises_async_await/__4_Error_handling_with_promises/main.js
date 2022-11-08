@@ -84,7 +84,6 @@ label05: {
   })
     .catch(function (error) {
       print("The error is handled, continue normally");
-      return 2;
     })
     .then(function (result) {
       console.log("Next successful handler runs", result);
