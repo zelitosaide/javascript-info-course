@@ -91,4 +91,21 @@ label05: {
 }
 
 label06: {
+  new Promise(function (resolve, reject) {
+    throw new Error("Whoops!");
+  })
+    .catch(function (error) {
+      if (error instanceof URIError) {
+        // handle it
+      } else {
+        console.log("Can't handle such error");
+        throw error; // throwing this or another error jumps to the next catch
+      }
+    })
+    .then(function () {
+      /* doesn't run here */
+    })
+    .catch(function (error) {
+      console.log(`The unknown error has occurred: ${error}`);
+    });
 }
