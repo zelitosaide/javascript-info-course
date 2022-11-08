@@ -129,3 +129,29 @@ new Promise(function(resolve, reject) {
 Here the `.catch` block finishes normally. So the next successful `.then` handler is called.
 
 In the example below we see the other situation with `.catch`. The handler `(*)` catches the error and just can't handle it (e.g. it only knows how to handle `URIError`), so it throws it again:
+
+```javascript
+// the execution: catch -> catch
+new Promise(function(resolve, reject) {
+
+  throw new Error("Whoops!");
+
+}).catch(function(error) {  // (*)
+
+  if (error instanceof URIError) {
+    // handle it
+  } else {
+    console.log("Can't handle such error");
+
+    throw error;  // throwing this or another error jumps to the next catch
+  }
+
+}).then(function() {
+  /* doesn't run here */
+}).catch(function(error) {  // (**)
+
+  console.log(`The unknown error has occurred: ${error}`);
+  // don't return anything => execution goes the normal way
+
+});
+```
