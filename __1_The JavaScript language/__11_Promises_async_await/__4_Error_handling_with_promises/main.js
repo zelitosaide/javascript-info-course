@@ -109,3 +109,14 @@ label06: {
       console.log(`The unknown error has occurred: ${error}`);
     });
 }
+
+label07: {
+  window.addEventListener("unhandledrejection", function (event) {
+    console.log(event.promise);
+    console.log(event.reason);
+  });
+
+  new Promise(function () {
+    throw new Error("Opa...");
+  });
+}
