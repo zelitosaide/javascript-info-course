@@ -124,3 +124,13 @@ Promise.all([
   })
 ]).catch(console.log);  // Error: Whoops!
 ```
+
+Here the second promise rejects in two seconds. That leads to an immediate rejection of `Promise.all`, so `.catch` executes: the rejection error becomes the outcome of the entire `Promise.all`.
+
+> ### In case of an error, other promises are ignored
+> 
+> If one promise rejects, `Promise.all` immediately rejects, completely forgetting about the other ones in the list. Their results are ignored.
+> 
+> For example, if there are multiple `fetch` calls, like in the example above, and one fails, the others will still continue to execute, but `Promise.all` won't watch them anymore. They will probably settle, but their results will be ignored.
+> 
+> `Promise.all` does nothing to cancel them, as there's no concept of "cancellation" in promises. In [another chapter](https://javascript.info/fetch-abort) we'll cover `AbortController` that can help with that, but it's not a part of the Promise API.
