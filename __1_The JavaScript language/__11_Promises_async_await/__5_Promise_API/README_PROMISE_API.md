@@ -134,3 +134,23 @@ Here the second promise rejects in two seconds. That leads to an immediate rejec
 > For example, if there are multiple `fetch` calls, like in the example above, and one fails, the others will still continue to execute, but `Promise.all` won't watch them anymore. They will probably settle, but their results will be ignored.
 > 
 > `Promise.all` does nothing to cancel them, as there's no concept of "cancellation" in promises. In [another chapter](https://javascript.info/fetch-abort) we'll cover `AbortController` that can help with that, but it's not a part of the Promise API.
+
+> ### `Promise.all(iterable)` allows non-promise "regular" values in `iterable`
+> 
+> Normally, `Promise.all(...)` accepts an iterable (in most cases any array) of promises. But if any of those objects is not promise, it's passed to the resulting array "as is".
+> 
+> For instance, here the results are `[1, 2, 3]`:
+> 
+> ```javascript
+> Promise.all([
+>   new Promise(function(resolve, reject) {
+>     setTimeout(function() {
+>       resolve(1);
+>     }, 1000);
+>   }),
+>   2,
+>   3
+> ]).then(console.log); // [1, 2, 3]
+> ```
+> 
+> So we are able to pass ready values to `Promise.all` where convenient.
