@@ -154,3 +154,5 @@ Here the second promise rejects in two seconds. That leads to an immediate rejec
 > ```
 > 
 > So we are able to pass ready values to `Promise.all` where convenient.
+
+## Promise.allSettled
