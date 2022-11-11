@@ -68,3 +68,35 @@ Promise.all(requests)
     });
   });
 ```
+
+A bigger example with fetching user information for an array of GitHub users by their names (we could fetch an array of goods by their ids, the logic is identical):
+
+```javascript
+const names = ["iliakan", "remy", "jeresig"];
+
+const requests = names.map(function(name) {
+  return fetch(`https://api.github.com/users/${name}`);
+});
+
+Promise.all(requests)
+  .then(function(responses) {
+    // all responses are resolved successfully
+    for (let response of responses) {
+      console.log(`${response.url}: ${response.status}`); // shows 200 for every url
+    }
+
+    return responses;
+  })
+  // map array of responses into an array of response.json() to read their content
+  .then(function(responses) {
+    return Promise.all(responses.map(function(response) {
+      return response.json();
+    }));
+  })
+  // all JSON answers are parsed: "users" is the array os them
+  .then(function(users) {
+    users.forEach(function(user) {
+      console.log(user.name);
+    });
+  });
+```
