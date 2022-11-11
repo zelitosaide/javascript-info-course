@@ -83,3 +83,15 @@ label04: {
     }),
   ]).catch(console.log);
 }
+
+label05: {
+  Promise.all([
+    new Promise(function (resolve, reject) {
+      setTimeout(function () {
+        resolve(1);
+      }, 1000);
+    }),
+    2,
+    3,
+  ]).then(console.log);
+}
