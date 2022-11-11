@@ -17,3 +17,22 @@ label01: {
     }),
   ]).then(console.log);
 }
+
+label02: {
+  const urls = [
+    "https://api.github.com/users/iliakan",
+    "https://api.github.com/users/remy",
+    "https://api.github.com/users/jeresig",
+  ];
+
+  // map every url to the promise of the fetch
+  const requests = urls.map(function (url) {
+    return fetch(url);
+  });
+
+  Promise.all(requests).then(function (responses) {
+    responses.forEach(function (response) {
+      console.log(`${response.url}: ${response.status}`);
+    });
+  });
+}
