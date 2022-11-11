@@ -100,3 +100,27 @@ Promise.all(requests)
     });
   });
 ```
+
+If any of the promises is rejected, the promise returned by `Promise.all` immediately rejects with that error.
+
+For instance:
+
+```javascript
+Promise.all([
+  new Promise(function(resolve, reject) {
+    setTimeout(function() {
+      resolve(1);
+    }, 1000);
+  }),
+  new Promise(function(resolve, reject) {
+    setTimeout(function() {
+      reject(new Error("Whoops!"));
+    }, 2000);
+  }),
+  new Promise(function(resolve, reject) {
+    setTimeout(function() {
+      resolve(3);
+    }, 3000);
+  })
+]).catch(console.log);  // Error: Whoops!
+```
