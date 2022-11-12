@@ -146,25 +146,68 @@
 //   ]).then(console.log);
 // }
 
-label09: {
-  const urls = [
-    "https://api.github.com/users/iliakan",
-    "https://api.github.com/users/remy",
-    "https://no-such-url",
-  ];
+// label09: {
+//   const urls = [
+//     "https://api.github.com/users/iliakan",
+//     "https://api.github.com/users/remy",
+//     "https://no-such-url",
+//   ];
 
-  const requests = urls.map(function (url) {
-    return fetch(url);
-  });
+//   const requests = urls.map(function (url) {
+//     return fetch(url);
+//   });
 
-  Promise.allSettled(requests).then(function (results) {
-    results.forEach(function (result) {
-      if (result.status === "fulfilled") {
-        console.log(result.value.url + ": " + result.value.status);
-      }
-      if (result.status === "rejected") {
-        console.log(result.reason);
-      }
-    });
-  });
+//   Promise.allSettled(requests).then(function (results) {
+//     results.forEach(function (result) {
+//       if (result.status === "fulfilled") {
+//         console.log(result.value.url + ": " + result.value.status);
+//       }
+//       if (result.status === "rejected") {
+//         console.log(result.reason);
+//       }
+//     });
+//   });
+// }
+
+// label10: {
+//   if (!!Promise.allSettled) {
+//     Promise.allSettled = function (promises) {
+//       const convertedPromises = promises.map(function (promise) {
+//         return Promise.resolve(promise).then(
+//           function (value) {
+//             return { status: "fulfilled-", value };
+//           },
+//           function (reason) {
+//             return { status: "rejected-", reason };
+//           }
+//         );
+//       });
+
+//       return Promise.all(convertedPromises);
+//     };
+
+//     Promise.allSettled([1, 2, 3]).then(console.log);
+//   }
+// }
+
+label11: {
+  if (!Promise.allSettled) {
+    const resolveHandler = function (value) {
+      return { status: "fulfilled-", value };
+    };
+
+    const rejectHandler = function (reason) {
+      return { status: "rejected-", reason };
+    };
+
+    Promise.allSettled = function (promises) {
+      const convertedPromises = promises.map(function (promise) {
+        return Promise.resolve(promise).then(resolveHandler, rejectHandler);
+      });
+
+      return Promise.all(convertedPromises);
+    };
+
+    Promise.allSettled([1, 2, 3]).then(console.log);
+  }
 }
