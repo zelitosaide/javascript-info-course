@@ -203,3 +203,15 @@ Promise.allSettled(requests)
     });
   });
 ```
+
+The `results` in the line `(*)` above will be:
+
+```javascript
+[
+  { status: "fulfilled", value: ...response...},
+  { status: "fulfilled", value: ...response...},
+  { status: "rejected", reason: ...error object...}
+]
+```
+
+So for each promise we get its status and `value/error`.
