@@ -287,3 +287,17 @@ function loadCached(url) {
 ```
 
 We can write `loadCached(url).then(...)`, because the function is guaranteed to return a promise. We can always use `.then` after `loadCached`. That's the purpose of `Promise.resolve` in the line `(*)`.
+
+### Promise.reject
+
+`Promise.reject(error)` creates a rejected promise with `error`.
+
+Same as:
+
+```javascript
+const promise = new Promise(function(resolve, reject) {
+  reject(error);
+});
+```
+
+In practice, this method is almost never used.
