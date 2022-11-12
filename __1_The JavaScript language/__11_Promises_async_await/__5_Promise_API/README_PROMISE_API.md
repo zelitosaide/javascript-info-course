@@ -170,3 +170,36 @@ Promise.all([
   fetch("/data.json")
 ]).then(render);  // render method needs results of all fetches
 ```
+
+`Promise.allSettled` just waits for all promises to settle, regardless of the result. The resulting array has:
+
+* `{ status: "fulfilled", value: result }` for successful responses,
+* `{ status: "rejected", reason: error }` for errors.
+
+For example, we'd like to fetch the information about multiple users. Even if one request fails, we're still interested in the others.
+
+Let's use `Promise.allSettled`:
+
+```javascript
+const urls = [
+  "https://api.github.com/users/iliakan",
+  "https://api.github.com/users/remy",
+  "https://no-such-url"
+];
+
+const requests = urls.map(function(url) {
+  return fetch(url);
+});
+
+Promise.allSettled(requests)
+  .then(function(results) { // (*)
+    results.forEach(function(result, index) {
+      if (result.status === "fulfilled") {
+        console.log(`${urls[index]}: ${result.value.status}`);
+      }
+      if (result.status === "rejected") {
+        console.log(`${urls[index]}: ${result.reason}`);
+      }
+    });
+  });
+```
