@@ -392,3 +392,5 @@ const promise = new Promise(function(resolve, reject) {
 ```
 
 In practice, this method is almost never used.
+
+## Summary
