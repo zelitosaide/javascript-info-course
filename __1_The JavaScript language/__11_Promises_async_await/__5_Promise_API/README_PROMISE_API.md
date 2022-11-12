@@ -285,3 +285,5 @@ function loadCached(url) {
     });
 }
 ```
+
+We can write `loadCached(url).then(...)`, because the function is guaranteed to return a promise. We can always use `.then` after `loadCached`. That's the purpose of `Promise.resolve` in the line `(*)`.
