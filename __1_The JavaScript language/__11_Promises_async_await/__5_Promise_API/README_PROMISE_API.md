@@ -229,7 +229,7 @@ if (!Promise.allSettled) {
   const resolveHandler = function(value) {
     return { status: "fulfilled", value };
   }
-  
+
   Promise.allSettled = function(promises) {
     const convertedPromises = promises.map(function(promise) {
       return Promise.resolve(promise).then(resolveHandler, rejectHandler);
@@ -238,3 +238,15 @@ if (!Promise.allSettled) {
   }
 }
 ```
+
+...
+
+## Promise.race
+
+## Promise.any
+
+## Promise.resolve/reject
+
+Methods `Promise.resolve` and `Promise.reject` are rarely needed in modern code, because `async/await` syntax (we'll cover it [a bit later](https://javascript.info/async-await)) makes them somewhat obsolete.
+
+We cover them here for completenesss and for those who can't use `async/await` for some reason.
