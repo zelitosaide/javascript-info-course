@@ -96,18 +96,42 @@
 //   ]).then(console.log);
 // }
 
-label06: {
-  const urls = [
-    "https://api.github.com/users/iliakan",
-    "https://api.github.com/users/remy",
-    "https://no-such-url",
-  ];
+// label06: {
+//   const urls = [
+//     "https://api.github.com/users/iliakan",
+//     "https://api.github.com/users/remy",
+//     "https://no-such-url",
+//   ];
 
-  const requests = urls.map(function (url) {
-    return fetch(url);
+//   const requests = urls.map(function (url) {
+//     return fetch(url);
+//   });
+
+//   Promise.all(requests).then(console.log).catch(console.log);
+
+//   Promise.allSettled(requests).then(console.log);
+// }
+
+label07: {
+  const numbers = [1, 2, 3];
+  let usingPromiseAll, usingPromiseAllSettled;
+
+  Promise.all(numbers).then(function (results) {
+    usingPromiseAll = results;
   });
 
-  Promise.all(requests).then(console.log).catch(console.log);
+  Promise.allSettled(numbers).then(function (results) {
+    usingPromiseAllSettled = results;
+  });
 
-  Promise.allSettled(requests).then(console.log);
+  setTimeout(function () {
+    usingPromiseAll.forEach(function (result) {
+      console.log(result);
+    });
+
+    console.log("/|//|//|//|");
+    usingPromiseAllSettled.forEach(function (result) {
+      console.log(result.status, result.value);
+    });
+  }, 1000);
 }
