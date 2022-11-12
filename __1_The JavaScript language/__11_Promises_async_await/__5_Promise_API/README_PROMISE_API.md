@@ -313,6 +313,27 @@ Promise.any([
 
 The first promise here was fastest, but it was rejected, so the second promise became the result. After the first fulfilled promise "wins the race", all further results are ignored.
 
+Here's an example when all promises fail:
+
+```javascript
+Promise.any([
+  new Promise(function(resolve, reject) {
+    setTimeout(function() {
+      reject(new Error("Ouch!"));
+    }, 1000);
+  }),
+  new Promise(function(resolve, reject) {
+    setTimeout(function() {
+      reject(new Error("Error"));
+    }, 2000);
+  })
+]).catch(function(error) {
+  console.log(error.constructor.name);  // AggregateError
+  console.log(error.errors[0]);   // Error: Ouch!
+  console.log(error.errors[1]);   // Error: Error!
+});
+```
+
 ## Promise.resolve/reject
 
 Methods `Promise.resolve` and `Promise.reject` are rarely needed in modern code, because `async/await` syntax (we'll cover it [a bit later](https://javascript.info/async-await)) makes them somewhat obsolete.
