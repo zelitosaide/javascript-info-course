@@ -334,6 +334,8 @@ Promise.any([
 });
 ```
 
+As you can see, error objects for failed promises are available in the `errors` property of the `AggregateError` object.
+
 ## Promise.resolve/reject
 
 Methods `Promise.resolve` and `Promise.reject` are rarely needed in modern code, because `async/await` syntax (we'll cover it [a bit later](https://javascript.info/async-await)) makes them somewhat obsolete.
