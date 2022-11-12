@@ -157,4 +157,16 @@ Here the second promise rejects in two seconds. That leads to an immediate rejec
 
 ## Promise.allSettled
 
-### > Ola
+### > A recent addition
+
+> This is a recent addition to the language. Old browsers may need [polyfills](https://javascript.info/polyfills).
+
+`Promise.all` rejects as whole if any promise rejects. That's good for "all or nothing" cases, when we need all results successful to proceed:
+
+```javascript
+Promise.all([
+  fetch("/template.html"),
+  fetch("/style.css"),
+  fetch("/data.json")
+]).then(render);  // render method needs results of all fetches
+```
