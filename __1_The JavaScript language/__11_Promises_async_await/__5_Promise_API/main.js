@@ -112,26 +112,59 @@
 //   Promise.allSettled(requests).then(console.log);
 // }
 
-label07: {
-  const numbers = [1, 2, 3];
-  let usingPromiseAll, usingPromiseAllSettled;
+// label07: {
+//   const numbers = [1, 2, 3];
+//   let usingPromiseAll, usingPromiseAllSettled;
 
-  Promise.all(numbers).then(function (results) {
-    usingPromiseAll = results;
+//   Promise.all(numbers).then(function (results) {
+//     usingPromiseAll = results;
+//   });
+
+//   Promise.allSettled(numbers).then(function (results) {
+//     usingPromiseAllSettled = results;
+//   });
+
+//   setTimeout(function () {
+//     usingPromiseAll.forEach(function (result) {
+//       console.log(result);
+//     });
+
+//     console.log("/|//|//|//|");
+//     usingPromiseAllSettled.forEach(function (result) {
+//       console.log(result.status, result.value);
+//     });
+//   }, 1000);
+// }
+
+// label08: {
+//   Promise.allSettled([
+//     1,
+//     2,
+//     new Promise(function () {
+//       throw new Error("Whoops!");
+//     }),
+//   ]).then(console.log);
+// }
+
+label09: {
+  const urls = [
+    "https://api.github.com/users/iliakan",
+    "https://api.github.com/users/remy",
+    "https://no-such-url",
+  ];
+
+  const requests = urls.map(function (url) {
+    return fetch(url);
   });
 
-  Promise.allSettled(numbers).then(function (results) {
-    usingPromiseAllSettled = results;
+  Promise.allSettled(requests).then(function (results) {
+    results.forEach(function (result) {
+      if (result.status === "fulfilled") {
+        console.log(result.value.url + ": " + result.value.status);
+      }
+      if (result.status === "rejected") {
+        console.log(result.reason);
+      }
+    });
   });
-
-  setTimeout(function () {
-    usingPromiseAll.forEach(function (result) {
-      console.log(result);
-    });
-
-    console.log("/|//|//|//|");
-    usingPromiseAllSettled.forEach(function (result) {
-      console.log(result.status, result.value);
-    });
-  }, 1000);
 }
