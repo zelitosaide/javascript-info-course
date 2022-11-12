@@ -190,24 +190,46 @@
 //   }
 // }
 
-label11: {
-  if (!Promise.allSettled) {
-    const resolveHandler = function (value) {
-      return { status: "fulfilled-", value };
-    };
+// label11: {
+//   if (!Promise.allSettled) {
+//     const resolveHandler = function (value) {
+//       return { status: "fulfilled-", value };
+//     };
 
-    const rejectHandler = function (reason) {
-      return { status: "rejected-", reason };
-    };
+//     const rejectHandler = function (reason) {
+//       return { status: "rejected-", reason };
+//     };
 
-    Promise.allSettled = function (promises) {
-      const convertedPromises = promises.map(function (promise) {
-        return Promise.resolve(promise).then(resolveHandler, rejectHandler);
-      });
+//     Promise.allSettled = function (promises) {
+//       const convertedPromises = promises.map(function (promise) {
+//         return Promise.resolve(promise).then(resolveHandler, rejectHandler);
+//       });
 
-      return Promise.all(convertedPromises);
-    };
+//       return Promise.all(convertedPromises);
+//     };
 
-    Promise.allSettled([1, 2, 3]).then(console.log);
-  }
+//     Promise.allSettled([1, 2, 3]).then(console.log);
+//   }
+// }
+
+label12: {
+  // Promise.race([2, 3, 4]).then(console.log);
+
+  Promise.race([
+    new Promise(function (resolve, reject) {
+      setTimeout(function () {
+        reject(new Error("Whoops!"));
+      }, 1000);
+    }),
+    new Promise(function (resolve, reject) {
+      setTimeout(function () {
+        resolve(1);
+      }, 1000);
+    }),
+    new Promise(function (resolve, reject) {
+      setTimeout(function () {
+        resolve(3);
+      }, 1000);
+    }),
+  ]).then(console.log, console.log);
 }
