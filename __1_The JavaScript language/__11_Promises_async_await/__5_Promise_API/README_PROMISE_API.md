@@ -262,3 +262,7 @@ const promise = new Promise(function(resolve) {
   resolve(value);
 });
 ```
+
+The method is used for compatibility, when a function is expected to return a promise.
+
+For example, the `loadCached` function fetches a URL and remembers (caches) its content. For future calls with the same URL it immediately gets the previous content from cache, but uses `Promise.resolve` to make a promise of it, so the returned value is always a promise.
