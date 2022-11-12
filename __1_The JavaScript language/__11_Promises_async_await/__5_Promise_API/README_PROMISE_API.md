@@ -250,3 +250,15 @@ if (!Promise.allSettled) {
 Methods `Promise.resolve` and `Promise.reject` are rarely needed in modern code, because `async/await` syntax (we'll cover it [a bit later](https://javascript.info/async-await)) makes them somewhat obsolete.
 
 We cover them here for completenesss and for those who can't use `async/await` for some reason.
+
+### Promise.resolve
+
+`Promise.resolve(value)` creates a resolved promise with the result `value`.
+
+Same as:
+
+```javascript
+const promise = new Promise(function(resolve) {
+  resolve(value);
+});
+```
