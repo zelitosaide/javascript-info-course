@@ -273,3 +273,22 @@ label14: {
     }),
   ]).then(console.log);
 }
+
+label15: {
+  Promise.any([
+    new Promise(function (resolve, reject) {
+      setTimeout(function () {
+        reject(new Error("Whoops!"));
+      }, 1000);
+    }),
+    new Promise(function (resolve, reject) {
+      setTimeout(function () {
+        reject(new Error("Ouch!"));
+      }, 2000);
+    }),
+  ]).catch(function (error) {
+    console.log(error.constructor.name);
+    console.log(error.errors[0]);
+    console.log(error.errors[1]);
+  });
+}
