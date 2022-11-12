@@ -281,6 +281,8 @@ The first promise here was fastest, so it became the result. After the first set
 
 ## Promise.any
 
+Similar to `Promise.race`, but waits only for the fulfilled promise and gets its result. If all of the given promises are rejected, then the returned promise is rejected with `AggregateError` - a special error object that stores all promise errors in its `errors` property.
+
 ## Promise.resolve/reject
 
 Methods `Promise.resolve` and `Promise.reject` are rarely needed in modern code, because `async/await` syntax (we'll cover it [a bit later](https://javascript.info/async-await)) makes them somewhat obsolete.
