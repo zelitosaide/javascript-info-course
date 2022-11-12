@@ -233,3 +233,23 @@
 //     }),
 //   ]).then(console.log, console.log);
 // }
+
+label13: {
+  Promise.race([
+    new Promise(function (resolve, reject) {
+      setTimeout(function () {
+        resolve(1);
+      }, 1000);
+    }),
+    new Promise(function (resolve, reject) {
+      setTimeout(function () {
+        reject(new Error("Whoops!"));
+      }, 2000);
+    }),
+    new Promise(function (resolve, reject) {
+      setTimeout(function () {
+        resolve(3);
+      }, 3000);
+    }),
+  ]).then(console.log, console.log);
+}
