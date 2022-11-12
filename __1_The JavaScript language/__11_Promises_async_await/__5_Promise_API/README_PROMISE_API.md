@@ -247,6 +247,38 @@ Now we can use `Promise.allSettled` to get the results of all given promises, ev
 
 ## Promise.race
 
+Similar to `Promise.all`, but waits only for the first settled promise and gets its result (error).
+
+The syntax is:
+
+```javascript
+const promise = Promise.race(iterable);
+```
+
+For instance, here the result will be `1`:
+
+```javascript
+Promise.race([
+  new Promise(function(resolve, reject) {
+    setTimeout(function() {
+      resolve(1);
+    }, 1000);
+  }),
+  new Promise(function(resolve, reject) {
+    setTimeout(function() {
+      reject(new Error("Whoops!"));
+    }, 2000);
+  }),
+  new Promise(function(resolve, reject) {
+    setTimeout(function() {
+      resolve(3);
+    }, 3000);
+  })
+]);
+```
+
+The first promise here was fastest, so it became the result. After the first settled promise "wins the race", all further results/errors are ignored.
+
 ## Promise.any
 
 ## Promise.resolve/reject
