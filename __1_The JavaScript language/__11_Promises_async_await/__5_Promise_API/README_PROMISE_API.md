@@ -239,7 +239,11 @@ if (!Promise.allSettled) {
 }
 ```
 
-...
+In this code, `promises.map` takes input values, turns them into promises (just in case a non-promise was passed) with `function(promise) { return Promise.resolve(promise); }`, and then adds `.then` handler to every one.
+
+That handler turns a successful result `value` into `{ status: "fulfilled", value }`, and an error `reason` into `{ status: "rejected", reason }`. That's exactly the format of `Promise.allSettled`.
+
+Now we can use `Promise.allSettled` to get the results of all given promises, even if some of them reject.
 
 ## Promise.race
 
