@@ -311,6 +311,8 @@ Promise.any([
 ]).then(console.log);   // 1
 ```
 
+The first promise here was fastest, but it was rejected, so the second promise became the result. After the first fulfilled promise "wins the race", all further results are ignored.
+
 ## Promise.resolve/reject
 
 Methods `Promise.resolve` and `Promise.reject` are rarely needed in modern code, because `async/await` syntax (we'll cover it [a bit later](https://javascript.info/async-await)) makes them somewhat obsolete.
