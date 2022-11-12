@@ -212,24 +212,24 @@
 //   }
 // }
 
-label12: {
-  // Promise.race([2, 3, 4]).then(console.log);
+// label12: {
+//   Promise.race([2, 3, 4]).then(console.log);
 
-  Promise.race([
-    new Promise(function (resolve, reject) {
-      setTimeout(function () {
-        reject(new Error("Whoops!"));
-      }, 1000);
-    }),
-    new Promise(function (resolve, reject) {
-      setTimeout(function () {
-        resolve(1);
-      }, 1000);
-    }),
-    new Promise(function (resolve, reject) {
-      setTimeout(function () {
-        resolve(3);
-      }, 1000);
-    }),
-  ]).then(console.log, console.log);
-}
+//   Promise.race([
+//     new Promise(function (resolve, reject) {
+//       setTimeout(function () {
+//         reject(new Error("Whoops!"));
+//       }, 1000);
+//     }),
+//     new Promise(function (resolve, reject) {
+//       setTimeout(function () {
+//         resolve(1);
+//       }, 1000);
+//     }),
+//     new Promise(function (resolve, reject) {
+//       setTimeout(function () {
+//         resolve(3);
+//       }, 1000);
+//     }),
+//   ]).then(console.log, console.log);
+// }
