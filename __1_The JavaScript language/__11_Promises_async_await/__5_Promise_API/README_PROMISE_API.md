@@ -215,3 +215,26 @@ The `results` in the line `(*)` above will be:
 ```
 
 So for each promise we get its status and `value/error`.
+
+### Polyfill
+
+If the browser doesn't support `Promise.allSettled`, it's easy to polyfill:
+
+```javascript
+if (!Promise.allSettled) {
+  const rejectHandler = function(reason) {
+    return { status: "rejected": reason };
+  }
+
+  const resolveHandler = function(value) {
+    return { status: "fulfilled", value };
+  }
+  
+  Promise.allSettled = function(promises) {
+    const convertedPromises = promises.map(function(promise) {
+      return Promise.resolve(promise).then(resolveHandler, rejectHandler);
+    });
+    return Promise.all(convertedPromises);
+  }
+}
+```
