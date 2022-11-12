@@ -266,3 +266,22 @@ const promise = new Promise(function(resolve) {
 The method is used for compatibility, when a function is expected to return a promise.
 
 For example, the `loadCached` function fetches a URL and remembers (caches) its content. For future calls with the same URL it immediately gets the previous content from cache, but uses `Promise.resolve` to make a promise of it, so the returned value is always a promise.
+
+```javascript
+const cache = new Map();
+
+function loadCached(url) {
+  if (cache.has(url)) {
+    return Promise.resolve(cache.get(url)); // (*)
+  }
+
+  return fetch(url)
+    .then(function(response) {
+      return response.text();
+    })
+    .then(function(text) {
+      cache.set(url, text);
+      return text;
+    });
+}
+```
