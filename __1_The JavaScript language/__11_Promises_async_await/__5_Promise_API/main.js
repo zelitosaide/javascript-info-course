@@ -292,3 +292,26 @@ label15: {
     console.log(error.errors[1]);
   });
 }
+
+label16: {
+  const cache = new Map();
+
+  function loadCached(url) {
+    if (cache.has(url)) {
+      return Promise.resolve(cache.get(url));
+    }
+
+    return fetch(url)
+      .then(function (response) {
+        return response.text();
+      })
+      .then(function (text) {
+        cache.set(url, text);
+        return text;
+      });
+  }
+}
+
+label17: {
+  Promise.reject(new Error("Whoops!")).catch(console.log);
+}
