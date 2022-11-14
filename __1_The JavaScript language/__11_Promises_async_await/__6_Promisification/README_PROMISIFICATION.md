@@ -49,4 +49,7 @@ const loadScriptPromise(src) {
     })
   });
 }
+
+// usage:
+// loadScriptPromise("path/script.js").then(...);
 ```
