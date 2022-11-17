@@ -59,7 +59,6 @@ label02: {
           }
         }
         args.push(callback);
-        console.log(args);
         // func(...args);
         func.call(this, ...args);
       });
