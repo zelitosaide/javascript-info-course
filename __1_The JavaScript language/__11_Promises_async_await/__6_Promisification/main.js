@@ -66,9 +66,45 @@ label02: {
     };
   };
 
+  // const loadScriptPromise = promisify(loadScript);
+
+  // loadScriptPromise("script.js").then(function () {
+  //   sayHello();
+  // });
+}
+
+label03: {
+  const loadScript = function (src, callback) {
+    const script = document.createElement("script");
+    script.src = src;
+    script.onload = function () {
+      callback(null, script);
+    };
+    script.onerror = function () {
+      callback(new Error("Whoops!.. error on load script"));
+    };
+    document.head.append(script);
+  };
+
+  const promisify = function (func) {
+    return function (...args) {
+      return new Promise(function (resolve, reject) {
+        args.push(function (error, result) {
+          if (error) {
+            reject(error);
+          } else {
+            resolve(result);
+          }
+        });
+        func(...args);
+      });
+    };
+  };
+
   const loadScriptPromise = promisify(loadScript);
 
   loadScriptPromise("script.js").then(function () {
     sayHello();
+    console.log("Finished");
   });
 }
