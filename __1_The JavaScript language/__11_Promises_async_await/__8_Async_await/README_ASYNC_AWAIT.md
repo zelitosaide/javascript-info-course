@@ -11,3 +11,5 @@ async function fn() {
   return 1;
 }
 ```
+
+The word "async" before a function means one simple thing: a function always returns a promise. Other values are wrapped in a resolved promise automatically.
