@@ -69,4 +69,4 @@ The function execution "pauses" at the line `(*)` and resumes when the promises 
 
 Let's emphasize: `await` literally suspends the function execution until the promise settles, and then resumes it with the promise result. That doesn't cost any CPU resources, because the JavaScript engine can do other jobs in the meantime: execute other scripts, handle events, etc.
 
-It's just a more elegant syntax of getting the promise result than `promise.then`. And, it's easier to read and write.
+It's just a more elegant syntax of getting the promise result than `promise.then`. And, it's easier to read and write.    
