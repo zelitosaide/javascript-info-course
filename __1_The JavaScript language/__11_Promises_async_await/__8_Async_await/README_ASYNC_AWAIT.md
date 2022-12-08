@@ -66,3 +66,5 @@ fn();
 ```
 
 The function execution "pauses" at the line `(*)` and resumes when the promises settles, with `result` becoming its result. So the code above shows "done!" in one second.
+
+Let's emphasize: `await` literally suspends the function execution until the promise settles, and then resumes it with the promise result. That doesn't cost any CPU resources, because the JavaScript engine can do other jobs in the meantime: execute other scripts, handle events, etc.
