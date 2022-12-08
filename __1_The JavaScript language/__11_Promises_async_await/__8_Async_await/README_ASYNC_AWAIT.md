@@ -44,3 +44,23 @@ The syntax:
 // works only inside async functions
 let value = await promise;
 ```
+
+The keyword `await` makes JavaScript wait until that promise settles and returns its result.
+
+Here's an example with a promise that resolves in 1 second:
+
+```js
+async function fn() {
+  let promise = new Promise(function(resolve, reject) {
+    setTimeout(function() {
+      resolve("done!");
+    }, 1000);
+  });
+
+  let result = await promise;
+
+  console.log(result); // "done!"
+}
+
+fn();
+```
