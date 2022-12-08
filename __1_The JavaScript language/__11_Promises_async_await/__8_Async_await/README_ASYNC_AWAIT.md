@@ -23,3 +23,13 @@ async function fn() {
 
 fn().then(console.log); // 1
 ```
+
+...We could explicitly return a promise, which would be the same:
+
+```js
+async function fn() {
+  return Promise.resolve(1);
+}
+
+fn().then(console.log); // 1
+```
