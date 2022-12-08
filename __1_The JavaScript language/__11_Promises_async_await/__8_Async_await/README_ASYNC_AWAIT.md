@@ -13,3 +13,13 @@ async function fn() {
 ```
 
 The word "async" before a function means one simple thing: a function always returns a promise. Other values are wrapped in a resolved promise automatically.
+
+For instance, this function returns a resolved promise with the result of `1`; let's test it:
+
+```js
+async function fn() {
+  return 1;
+}
+
+fn().then(console.log); // 1
+```
