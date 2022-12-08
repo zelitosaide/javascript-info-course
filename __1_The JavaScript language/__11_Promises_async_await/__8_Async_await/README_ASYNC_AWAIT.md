@@ -33,3 +33,14 @@ async function fn() {
 
 fn().then(console.log); // 1
 ```
+
+So, `async` ensures that the function returns a promise, and wraps non-promises in it. Simple enough, right? But not only that. There's another keyword, `await`, that works only inside `async` functions, and it's pretty cool.
+
+## Await
+
+The syntax:
+
+```js
+// works only inside async functions
+let value = await promise;
+```
