@@ -117,3 +117,5 @@ async function showAvatar() {
 
 showAvatar();
 ```
+
+Pretty clean and easy to read, right? Much better than before.
