@@ -1,3 +1,5 @@
+import { user } from "./script.js";
+
 label01: {
   const func = async function () {
     return 1;
@@ -56,4 +58,8 @@ label04: {
   };
 
   showAvatar();
+}
+
+label05: {
+  console.log(user);
 }
