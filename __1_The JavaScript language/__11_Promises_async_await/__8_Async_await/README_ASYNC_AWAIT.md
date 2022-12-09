@@ -148,3 +148,26 @@ Like this:
 ## > `await` accepts "thenables"
 
 Like `promise.then`, `await` allows us to use thenable objects (those with a callable `then` method). The idea is that a third-party object may not be a promise, but promise-compatible: if it supports `.then`, that's enough to use it with `await`.
+
+```js
+class Thenable {
+  constructor(num) {
+    this.num = num;
+  }
+  then(resolve, reject) {
+    console.log(resolve);
+    // resolve with this.num * 2 after 1000ms
+    setTimeout(() => {
+      resolve(this.num * 2);
+    }, 1000); // (*)
+  }
+}
+
+async function fn() {
+  // waits from 1 second, then result becomes 2
+  let result = await new Thenable(1);
+  console.log(result);
+}
+
+fn();
+```
