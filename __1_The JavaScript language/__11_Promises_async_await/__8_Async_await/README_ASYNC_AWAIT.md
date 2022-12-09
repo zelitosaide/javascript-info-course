@@ -81,3 +81,5 @@ function fn() {
   let result = await promise; // Syntax error
 }
 ```
+
+We may get this error if we forget to put `async` before a function. As stated earlier, `await` only works inside an `async` function.
