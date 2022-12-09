@@ -38,7 +38,21 @@ label04: {
       `https://api.github.com/users/${user.username}`
     );
     const githubUser = await githubResponse.json();
-    console.log(githubUser);
+
+    // show the avatar
+    const img = document.createElement("img");
+    img.src = githubUser.avatar_url;
+    img.style.width = "100px";
+    document.body.append(img);
+
+    // wait 3 seconds
+    await new Promise(function (resolve) {
+      setTimeout(resolve, 3000);
+    });
+
+    img.remove();
+
+    return showAvatar;
   };
 
   showAvatar();
