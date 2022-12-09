@@ -274,3 +274,5 @@ let resullts = await Promise.all([
   ...
 ]);
 ```
+
+In the case of an error, it propagates as usual, from the failed promise to `Promise.all`, and then becomes an exception that we can catch using `try..catch` around the call.
