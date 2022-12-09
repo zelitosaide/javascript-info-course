@@ -93,5 +93,10 @@ Let's take the `showAvatar()` example from the chapter [Promises chaining](https
 async function showAvatar() {
   // read our JSON
   let response = await fetch("user.json");
+  let user = await response.json();
+
+  // read github user
+  let githubResponse = await fetch(`https://api.github.com/users/${user.name}`);
+  let githubUser = await githubResponse.json();
 }
 ```
