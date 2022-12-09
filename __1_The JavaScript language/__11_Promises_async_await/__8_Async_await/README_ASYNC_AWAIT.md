@@ -125,3 +125,10 @@ Pretty clean and easy to read, right? Much better than before.
 In modern browsers, `await` on top level works just fine, when we're inside a module. We'll cover modules in article [Modules, introduction](https://javascript.info/modules-intro).
 
 For instance:
+
+```js
+let response = await fetch("user.json");
+let user = await response.json();
+
+console.log(user);
+```
