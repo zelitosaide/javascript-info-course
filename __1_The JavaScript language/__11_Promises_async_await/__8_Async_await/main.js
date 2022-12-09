@@ -75,3 +75,14 @@ label06: {
   const waiter = await new Waiter().wait();
   console.log("waiter", waiter);
 }
+
+label07: {
+  const func = async function () {
+    await Promise.reject(new Error("Whoops!"));
+  };
+
+  // OR
+  const func2 = async function () {
+    throw new Error("Whoops!");
+  };
+}
