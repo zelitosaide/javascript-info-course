@@ -144,3 +144,7 @@ Like this:
   // ...
 })();
 ```
+
+## > `await` accepts "thenables"
+
+Like `promise.then`, `await` allows us to use thenable objects (those with a callable `then` method). The idea is that a third-party object may not be a promise, but promise-compatible: if it supports `.then`, that's enough to use it with `await`.
