@@ -255,3 +255,7 @@ fn().catch(console.log); // TypeError: failed to fetch // (*)
 ```
 
 If we forget to add `.catch` there, then we get an unhandled promise error (viewable in the console). We can catch such errors using a global `unhandledrejection` event handler as described in the chapter [Error handling with promises](https://javascript.info/promise-error-handling).
+
+## > `Async/await` and `promise.then/catch`
+
+When we use `async/await`, we rarely need `.then`, because `await` handles the waiting for us. And we can use a regular `try..catch` instead of `.catch`. That's usually (but not always) more convenient.
