@@ -173,3 +173,20 @@ fn();
 ```
 
 If `await` gets a non-promise object with `.then`, it calls that method providing the built-in functions `resolve` and `reject` as arguments (just as it does for a regular `Promise` executor). Then `await` waits until one of them is called (in the example above it happens in the line `(*)`) and then proceeds with the result.
+
+## > Async class methods
+
+To declare an async class method, just prepend it with `async`:
+
+```js
+class Waiter {
+  async wait() {
+    return await Promise.resolve(1);
+  }
+}
+
+// 1 (this is the same as (result => console.log(result)))
+new Waiter().wait().then(console.log);
+```
+
+The meaning is the same: it ensures that the returned value is a promise and enables `await`.
