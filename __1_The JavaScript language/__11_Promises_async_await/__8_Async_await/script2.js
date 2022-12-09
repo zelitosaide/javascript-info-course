@@ -15,5 +15,3 @@ await new Promise(function (resolve) {
 });
 
 img.remove();
-
-// console.log(githubUser);
