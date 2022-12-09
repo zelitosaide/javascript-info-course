@@ -70,4 +70,8 @@ label06: {
       return await Promise.resolve(1);
     }
   }
+
+  new Waiter().wait().then(console.log);
+  const waiter = await new Waiter().wait();
+  console.log("waiter", waiter);
 }
