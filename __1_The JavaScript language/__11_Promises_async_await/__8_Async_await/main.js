@@ -29,7 +29,16 @@ label03: {
 
 label04: {
   const showAvatar = async function () {
+    // read our JSON
     const response = await fetch("user.json");
+    const user = await response.json();
+
+    // read github user
+    const githubResponse = await fetch(
+      `https://api.github.com/users/${user.username}`
+    );
+    const githubUser = await githubResponse.json();
+    console.log(githubUser);
   };
 
   showAvatar();
