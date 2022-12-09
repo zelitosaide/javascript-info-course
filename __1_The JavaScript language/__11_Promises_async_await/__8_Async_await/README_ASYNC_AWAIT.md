@@ -194,3 +194,19 @@ The meaning is the same: it ensures that the returned value is a promise and ena
 ## Error handling
 
 If a promise resolves normally, then `await promise` returns the result. But in the case of a rejection, it throws the error, just as if there were a `throw` statement at that line.
+
+This code:
+
+```js
+async function fn() {
+  await Promise.reject(new Error("Whoops!"));
+}
+```
+
+...is the same as this:
+
+```js
+async function fn() {
+  throw new Error("Whoops!");
+}
+```
