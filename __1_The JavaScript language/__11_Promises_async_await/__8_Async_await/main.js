@@ -26,3 +26,11 @@ label03: {
 
   func();
 }
+
+label04: {
+  const showAvatar = async function () {
+    const response = await fetch("user.json");
+  };
+
+  showAvatar();
+}
