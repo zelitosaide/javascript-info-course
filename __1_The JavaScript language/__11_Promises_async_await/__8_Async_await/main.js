@@ -63,3 +63,11 @@ label04: {
 label05: {
   console.log(user);
 }
+
+label06: {
+  class Waiter {
+    async wait() {
+      return await Promise.resolve(1);
+    }
+  }
+}
