@@ -226,3 +226,19 @@ async function fn() {
 
 fn()
 ```
+
+In the case of an error, the control jumps to the `catch` block. We can also wrap multiple lines:
+
+```js
+async function fn() {
+  try {
+    let response = await fetch("/no-user-here");
+    let user = await response.json();
+  } catch(error) {
+    // catches errors both in fetch and response.json
+    console.log(error);
+  }
+}
+
+fn();
+```
