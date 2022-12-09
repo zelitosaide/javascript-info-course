@@ -83,3 +83,15 @@ function fn() {
 ```
 
 We may get this error if we forget to put `async` before a function. As stated earlier, `await` only works inside an `async` function.
+
+Let's take the `showAvatar()` example from the chapter [Promises chaining](https://javascript.info/promise-chaining) and rewrite it using `async/await`:
+
+1. We'll need to replace `.then` calls with `await`.
+2. Also we should make the function `async` for them to work.
+
+```js
+async function showAvatar() {
+  // read our JSON
+  let response = await fetch("user.json");
+}
+```
