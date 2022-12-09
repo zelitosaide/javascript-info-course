@@ -210,3 +210,19 @@ async function fn() {
   throw new Error("Whoops!");
 }
 ```
+
+In real situations, the promise may take some time before it rejects. In that case there will be a delay before `await` throws an error.
+
+We can catch that error using `try..catch`, the same way as a regular `throw`:
+
+```js
+async function fn() {
+  try {
+    let response = await fetch("http://no-such-url");
+  } catch(error) {
+    console.log(error); // TypeError: failed to fetch
+  }
+}
+
+fn()
+```
