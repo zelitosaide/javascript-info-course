@@ -119,3 +119,9 @@ showAvatar();
 ```
 
 Pretty clean and easy to read, right? Much better than before.
+
+## > Modern browsers allow top-level `await` in modules
+
+In modern browsers, `await` on top level works just fine, when we're inside a module. We'll cover modules in article [Modules, introduction](https://javascript.info/modules-intro).
+
+For instance:
