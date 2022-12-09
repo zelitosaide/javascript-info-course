@@ -132,3 +132,15 @@ let user = await response.json();
 
 console.log(user);
 ```
+
+If we're not using modules, or [older browsers](https://caniuse.com/mdn-javascript_operators_await_top_level) must be supported, there's a universal recipe: wrapping into an anonymous async function.
+
+Like this:
+
+```js
+(async () {
+  let response = await fetch("user.json");
+  let user = await response.json();
+  // ...
+})();
+```
