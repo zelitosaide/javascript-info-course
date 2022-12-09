@@ -261,3 +261,16 @@ If we forget to add `.catch` there, then we get an unhandled promise error (view
 When we use `async/await`, we rarely need `.then`, because `await` handles the waiting for us. And we can use a regular `try..catch` instead of `.catch`. That's usually (but not always) more convenient.
 
 But at the top level of the code, when we're outside any `async` function, we're syntactically unable to use `await`, so it's a normal practice to add `.thenn/catch` to handle the final result or falling-through error, like in the line `(*)` of the example above.
+
+## > `async/await` works well with `Promise.all`
+
+When we need to wait for multiple promises, we can wrap them in `Promise.all` and then `await`:
+
+```js
+// wait for the array of results
+let resullts = await Promise.all([
+  fetch(url1),
+  fetch(url2),
+  ...
+]);
+```
