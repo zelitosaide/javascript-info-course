@@ -253,3 +253,5 @@ async function fn() {
 // fn(); becomes a rejected promise
 fn().catch(console.log); // TypeError: failed to fetch // (*)
 ```
+
+If we forget to add `.catch` there, then we get an unhandled promise error (viewable in the console). We can catch such errors using a global `unhandledrejection` event handler as described in the chapter [Error handling with promises](https://javascript.info/promise-error-handling).
