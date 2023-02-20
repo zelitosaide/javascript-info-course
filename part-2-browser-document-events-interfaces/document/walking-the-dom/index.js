@@ -29,3 +29,9 @@ if (document.body.hasChildNodes()) {
 alert(document.body.childNodes.filter);
 
 alert(Array.from(document.body.childNodes).filter);
+
+alert(document.documentElement === document.body.parentNode);
+
+alert(document.head.nextSibling.nextSibling);
+
+alert(document.body.previousSibling);
