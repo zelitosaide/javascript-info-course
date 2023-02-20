@@ -34,4 +34,4 @@ alert(document.documentElement === document.body.parentNode);
 
 alert(document.head.nextSibling.nextSibling);
 
-alert(document.body.previousSibling);
+alert(document.body.previousSibling.previousSibling);
