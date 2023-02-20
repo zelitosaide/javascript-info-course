@@ -35,3 +35,8 @@ alert(document.documentElement === document.body.parentNode);
 alert(document.head.nextSibling.nextSibling);
 
 alert(document.body.previousSibling.previousSibling);
+
+const parentNode = document.documentElement.parentNode;
+const parentElement = document.documentElement.parentElement;
+
+alert(parentNode, parentElement);
