@@ -27,3 +27,5 @@ if (document.body.hasChildNodes()) {
 }
 
 alert(document.body.childNodes.filter);
+
+alert(Array.from(document.body.childNodes).filter);
