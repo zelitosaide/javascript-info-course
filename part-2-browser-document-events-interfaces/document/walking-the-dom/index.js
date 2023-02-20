@@ -52,3 +52,13 @@ while (elem) {
 while ((elem = elem.parentElement)) {
   alert(elem);
 }
+
+for (const elem of document.body.children) {
+  console.log(elem);
+}
+
+// or
+
+for (let i = 0; i < document.body.children.length; i++) {
+  console.log(document.body.children[i]);
+}
