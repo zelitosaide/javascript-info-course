@@ -19,3 +19,9 @@ if (body.hasChildNodes()) {
   const lastChild = body.lastChild;
   alert(lastChild === body.childNodes[body.childNodes.length - 1]);
 }
+
+if (document.body.hasChildNodes()) {
+  for (const node of document.body.childNodes) {
+    console.log(node);
+  }
+}
