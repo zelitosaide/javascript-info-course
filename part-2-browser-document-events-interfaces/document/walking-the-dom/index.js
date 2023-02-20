@@ -12,8 +12,10 @@ for (const node of body.childNodes) {
   console.log(node);
 }
 
-const firstChild = body.firstChild;
-alert(firstChild === body.childNodes[0]);
+if (body.hasChildNodes()) {
+  const firstChild = body.firstChild;
+  alert(firstChild === body.childNodes[0]);
 
-const lastChild = body.lastChild;
-alert(lastChild === body.childNodes[body.childNodes.length - 1]);
+  const lastChild = body.lastChild;
+  alert(lastChild === body.childNodes[body.childNodes.length - 1]);
+}
