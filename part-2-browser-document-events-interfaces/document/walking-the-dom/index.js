@@ -25,3 +25,5 @@ if (document.body.hasChildNodes()) {
     console.log(node);
   }
 }
+
+alert(document.body.childNodes.filter);
