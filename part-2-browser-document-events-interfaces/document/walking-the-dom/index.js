@@ -49,12 +49,12 @@ while (elem) {
 }
 
 // or
-while ((elem = elem.parentElement)) {
-  alert(elem);
-}
+// while ((elem = elem.parentElement)) {
+//   alert(elem);
+// }
 
 for (const elem of document.body.children) {
-  console.log(elem);
+  console.log("elem: " + elem);
 }
 
 // or
