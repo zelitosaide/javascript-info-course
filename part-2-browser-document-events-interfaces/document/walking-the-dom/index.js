@@ -39,4 +39,4 @@ alert(document.body.previousSibling.previousSibling);
 const parentNode = document.documentElement.parentNode;
 const parentElement = document.documentElement.parentElement;
 
-alert(parentNode, parentElement);
+console.log(parentNode, parentElement);
