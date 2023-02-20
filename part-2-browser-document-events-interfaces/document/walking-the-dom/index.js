@@ -47,3 +47,8 @@ while (elem) {
   console.log(elem);
   elem = elem.parentElement;
 }
+
+// or
+while ((elem = elem.parentElement)) {
+  alert(elem);
+}
