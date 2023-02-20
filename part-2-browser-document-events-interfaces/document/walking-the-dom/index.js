@@ -11,3 +11,6 @@ for (let i = 0; i < body.childNodes.length; i++) {
 for (const node of body.childNodes) {
   console.log(node);
 }
+
+const firstChild = body.firstChild;
+alert(firstChild === body.childNodes[0]);
