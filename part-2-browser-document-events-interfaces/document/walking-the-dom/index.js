@@ -40,3 +40,10 @@ const parentNode = document.documentElement.parentNode;
 const parentElement = document.documentElement.parentElement;
 
 console.log(parentNode, parentElement);
+
+let elem = b;
+
+while (elem) {
+  console.log(elem);
+  elem = elem.parentElement;
+}
