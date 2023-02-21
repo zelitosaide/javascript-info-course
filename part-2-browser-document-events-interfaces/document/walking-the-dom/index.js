@@ -91,3 +91,6 @@ console.log(tHeadRows);
 
 const tFootRows = table.tFoot.rows;
 console.log(tFootRows);
+
+const cells = table.rows[0].cells;
+console.log(cells);
