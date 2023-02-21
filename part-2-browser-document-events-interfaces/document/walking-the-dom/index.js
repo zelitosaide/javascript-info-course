@@ -85,3 +85,6 @@ for (const node of tBodies) {
 
 const tBodyRows = table.tBodies[0].rows;
 console.log(tBodyRows);
+
+const tHeadRows = table.tHead.rows;
+console.log(tHeadRows);
