@@ -62,3 +62,9 @@ for (const elem of document.body.children) {
 for (let i = 0; i < document.body.children.length; i++) {
   console.log("elem2: " + document.body.children[i]);
 }
+
+const rows = table.rows;
+
+for (const row of table.rows) {
+  console.log(row);
+}
