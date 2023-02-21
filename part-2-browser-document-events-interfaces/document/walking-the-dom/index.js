@@ -76,3 +76,9 @@ const tFoot = table.tFoot;
 console.log("Caption: " + caption);
 console.log("THead: " + tHead);
 console.log("TFoot: " + tFoot);
+
+const tBodies = table.tBodies;
+
+for (const node of tBodies) {
+  console.log(node);
+}
