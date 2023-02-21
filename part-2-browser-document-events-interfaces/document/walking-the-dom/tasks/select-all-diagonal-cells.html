@@ -53,17 +53,19 @@
 
       <script>
         const table = document.body.firstElementChild;
-        for (const row of table.rows) {
-          for (const cell of row.cells) {
-            if (row.rowIndex === cell.cellIndex) {
-              cell.style.backgroundColor = "red";
-            }
-          }
-        }
+
+        // for (const row of table.rows) {
+        //   for (const cell of row.cells) {
+        //     if (row.rowIndex === cell.cellIndex) {
+        //       cell.style.backgroundColor = "red";
+        //     }
+        //   }
+        // }
         // or
         for (let i = 0; i < table.rows.length; i++) {
           const row = table.rows[i];
           row.cells[i].style.backgroundColor = "green";
+          row.cells[i].style.color = "white";
         }
       </script>
     </body>
