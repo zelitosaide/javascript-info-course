@@ -95,5 +95,8 @@ console.log(tFootRows);
 const cells = table.rows[0].cells;
 console.log(cells);
 
-const sectionRowIndex = table.rows[1].sectionRowIndex;
+const sectionRowIndex = table.rows[2].sectionRowIndex;
 console.log(sectionRowIndex);
+
+const rowIndex = table.rows[2].rowIndex;
+console.log(rowIndex);
