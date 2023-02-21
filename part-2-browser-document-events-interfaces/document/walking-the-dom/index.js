@@ -100,3 +100,6 @@ console.log(sectionRowIndex);
 
 const rowIndex = table.rows[2].rowIndex;
 console.log(rowIndex);
+
+const cellIndex = table.tHead.rows[0].cells[0].cellIndex;
+console.log(cellIndex);
