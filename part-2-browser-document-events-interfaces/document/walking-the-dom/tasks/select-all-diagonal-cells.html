@@ -50,6 +50,18 @@
           </tr>
         </tbody>
       </table>
+
+      <script>
+        const table = document.body.firstElementChild;
+        const rows = table.rows;
+        for (const row of table.rows) {
+          for (const cell of row.cells) {
+            if (row.rowIndex === cell.cellIndex) {
+              console.log(row.rowIndex, cell.cellIndex);
+            }
+          }
+        }
+      </script>
     </body>
   </head>
 </html>
