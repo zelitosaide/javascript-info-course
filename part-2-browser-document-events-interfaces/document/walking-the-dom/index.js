@@ -106,3 +106,4 @@ console.log(cellIndex);
 
 const cell = table.rows[0].cells[0];
 cell.style.backgroundColor = "red";
+cell.style.color = "white";
