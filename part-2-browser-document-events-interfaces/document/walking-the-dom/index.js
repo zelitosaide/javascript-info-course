@@ -68,3 +68,7 @@ const rows = table.rows;
 for (const row of table.rows) {
   console.log(row);
 }
+
+const caption = table.caption;
+const tHead = table.tHead;
+const tFoot = table.tFoot;
