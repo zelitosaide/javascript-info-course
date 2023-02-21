@@ -103,3 +103,6 @@ console.log(rowIndex);
 
 const cellIndex = table.tHead.rows[0].cells[1].cellIndex;
 console.log(cellIndex);
+
+const cell = table.rows[0].cells[0];
+cell.style.backgroundColor = "red";
