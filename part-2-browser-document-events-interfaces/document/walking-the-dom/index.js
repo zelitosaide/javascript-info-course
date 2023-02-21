@@ -72,3 +72,7 @@ for (const row of table.rows) {
 const caption = table.caption;
 const tHead = table.tHead;
 const tFoot = table.tFoot;
+
+console.log("Caption: " + caption);
+console.log("THead: " + tHead);
+console.log("TFoot: " + tFoot);
