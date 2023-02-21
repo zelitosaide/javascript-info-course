@@ -10,8 +10,8 @@
 
     <script>
       const div1 = document.body.firstElementChild;
-      const ul1 = div.nextElementSibling;
-      const li1 = ul.lastElementChild;
+      const ul1 = div1.nextElementSibling;
+      const li1 = ul1.lastElementChild;
       // OR
       const div2 = document.body.children[0];
       const ul2 = document.body.children[1];
@@ -22,7 +22,7 @@
       const ul3 = document.body.childNodes[3];
       const li3 = document.body.childNodes[3].childNodes[3];
 
-      alert((div1 === div2) === div3);
+      alert(div1 === div2 && div1 === div3);
     </script>
   </body>
 </html>
