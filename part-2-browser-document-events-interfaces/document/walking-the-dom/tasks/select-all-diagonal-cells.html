@@ -67,6 +67,12 @@
           row.cells[i].style.backgroundColor = "green";
           row.cells[i].style.color = "white";
         }
+
+        for (let i = 0; i < table.rows.length; i++) {
+          const row = table.rows[i];
+          row.cells[row.cells.length - 1 - i].style.backgroundColor = "red";
+          row.cells[row.cells.length - 1 - i].style.color = "white";
+        }
       </script>
     </body>
   </head>
