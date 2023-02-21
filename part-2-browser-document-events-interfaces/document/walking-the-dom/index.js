@@ -88,3 +88,6 @@ console.log(tBodyRows);
 
 const tHeadRows = table.tHead.rows;
 console.log(tHeadRows);
+
+const tFootRows = table.tFoot.rows;
+console.log(tFootRows);
