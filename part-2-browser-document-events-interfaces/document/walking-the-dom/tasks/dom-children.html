@@ -9,9 +9,13 @@
     </ul>
 
     <script>
-      const div = document.body.firstElementChild;
-      const ul = div.nextElementSibling;
-      const li = ul.lastElementChild;
+      const div1 = document.body.firstElementChild;
+      const ul1 = div.nextElementSibling;
+      const li1 = ul.lastElementChild;
+      // OR
+      const div2 = document.body.children[0];
+      const ul2 = document.body.children[1];
+      const li2 = document.body.children[1].children[1];
     </script>
   </body>
 </html>
