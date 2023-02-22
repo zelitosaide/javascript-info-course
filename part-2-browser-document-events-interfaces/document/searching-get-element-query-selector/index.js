@@ -13,3 +13,5 @@ if (elem instanceof Object) {
 
 const elemContent = window["elem-content"];
 elemContent.style.color = "white";
+
+document.getElementById("elem").style.backgroundColor = "yellow";
