@@ -17,4 +17,7 @@ elemContent.style.color = "white";
 document.getElementById("elem").style.backgroundColor = "yellow";
 
 const elements = document.querySelectorAll("ul > li:last-child");
-console.log(elements);
+
+for (const el of elements) {
+  console.log(el.innerHTML);
+}
