@@ -3,3 +3,5 @@
 
 // or
 elem.style.backgroundColor = "green";
+const elemContent = window["elem-content"];
+elemContent.style.color = "white";
