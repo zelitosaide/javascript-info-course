@@ -75,3 +75,6 @@ console.log(inputs);
 
 const form = document.getElementsByName("my-form")[0];
 form.style.backgroundColor = "pink";
+
+const articles = form.getElementsByClassName("article");
+console.log(articles.length);
