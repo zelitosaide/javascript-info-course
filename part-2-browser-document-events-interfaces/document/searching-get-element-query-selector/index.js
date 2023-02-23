@@ -49,3 +49,6 @@ console.log(chapter.closest(".contents"));
 
 console.log(chapter.closest("h1"));
 console.log(chapter.closest(".chapter"));
+
+const allTags = document.body.getElementsByTagName("*");
+console.log(allTags);
