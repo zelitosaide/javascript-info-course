@@ -72,3 +72,6 @@ inputs[4].checked = true;
 inputs[4].value = 5;
 
 console.log(inputs);
+
+const form = document.getElementsByName("my-form")[0];
+form.style.backgroundColor = "pink";
