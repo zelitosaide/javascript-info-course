@@ -18,6 +18,8 @@ document.getElementById("elem").style.backgroundColor = "yellow";
 
 const elements = document.querySelectorAll("ul > li:last-child");
 console.log(elements);
+const elements2 = document.body.children;
+console.log(elements2);
 
 for (const el of elements) {
   console.log(el.innerHTML);
