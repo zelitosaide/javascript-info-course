@@ -50,5 +50,8 @@ console.log(chapter.closest(".contents"));
 console.log(chapter.closest("h1"));
 console.log(chapter.closest(".chapter"));
 
-const allTags = document.body.getElementsByTagName("*");
+const allTags = document.getElementsByTagName("*");
 console.log(allTags);
+
+const allLiTags = document.getElementsByTagName("li");
+console.log(allLiTags);
