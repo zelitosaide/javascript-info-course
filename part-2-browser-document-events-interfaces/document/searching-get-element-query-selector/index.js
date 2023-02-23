@@ -65,5 +65,7 @@ console.log(gendersInput);
 const inputs = document.getElementsByTagName("input");
 
 for (const input of inputs) {
-  console.log(input);
+  console.log(input.value + ":" + input.checked);
 }
+
+console.log(inputs);
