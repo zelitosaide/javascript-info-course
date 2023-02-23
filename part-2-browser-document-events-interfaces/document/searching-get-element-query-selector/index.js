@@ -24,3 +24,7 @@ console.log(elements2);
 for (const el of elements) {
   console.log(el.innerHTML);
 }
+
+// document.querySelectorAll(':hover')
+
+// will return the collection with elements that the pointer is over now (in nesting order: from the outermost <html> to the most nested one).
