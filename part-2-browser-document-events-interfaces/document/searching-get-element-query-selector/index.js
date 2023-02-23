@@ -48,3 +48,4 @@ console.log(chapter.closest(".book"));
 console.log(chapter.closest(".contents"));
 
 console.log(chapter.closest("h1"));
+console.log(chapter.closest(".chapter"));
