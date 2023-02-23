@@ -45,3 +45,4 @@ for (const elem of document.body.children) {
 const chapter = document.querySelector(".chapter");
 
 console.log(chapter.closest(".book"));
+console.log(chapter.closest(".contents"));
