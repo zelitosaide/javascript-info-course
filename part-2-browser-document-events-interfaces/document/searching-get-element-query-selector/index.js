@@ -61,3 +61,9 @@ console.log(allChapters);
 
 const gendersInput = document.getElementsByName("gender");
 console.log(gendersInput);
+
+const inputs = document.getElementsByTagName("input");
+
+for (const input of inputs) {
+  console.log(input);
+}
