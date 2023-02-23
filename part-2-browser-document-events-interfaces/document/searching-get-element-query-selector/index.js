@@ -46,3 +46,5 @@ const chapter = document.querySelector(".chapter");
 
 console.log(chapter.closest(".book"));
 console.log(chapter.closest(".contents"));
+
+console.log(chapter.closest("h1"));
