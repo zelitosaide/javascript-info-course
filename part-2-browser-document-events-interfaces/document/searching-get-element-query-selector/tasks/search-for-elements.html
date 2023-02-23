@@ -85,7 +85,8 @@
       const firstInput = form.querySelector("input");
       console.log(firstInput === form.querySelectorAll("input")[0]);
       const lastInput = form.querySelector("input[value='Search!']");
-      console.log(lastInput);
+      const inputs = form.querySelectorAll("input");
+      console.log(lastInput === inputs[inputs.length - 1]);
     </script>
   </body>
 </html>
