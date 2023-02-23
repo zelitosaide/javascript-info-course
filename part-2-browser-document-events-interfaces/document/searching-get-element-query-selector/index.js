@@ -58,3 +58,6 @@ console.log(allLiTags);
 
 const allChapters = document.getElementsByClassName("chapter");
 console.log(allChapters);
+
+const gendersInput = document.getElementsByName("gender");
+console.log(gendersInput);
