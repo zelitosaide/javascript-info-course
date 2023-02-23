@@ -55,3 +55,6 @@ console.log(allTags);
 
 const allLiTags = document.getElementsByTagName("li");
 console.log(allLiTags);
+
+const allChapters = document.getElementsByClassName("chapter");
+console.log(allChapters);
