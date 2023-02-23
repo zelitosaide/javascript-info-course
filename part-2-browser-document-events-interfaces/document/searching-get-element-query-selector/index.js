@@ -68,4 +68,7 @@ for (const input of inputs) {
   console.log(input.value + ":" + input.checked);
 }
 
+inputs[4].checked = true;
+inputs[4].value = 5;
+
 console.log(inputs);
