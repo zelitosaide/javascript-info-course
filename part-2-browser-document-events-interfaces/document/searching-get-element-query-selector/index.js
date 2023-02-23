@@ -41,3 +41,7 @@ for (const elem of document.body.children) {
     elem.innerHTML = "http://example.com/file.zip";
   }
 }
+
+const chapter = document.querySelector(".chapter");
+
+console.log(chapter.closest(".book"));
