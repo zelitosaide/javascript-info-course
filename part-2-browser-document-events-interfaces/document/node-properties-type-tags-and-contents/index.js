@@ -7,3 +7,4 @@ console.log(document.constructor.name);
 console.log(document.documentElement.constructor.name);
 
 console.log(document.body instanceof HTMLBodyElement);
+console.log(document.body instanceof HTMLElement);
