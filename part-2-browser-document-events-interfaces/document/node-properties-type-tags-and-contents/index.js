@@ -14,3 +14,8 @@ console.log(document.body instanceof EventTarget);
 
 console.dir(document.body.__proto__);
 console.log(document.body.__proto__);
+
+const elem = document.body;
+
+console.log(elem.nodeType);
+console.log(elem.firstChild.nodeType);
