@@ -27,3 +27,5 @@ console.log(document.body.tagName);
 
 console.log(document.nodeName);
 console.log(document.tagName);
+
+console.log(document.body.firstChild.nextSibling.nodeName);
