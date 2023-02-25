@@ -21,6 +21,12 @@
       document.body.innerHTML += "<div>Hello";
       document.body.innerHTML += "How goes?";
     </script>
+
+    <div id="elem">Hello <b>world</b></div>
+
+    <script>
+      console.log(document.getElementById("elem").outerHTML);
+    </script>
     <script src="index.js"></script>
   </body>
 </html>
