@@ -12,8 +12,8 @@ console.log(document.body instanceof Element);
 console.log(document.body instanceof Node);
 console.log(document.body instanceof EventTarget);
 
-console.dir(document.body.__proto__);
-console.log(document.body.__proto__);
+// console.dir(document.body.__proto__);
+// console.log(document.body.__proto__);
 
 const elem = document.body;
 
