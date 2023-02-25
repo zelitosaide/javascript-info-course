@@ -11,3 +11,5 @@ console.log(document.body instanceof HTMLElement);
 console.log(document.body instanceof Element);
 console.log(document.body instanceof Node);
 console.log(document.body instanceof EventTarget);
+
+console.dir(document.body.prototype);
