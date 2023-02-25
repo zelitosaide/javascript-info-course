@@ -25,7 +25,10 @@
     <div id="elem">Hello <b>world</b></div>
 
     <script>
-      console.log(document.getElementById("elem").outerHTML);
+      console.log(
+        document.getElementById("elem").outerHTML,
+        typeof document.getElementById("elem").outerHTML
+      );
     </script>
     <script src="index.js"></script>
   </body>
