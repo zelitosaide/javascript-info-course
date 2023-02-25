@@ -23,3 +23,4 @@ console.log(document.nodeType);
 console.log(elem.parentNode.parentNode === document);
 
 console.log(document.body.nodeName);
+console.log(document.body.tagName);
