@@ -19,3 +19,5 @@ const elem = document.body;
 
 console.log(elem.nodeType);
 console.log(elem.firstChild.nodeType);
+console.log(document.nodeType);
+console.log(elem.parentNode.parentNode === document);
