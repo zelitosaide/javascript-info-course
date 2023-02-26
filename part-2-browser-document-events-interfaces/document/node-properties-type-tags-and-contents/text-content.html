@@ -28,5 +28,14 @@
     <script>
       hidden.hidden = true;
     </script>
+
+    <h3 id="blinking">A blinking element</h3>
+
+    <script>
+      console.log(blinking.hidden);
+      setInterval(function () {
+        blinking.hidden = !blinking.hidden;
+      }, 1000);
+    </script>
   </body>
 </html>
