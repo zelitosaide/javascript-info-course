@@ -19,11 +19,16 @@
     </ul>
     <script>
       function func(li) {
-        const title = li.firstChild;
+        const title = li.firstChild.data.trim();
+        console.log(title);
         const ul = li.querySelector("ul");
         if (ul) {
           func(ul.firstElementChild);
         }
+      }
+
+      for (const li of document.body.firstElementChild.children) {
+        func(li);
       }
     </script>
   </body>
