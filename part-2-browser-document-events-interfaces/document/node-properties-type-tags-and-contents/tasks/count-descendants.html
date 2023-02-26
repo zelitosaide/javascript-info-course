@@ -5,15 +5,41 @@
       <li>
         Animals
         <ul>
-          <li>Mammals</li>
-          <li>Other</li>
+          <li>
+            Mammals
+            <ul>
+              <li>Cows</li>
+              <li>Donkeys</li>
+              <li>Dogs</li>
+              <li>Tigers</li>
+            </ul>
+          </li>
+          <li>
+            Other
+            <ul>
+              <li>Snakes</li>
+              <li>Birds</li>
+              <li>Lizards</li>
+            </ul>
+          </li>
         </ul>
       </li>
       <li>
         Fishes
         <ul>
-          <li>Aquarium</li>
-          <li>Sea</li>
+          <li>
+            Aquarium
+            <ul>
+              <li>Guppy</li>
+              <li>Angelfish</li>
+            </ul>
+          </li>
+          <li>
+            Sea
+            <ul>
+              <li>Sea trout</li>
+            </ul>
+          </li>
         </ul>
       </li>
     </ul>
@@ -21,6 +47,7 @@
       function func(li) {
         const title = li.firstChild.data.trim();
         const list = li.querySelector("ul");
+        console.log(title);
 
         if (list) {
           for (const li of list.children) {
