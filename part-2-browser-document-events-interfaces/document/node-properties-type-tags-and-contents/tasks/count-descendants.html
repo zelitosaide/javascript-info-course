@@ -44,7 +44,10 @@
       </li>
     </ul>
     <script>
-      const ul = document.body.firstElementChild;
+      for (const li of document.body.querySelectorAll("li")) {
+        const title = li.firstChild.nodeValue.trim();
+        console.log(title);
+      }
     </script>
   </body>
 </html>
