@@ -20,11 +20,11 @@
     <script>
       function func(li) {
         const title = li.firstChild.data.trim();
-        console.log(title);
-        const ul = li.querySelector("ul");
-        if (ul) {
-          for (const elem of ul.children) {
-            func(elem);
+        const list = li.querySelector("ul");
+
+        if (list) {
+          for (const li of list.children) {
+            func(li);
           }
         }
       }
