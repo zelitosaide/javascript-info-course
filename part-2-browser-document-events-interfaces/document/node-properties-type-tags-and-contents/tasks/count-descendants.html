@@ -47,6 +47,11 @@
       function func(li) {
         const title = li.firstChild.data.trim();
         const list = li.querySelector("ul");
+
+        function countDescendants() {}
+
+        const descendants = countDescendants();
+
         console.log(title);
 
         if (list) {
