@@ -6,6 +6,11 @@
     <div>Hello, world!</div>
 
     <script>
+      let text = document.body.firstChild;
+      console.log(text.nodeValue, text.data);
+    </script>
+
+    <script>
       let div = document.querySelector("div");
 
       // replace div.outerHTML with <p>...</p>
