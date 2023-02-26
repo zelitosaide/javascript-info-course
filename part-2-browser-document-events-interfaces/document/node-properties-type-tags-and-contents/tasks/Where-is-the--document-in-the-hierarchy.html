@@ -13,6 +13,13 @@
       console.log(
         HTMLDocument.prototype.constructor.__proto__.__proto__.__proto__.name
       );
+
+      class A {}
+
+      const a = new A();
+      console.log(
+        a.__proto__.constructor.name === A.prototype.constructor.name
+      );
     </script>
   </body>
 </html>
