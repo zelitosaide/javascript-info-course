@@ -23,7 +23,9 @@
         console.log(title);
         const ul = li.querySelector("ul");
         if (ul) {
-          func(ul.firstElementChild);
+          for (const elem of ul.children) {
+            func(elem);
+          }
         }
       }
 
