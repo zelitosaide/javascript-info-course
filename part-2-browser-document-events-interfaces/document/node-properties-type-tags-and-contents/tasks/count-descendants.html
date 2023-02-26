@@ -44,26 +44,7 @@
       </li>
     </ul>
     <script>
-      function func(li) {
-        const title = li.firstChild.data.trim();
-        const list = li.querySelector("ul");
-
-        function countDescendants() {}
-
-        const descendants = countDescendants();
-
-        console.log(title);
-
-        if (list) {
-          for (const li of list.children) {
-            func(li);
-          }
-        }
-      }
-
-      for (const li of document.body.firstElementChild.children) {
-        func(li);
-      }
+      const ul = document.body.firstElementChild;
     </script>
   </body>
 </html>
