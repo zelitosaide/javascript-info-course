@@ -17,6 +17,14 @@
         </ul>
       </li>
     </ul>
-    <script></script>
+    <script>
+      function func(li) {
+        const title = li.firstChild;
+        const ul = li.querySelector("ul");
+        if (ul) {
+          func(ul.firstElementChild);
+        }
+      }
+    </script>
   </body>
 </html>
