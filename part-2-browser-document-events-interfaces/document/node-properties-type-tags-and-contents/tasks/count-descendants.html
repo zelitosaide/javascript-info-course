@@ -46,7 +46,8 @@
     <script>
       for (const li of document.body.querySelectorAll("li")) {
         const title = li.firstChild.nodeValue.trim();
-        console.log(title);
+        const descendantsCount = li.querySelectorAll("li").length;
+        alert(title + ": " + descendantsCount);
       }
     </script>
   </body>
