@@ -15,7 +15,11 @@
       // attribute => property
 
       input.setAttribute("id", "id");
-      console.log(input.outerHTML);
+      console.log(input.id); // id (updated)
+
+      // property => attribute
+      input.id = "newId";
+      console.log(input.getAttribute("id")); // newId (updated)
     </script>
 
     <h1>Attributes and Properties</h1>
