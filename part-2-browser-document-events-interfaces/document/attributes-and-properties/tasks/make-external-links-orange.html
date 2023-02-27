@@ -36,6 +36,10 @@
         if (!href.includes("://")) {
           continue;
         }
+
+        if (href.startsWith("http://internal.com")) {
+          continue;
+        }
       }
     </script>
   </body>
