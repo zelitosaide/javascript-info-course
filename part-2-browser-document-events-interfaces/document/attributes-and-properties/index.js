@@ -4,3 +4,7 @@ document.body.myData = {
 };
 
 console.log(document.body.myData.title);
+
+document.body.sayTagName = function () {
+  console.log(this.tagName);
+};
