@@ -15,10 +15,12 @@
     <script>
       // setting style for a single link
       for (const link of document.querySelectorAll("a")) {
+        const href = link.getAttribute("href");
+
         if (
-          link.getAttribute("href") &&
-          link.getAttribute("href").includes("://") &&
-          !link.getAttribute("href").startsWith("http://internal.com")
+          href &&
+          href.includes("://") &&
+          !href.startsWith("http://internal.com")
         ) {
           link.style.color = "orange";
         }
