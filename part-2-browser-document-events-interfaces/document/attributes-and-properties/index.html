@@ -19,7 +19,8 @@
 
       for (const div of document.querySelectorAll("[show-info]")) {
         // insert the corresponding info into the field
-        console.log(div);
+        const field = div.getAttribute("show-info");
+        console.log(field);
       }
     </script>
 
