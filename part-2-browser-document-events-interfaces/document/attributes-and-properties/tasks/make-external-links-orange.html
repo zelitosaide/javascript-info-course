@@ -15,7 +15,9 @@
     <script>
       // setting style for a single link
       for (const link of document.querySelectorAll("a")) {
-        console.log(link);
+        if (link.getAttribute("href")) {
+          console.log(link);
+        }
       }
     </script>
   </body>
