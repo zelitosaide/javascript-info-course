@@ -14,6 +14,8 @@
       />
     </label>
 
+    <script></script>
+
     <label>
       Name:
       <input type="text" />
@@ -34,11 +36,11 @@
 
       // attribute => property
       input.setAttribute("value", ":::Zelito");
-      alert(input.value); // :::Zelito
+      console.log(input.value); // :::Zelito
 
       // NOT property => attribute
       input.value = ":::newValue";
-      alert(input.getAttribute("value")); // Zelito (not updated!)
+      console.log(input.getAttribute("value")); // Zelito (not updated!)
 
       console.log(input.outerHTML);
     </script>
