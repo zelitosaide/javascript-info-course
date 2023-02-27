@@ -40,6 +40,10 @@
       console.log("TEST: " + elem.getAttribute("TEST"));
 
       console.log(elem.outerHTML);
+
+      for (const attr of elem.attributes) {
+        console.log(attr.name + " = " + attr.value);
+      }
     </script>
 
     <input
