@@ -3,4 +3,4 @@ document.body.myData = {
   title: "Imperator",
 };
 
-console.log(document.body.myData);
+console.log(document.body.myData.title);
