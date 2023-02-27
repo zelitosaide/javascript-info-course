@@ -24,6 +24,7 @@
     data-about="Elephants"
   >
     <div
+      id="order"
       class="order"
       data-order-state="new"
     >
@@ -46,7 +47,7 @@
 
     <script>
       // read
-      console.log(document.querySelectorAll("[data-order-state]"));
+      console.log(order.dataset.orderState);
       console.log("DATA SET", document.body.dataset.about);
     </script>
 
