@@ -23,8 +23,8 @@
 
       const attributes = document.body.attributes;
 
-      for (const attr of attributes) {
-        console.log(attr);
+      for (const { name, value } of attributes) {
+        console.log(name + ":" + value);
       }
     </script>
 
@@ -41,6 +41,7 @@
     <script>
       console.log(document.body.id);
       // non-standard attribute doesn't yield a property
+
       console.log(document.body.something); // undefined
     </script>
     <script src="index.js"></script>
