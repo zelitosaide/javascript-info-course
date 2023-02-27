@@ -17,7 +17,8 @@
       for (const link of document.querySelectorAll("a")) {
         if (
           link.getAttribute("href") &&
-          link.getAttribute("href").includes("://")
+          link.getAttribute("href").includes("://") &&
+          !link.getAttribute("href").startsWith("http://internal.com")
         ) {
           link.style.color = "orange";
         }
