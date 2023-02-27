@@ -3,7 +3,8 @@
   <head>
     <style>
       /* styles rely on the custom attribute "order-state" */
-      .order[order-state="new"] {
+      .order[order-state="new"],
+      .order[data-order-state="new"] {
         color: green;
       }
       .order[order-state="pending"] {
