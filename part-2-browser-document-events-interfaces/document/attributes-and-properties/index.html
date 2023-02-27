@@ -20,7 +20,7 @@
       for (const div of document.querySelectorAll("[show-info]")) {
         // insert the corresponding info into the field
         const field = div.getAttribute("show-info");
-        console.log(field);
+        div.innerHTML = user[field]; // first Pete into "name", then 25 into "age"
       }
     </script>
 
