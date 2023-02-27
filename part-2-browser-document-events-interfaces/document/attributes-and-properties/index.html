@@ -5,6 +5,12 @@
     something="no-standard"
   >
     <h1>Attributes and Properties</h1>
+
+    <script>
+      console.log(document.body.id);
+      // non-standard attribute doesn't yield a property
+      console.log(document.body.something); // undefined
+    </script>
     <script src="index.js"></script>
   </body>
 </html>
