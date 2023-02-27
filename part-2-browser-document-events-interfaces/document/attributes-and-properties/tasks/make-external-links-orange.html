@@ -32,6 +32,10 @@
         if (!href) {
           continue;
         }
+
+        if (!href.includes("://")) {
+          continue;
+        }
       }
     </script>
   </body>
