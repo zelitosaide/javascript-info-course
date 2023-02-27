@@ -25,6 +25,10 @@
       input.setAttribute("value", "Zelito");
       console.log(input.value); // Zelito
 
+      // NOT property => attribute
+      input.value = "newValue";
+      console.log(input.getAttribute("value")); // Zelito (not updated!)
+
       console.log(input.outerHTML);
     </script>
 
