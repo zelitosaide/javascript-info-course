@@ -21,12 +21,14 @@
       input.id = "newId";
       console.log(input.getAttribute("id")); // newId (updated)
 
+      console.log("-------------");
+
       // attribute => property
-      input.setAttribute("value", "Zelito");
+      input.setAttribute("value", ":::Zelito");
       console.log(input.value); // Zelito
 
       // NOT property => attribute
-      input.value = "newValue";
+      input.value = ":::newValue";
       console.log(input.getAttribute("value")); // Zelito (not updated!)
 
       console.log(input.outerHTML);
