@@ -7,6 +7,15 @@
   >
     <h1>Attributes and Properties</h1>
 
+    <script>
+      const hasSomething = document.body.hasAttribute("something");
+
+      if (hasSomething) {
+        const something = document.body.getAttribute("something");
+        console.log(something);
+      }
+    </script>
+
     <input
       id="input"
       type="text"
