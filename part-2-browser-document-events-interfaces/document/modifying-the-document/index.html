@@ -15,8 +15,14 @@
     <div id="insert-adjacent-html">Insert Adjacent HTML</div>
 
     <script>
-      const insertAdjacentHtml = window["insert-adjacent-html"];
-      console.log(insertAdjacentHtml);
+      // const insertAdjacentHtml = window["insert-adjacent-html"];
+      const insertAdjacentHtml = document.getElementById(
+        "insert-adjacent-html"
+      );
+      insertAdjacentHtml.insertAdjacentHTML(
+        "beforebegin",
+        "<h1>Before begin</h1>"
+      );
     </script>
 
     <div id="div">I am a DIV</div>
