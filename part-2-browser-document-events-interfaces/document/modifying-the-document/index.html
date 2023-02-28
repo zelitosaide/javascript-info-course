@@ -164,9 +164,9 @@
       newLi.innerHTML = "Hello, world!";
 
       // parentElem.insertBefore(node, nextSibling)
-      document
-        .getElementById("lista")
-        .insertBefore(newLi, document.getElementById("lista").children[1]);
+      const parentElem = document.getElementById("lista");
+
+      parentElem.insertBefore(newLi, parentElem.children[1]);
     </script>
     <script src="index.js"></script>
   </body>
