@@ -172,6 +172,12 @@
       li2.innerHTML = "Are you fine?";
 
       parentElem.insertBefore(li2, parentElem.firstChild);
+
+      // parentElem.replaceChild(node, oldChild)
+      const newLiNode = document.createElement("li");
+      newLiNode.innerHTML = "replaced node";
+
+      parentElem.replaceChild(newLiNode, parentElem.children[4]);
     </script>
     <script src="index.js"></script>
   </body>
