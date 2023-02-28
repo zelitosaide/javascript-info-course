@@ -113,6 +113,12 @@
       liLast.innerHTML = "append";
       ol.append(liLast); // insert liLast at the end of <ol>
     </script>
+
+    <script>
+      const list = document.createElement("ul");
+      const listItems = document.querySelectorAll("li");
+      list.append(...listItems);
+    </script>
     <script src="index.js"></script>
   </body>
 </html>
