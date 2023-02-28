@@ -14,6 +14,17 @@
   <body>
     <ul id="ul"></ul>
 
+    <script>
+      function getListContent() {
+        const fragment = new DocumentFragment();
+
+        for (let i = 1; i <= 3; i++) {
+          const li = document.createElement("li");
+          li.append(i);
+        }
+      }
+    </script>
+
     <div
       id="alert"
       class="alert"
