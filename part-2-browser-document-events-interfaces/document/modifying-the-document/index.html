@@ -178,6 +178,11 @@
       newLiNode.innerHTML = "replaced node";
 
       parentElem.replaceChild(newLiNode, parentElem.children[4]);
+
+      // parentElem.removeChild(node)
+      parentElem.removeChild(
+        parentElem.lastElementChild.previousElementSibling
+      );
     </script>
     <script src="index.js"></script>
   </body>
