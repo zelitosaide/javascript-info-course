@@ -39,3 +39,7 @@ ol.prepend(firstLi); // insert firstLi at the beginning of <ol>
 const lastLLi = document.createElement("li");
 lastLLi.innerHTML = "Append";
 ol.append(lastLLi); // insert lastLi at the end of <ol>
+
+setTimeout(function () {
+  ol.remove();
+}, 3000);
