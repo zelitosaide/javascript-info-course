@@ -35,13 +35,11 @@
     <script>
       function getListContent() {
         const fragment = new DocumentFragment();
-
         for (let i = 1; i <= 3; i++) {
           const li = document.createElement("li");
           li.append(i);
           fragment.append(li);
         }
-
         return fragment;
       }
 
@@ -200,7 +198,7 @@
     <script>
       setTimeout(function () {
         document.write("<b>...By this</b>");
-      }, 1000);
+      }, 10000);
     </script>
     <script src="index.js"></script>
   </body>
