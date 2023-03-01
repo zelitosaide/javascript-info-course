@@ -25,4 +25,4 @@ setTimeout(function () {
 // node.after(...nodes or strings)
 // node.replaceWith(...nodes or strings)
 
-// const node = document.body.append(div);
+const node = document.body.append(div) ?? "Nao retorna nada";
