@@ -41,5 +41,7 @@ lastLLi.innerHTML = "Append";
 ol.append(lastLLi); // insert lastLi at the end of <ol>
 
 setTimeout(function () {
+  ol.previousSibling.remove();
+  ol.nextSibling.remove();
   ol.remove();
 }, 3000);
