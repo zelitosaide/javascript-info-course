@@ -21,3 +21,6 @@ setTimeout(function () {
 
 // node.append(...nodes or strings)
 // node.prepend(...nodes or strings)
+// node.before(...nodes or strings)
+// node.after(...nodes or strings)
+// node.replaceWith(...nodes or strings)
