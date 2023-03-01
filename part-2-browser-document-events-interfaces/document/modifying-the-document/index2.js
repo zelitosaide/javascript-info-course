@@ -16,7 +16,7 @@ div.innerHTML = "<strong>Hi there!</strong> You've read an important message.";
 document.body.append(div);
 
 setTimeout(function () {
-  document.body.remove(div);
+  div.remove();
 }, 2000);
 
 // node.append(...nodes or strings)
@@ -24,3 +24,5 @@ setTimeout(function () {
 // node.before(...nodes or strings)
 // node.after(...nodes or strings)
 // node.replaceWith(...nodes or strings)
+
+// const node = document.body.append(div);
