@@ -45,3 +45,5 @@ setTimeout(function () {
   ol.nextSibling.remove();
   ol.remove();
 }, 3000);
+
+// insertAdjacentHTML/Text/Element
