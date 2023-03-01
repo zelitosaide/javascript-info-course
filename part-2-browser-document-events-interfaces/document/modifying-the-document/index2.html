@@ -25,6 +25,14 @@
       <li>2</li>
     </ol>
 
+    <div id="div"></div>
+
+    <script>
+      document
+        .getElementById("div")
+        .before("<p>Hello World!</p>", document.createElement("hr"));
+    </script>
+
     <script>
       setTimeout(function () {
         document.getElementById("html-example").remove();
