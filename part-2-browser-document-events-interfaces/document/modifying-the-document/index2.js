@@ -9,3 +9,6 @@ const div = document.createElement("div");
 
 // 1. Create <div> element
 div.className = "alert";
+
+// 3. Fill it with the content
+div.innerHTML = "<strong>Hi there!</strong> You've read an important message.";
