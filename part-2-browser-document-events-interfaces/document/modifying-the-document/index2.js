@@ -34,4 +34,4 @@ ol.after("After"); // insert string "after" after <ol>
 
 const firstLi = document.createElement("li");
 firstLi.textContent = "Prepend";
-ol.append(firstLi);
+ol.prepend(firstLi);
