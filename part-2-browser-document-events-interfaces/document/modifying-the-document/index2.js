@@ -29,5 +29,5 @@ setTimeout(function () {
 
 const ol = document.getElementById("ol");
 
-ol.before("Before");
-ol.after("After");
+ol.before("Before"); // insert string "before" before <ol>
+ol.after("After"); // insert string "after" after <ol>
