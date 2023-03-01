@@ -39,6 +39,14 @@
       }, 4000);
     </script>
 
+    <ul id="another-div"></ul>
+
+    <script>
+      document
+        .getElementById("another-div")
+        .append(...document.getElementsByTagName("li"));
+    </script>
+
     <script>
       setTimeout(function () {
         document.getElementById("html-example").remove();
