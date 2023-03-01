@@ -39,12 +39,14 @@
       }, 4000);
     </script>
 
-    <ul id="another-div"></ul>
+    <ul id="ul"></ul>
 
     <script>
-      document
-        .getElementById("another-div")
-        .append(...document.querySelectorAll("li"));
+      document.getElementById("ul").append(...document.querySelectorAll("li"));
+
+      setTimeout(function () {
+        document.getElementById("ul").remove();
+      }, 5000);
     </script>
 
     <script>
