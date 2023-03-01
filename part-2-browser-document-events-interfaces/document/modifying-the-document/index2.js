@@ -28,3 +28,4 @@ setTimeout(function () {
 // const node = document.body.append(div) ?? "Nao retorna nada";
 
 const ol = document.getElementById("ol");
+ol.before("Before");
