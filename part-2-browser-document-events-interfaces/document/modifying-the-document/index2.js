@@ -30,4 +30,4 @@ setTimeout(function () {
 const ol = document.getElementById("ol");
 
 ol.before("Before");
-ol.afler("After");
+ol.after("After");
