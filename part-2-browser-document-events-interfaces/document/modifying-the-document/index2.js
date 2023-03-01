@@ -18,3 +18,6 @@ document.body.append(div);
 setTimeout(function () {
   document.body.remove(div);
 }, 2000);
+
+// node.append(...nodes or strings)
+// node.prepend(...nodes or strings)
