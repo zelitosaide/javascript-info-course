@@ -33,5 +33,9 @@ ol.before("Before"); // insert string "before" before <ol>
 ol.after("After"); // insert string "after" after <ol>
 
 const firstLi = document.createElement("li");
-firstLi.textContent = "Prepend";
+firstLi.innerHTML = "Prepend";
 ol.prepend(firstLi); // insert liFirst at the beginning of <ol>
+
+const lastLLi = document.createElement("li");
+lastLLi.innerHTML = "Append";
+ol.append(lastLLi);
