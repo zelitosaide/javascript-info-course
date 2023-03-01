@@ -31,6 +31,12 @@
       document
         .getElementById("div")
         .before("<p>Hello World!</p>", document.createElement("hr"));
+
+      setTimeout(function () {
+        document.getElementById("div").previousElementSibling.remove();
+        document.getElementById("div").previousSibling.remove();
+        document.getElementById("div").remove();
+      }, 4000);
     </script>
 
     <script>
