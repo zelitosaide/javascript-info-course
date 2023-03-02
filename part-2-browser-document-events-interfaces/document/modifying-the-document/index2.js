@@ -47,3 +47,4 @@ setTimeout(function () {
 }, 3000);
 
 // insertAdjacentHTML/Text/Element
+// elem.insertAdjacentHTML(where, html)
