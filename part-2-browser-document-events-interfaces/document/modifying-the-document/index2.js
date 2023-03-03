@@ -63,3 +63,4 @@ setTimeout(function () {
 // parentElem.appendChild(node)
 // parentElem.insertBefore(node, nextSibling)
 // parentElem.replaceChild(node, oldChild)
+// parentElem.removeChild(node)
