@@ -74,6 +74,17 @@
       }, 6000);
     </script>
 
+    <ul id="ul-id">
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+    </ul>
+
+    <script>
+      const ulElem = document.getElementById("ul-id");
+      ulElem.insertAdjacentHTML("beforebegin", "<p>Before Begin</p>");
+    </script>
+
     <script src="index2.js"></script>
   </body>
 </html>
