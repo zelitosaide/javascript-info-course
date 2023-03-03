@@ -29,15 +29,12 @@
           if (Object.entries(value).length > 0) {
             const ul = document.createElement("ul");
             createTree(ul, value);
-            li.innerHTML = key;
-            li.append(ul);
+            li.append(key, ul);
             container.append(li);
           } else {
             li.innerHTML = key;
             container.append(li);
           }
-          // createTree(value);
-          // console.log(key, value);
         });
       }
 
