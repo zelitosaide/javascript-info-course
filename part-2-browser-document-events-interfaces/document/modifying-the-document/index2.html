@@ -113,6 +113,10 @@
       removedDiv.innerHTML =
         "<strong>Hi there!</strong> You've read an important message.";
       document.body.append(removedDiv);
+
+      setTimeout(function () {
+        removedDiv.remove();
+      }, 9000);
     </script>
 
     <script src="index2.js"></script>
