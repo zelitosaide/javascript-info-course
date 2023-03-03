@@ -147,6 +147,11 @@
 
       const div3 = document.getElementById("div-1").cloneNode(false);
       console.log(div3.outerHTML);
+
+      setTimeout(function () {
+        document.getElementById("div-1").remove();
+        document.getElementById("div-1").remove();
+      }, 11000);
     </script>
 
     <script src="index2.js"></script>
