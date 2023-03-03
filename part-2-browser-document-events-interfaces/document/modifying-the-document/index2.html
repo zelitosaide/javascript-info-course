@@ -205,7 +205,10 @@
 
     <script>
       const oldSchoolList = document.getElementById("old-school-list");
-      oldSchoolList.appendChild("ola");
+      const listItem = document.createElement("li");
+      listItem.innerHTML = "Append Child";
+
+      oldSchoolList.appendChild(listItem);
     </script>
 
     <script src="index2.js"></script>
