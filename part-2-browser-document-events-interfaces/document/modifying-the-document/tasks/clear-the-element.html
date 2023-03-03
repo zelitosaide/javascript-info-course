@@ -2,13 +2,27 @@
 <html>
   <body>
     <ol id="elem">
-      <li>Hello</li>
-      <li>World</li>
+      <li>Hello 1</li>
+      <li>Hello 2</li>
+      <li>Hello 3</li>
+      <li>Hello 4</li>
+      <li>Hello 5</li>
+      <li>Hello 6</li>
     </ol>
 
     <script>
       function clear(elem) {
-        elem.outerHTML = elem.cloneNode(false).outerHTML;
+        // NOT this
+        // for (let i = 0; i < elem.children.length; i++) {
+        //   elem.children[i].remove();
+        // }
+
+        // OR this
+        for (const node of elem.children) {
+          // console.log(node);
+          node.remove();
+        }
+        // elem.innerHTML = "";
       }
 
       clear(document.getElementById("elem"));
