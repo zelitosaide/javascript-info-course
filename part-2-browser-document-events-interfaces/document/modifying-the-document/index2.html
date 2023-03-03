@@ -112,10 +112,7 @@
       removedDiv.className = "alert";
       removedDiv.innerHTML =
         "<strong>Hi there!</strong> You've read an important message.";
-      const insertedDiv = document.body.insertAdjacentHTML(
-        "afterbegin",
-        "<h1>Ola</h1>"
-      );
+      document.body.append(removedDiv);
     </script>
 
     <script src="index2.js"></script>
