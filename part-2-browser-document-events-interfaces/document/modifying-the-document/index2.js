@@ -58,3 +58,4 @@ setTimeout(function () {
 // elem.insertAdjacentElement(where, elem)
 
 // elem.cloneNode(true)
+// elem.cloneNode(false)
