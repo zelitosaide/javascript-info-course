@@ -2,10 +2,16 @@
 <html>
   <body>
     <script>
-      let input = prompt("Insert the list item: ");
+      let text = prompt("Insert the list item: ");
       const listItems = [];
 
-      while (input) {}
+      while (text) {
+        const li = document.createElement("li");
+        li.textContent = text;
+        listItems.push(li);
+      }
+
+      console.log(listItems);
     </script>
   </body>
 </html>
