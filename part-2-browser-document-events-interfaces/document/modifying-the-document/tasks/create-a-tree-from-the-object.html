@@ -21,6 +21,7 @@
       };
 
       const container = document.createElement("ul");
+      document.body.append(container);
 
       function createTree(container, data) {
         Object.entries(data).forEach(function ([key, value]) {
@@ -28,7 +29,9 @@
           if (Object.entries(value).length > 0) {
             const ul = document.createElement("ul");
             createTree(ul, value);
-            li.innerHTML = key + ul;
+            li.innerHTML = key;
+            li.append(ul);
+            container.append(li);
           } else {
             li.innerHTML = key;
             container.append(li);
