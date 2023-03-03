@@ -144,6 +144,9 @@
       div2.querySelector("strong").innerHTML = "Bye there!"; // change the clone
 
       document.getElementById("div-1").after(div2); // show the clone after the existing div
+
+      const div3 = document.getElementById("div-1").cloneNode(false);
+      console.log(div3.outerHTML);
     </script>
 
     <script src="index2.js"></script>
