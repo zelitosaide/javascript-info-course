@@ -2,19 +2,19 @@
 <html>
   <body>
     <script>
-      let text = prompt("Insert the list item: ");
       const ul = document.createElement("ul");
-      const listItems = [];
+      document.body.append(ul);
 
-      while (text) {
+      while (true) {
+        let text = prompt("Enter the text for the list item");
+
+        if (!text) {
+          break;
+        }
         const li = document.createElement("li");
         li.textContent = text;
         listItems.push(li);
-        text = prompt("Insert the list item: ");
       }
-
-      ul.append(...listItems);
-      document.body.append(ul);
     </script>
   </body>
 </html>
