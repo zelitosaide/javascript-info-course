@@ -22,7 +22,8 @@
 
       function print(data) {
         Object.entries(data).forEach(function ([key, value]) {
-          console.log(key);
+          console.log(key, value);
+          print(value);
         });
       }
 
