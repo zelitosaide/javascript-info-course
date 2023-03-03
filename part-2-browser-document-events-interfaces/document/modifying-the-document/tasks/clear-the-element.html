@@ -8,7 +8,7 @@
 
     <script>
       function clear(elem) {
-        elem.innerHTML = elem.cloneNode(false);
+        elem.outerHTML = elem.cloneNode(false).outerHTML;
       }
 
       clear(document.getElementById("elem"));
