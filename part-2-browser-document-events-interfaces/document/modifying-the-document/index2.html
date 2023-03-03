@@ -191,6 +191,10 @@
 
       const ulWithArray = document.getElementById("ul-with-array");
       ulWithArray.append(...getListContentUsingArray());
+
+      setTimeout(function () {
+        ulWithArray.remove();
+      }, 13000);
     </script>
     <script src="index2.js"></script>
   </body>
