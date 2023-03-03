@@ -20,11 +20,13 @@
         // for (const node of elem.children) {
         //   node.remove();
         // }
-        // But this
+        // BUT this
         while (elem.firstChild) {
           elem.firstChild.remove();
         }
-        // elem.innerHTML = "";
+
+        // OR this
+        elem.innerHTML = "";
       }
 
       clear(document.getElementById("elem"));
