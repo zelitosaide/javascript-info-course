@@ -132,11 +132,16 @@
       }, 10000);
     </script>
 
-    <div class="alert">
+    <div
+      class="alert"
+      id="div-1"
+    >
       <strong>Hi there!</strong> You've read an important message.
     </div>
 
-    <script></script>
+    <script>
+      const div2 = document.getElementById("div-1").cloneNode(true);
+    </script>
 
     <script src="index2.js"></script>
   </body>
