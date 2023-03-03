@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <script>
+      let data = {
+        Fish: {
+          trout: {},
+          salmon: {},
+        },
+
+        Tree: {
+          Huge: {
+            sequoia: {},
+            oak: {},
+          },
+          Flowering: {
+            "apple tree": {},
+            magnolia: {},
+          },
+        },
+      };
+
+      console.log(Object.entries(data));
+
+      function print(data) {
+        Object.entries(data).forEach(function (value) {
+          console.log(value);
+        });
+      }
+
+      print(data);
+    </script>
+  </body>
+</html>
