@@ -171,7 +171,9 @@
 
       ulWithFragment.append(getListContent());
 
-      setTimeout(function () {}, 12000);
+      setTimeout(function () {
+        ulWithFragment.remove();
+      }, 12000);
     </script>
     <script src="index2.js"></script>
   </body>
