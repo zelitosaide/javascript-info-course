@@ -167,7 +167,11 @@
         return fragment;
       }
 
-      document.getElementById("ul-with-fragment").append(getListContent());
+      const ulWithFragment = document.getElementById("ul-with-fragment");
+
+      ulWithFragment.append(getListContent());
+
+      setTimeout(function () {}, 12000);
     </script>
     <script src="index2.js"></script>
   </body>
