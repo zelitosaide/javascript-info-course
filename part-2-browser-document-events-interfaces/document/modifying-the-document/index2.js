@@ -54,4 +54,5 @@ setTimeout(function () {
 // "beforeend" – insert html into elem, at the end,
 // "afterend" – insert html immediately after elem.
 
-
+// elem.insertAdjacentText(where, text)
+// elem.insertAdjacentElement(where, elem)
