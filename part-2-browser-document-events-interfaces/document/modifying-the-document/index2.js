@@ -59,3 +59,5 @@ setTimeout(function () {
 
 // elem.cloneNode(true)
 // elem.cloneNode(false)
+
+// parentElem.appendChild(node)
