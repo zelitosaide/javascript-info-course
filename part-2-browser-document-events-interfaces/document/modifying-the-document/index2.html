@@ -66,6 +66,12 @@
         "beforebegin",
         "<p>Before Begin</p>"
       );
+
+      setTimeout(function () {
+        usingAdjacentHtml.nextElementSibling.remove();
+        usingAdjacentHtml.previousElementSibling.remove();
+        usingAdjacentHtml.remove();
+      }, 6000);
     </script>
 
     <script src="index2.js"></script>
