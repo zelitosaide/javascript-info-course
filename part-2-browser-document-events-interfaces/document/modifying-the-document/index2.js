@@ -61,3 +61,4 @@ setTimeout(function () {
 // elem.cloneNode(false)
 
 // parentElem.appendChild(node)
+// parentElem.insertBefore(node, nextSibling)
