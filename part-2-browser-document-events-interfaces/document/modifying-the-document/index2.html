@@ -141,6 +141,9 @@
 
     <script>
       const div2 = document.getElementById("div-1").cloneNode(true);
+      div2.querySelector("strong").innerHTML = "Bye there!";
+
+      document.getElementById("div-1").after(div2);
     </script>
 
     <script src="index2.js"></script>
