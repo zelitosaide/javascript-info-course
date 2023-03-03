@@ -125,6 +125,11 @@
     <script>
       // no need to call remove
       document.getElementById("second").after(document.getElementById("first")); // take #second and after it insert #first
+
+      setTimeout(function () {
+        document.getElementById("first").remove();
+        document.getElementById("second").remove();
+      }, 10000);
     </script>
 
     <div class="alert">
