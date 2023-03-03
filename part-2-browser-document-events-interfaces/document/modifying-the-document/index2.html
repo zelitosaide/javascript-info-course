@@ -210,6 +210,11 @@
       const appendChild = oldSchoolList.appendChild(listItem);
 
       // parentElem.insertBefore(node, nextSibling)
+      const listItem2 = document.createElement("li");
+      listItem2.innerHTML = "Insert Before";
+      const nextSibling = oldSchoolList.children[1];
+
+      const insertBefore = oldSchoolList.insertBefore(listItem2);
     </script>
 
     <script src="index2.js"></script>
