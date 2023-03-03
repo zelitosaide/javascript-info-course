@@ -101,6 +101,10 @@
         "afterbegin",
         "<div class='alert'><strong>Hi there!</strong> You've read an important message.</div>"
       );
+
+      setTimeout(function () {
+        document.querySelector(".alert").remove();
+      }, 8000);
     </script>
 
     <script src="index2.js"></script>
