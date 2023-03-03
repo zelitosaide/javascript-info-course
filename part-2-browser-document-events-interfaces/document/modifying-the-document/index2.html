@@ -158,6 +158,15 @@
 
     <script>
       const ulWithFragment = document.getElementById("ul-with-fragment");
+      function getListContent() {
+        const fragment = new DocumentFragment();
+        for (let i = 1; i <= 4; i++) {
+          const li = document.createElement("li");
+          li.append(i);
+          fragment.append(li);
+        }
+        return fragment;
+      }
     </script>
     <script src="index2.js"></script>
   </body>
