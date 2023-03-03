@@ -87,6 +87,12 @@
       ulElem.insertAdjacentHTML("beforeend", "<li>Before End</li>");
       ulElem.insertAdjacentHTML("afterend", "<p>After End</p>");
       ulElem.insertAdjacentHTML("beforebegin", "<!-- Comment -->");
+
+      setTimeout(function () {
+        ulElem.previousElementSibling.remove();
+        ulElem.previousSibling.remove();
+        ulElem.nextElementSibling.remove();
+      }, 7000);
     </script>
 
     <script src="index2.js"></script>
