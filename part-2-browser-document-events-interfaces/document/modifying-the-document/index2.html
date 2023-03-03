@@ -215,6 +215,13 @@
       const nextSibling = oldSchoolList.children[1];
 
       const insertBefore = oldSchoolList.insertBefore(listItem2, nextSibling);
+
+      const insertAsFirstElement = document.createElement("li");
+      insertAsFirstElement.innerHTML = "Insert as First Element";
+      oldSchoolList.insertBefore(
+        insertAsFirstElement,
+        oldSchoolList.firstElementChild
+      );
     </script>
 
     <script src="index2.js"></script>
