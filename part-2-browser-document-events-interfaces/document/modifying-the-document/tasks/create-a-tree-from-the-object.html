@@ -20,14 +20,14 @@
         },
       };
 
-      function print(data) {
+      function createTree(data) {
         Object.entries(data).forEach(function ([key, value]) {
           console.log(key, value);
-          print(value);
+          createTree(value);
         });
       }
 
-      print(data);
+      createTree(data);
     </script>
   </body>
 </html>
