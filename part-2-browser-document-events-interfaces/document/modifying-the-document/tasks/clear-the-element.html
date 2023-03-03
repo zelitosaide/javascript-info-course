@@ -16,11 +16,13 @@
         // for (let i = 0; i < elem.children.length; i++) {
         //   elem.children[i].remove();
         // }
-
         // OR this
-        for (const node of elem.children) {
-          // console.log(node);
-          node.remove();
+        // for (const node of elem.children) {
+        //   node.remove();
+        // }
+        // But this
+        while (elem.firstChild) {
+          elem.firstChild.remove();
         }
         // elem.innerHTML = "";
       }
