@@ -20,14 +20,25 @@
         },
       };
 
-      function createTree(data) {
+      const container = document.createElement("ul");
+
+      function createTree(container, data) {
         Object.entries(data).forEach(function ([key, value]) {
-          console.log(key, value);
-          createTree(value);
+          const li = document.createElement("li");
+          if (Object.entries(value).length > 0) {
+            const ul = document.createElement("ul");
+            createTree(ul, value);
+            li.innerHTML = key + ul;
+          } else {
+            li.innerHTML = key;
+            container.append(li);
+          }
+          // createTree(value);
+          // console.log(key, value);
         });
       }
 
-      createTree(data);
+      createTree(container, data);
     </script>
   </body>
 </html>
