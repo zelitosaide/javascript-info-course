@@ -123,7 +123,8 @@
     <div id="second">Second</div>
 
     <script>
-      document.getElementById("second").after(document.getElementById("first"));
+      // no need to call remove
+      document.getElementById("second").after(document.getElementById("first")); // take #second and after it insert #first
     </script>
 
     <script src="index2.js"></script>
