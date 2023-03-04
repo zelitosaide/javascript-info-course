@@ -34,8 +34,7 @@
       const container = document.createElement("ul");
 
       function createTree(container, obj) {
-        const hasEntries = Object.entries(obj).length;
-        if (hasEntries) {
+        if (Object.entries(obj).length) {
           Object.entries(obj).forEach(function ([key, value]) {
             const li = document.createElement("li");
             if (Object.entries(value).length) {
