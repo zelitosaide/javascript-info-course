@@ -33,22 +33,24 @@
 
       const container = document.createElement("ul");
 
-      function createTree(container, obj) {
-        if (Object.entries(obj).length) {
-          Object.entries(obj).forEach(function ([key, value]) {
-            const li = document.createElement("li");
-            if (Object.entries(value).length) {
-              const ul = document.createElement("ul");
-              li.append(key, ul);
-              container.append(li);
-              createTree(ul, value);
-            } else {
-              li.append(key);
-              container.append(li);
-            }
-          });
-        }
-      }
+      function createTree(container, obj) {}
+
+      // function createTree(container, obj) {
+      //   if (Object.entries(obj).length) {
+      //     Object.entries(obj).forEach(function ([key, value]) {
+      //       const li = document.createElement("li");
+      //       if (Object.entries(value).length) {
+      //         const ul = document.createElement("ul");
+      //         li.append(key, ul);
+      //         container.append(li);
+      //         createTree(ul, value);
+      //       } else {
+      //         li.append(key);
+      //         container.append(li);
+      //       }
+      //     });
+      //   }
+      // }
 
       createTree(container, data);
       document.body.append(container);
