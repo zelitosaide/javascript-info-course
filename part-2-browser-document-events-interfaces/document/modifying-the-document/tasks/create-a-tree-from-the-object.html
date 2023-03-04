@@ -37,8 +37,9 @@
         const hasEntries = Object.entries(obj).length;
 
         if (hasEntries) {
-          Object.entries(obj).forEach(function (value) {
-            console.log(value);
+          Object.entries(obj).forEach(function ([key, value]) {
+            console.log(key);
+            createTree(null, value);
           });
         }
       }
@@ -60,8 +61,8 @@
       //   }
       // }
 
-      createTree(container, data);
-      document.body.append(container);
+      // createTree(container, data);
+      // document.body.append(container);
     </script>
   </body>
 </html>
