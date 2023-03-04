@@ -42,7 +42,8 @@
               console.log(key, value);
               createTree(null, value);
             } else {
-              console.log(key);
+              li.append(key);
+              container.append(li);
             }
           });
         }
