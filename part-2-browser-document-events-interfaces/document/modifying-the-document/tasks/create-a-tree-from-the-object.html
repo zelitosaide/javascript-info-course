@@ -22,9 +22,12 @@
       const container = document.createElement("ul");
 
       function createTree(container, obj) {
-        Object.entries(obj).forEach(function ([key, value]) {
-          console.log(key, value);
-        });
+        if (Object.entries(obj).length) {
+          Object.entries(obj).forEach(function ([key, value]) {
+            console.log(key, value);
+            createTree(null, value);
+          });
+        }
         // Object.entries(obj).forEach(function ([key, value]) {
         //   const li = document.createElement("li");
         //   if (Object.entries(value).length > 0) {
