@@ -24,22 +24,13 @@
       function createTree(container, obj) {
         if (Object.entries(obj).length) {
           Object.entries(obj).forEach(function ([key, value]) {
-            console.log(key, value);
-            createTree(null, value);
+            const li = document.createElement("li");
+            const ul = document.createElement("ul");
+            li.append(key, ul);
+            container.append(li);
+            createTree(ul, value);
           });
         }
-        // Object.entries(obj).forEach(function ([key, value]) {
-        //   const li = document.createElement("li");
-        //   if (Object.entries(value).length > 0) {
-        //     const ul = document.createElement("ul");
-        //     createTree(ul, value);
-        //     li.append(key, ul);
-        //     container.append(li);
-        //   } else {
-        //     li.append(key);
-        //     container.append(li);
-        //   }
-        // });
       }
 
       createTree(container, data);
