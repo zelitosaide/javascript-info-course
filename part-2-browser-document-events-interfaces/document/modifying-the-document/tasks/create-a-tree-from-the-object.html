@@ -35,12 +35,13 @@
 
       function createTree(container, obj) {
         const hasEntries = Object.entries(obj).length;
-
         if (hasEntries) {
           Object.entries(obj).forEach(function ([key, value]) {
             console.log(key);
             createTree(null, value);
           });
+        } else {
+          console.log(obj);
         }
       }
 
