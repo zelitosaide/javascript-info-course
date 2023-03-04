@@ -37,6 +37,9 @@
         const hasEntries = Object.entries(obj).length;
 
         if (hasEntries) {
+          Object.entries(obj).forEach(function (value) {
+            console.log(value);
+          });
         }
       }
 
