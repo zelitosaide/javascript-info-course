@@ -53,21 +53,15 @@
 
       function createTree(container, obj) {
         container.innerHTML = createTreeText(obj);
+        console.log(container.outerHTML);
       }
 
       function createTreeText(obj) {
         let li = "";
-        let ul;
-
         for (const key in obj) {
-          li += "<li>" + key + "</li>";
+          li += "<tag>" + key + createTreeText(obj[key]) + "</tag>";
         }
-
-        if (li) {
-          ul = "<ul>" + li + "</ul>";
-        }
-
-        return ul || "";
+        return "<ul>" + li + "</ul>";
       }
 
       createTree(document.getElementById("tree"), data);
