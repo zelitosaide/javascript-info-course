@@ -59,7 +59,7 @@
       function createTreeText(obj) {
         let li = "";
         for (const key in obj) {
-          li += "<tag>" + key + createTreeText(obj[key]) + "</tag>";
+          li += "<li>" + key + createTreeText(obj[key]) + "</li>";
         }
         return "<ul>" + li + "</ul>";
       }
