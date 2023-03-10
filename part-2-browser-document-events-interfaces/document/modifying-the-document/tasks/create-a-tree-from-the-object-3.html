@@ -26,7 +26,13 @@
         container.append(createTreeDom(obj));
       }
 
-      function createTreeDom(obj) {}
+      function createTreeDom(obj) {
+        const ul = document.createElement("ul");
+
+        for (const key in obj) {
+        }
+        return ul;
+      }
 
       createTree(document.getElementById("tree"), data);
     </script>
