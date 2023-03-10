@@ -1,7 +1,36 @@
 <!DOCTYPE html>
 <html>
   <body>
-    <div id="container"></div>
+    <div id="tree"></div>
+
+    <!-- The result should be:
+      <div id="tree">
+        <ul>
+          <li>Fish
+            <ul>
+              <li>trout</li>
+              <li>salmon</li>
+            </ul>
+          </li>
+          <li>Trees
+            <ul>
+              <li>Huge
+                <ul>
+                  <li>sequoia</li>
+                  <li>oak</li>
+                </ul>
+              </li>
+              <li>Flowering
+                <ul>
+                  <li>apple tree</li>
+                  <li>magnolia</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    -->
 
     <script>
       let data = {
@@ -24,8 +53,7 @@
 
       function createTree() {}
 
-      let container = document.getElementById("container");
-      createTree(container, data);
+      createTree(document.getElementById("tree"), data);
     </script>
   </body>
 </html>
