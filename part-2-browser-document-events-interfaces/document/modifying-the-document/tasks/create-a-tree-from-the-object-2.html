@@ -61,7 +61,11 @@
         for (const key in obj) {
           li += "<li>" + key + createTreeText(obj[key]) + "</li>";
         }
-        return "<ul>" + li + "</ul>";
+        if (li) {
+          return "<ul>" + li + "</ul>";
+        } else {
+          return li;
+        }
       }
 
       createTree(document.getElementById("tree"), data);
