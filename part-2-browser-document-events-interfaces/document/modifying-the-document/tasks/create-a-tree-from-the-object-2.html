@@ -1,27 +1,31 @@
 <!DOCTYPE html>
 <html>
-  <script>
-    let data = {
-      Fish: {
-        trout: {},
-        salmon: {},
-      },
+  <body>
+    <div id="container"></div>
 
-      Tree: {
-        Huge: {
-          sequoia: {},
-          oak: {},
+    <script>
+      let data = {
+        Fish: {
+          trout: {},
+          salmon: {},
         },
-        Flowering: {
-          "apple tree": {},
-          magnolia: {},
+
+        Tree: {
+          Huge: {
+            sequoia: {},
+            oak: {},
+          },
+          Flowering: {
+            "apple tree": {},
+            magnolia: {},
+          },
         },
-      },
-    };
+      };
 
-    function createTree() {}
+      function createTree() {}
 
-    let container = document.getElementById("container");
-    createTree(container, data);
-  </script>
+      let container = document.getElementById("container");
+      createTree(container, data);
+    </script>
+  </body>
 </html>
