@@ -62,6 +62,12 @@
         for (const key in obj) {
           li += "<li>" + key + "</li>";
         }
+
+        if (li) {
+          ul = "<ul>" + li + "</ul>";
+        }
+
+        return ul || "";
       }
 
       createTree(document.getElementById("tree"), data);
