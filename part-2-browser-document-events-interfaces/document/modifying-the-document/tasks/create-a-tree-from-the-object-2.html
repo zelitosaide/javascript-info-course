@@ -51,7 +51,9 @@
         },
       };
 
-      function createTree() {}
+      function createTree(container, obj) {
+        container.innerHTML = createTreeText(obj);
+      }
 
       createTree(document.getElementById("tree"), data);
     </script>
