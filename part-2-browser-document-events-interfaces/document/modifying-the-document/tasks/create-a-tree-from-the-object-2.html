@@ -55,7 +55,14 @@
         container.innerHTML = createTreeText(obj);
       }
 
-      function createTreeText(obj) {}
+      function createTreeText(obj) {
+        let li = "";
+        let ul;
+
+        for (const key in obj) {
+          li += "<li>" + key + "</li>";
+        }
+      }
 
       createTree(document.getElementById("tree"), data);
     </script>
