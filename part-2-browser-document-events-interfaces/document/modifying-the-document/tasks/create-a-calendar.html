@@ -27,33 +27,35 @@
         let table = `
           <table>
             <tr>
+              <th>SU</th>
               <th>MO</th>
               <th>TU</th>
               <th>WE</th>
               <th>TH</th>
               <th>FR</th>
               <th>SA</th>
-              <th>SU</th>
             </tr>
         `;
 
         const mon = month - 1;
         const date = new Date(year, mon);
 
-        console.log(date.getDay());
+        for (let i = 0; i < date.getDay(); i++) {
+          table += "<td></td>";
+        }
+
+        table += "<td>" + date.getDate() + "</td>";
+        date.setDate(date.getDate() + 1);
+        table += "<td>" + date.getDate() + "</td>";
+        date.setDate(date.getDate() + 1);
+        table += "<td>" + date.getDate() + "</td>";
+        date.setDate(date.getDate() + 1);
+        table += "<td>" + date.getDate() + "</td>";
 
         elem.innerHTML = table;
       }
 
-      function getDay(date) {
-        let day = date.getDay();
-        if (day === 0) {
-          day = 7;
-        }
-        return day - 1;
-      }
-
-      createCalendar(calendar, 2012, 9);
+      createCalendar(calendar, 2023, 3);
     </script>
   </body>
 </html>
