@@ -39,3 +39,6 @@ const timerId = setTimeout(function () {
 }, 6000);
 
 console.log("Timer Identifier", timerId);
+
+clearTimeout(timerId);
+console.log("Timer Identifier after cancelled", timerId);
