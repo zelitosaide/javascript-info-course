@@ -61,4 +61,5 @@ const timerIdentifier = setInterval(
 // after 20 seconds stop
 setTimeout(function () {
   clearInterval(timerIdentifier);
+  console.log("stop");
 }, 20000);
