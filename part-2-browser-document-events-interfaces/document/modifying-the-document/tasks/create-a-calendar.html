@@ -54,6 +54,12 @@
           date.setDate(date.getDate() + 1);
         }
 
+        if (date.getDay() !== 0) {
+          for (let i = date.getDay(); i < 7; i++) {
+            table += "<td></td>";
+          }
+        }
+
         elem.innerHTML = table;
       }
 
