@@ -53,7 +53,8 @@ console.log("Timer Identifier after canceled", timerId);
 const timerIdentifier = setInterval(
   (function () {
     let number = 1;
-    return () => console.log("tick", number++);
+    // return () => console.log("tick", number++);
+    return () => alert("tick: " + number++);
   })(),
   2000
 );
@@ -61,5 +62,6 @@ const timerIdentifier = setInterval(
 // after 20 seconds stop
 setTimeout(function () {
   clearInterval(timerIdentifier);
-  console.log("stop");
+  // console.log("stop");
+  alert("stop");
 }, 20000);
