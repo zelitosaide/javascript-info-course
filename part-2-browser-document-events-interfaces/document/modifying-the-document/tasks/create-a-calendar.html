@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      table {
+        border-collapse: collapse;
+      }
+
+      td,
+      th {
+        border: 1px solid black;
+        padding: 3px;
+        text-align: center;
+      }
+
+      th {
+        font-weight: bold;
+        background-color: #e6e6e6;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="calendar"></div>
+
+    <script>
+      function createCalendar(elem, year, month) {
+        let table = `
+          <table>
+            <tr>
+              <th>MO</th>
+              <th>TU</th>
+              <th>WE</th>
+              <th>TH</th>
+              <th>FR</th>
+              <th>SA</th>
+              <th>SU</th>
+            </tr>
+        `;
+
+        const mon = month - 1;
+        const date = new Date(year, mon);
+
+        console.log(date.getDay());
+
+        elem.innerHTML = table;
+      }
+
+      function getDay(date) {
+        let day = date.getDay();
+        if (day === 0) {
+          day = 7;
+        }
+        return day - 1;
+      }
+
+      createCalendar(calendar, 2012, 9);
+    </script>
+  </body>
+</html>
