@@ -38,12 +38,10 @@
             <tr>
         `;
 
-        const mon = month - 1;
-        const date = new Date(year, mon);
+        const date = new Date(year, month - 1);
 
-        while (date.getMonth() === mon) {
-          console.log(date.getDate());
-          date.setDate(date.getDate() + 1);
+        for (let i = 0; i < date.getDay(); i++) {
+          table += "<td></td>";
         }
 
         elem.innerHTML = table;
