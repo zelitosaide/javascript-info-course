@@ -19,3 +19,10 @@ setTimeout(() => console.log("From arrow function!!"), 4000);
 
 // wrong!
 // setTimeout(sayHi(), 1000);
+
+setTimeout(
+  (function () {
+    return () => console.log("Sei la!!");
+  })(),
+  5000
+);
