@@ -26,3 +26,10 @@ setTimeout(
   })(),
   5000
 );
+
+// Canceling with clearTimeout
+
+/**
+ * let timerId = setTimeout(...);
+ * clearTimeout(timerId);
+ */
