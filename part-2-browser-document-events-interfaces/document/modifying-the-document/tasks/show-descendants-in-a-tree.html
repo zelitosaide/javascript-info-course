@@ -49,6 +49,7 @@
 
       for (const li of lis) {
         const descendants = li.querySelectorAll("li").length;
+        if (!descendants) continue;
         li.firstChild.data += "[" + descendants + "]";
       }
     </script>
