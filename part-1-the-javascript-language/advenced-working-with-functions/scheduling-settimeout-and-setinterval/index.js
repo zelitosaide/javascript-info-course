@@ -37,3 +37,5 @@ setTimeout(
 const timerId = setTimeout(function () {
   console.log("never happens");
 }, 6000);
+
+console.log("Timer Identifier", timerId);
