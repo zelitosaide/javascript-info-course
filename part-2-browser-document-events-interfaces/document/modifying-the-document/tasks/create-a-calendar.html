@@ -35,24 +35,25 @@
               <th>FR</th>
               <th>SA</th>
             </tr>
+            <tr>
         `;
 
         const mon = month - 1;
         const date = new Date(year, mon);
 
-        for (let i = 0; i < date.getDay(); i++) {
-          table += "<td></td>";
+        while (date.getMonth() === mon) {
+          console.log(date.getDate());
+          date.setDate(date.getDate() + 1);
         }
 
-        table += "<td>" + date.getDate() + "</td>";
-        date.setDate(date.getDate() + 1);
-        table += "<td>" + date.getDate() + "</td>";
-        date.setDate(date.getDate() + 1);
-        table += "<td>" + date.getDate() + "</td>";
-        date.setDate(date.getDate() + 1);
-        table += "<td>" + date.getDate() + "</td>";
-
         elem.innerHTML = table;
+      }
+
+      function countDays(year, month) {
+        const mon = month - 1;
+        const date = new Date(year, mon);
+
+        while (date.getMonth() === mon) {}
       }
 
       createCalendar(calendar, 2023, 3);
