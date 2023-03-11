@@ -12,3 +12,5 @@ setTimeout(
   "Hello",
   "Zelito"
 );
+
+setTimeout("console.log('From string!!')", 3000);
