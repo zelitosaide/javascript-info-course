@@ -43,3 +43,7 @@ console.log("Timer Identifier", timerId);
 clearTimeout(timerId);
 
 console.log("Timer Identifier after canceled", timerId);
+
+// setInterval
+
+// let timerId = setInterval(func|code, [delay], [arg1], [arg2], ...)
