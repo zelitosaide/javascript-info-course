@@ -24,10 +24,11 @@
 
       function createTree(container, obj) {
         container.append(createTreeDom(obj));
+        console.log(createTreeDom(obj));
       }
 
       function createTreeDom(obj) {
-        if (Object.keys(obj).length) return;
+        if (!Object.keys(obj).length) return;
 
         const ul = document.createElement("ul");
 
