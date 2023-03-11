@@ -14,3 +14,5 @@ setTimeout(
 );
 
 setTimeout("console.log('From string!!')", 3000);
+
+setTimeout(() => console.log("From arrow function!!"), 4000);
