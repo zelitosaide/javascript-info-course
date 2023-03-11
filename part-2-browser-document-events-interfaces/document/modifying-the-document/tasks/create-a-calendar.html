@@ -44,6 +44,8 @@
           table += "<td></td>";
         }
 
+        while (date.getMonth() === month - 1) {}
+
         elem.innerHTML = table;
       }
 
