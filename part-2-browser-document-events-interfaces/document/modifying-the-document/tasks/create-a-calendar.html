@@ -40,7 +40,7 @@
 
         const date = new Date(year, month - 1);
 
-        for (let i = 0; i <tr date.getDay(); i++) {
+        for (let i = 0; i < date.getDay(); i++) {
           table += "<td></td>";
         }
 
@@ -48,9 +48,9 @@
           table += "<td>" + date.getDate() + "</td>";
           date.setDate(date.getDate() + 1);
 
-          // if (date.getDay() === 6) {
-          //   table += '</tr><tr>'
-          // }
+          if (date.getDay() === 6) {
+            table += "</tr><tr>";
+          }
         }
 
         elem.innerHTML = table;
