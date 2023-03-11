@@ -3,3 +3,12 @@
 setTimeout(function () {
   alert("Hi");
 }, 1000);
+
+setTimeout(
+  function (phrase, who) {
+    console.log(phrase, who);
+  },
+  2000,
+  "Hello",
+  "Zelito"
+);
