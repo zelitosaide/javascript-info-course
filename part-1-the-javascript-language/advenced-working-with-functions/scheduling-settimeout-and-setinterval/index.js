@@ -47,3 +47,13 @@ console.log("Timer Identifier after canceled", timerId);
 // setInterval
 
 // let timerId = setInterval(func|code, [delay], [arg1], [arg2], ...)
+
+// repeat with the interval of 2 seconds
+
+const timerIdentifier = setInterval(
+  (function () {
+    let number = 1;
+    return () => console.log("tick", number++);
+  })(),
+  2000
+);
