@@ -57,3 +57,8 @@ const timerIdentifier = setInterval(
   })(),
   2000
 );
+
+// after 20 seconds stop
+setTimeout(function () {
+  clearInterval(timerIdentifier);
+}, 20000);
