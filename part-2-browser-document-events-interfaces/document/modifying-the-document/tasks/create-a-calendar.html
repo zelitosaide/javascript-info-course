@@ -46,11 +46,12 @@
 
         while (date.getMonth() === month - 1) {
           table += "<td>" + date.getDate() + "</td>";
-          date.setDate(date.getDate() + 1);
 
           if (date.getDay() === 6) {
             table += "</tr><tr>";
           }
+
+          date.setDate(date.getDate() + 1);
         }
 
         elem.innerHTML = table;
