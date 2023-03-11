@@ -33,3 +33,7 @@ setTimeout(
  * let timerId = setTimeout(...);
  * clearTimeout(timerId);
  */
+
+const timerId = setTimeout(function () {
+  console.log("never happens");
+}, 6000);
