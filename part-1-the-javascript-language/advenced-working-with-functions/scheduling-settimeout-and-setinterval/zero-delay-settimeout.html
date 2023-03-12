@@ -12,10 +12,9 @@
 
       setTimeout(function run() {
         times.push(Date.now() - start);
-        console.log(times);
 
         if (start + 100 < Date.now()) {
-          // console.log(times);
+          console.log(times);
         } else {
           setTimeout(run);
         }

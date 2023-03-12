@@ -1,4 +1,6 @@
+const start = Date.now();
+
 let timerId = setImmediate(function run() {
   console.log("ola");
-  timerId = setImmediate(run, 1000);
-}, 1000);
+  timerId = setImmediate(run);
+});
