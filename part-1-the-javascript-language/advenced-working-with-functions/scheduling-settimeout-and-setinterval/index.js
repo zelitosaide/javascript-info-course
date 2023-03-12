@@ -65,3 +65,7 @@ setTimeout(function () {
   // console.log("stop");
   alert("stop");
 }, 20000);
+
+/** instead of:
+let timerId = setInterval(() => alert('tick'), 2000);
+*/
