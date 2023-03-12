@@ -20,6 +20,8 @@
           // increase the interval to the next run
           delay *= 2;
         }
+
+        timerId = setTimeout(request, delay);
       }, delay);
     </script>
   </body>
