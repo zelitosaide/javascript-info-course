@@ -30,6 +30,12 @@
         func(i++);
       }, 100);
 
+      let j = 1;
+      setTimeout(function run() {
+        func(j++);
+        setTimeout(run, 100);
+      }, 100);
+
       function func(number) {
         console.log(number);
       }
