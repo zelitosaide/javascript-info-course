@@ -23,6 +23,16 @@
 
         timerId = setTimeout(request, delay);
       }, delay);
+
+      let i = 1;
+
+      setInterval(function () {
+        func(i++);
+      }, 100);
+
+      function func(number) {
+        console.log(number);
+      }
     </script>
   </body>
 </html>
