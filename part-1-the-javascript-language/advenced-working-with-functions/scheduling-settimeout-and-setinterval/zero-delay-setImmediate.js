@@ -1,6 +1,12 @@
 const start = Date.now();
+let times = [];
 
 let timerId = setImmediate(function run() {
-  console.log("ola");
+  times.push();
+
+  if (start + 100 < Date.now()) {
+    console.log(times);
+  }
+
   timerId = setImmediate(run);
 });
