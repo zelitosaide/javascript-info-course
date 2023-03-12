@@ -13,7 +13,14 @@
 
       let delay = 5000;
 
-      let timerId = setTimeout(function request() {}, delay);
+      let timerId = setTimeout(function request() {
+        // ...send request...
+
+        if (/*request failed due to server overload*/ false) {
+          // increase the interval to the next run
+          delay *= 2;
+        }
+      }, delay);
     </script>
   </body>
 </html>
