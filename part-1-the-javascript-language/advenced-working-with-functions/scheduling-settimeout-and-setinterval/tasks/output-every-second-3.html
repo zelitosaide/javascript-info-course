@@ -2,7 +2,19 @@
 <html>
   <body>
     <script>
-      function printNumbers(from, to) {}
+      function printNumbers(from, to) {
+        function run() {
+          console.log(from);
+          if (current > to) {
+            clearInterval(timerId);
+          }
+          from++;
+        }
+
+        run();
+
+        let timerId = setInterval(run, 1000);
+      }
     </script>
   </body>
 </html>
