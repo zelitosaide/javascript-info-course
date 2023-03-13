@@ -35,6 +35,23 @@
 
     <script>
       const tbody = document.getElementById("table").querySelector("tbody");
+
+      const sortedContent = Array.from(tbody.querySelectorAll("tr")).sort(
+        function (a, b) {
+          const x = a.cells[0].firstChild.data.toLowerCase();
+          const y = b.cells[0].firstChild.data.toLowerCase();
+
+          if (x < y) {
+            return -1;
+          }
+          if (x > y) {
+            return 1;
+          }
+          return 0;
+        }
+      );
+
+      tbody.append(...sortedContent);
     </script>
   </body>
 </html>
