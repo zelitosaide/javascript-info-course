@@ -37,9 +37,9 @@
       const tbody = document.getElementById("table").querySelector("tbody");
 
       const sortedContent = Array.from(tbody.querySelectorAll("tr")).sort(
-        function (a, b) {
-          const x = a.cells[0].firstChild.data.toLowerCase();
-          const y = b.cells[0].firstChild.data.toLowerCase();
+        function (rowA, rowB) {
+          const x = rowA.cells[0].innerHTML.toLowerCase();
+          const y = rowB.cells[0].innerHTML.toLowerCase();
 
           if (x < y) {
             return -1;
@@ -48,6 +48,13 @@
             return 1;
           }
           return 0;
+        }
+      );
+
+      // OR
+      const sortedContent2 = Array.from(tbody.querySelectorAll("tr")).sort(
+        function (rowA, rowB) {
+          return rowA.cells[0].innerHTML.localeCompare(rowB.cells[0].innerHTML);
         }
       );
 
