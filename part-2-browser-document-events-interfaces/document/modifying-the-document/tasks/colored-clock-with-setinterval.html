@@ -60,12 +60,15 @@
       }
 
       function clockStart() {
-        update();
-        timerId = setInterval(update, 1000);
+        if (!timerId) {
+          update();
+          timerId = setInterval(update, 1000);
+        }
       }
 
       function clockStop() {
         clearInterval(timerId);
+        timerId = null;
       }
     </script>
   </body>
