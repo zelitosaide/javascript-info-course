@@ -61,6 +61,8 @@ setTimeout(function () {
 // Full rewrite with style.cssText
 
 const button = document.createElement("div");
+
+button.innerHTML = "Click me";
 button.style.cssText = `color: red !important;
   background-color: yellow;
   width: 100px;
