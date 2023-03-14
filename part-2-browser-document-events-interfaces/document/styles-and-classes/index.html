@@ -22,6 +22,14 @@
     <script>
       // don't work!
       document.body.style.margin = 10;
+      console.log(document.body.style.margin);
+
+      // now add the CSS unit (px) - and it works
+      document.body.style.margin = "10px";
+      console.log(document.body.style.margin);
+
+      console.log(document.body.style.marginTop);
+      console.log(document.body.style.marginBottom);
     </script>
 
     <script src="index.js"></script>
