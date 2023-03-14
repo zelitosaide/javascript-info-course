@@ -69,4 +69,6 @@ button.style.cssText = `color: red !important;
   text-align: center;
 `;
 
+const cssText = button.style.cssText;
+
 document.body.append(button);
