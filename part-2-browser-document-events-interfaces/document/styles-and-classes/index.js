@@ -61,3 +61,8 @@ setTimeout(function () {
 // Full rewrite with style.cssText
 
 const button = document.createElement("div");
+button.style.cssText = `color: red !important;
+  background-color: yellow;
+  width: 100px;
+  text-align: center;
+`;
