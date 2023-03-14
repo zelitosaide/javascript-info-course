@@ -85,7 +85,7 @@ alert.innerHTML =
 
 alert.setAttribute(
   "style",
-  "color: white; background-color: #555; pandding: 10px; margin-top: 20px"
+  "color: white; background-color: #555; padding: 10px; margin-top: 20px"
 );
 
 document.body.append(alert);
