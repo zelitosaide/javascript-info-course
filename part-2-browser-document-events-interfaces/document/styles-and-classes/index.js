@@ -31,3 +31,4 @@ const contains = document.body.classList.contains("add");
 // background-color  => elem.style.backgroundColor
 // z-index           => elem.style.zIndex
 // border-left-width => elem.style.borderLeftWidth
+document.body.style.backgroundColor = prompt("Background color?", "green");
