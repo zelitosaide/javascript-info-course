@@ -46,3 +46,7 @@ block.style.backgroundColor = "#777";
 block.style.width = "100px";
 block.style.height = "100px";
 block.style.display = "none";
+
+setTimeout(function () {
+  delete block.style.display;
+}, 1000);
