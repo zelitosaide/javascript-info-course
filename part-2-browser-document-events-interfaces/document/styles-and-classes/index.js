@@ -32,3 +32,10 @@ const contains = document.body.classList.contains("add");
 // z-index           => elem.style.zIndex
 // border-left-width => elem.style.borderLeftWidth
 document.body.style.backgroundColor = prompt("Background color?", "green");
+
+// Prefixed properties
+// Browser-prefixed properties like -moz-border-radius, -webkit-border-radius
+// also follow the same rule: a dash means upper case.
+
+// button.style.MozBorderRadius = '5px';
+// button.style.WebkitBorderRadius = '5px';
