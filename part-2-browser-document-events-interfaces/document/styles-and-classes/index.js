@@ -98,3 +98,5 @@ document.body.append(alert);
 
 // doesn't work!
 // document.body.style.margin = 20;
+
+// Computed styles: getComputedStyle
