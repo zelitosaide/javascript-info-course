@@ -92,3 +92,9 @@ document.body.append(alert);
 
 // Mind the units
 // Don't forget add the CSS units to values.
+
+// For instance, we should not set elem.style.top to 10, but rather to 10px.
+// Otherwise it wouldn’t work:
+
+// doesn't work!
+// document.body.style.margin = 20;
