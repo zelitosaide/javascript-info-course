@@ -78,3 +78,7 @@ document.body.append(button);
 // can safely use it for new elements, when we know we won’t delete an existing style.
 
 // The same can be accomplished by setting an attribute: div.setAttribute('style', 'color: red...').
+
+const alert = document.createElement("div");
+alert.innerHTML =
+  "Lorem Ipsum is simply dummy text of the printing and typesetting industry.";
