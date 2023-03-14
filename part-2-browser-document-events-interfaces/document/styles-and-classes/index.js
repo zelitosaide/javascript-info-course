@@ -18,5 +18,6 @@ elem.style.left = left;
 document.body.classList.add("add");
 document.body.classList.remove("new-class");
 // elem.classList.toggle("class") – adds the class if it doesn’t exist, otherwise removes it.
-document.body.classList.toggle("toggle");
+const toggle = document.body.classList.toggle("toggle");
 // elem.classList.contains("class") – checks for the given class, returns true/false.
+const contains = document.body.classList.contains("add");
