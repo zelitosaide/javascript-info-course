@@ -57,3 +57,7 @@ setTimeout(function () {
   // Or this:
   block.style.removeProperty("display");
 }, 1000);
+
+// Full rewrite with style.cssText
+
+const button = document.createElement("div");
