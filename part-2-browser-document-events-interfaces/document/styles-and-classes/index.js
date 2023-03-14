@@ -48,5 +48,12 @@ block.style.height = "100px";
 block.style.display = "none";
 
 setTimeout(function () {
-  delete block.style.display;
+  // Instead of this:
+  // delete block.style.display;
+
+  // Do this:
+  // block.style.display = "";
+
+  // Or this:
+  block.style.removeProperty("display");
 }, 1000);
