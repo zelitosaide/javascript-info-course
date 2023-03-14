@@ -41,3 +41,7 @@ document.body.style.backgroundColor = prompt("Background color?", "green");
 // button.style.WebkitBorderRadius = '5px';
 
 // Resetting the style property
+const block = document.getElementById("block");
+block.style.style.backgroundColor = "#777";
+block.style.style.width = "100px";
+block.style.style.height = "100px";
