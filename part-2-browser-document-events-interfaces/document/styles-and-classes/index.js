@@ -83,4 +83,4 @@ const alert = document.createElement("div");
 alert.innerHTML =
   "Lorem Ipsum is simply dummy text of the printing and typesetting industry.";
 
-alert.setAttribute("style", "color: white;");
+alert.setAttribute("style", "color: white; background-color: #555");
