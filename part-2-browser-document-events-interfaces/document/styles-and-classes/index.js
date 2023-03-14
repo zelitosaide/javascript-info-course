@@ -27,3 +27,7 @@ const contains = document.body.classList.contains("add");
 // Setting elem.style.width="100px" works the same as if we had in the attribute
 // style a string width:100px.
 // For multi-word property the camelCase is used:
+
+// background-color  => elem.style.backgroundColor
+// z-index           => elem.style.zIndex
+// border-left-width => elem.style.borderLeftWidth
