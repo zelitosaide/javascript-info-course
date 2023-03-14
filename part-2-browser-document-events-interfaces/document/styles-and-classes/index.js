@@ -21,3 +21,9 @@ document.body.classList.remove("new-class");
 const toggle = document.body.classList.toggle("toggle");
 // elem.classList.contains("class") – checks for the given class, returns true/false.
 const contains = document.body.classList.contains("add");
+
+// Element style
+
+// Setting elem.style.width="100px" works the same as if we had in the attribute
+// style a string width:100px.
+// For multi-word property the camelCase is used:
