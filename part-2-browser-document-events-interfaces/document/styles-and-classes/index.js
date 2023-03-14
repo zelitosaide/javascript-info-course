@@ -82,3 +82,5 @@ document.body.append(button);
 const alert = document.createElement("div");
 alert.innerHTML =
   "Lorem Ipsum is simply dummy text of the printing and typesetting industry.";
+
+alert.setAttribute("style", "color: white;");
