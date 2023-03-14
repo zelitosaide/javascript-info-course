@@ -76,3 +76,5 @@ document.body.append(button);
 // This property is rarely used, because such assignment removes all existing styles:
 // it does not add, but replaces them. May occasionally delete something needed. But we
 // can safely use it for new elements, when we know we won’t delete an existing style.
+
+// The same can be accomplished by setting an attribute: div.setAttribute('style', 'color: red...').
