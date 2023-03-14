@@ -39,3 +39,5 @@ document.body.style.backgroundColor = prompt("Background color?", "green");
 
 // button.style.MozBorderRadius = '5px';
 // button.style.WebkitBorderRadius = '5px';
+
+// Resetting the style property
