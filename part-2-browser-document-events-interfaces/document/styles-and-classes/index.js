@@ -1,9 +1,9 @@
-let top = ""; /* complex calculations */
+let _top = ""; /* complex calculations */
 let left = ""; /* complex calculations */
 
 const elem = document.createElement("div");
 
-elem.style.top = top;
+elem.style.top = _top;
 elem.style.left = left;
 
 // className and classList
@@ -13,3 +13,10 @@ elem.style.left = left;
 
 // elem.classList
 // The elem.classList is a special object with methods to add/remove/toggle a single class.
+
+// elem.classList.add/remove("class") – adds/removes the class.
+document.body.classList.add("add");
+document.body.classList.remove("new-class");
+// elem.classList.toggle("class") – adds the class if it doesn’t exist, otherwise removes it.
+document.body.classList.toggle("toggle");
+// elem.classList.contains("class") – checks for the given class, returns true/false.
