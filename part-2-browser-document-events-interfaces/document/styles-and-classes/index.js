@@ -72,3 +72,5 @@ button.style.cssText = `color: red !important;
 const cssText = button.style.cssText;
 
 document.body.append(button);
+
+// This property is rarely used, because such assignment removes all existing styles:
