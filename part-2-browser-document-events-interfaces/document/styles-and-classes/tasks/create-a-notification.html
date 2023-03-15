@@ -54,13 +54,16 @@
 
       // test it recursively
       let i = 1;
-      setInterval(function () {
+      let timerId = setInterval(function () {
         showNotification({
           top: 10,
           right: 10,
           html: "Hello " + i++,
           className: "welcome",
         });
+        if ((i = 10)) {
+          clearInterval(timerId);
+        }
       }, 2000);
     </script>
   </body>
