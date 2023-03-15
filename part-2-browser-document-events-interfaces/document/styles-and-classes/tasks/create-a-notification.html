@@ -27,6 +27,12 @@
           div.classList.add(className);
         }
         div.innerHTML = html;
+
+        document.body.append(div);
+
+        setTimeout(function () {
+          div.remove();
+        }, 1500);
       }
 
       showNotification({
