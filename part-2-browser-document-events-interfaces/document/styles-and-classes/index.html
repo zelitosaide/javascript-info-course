@@ -56,12 +56,15 @@
       console.log(computedStyle.padding);
       console.log(computedStyle.color);
 
-      console.log("compuuted margin::", computedStyle.margin);
-      console.log("compuuted margin left::", computedStyle.marginLeft);
+      console.log("computed margin::", computedStyle.margin);
+      console.log("computed margin left::", computedStyle.marginLeft);
 
       document.body.style.padding = "";
       document.body.style.paddingLeft = "30px";
       document.body.style.paddingTop = "30px";
+
+      const compStyle = getComputedStyle(document.body);
+      console.log(compStyle.padding);
     </script>
 
     <script src="index.js"></script>
