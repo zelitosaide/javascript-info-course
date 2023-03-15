@@ -44,12 +44,24 @@
         }, 1500);
       }
 
+      // test once
       showNotification({
         top: 10, // 10px from the top of the window (by default 0px)
         right: 10, // 10px from the right edge of the window (by default 0px)
         html: "Hello!", // the HTML of notification
         className: "welcome", // an additional class for the div (optional)
       });
+
+      // test it recursively
+      let i = 1;
+      setInterval(function () {
+        showNotification({
+          top: 10,
+          right: 10,
+          html: "Hello " + i++,
+          className: "welcome",
+        });
+      }, 2000);
     </script>
   </body>
 </html>
