@@ -100,3 +100,5 @@ document.body.append(alert);
 // document.body.style.margin = 20;
 
 // Computed styles: getComputedStyle
+// getComputedStyle.
+// getComputedStyle(element, [pseudo])
