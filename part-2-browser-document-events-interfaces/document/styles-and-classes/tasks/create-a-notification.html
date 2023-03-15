@@ -26,9 +26,9 @@
     <script>
       function showNotification({ top = 0, right = 0, className, html }) {
         const div = document.createElement("div");
-        div.classList.add("notification");
         div.style.top = top + "px";
         div.style.right = right + "px";
+        div.classList.add("notification");
         if (className) {
           div.classList.add(className);
         }
