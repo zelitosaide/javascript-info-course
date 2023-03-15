@@ -1,6 +1,19 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <style>
+      body {
+        color: #1d1c1c;
+        padding: 10px;
+      }
+    </style>
+  </head>
   <body class="main page">
+    <script>
+      console.log(document.body.style.color);
+      console.log(document.body.style.padding);
+    </script>
+
     <script>
       // If we assign something to elem.className, it replaces the whole string of classes.
       document.body.className = "new-class";
