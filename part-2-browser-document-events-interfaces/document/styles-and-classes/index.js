@@ -102,3 +102,4 @@ document.body.append(alert);
 // Computed styles: getComputedStyle
 // getComputedStyle.
 // getComputedStyle(element, [pseudo])
+// getComputedStyle requires the full property name
