@@ -38,4 +38,5 @@ function showNotification() {
   div.style.right = 0 + "px";
   div.style.position = "fixed";
   div.innerHTML = "<h1>" + i++ + "</h1>";
+  document.body.append(div);
 }
