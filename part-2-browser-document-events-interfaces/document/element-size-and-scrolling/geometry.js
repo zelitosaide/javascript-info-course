@@ -42,11 +42,11 @@ function showNotification() {
 
   setTimeout(function () {
     div.remove();
-  }, 1000000);
+  }, 1000);
 }
 
 let timerId = setInterval(function () {
-  if (i > 10) {
+  if (i < 11) {
     showNotification();
   } else {
     clearInterval(timerId);
