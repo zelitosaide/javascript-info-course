@@ -43,3 +43,11 @@ document.body.append(div);
 // CSS-width (300px) plus paddings (2 * 20px) and borders (2 * 25px).
 
 // offsetHeight = 290 – the outer height.
+
+// Geometry properties are zero/null for elements that are not displayed
+// Geometry properties are calculated only for displayed elements.
+
+/**
+ * If an element (or any of its ancestors) has display:none or is not in the
+ * document, then all geometry properties are zero (or null for offsetParent).
+ */
