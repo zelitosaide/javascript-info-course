@@ -17,6 +17,6 @@ tempore ipsam.</p>`;
 
 document.getElementById("hidden").append(hidden);
 
-console.log();
+console.log(hidden.offsetParent);
 // For <body> and <html>.
 // For elements with position:fixed.
