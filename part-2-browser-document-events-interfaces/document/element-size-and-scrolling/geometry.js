@@ -116,3 +116,6 @@ function isHidden(elem) {
 // Please note that such isHidden returns true for elements that are on-screen, but have zero sizes.
 
 // clientTop/Left
+// Inside the element we have the borders.
+// To measure them, there are properties clientTop and clientLeft.
+// In our example:
