@@ -101,3 +101,5 @@ document.body.append(elem5);
 console.log(":(", elem6.offsetParent);
 console.log(":(", elem6.offsetWidth);
 console.log(":(", elem6.offsetHeight);
+console.log(":(", elem6.offsetTop);
+console.log(":(", elem6.offsetLeft);
