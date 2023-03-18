@@ -75,7 +75,7 @@ const elem4 = document.createElement("div");
 elem3.id = "elem3";
 elem3.style.position = "relative";
 elem4.style.cssText =
-  "position: absolute; background-color: pink; top: 10px; left: 20px";
+  "position: absolute; background-color: pink; top: 10px; left: 10px; width: 50px; height: 50px";
 elem3.append(elem4);
 elem3.style.display = "";
 
