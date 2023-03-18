@@ -112,3 +112,5 @@ console.log(":(", elem6.offsetLeft);
 function isHidden(elem) {
   return !elem.offsetWidth && !elem.offsetHeight;
 }
+
+// Please note that such isHidden returns true for elements that are on-screen, but have zero sizes.
