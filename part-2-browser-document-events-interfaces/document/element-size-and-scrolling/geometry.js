@@ -39,4 +39,8 @@ function showNotification() {
   div.style.position = "fixed";
   div.innerHTML = "<h1>" + i++ + "</h1>";
   document.body.append(div);
+
+  setTimeout(function () {
+    div.remove();
+  }, 1000);
 }
