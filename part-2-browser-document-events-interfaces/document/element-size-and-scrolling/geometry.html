@@ -9,19 +9,25 @@
         position: absolute;
         left: 180px;
         top: 180px;
+        border: 1px solid black;
       }
     </style>
   </head>
   <body>
     <main id="main">
       <article>
-        <div id="example">...</div>
+        <div id="example">
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nam
+          necessitatibus itaque commodi cum quo eligendi hic libero! Veniam at
+          quisquam quia possimus perspiciatis totam quo magni minus, impedit
+          tempore ipsam.
+        </div>
       </article>
     </main>
 
     <script>
       const example = document.getElementById("example");
-      console.log();
+      console.log(example.offsetParent.id);
     </script>
   </body>
 </html>
