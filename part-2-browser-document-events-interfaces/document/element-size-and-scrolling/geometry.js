@@ -72,3 +72,5 @@ console.log(elem2.offsetLeft);
 
 const elem3 = document.createElement("div");
 elem3.style.display = "none";
+
+document.body.append(elem3);
