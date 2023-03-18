@@ -19,6 +19,7 @@ document.getElementById("hidden").append(hidden);
 console.log(hidden.offsetParent);
 
 const notInTheDocumentContainer = document.createElement("div");
+notInTheDocumentContainer.style.position = "relative";
 const notInTheDocument = document.createElement("div");
 // For <body> and <html>.
 // For elements with position:fixed.
