@@ -5,9 +5,8 @@
  * 3 - <body>.
  */
 
-/**
- * There are several occasions when offsetParent is null:
- * 1 - For not shown elements (display:none or not in the document).
- * 2 - For <body> and <html>.
- * 3 - For elements with position:fixed.
- */
+// There are several occasions when offsetParent is null:
+
+// For not shown elements (display:none or not in the document).
+// For <body> and <html>.
+// For elements with position:fixed.
