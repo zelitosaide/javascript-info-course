@@ -51,3 +51,8 @@ document.body.append(div);
  * If an element (or any of its ancestors) has display:none or is not in the
  * document, then all geometry properties are zero (or null for offsetParent).
  */
+
+const elem = document.createElement("div");
+elem.style.display = "none";
+document.body.append(elem);
+console.log(elem.offsetParent);
