@@ -42,5 +42,7 @@ function showNotification() {
 
   setTimeout(function () {
     div.remove();
-  }, 1000);
+  }, 1000000);
 }
+
+showNotification();
