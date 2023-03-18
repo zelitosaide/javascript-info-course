@@ -9,5 +9,12 @@
 
 // For not shown elements (display:none or not in the document).
 const hidden = document.createElement("div");
+hidden.style.display = "none";
+hidden.innerHTML = `<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nam
+necessitatibus itaque commodi cum quo eligendi hic libero! Veniam at
+quisquam quia possimus perspiciatis totam quo magni minus, impedit
+tempore ipsam.</p>`;
+
+document.getElementById("hidden").append(hidden);
 // For <body> and <html>.
 // For elements with position:fixed.
