@@ -8,5 +8,6 @@
 // There are several occasions when offsetParent is null:
 
 // For not shown elements (display:none or not in the document).
+const hidden = document.createElement("div");
 // For <body> and <html>.
 // For elements with position:fixed.
