@@ -32,8 +32,10 @@ console.log("html", document.documentElement.offsetParent);
 // For elements with position:fixed.
 let i = 1;
 
-function showNotification({}) {
+function showNotification() {
   const div = document.createElement("div");
+  div.style.top = 0 + "px";
+  div.style.right = 0 + "px";
   div.style.position = "fixed";
   div.innerHTML = "<h1>" + i++ + "</h1>";
 }
