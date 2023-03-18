@@ -103,3 +103,8 @@ console.log(":(", elem6.offsetWidth);
 console.log(":(", elem6.offsetHeight);
 console.log(":(", elem6.offsetTop);
 console.log(":(", elem6.offsetLeft);
+
+/**
+ * For example, offsetParent is null, and offsetWidth, offsetHeight are 0 when we created an
+ * element, but haven’t inserted it into the document yet, or it (or its ancestor) has display:none.
+ */
