@@ -80,3 +80,5 @@ elem3.append(elem4);
 elem3.style.display = "";
 
 document.body.append(elem3);
+
+console.log("parent", elem4.offsetParent);
