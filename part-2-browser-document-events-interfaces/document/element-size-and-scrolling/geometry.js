@@ -45,4 +45,10 @@ function showNotification() {
   }, 1000000);
 }
 
-showNotification();
+let timerId = setInterval(function () {
+  if (i > 10) {
+    showNotification();
+  } else {
+    clearInterval(timerId);
+  }
+}, 2000);
