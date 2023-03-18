@@ -22,5 +22,7 @@ const notInTheDocumentContainer = document.createElement("div");
 notInTheDocumentContainer.style.position = "relative";
 const notInTheDocument = document.createElement("div");
 notInTheDocumentContainer.append(notInTheDocument);
+
+console.log(notInTheDocument.offsetParent);
 // For <body> and <html>.
 // For elements with position:fixed.
