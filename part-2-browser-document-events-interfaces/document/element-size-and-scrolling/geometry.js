@@ -132,3 +132,7 @@ function isHidden(elem) {
  * Arabic or Hebrew languages). The scrollbar is then not on the right, but on the left,
  * and then clientLeft also includes the scrollbar width.
  */
+
+// clientWidth/Height
+// These properties provide the size of the area inside the element borders.
+// They include the content width together with paddings, but without the scrollbar:
