@@ -87,3 +87,5 @@ console.log("parent", elem4.offsetWidth);
 console.log("parent", elem4.offsetHeight);
 console.log("parent", elem4.offsetTop);
 console.log("parent", elem4.offsetLeft);
+
+// case with parent not added to document
