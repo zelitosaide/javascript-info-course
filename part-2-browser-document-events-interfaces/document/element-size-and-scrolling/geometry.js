@@ -30,3 +30,6 @@ console.log("body", document.body.offsetParent);
 console.log("html", document.documentElement.offsetParent);
 
 // For elements with position:fixed.
+let i = 1;
+
+function showNotification() {}
