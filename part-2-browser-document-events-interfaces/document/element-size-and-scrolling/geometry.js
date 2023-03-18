@@ -82,3 +82,7 @@ elem3.style.display = "";
 document.body.append(elem3);
 
 console.log("parent", elem4.offsetParent);
+console.log("parent", elem4.offsetWidth);
+console.log("parent", elem4.offsetHeight);
+console.log("parent", elem4.offsetTop);
+console.log("parent", elem4.offsetLeft);
