@@ -16,5 +16,7 @@ quisquam quia possimus perspiciatis totam quo magni minus, impedit
 tempore ipsam.</p>`;
 
 document.getElementById("hidden").append(hidden);
+
+console.log();
 // For <body> and <html>.
 // For elements with position:fixed.
