@@ -97,3 +97,5 @@ elem6.style.cssText =
 elem5.append(elem6);
 
 document.body.append(elem5);
+
+console.log(":(", elem6.offsetParent);
