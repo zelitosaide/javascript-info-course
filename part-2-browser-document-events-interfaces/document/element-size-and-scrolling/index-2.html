@@ -18,10 +18,9 @@
 
     <script>
       const snack = document.getElementById("snack");
-      const styles = getComputedStyle(snack);
 
       setInterval(function () {
-        snack.style.left = Number(styles.left.split("px")[0]) + 10 + "px";
+        snack.style.left = snack.offsetLeft + 10 + "px";
       }, 500);
     </script>
   </body>
