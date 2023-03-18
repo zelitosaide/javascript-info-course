@@ -77,7 +77,7 @@ elem3.style.position = "relative";
 elem4.style.cssText =
   "position: absolute; background-color: pink; top: 10px; left: 10px; width: 50px; height: 50px";
 elem3.append(elem4);
-elem3.style.display = "";
+elem3.style.display = "none";
 
 document.body.append(elem3);
 
