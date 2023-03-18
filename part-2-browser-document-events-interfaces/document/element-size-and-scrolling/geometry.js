@@ -119,3 +119,5 @@ function isHidden(elem) {
 // Inside the element we have the borders.
 // To measure them, there are properties clientTop and clientLeft.
 // In our example:
+// clientLeft = 25 – left border width
+// clientTop = 25 – top border width
