@@ -89,3 +89,5 @@ console.log("parent", elem4.offsetTop);
 console.log("parent", elem4.offsetLeft);
 
 // case with parent not added to document
+const elem5 = document.createElement("div");
+elem5.style.position = "relative";
