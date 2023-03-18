@@ -29,26 +29,12 @@ console.log("::", notInTheDocument.offsetParent);
 console.log("body", document.body.offsetParent);
 console.log("html", document.documentElement.offsetParent);
 
-// For elements with position:fixed.
+// For elements with position:fixed. (in chrome only)
 let i = 1;
 
-function showNotification() {
-  const div = document.createElement("div");
-  div.style.top = 0 + "px";
-  div.style.right = 0 + "px";
-  div.style.position = "fixed";
-  div.innerHTML = "<h1>" + i++ + "</h1>";
-  document.body.append(div);
-
-  setTimeout(function () {
-    div.remove();
-  }, 1000);
-}
-
-let timerId = setInterval(function () {
-  if (i < 11) {
-    showNotification();
-  } else {
-    clearInterval(timerId);
-  }
-}, 2000);
+const div = document.createElement("div");
+div.style.top = 0 + "px";
+div.style.right = 0 + "px";
+div.style.position = "fixed";
+div.innerHTML = "<h1>" + i++ + "</h1>";
+document.body.append(div);
