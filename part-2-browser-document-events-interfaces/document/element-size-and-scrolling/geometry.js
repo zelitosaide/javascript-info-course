@@ -41,3 +41,5 @@ document.body.append(div);
 
 // offsetWidth = 390 – the outer width, can be calculated as inner
 // CSS-width (300px) plus paddings (2 * 20px) and borders (2 * 25px).
+
+// offsetHeight = 290 – the outer height.
