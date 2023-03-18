@@ -60,3 +60,7 @@ console.log(elem.offsetWidth);
 console.log(elem.offsetHeight);
 console.log(elem.offsetLeft);
 console.log(elem.offsetTop);
+
+console.log("----");
+const elem2 = document.createElement("div");
+console.log(elem2.offsetParent);
