@@ -69,3 +69,6 @@ console.log(elem2.offsetWidth);
 console.log(elem2.offsetHeight);
 console.log(elem2.offsetTop);
 console.log(elem2.offsetLeft);
+
+const elem3 = document.createElement("div");
+elem3.style.display = "none";
