@@ -99,3 +99,5 @@ elem5.append(elem6);
 document.body.append(elem5);
 
 console.log(":(", elem6.offsetParent);
+console.log(":(", elem6.offsetWidth);
+console.log(":(", elem6.offsetHeight);
