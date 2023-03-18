@@ -92,4 +92,6 @@ console.log("parent", elem4.offsetLeft);
 const elem5 = document.createElement("div");
 elem5.style.position = "relative";
 const elem6 = document.createElement("div");
+elem6.style.cssText =
+  "position: absolute; background-color: pink; top: 10px; right: 10px; width: 50px; height: 50px";
 elem5.append(elem6);
