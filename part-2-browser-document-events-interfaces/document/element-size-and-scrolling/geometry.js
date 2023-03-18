@@ -24,5 +24,7 @@ const notInTheDocument = document.createElement("div");
 notInTheDocumentContainer.append(notInTheDocument);
 
 console.log("::", notInTheDocument.offsetParent);
+
 // For <body> and <html>.
+console.log(document.body.offsetParent);
 // For elements with position:fixed.
