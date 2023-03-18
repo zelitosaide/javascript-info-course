@@ -28,4 +28,5 @@ console.log("::", notInTheDocument.offsetParent);
 // For <body> and <html>.
 console.log("body", document.body.offsetParent);
 console.log("html", document.documentElement.offsetParent);
+
 // For elements with position:fixed.
