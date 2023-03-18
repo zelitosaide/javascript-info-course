@@ -38,3 +38,6 @@ div.style.right = 0 + "px";
 div.style.position = "fixed";
 div.innerHTML = "<h1>" + i++ + "</h1>";
 document.body.append(div);
+
+// offsetWidth = 390 – the outer width, can be calculated as inner
+// CSS-width (300px) plus paddings (2 * 20px) and borders (2 * 25px).
