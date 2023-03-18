@@ -35,5 +35,5 @@ let i = 1;
 function showNotification({}) {
   const div = document.createElement("div");
   div.style.position = "fixed";
-  div.innerHTML = i++;
+  div.innerHTML = "<h1>" + i++ + "</h1>";
 }
