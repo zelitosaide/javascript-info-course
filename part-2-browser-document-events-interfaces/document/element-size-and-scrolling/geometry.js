@@ -108,3 +108,7 @@ console.log(":(", elem6.offsetLeft);
  * For example, offsetParent is null, and offsetWidth, offsetHeight are 0 when we created an
  * element, but haven’t inserted it into the document yet, or it (or its ancestor) has display:none.
  */
+
+function isHidden(elem) {
+  return !elem.offsetWidth && !elem.offsetHeight;
+}
