@@ -34,4 +34,5 @@ let i = 1;
 
 function showNotification({}) {
   const div = document.createElement("div");
+  div.innerHTML = i++;
 }
