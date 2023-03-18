@@ -70,6 +70,7 @@ console.log(elem2.offsetHeight);
 console.log(elem2.offsetTop);
 console.log(elem2.offsetLeft);
 
+// case with parent set display:none
 const elem3 = document.createElement("div");
 const elem4 = document.createElement("div");
 elem3.id = "elem3";
