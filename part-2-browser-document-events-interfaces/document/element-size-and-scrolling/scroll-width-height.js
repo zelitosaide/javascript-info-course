@@ -5,3 +5,5 @@
 // scrollLeft/scrollTop
 // Properties scrollLeft/scrollTop are the width/height of the hidden, scrolled out part of the element.
 // In other words, scrollTop is “how much is scrolled up”.
+// Setting scrollTop to 0 or a big value, such as 1e9 will make the
+//  element scroll to the very top/bottom respectively.
