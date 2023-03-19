@@ -65,6 +65,11 @@
           document.getElementById("example").scrollHeight
         );
       }
+
+      function resetHeight() {
+        const element = document.getElementById("example");
+        element.style.height = `${element.scrollHeight}px`;
+      }
     </script>
   </body>
 </html>
