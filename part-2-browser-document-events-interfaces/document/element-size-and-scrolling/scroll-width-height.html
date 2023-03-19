@@ -18,6 +18,7 @@
     <div
       onscroll="showScrollHeight()"
       id="example"
+      onclick="scroll10px()"
     >
       <h3>Introduction</h3>
       <p>
@@ -59,11 +60,12 @@
     </button>
 
     <script>
+      function scroll10px() {
+        document.getElementById("example").scrollTop += 10;
+      }
       function showScrollHeight() {
-        console.log(
-          "scrollHeight",
-          document.getElementById("example").scrollHeight
-        );
+        const elem = document.getElementById("example");
+        console.log("scrollHeight", elem.scrollHeight, elem.scrollTop);
         // console.log(
         //   "scrollWidth",
         //   document.getElementById("example").scrollWidth
