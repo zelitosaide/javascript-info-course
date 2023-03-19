@@ -12,7 +12,10 @@
     </style>
   </head>
   <body>
-    <div id="example">
+    <div
+      onscroll="showScrollHeight()"
+      id="example"
+    >
       <h3>Introduction</h3>
       <p>
         This Ecma Standard is based on several originating technologies, the
@@ -45,5 +48,11 @@
         2002.
       </p>
     </div>
+
+    <script>
+      function showScrollHeight() {
+        console.log(document.getElementById("example").scrollHeight);
+      }
+    </script>
   </body>
 </html>
