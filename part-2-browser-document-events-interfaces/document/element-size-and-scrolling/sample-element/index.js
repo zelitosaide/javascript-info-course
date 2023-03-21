@@ -16,6 +16,7 @@ const _top = example.offsetTop;
 const containerHeight = "container height (border + height + padding)";
 const containerHeightExperimental = border * 2 + height + padding * 2;
 const containerWidth = "container width (border + height + padding)";
+const containerWidthExperimental = border * 2 + padding * 2 + width + 16;
 
 console.log(clientWidth, example.clientWidth, clientWidthExperimental);
 console.log(clientHeight, example.clientHeight, clientHeightExperimental);
@@ -24,4 +25,4 @@ console.log("border top", borderTop);
 console.log("left", left);
 console.log("top", _top);
 console.log(containerHeight, example.offsetHeight, containerHeightExperimental);
-console.log(containerWidth);
+console.log(containerWidth, example.offsetWidth, containerWidthExperimental);
