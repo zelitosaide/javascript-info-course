@@ -10,8 +10,10 @@ const clientHeight = "content height (height + padding)";
 
 const borderLeft = example.clientLeft;
 const borderTop = example.clientTop;
+const left = example.offsetTop;
 
 console.log(clientWidth, example.clientWidth, clientWidthExperimental);
 console.log(clientHeight, example.clientHeight, clientHeightExperimental);
 console.log("border left", borderLeft);
 console.log("border top", borderTop);
+console.log("left", left);
