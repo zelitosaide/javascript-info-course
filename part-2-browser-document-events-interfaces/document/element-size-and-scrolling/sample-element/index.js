@@ -4,11 +4,12 @@ const width = +styles.width.split("px")[0]; // width - scrollbar
 const padding = +styles.paddingLeft.split("px")[0];
 const clientWidthExperimental = width + 2 * padding;
 const clientWidth = "content width (width + padding - scrollbar)";
-const clientHeight = "";
+const clientHeight = "content height (height + padding)";
 
 const borderLeft = example.clientLeft;
 const borderTop = example.clientTop;
 
 console.log(clientWidth, example.clientWidth, clientWidthExperimental);
+console.log(clientHeight);
 console.log("border left", example.clientLeft);
 console.log("border top", borderTop);
