@@ -13,5 +13,5 @@ const borderTop = example.clientTop;
 
 console.log(clientWidth, example.clientWidth, clientWidthExperimental);
 console.log(clientHeight, example.clientHeight, clientHeightExperimental);
-console.log("border left", example.clientLeft);
+console.log("border left", borderLeft);
 console.log("border top", borderTop);
