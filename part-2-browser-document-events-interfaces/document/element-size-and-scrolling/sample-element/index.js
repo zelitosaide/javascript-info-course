@@ -1,8 +1,10 @@
 const example = document.getElementById("example");
 const styles = getComputedStyle(example);
 const width = +styles.width.split("px")[0]; // width - scrollbar
+const height = +styles.height.split("px")[0];
 const padding = +styles.paddingLeft.split("px")[0];
 const clientWidthExperimental = width + 2 * padding;
+const clientHeightExperimental = height + 2 * padding;
 const clientWidth = "content width (width + padding - scrollbar)";
 const clientHeight = "content height (height + padding)";
 
