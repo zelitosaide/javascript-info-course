@@ -3,6 +3,7 @@ const styles = getComputedStyle(example);
 const width = +styles.width.split("px")[0]; // width - scrollbar
 const height = +styles.height.split("px")[0];
 const padding = +styles.paddingLeft.split("px")[0];
+const border = +styles.borderTop.split("px")[0];
 const clientWidthExperimental = width + 2 * padding;
 const clientHeightExperimental = height + 2 * padding;
 const clientWidth = "content width (width + padding - scrollbar)";
@@ -13,7 +14,7 @@ const borderTop = example.clientTop;
 const left = example.offsetLeft;
 const _top = example.offsetTop;
 const containerHeight = "container height (border + height + padding)";
-const containerHeightExperimental = "";
+const containerHeightExperimental = border * 2 + height + padding * 2;
 
 console.log(clientWidth, example.clientWidth, clientWidthExperimental);
 console.log(clientHeight, example.clientHeight, clientHeightExperimental);
