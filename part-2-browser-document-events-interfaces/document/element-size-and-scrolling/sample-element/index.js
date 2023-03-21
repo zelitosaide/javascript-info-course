@@ -28,6 +28,7 @@ console.log(containerHeight, example.offsetHeight, containerHeightExperimental);
 console.log(containerWidth, example.offsetWidth, containerWidthExperimental);
 console.log("scrollHeight", example.scrollHeight);
 console.log("scrollLeft", example.scrollLeft);
+console.log("scrollWidth", example.scrollWidth);
 
 function printScrollTop() {
   console.log(
