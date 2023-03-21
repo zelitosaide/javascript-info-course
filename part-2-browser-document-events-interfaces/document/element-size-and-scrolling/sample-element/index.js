@@ -5,4 +5,7 @@ const padding = +styles.paddingLeft.split("px")[0];
 const clientWidthExperimental = width + 2 * padding;
 const clientWidth = "content width (width + padding - scrollbar)";
 
+const borderLeft = example.clientLeft;
+
 console.log(clientWidth, example.clientWidth, clientWidthExperimental);
+console.log("clientLeft", example.clientLeft);
