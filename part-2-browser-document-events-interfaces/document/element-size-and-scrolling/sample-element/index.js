@@ -8,4 +8,4 @@ const clientWidth = "content width (width + padding - scrollbar)";
 const borderLeft = example.clientLeft;
 
 console.log(clientWidth, example.clientWidth, clientWidthExperimental);
-console.log("clientLeft", example.clientLeft);
+console.log("border left", example.clientLeft);
