@@ -24,12 +24,14 @@
   </head>
   <body>
     <table>
-      <tbody id="tbody">
+      <thead>
         <tr id="tr">
           <th id="th">
             <div id="thead"></div>
           </th>
         </tr>
+      </thead>
+      <tbody id="tbody">
         <tr>
           <td id="td">
             <div id="tdata"></div>
@@ -59,6 +61,7 @@
       console.log("offsetParent of tbody", tbody.offsetParent);
       console.log("offsetParent of tr", tr.offsetParent);
       console.log("offsetParent of th", th.offsetParent);
+      console.log("offsetParent of td", td.offsetParent);
     </script>
   </body>
 </html>
