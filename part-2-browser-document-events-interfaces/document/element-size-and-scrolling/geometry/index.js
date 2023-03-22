@@ -9,5 +9,5 @@ console.log("offsetWidth", example.offsetWidth, 25 * 2 + 20 * 2 + 300);
 console.log("offsetHeight", example.offsetHeight, 25 * 2 + 20 * 2 + 200);
 console.log("clientWidth", example.clientWidth, 20 * 2 + 283);
 console.log("clientHeight", example.clientHeight, 20 * 2 + 200);
-
+console.log("scrollHeight", example.scrollHeight);
 console.log(styles.width);
