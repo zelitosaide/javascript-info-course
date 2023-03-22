@@ -24,7 +24,7 @@
   </head>
   <body>
     <table>
-      <thead>
+      <thead id="_thead">
         <tr id="tr">
           <th id="th">
             <div id="thead"></div>
@@ -55,10 +55,12 @@
 
       // For table
       const tbody = document.getElementById("tbody");
+      const _thead = document.getElementById("_thead");
       const tr = document.getElementById("tr");
       const th = document.getElementById("th");
       const td = document.getElementById("td");
       console.log("offsetParent of tbody", tbody.offsetParent);
+      console.log("offsetParent of _thead", _thead.offsetParent);
       console.log("offsetParent of tr", tr.offsetParent);
       console.log("offsetParent of th", th.offsetParent);
       console.log("offsetParent of td", td.offsetParent);
