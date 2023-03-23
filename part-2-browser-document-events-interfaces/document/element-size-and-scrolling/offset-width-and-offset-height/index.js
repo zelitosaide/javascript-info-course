@@ -36,3 +36,7 @@ document.body.append(ancestor);
 console.log("offsetParent", child.offsetParent);
 console.log("offsetWidth", child.offsetWidth);
 console.log("offsetHeight", child.offsetHeight);
+
+function isHidden(elem) {
+  return !elem.offsetWidth && !elem.offsetHeight;
+}
