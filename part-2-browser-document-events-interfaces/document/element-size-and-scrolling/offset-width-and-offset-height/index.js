@@ -24,3 +24,6 @@ document.body.append(displayNone);
 console.log("offsetParent", displayNone.offsetParent);
 console.log("offsetWidth", displayNone.offsetWidth);
 console.log("offsetheight", displayNone.offsetHeight);
+
+const ancestor = document.createElement("div");
+const child = document.createElement("button");
