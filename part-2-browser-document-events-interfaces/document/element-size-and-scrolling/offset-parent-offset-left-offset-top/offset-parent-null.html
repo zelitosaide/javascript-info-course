@@ -23,6 +23,8 @@
       const body = document.body;
       const html = document.documentElement;
 
+      const chat = document.getElementById("chat");
+
       console.log("offsetParent of a hidden elem", displayNone.offsetParent);
       console.log(
         "offsetParent of element is not in the document",
@@ -31,6 +33,10 @@
 
       console.log("offsetParent of body", body.offsetParent);
       console.log("offsetParent of html", html.offsetParent);
+      console.log(
+        "offsetParent of element with position:fixed",
+        chat.offsetParent
+      );
     </script>
   </body>
 </html>
