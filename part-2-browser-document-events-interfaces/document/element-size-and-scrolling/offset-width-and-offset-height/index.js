@@ -13,3 +13,4 @@ console.log("offsetHeight", example.offsetHeight, 150 + 2 * 25 + 2 * 20);
 // when we created an element, but haven’t inserted it into the document
 // yet, or it (or its ancestor) has display:none.
 const notInTheDOM = document.createElement("div");
+console.log("offsetParent", notInTheDOM.offsetParent);
