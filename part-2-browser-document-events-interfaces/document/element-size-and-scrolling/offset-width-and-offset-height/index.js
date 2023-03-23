@@ -8,3 +8,7 @@ console.log("offsetHeight", example.offsetHeight, 150 + 2 * 25 + 2 * 20);
 // If an element (or any of its ancestors) has display:none or is not in
 // the document, then all geometry properties are zero (or null for
 // offsetParent).
+
+// For example, offsetParent is null, and offsetWidth, offsetHeight are 0
+// when we created an element, but haven’t inserted it into the document
+// yet, or it (or its ancestor) has display:none.
