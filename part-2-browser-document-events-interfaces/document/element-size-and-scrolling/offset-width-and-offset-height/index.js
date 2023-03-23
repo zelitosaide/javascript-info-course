@@ -15,3 +15,4 @@ console.log("offsetHeight", example.offsetHeight, 150 + 2 * 25 + 2 * 20);
 const notInTheDOM = document.createElement("div");
 console.log("offsetParent", notInTheDOM.offsetParent);
 console.log("offsetWidth", notInTheDOM.offsetWidth);
+console.log("offsetHeight", notInTheDOM.offsetHeight);
