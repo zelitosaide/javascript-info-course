@@ -42,3 +42,9 @@ function isHidden(elem) {
 }
 
 console.log("ancestor is hidden?", isHidden(ancestor));
+
+const test = document.createElement("div");
+test.style.cssText = "width: 0px; height: 0px";
+document.body.append(test);
+
+console.log("test is hidden?", isHidden(test));
