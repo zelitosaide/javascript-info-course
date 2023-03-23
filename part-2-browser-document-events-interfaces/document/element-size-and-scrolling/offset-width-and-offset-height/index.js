@@ -26,7 +26,10 @@ console.log("offsetWidth", displayNone.offsetWidth);
 console.log("offsetheight", displayNone.offsetHeight);
 
 const ancestor = document.createElement("div");
+ancestor.style.position = "relative";
 const child = document.createElement("button");
 child.innerHTML = "Hi there!";
 ancestor.append(child);
 document.body.append(ancestor);
+
+console.log("offsetParent", child.offsetParent);
