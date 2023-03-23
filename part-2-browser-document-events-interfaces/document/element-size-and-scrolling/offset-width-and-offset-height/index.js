@@ -40,3 +40,5 @@ console.log("offsetHeight", child.offsetHeight);
 function isHidden(elem) {
   return !elem.offsetWidth && !elem.offsetHeight;
 }
+
+console.log("ancestor is hidden?", isHidden(ancestor));
