@@ -33,3 +33,5 @@ ancestor.append(child);
 document.body.append(ancestor);
 
 console.log("offsetParent", child.offsetParent);
+console.log("offsetWidth", child.offsetWidth);
+console.log("offsetHeight", child.offsetHeight);
