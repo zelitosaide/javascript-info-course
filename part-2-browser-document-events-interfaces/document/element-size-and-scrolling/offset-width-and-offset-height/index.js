@@ -16,3 +16,11 @@ const notInTheDOM = document.createElement("div");
 console.log("offsetParent", notInTheDOM.offsetParent);
 console.log("offsetWidth", notInTheDOM.offsetWidth);
 console.log("offsetHeight", notInTheDOM.offsetHeight);
+
+const displayNone = document.createElement("div");
+displayNone.style.display = "none";
+document.body.append(displayNone);
+
+console.log("offsetParent", displayNone.offsetParent);
+console.log("offsetWidth", displayNone.offsetWidth);
+console.log("offsetheight", displayNone.offsetHeight);
