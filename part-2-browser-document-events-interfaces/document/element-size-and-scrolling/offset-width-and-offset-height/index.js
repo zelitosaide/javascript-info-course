@@ -27,6 +27,7 @@ console.log("offsetheight", displayNone.offsetHeight);
 
 const ancestor = document.createElement("div");
 ancestor.style.position = "relative";
+ancestor.style.display = "none";
 const child = document.createElement("button");
 child.innerHTML = "Hi there!";
 ancestor.append(child);
