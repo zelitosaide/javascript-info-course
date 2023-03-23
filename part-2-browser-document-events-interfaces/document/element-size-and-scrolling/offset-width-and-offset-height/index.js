@@ -14,3 +14,4 @@ console.log("offsetHeight", example.offsetHeight, 150 + 2 * 25 + 2 * 20);
 // yet, or it (or its ancestor) has display:none.
 const notInTheDOM = document.createElement("div");
 console.log("offsetParent", notInTheDOM.offsetParent);
+console.log("offsetWidth", notInTheDOM.offsetWidth);
