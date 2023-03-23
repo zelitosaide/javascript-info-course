@@ -15,6 +15,7 @@
       const notInTheDocument = document.createElement("div");
 
       const body = document.body;
+      const html = document.documentElement;
 
       console.log("offsetParent of a hidden elem", displayNone.offsetParent);
       console.log(
@@ -23,6 +24,7 @@
       );
 
       console.log("offsetParent of body", body.offsetParent);
+      console.log("offsetParent of html", html.offsetParent);
     </script>
   </body>
 </html>
