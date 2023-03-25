@@ -6,11 +6,15 @@
         width: 100px;
         border: 1px solid black;
         height: 100px;
+        overflow: auto;
       }
     </style>
   </head>
   <body>
-    <div id="example">
+    <div
+      onclick="scroll()"
+      id="example"
+    >
       <div>Click me</div>
       <div>1</div>
       <div>2</div>
@@ -27,5 +31,9 @@
       <div>13</div>
       <div>14</div>
     </div>
+
+    <script>
+      function scroll() {}
+    </script>
   </body>
 </html>
