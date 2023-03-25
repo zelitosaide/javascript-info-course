@@ -33,7 +33,18 @@
       <div>15</div>
       <div>16</div>
     </div>
-    <button onclick="goToTop()">Go to Top</button>
+    <button
+      type="button"
+      onclick="goToTop()"
+    >
+      Go to Top
+    </button>
+    <button
+      type="button"
+      onclick="goToBottom()"
+    >
+      Go to Bottom
+    </button>
 
     <script>
       const example = document.getElementById("example");
@@ -44,6 +55,10 @@
 
       function goToTop() {
         example.scrollTop = 0;
+      }
+
+      function goToBottom() {
+        example.scrollTop = 1e9;
       }
     </script>
   </body>
