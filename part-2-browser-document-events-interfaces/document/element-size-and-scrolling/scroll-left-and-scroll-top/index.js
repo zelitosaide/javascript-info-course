@@ -1,3 +1,5 @@
 const example = document.getElementById("example");
 
-console.log("scrollTop", example.scrollTop);
+function showScrollTop() {
+  console.log("scrollTop", example.scrollTop);
+}
