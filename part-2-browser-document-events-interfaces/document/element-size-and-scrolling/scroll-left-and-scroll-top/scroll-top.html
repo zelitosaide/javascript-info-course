@@ -33,12 +33,17 @@
       <div>15</div>
       <div>16</div>
     </div>
+    <button onclick="goToTop()">Go to Top</button>
 
     <script>
       const example = document.getElementById("example");
 
       function scroll10pxDown() {
         example.scrollTop += 10;
+      }
+
+      function goToTop() {
+        example.scrollTop = 0;
       }
     </script>
   </body>
