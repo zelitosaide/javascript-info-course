@@ -29,13 +29,14 @@
 
     <script>
       const field = document.getElementById("field");
-      const offsetWidth = field.offsetWidth;
-      const offsetHeight = field.offsetHeight;
+      const fieldOffsetWidth = field.offsetWidth;
+      const fieldOffsetHeight = field.offsetHeight;
 
       const ball = document.getElementById("ball");
       const ballOffsetWidth = ball.offsetWidth;
       const ballOffsetHeight = ball.offsetHeight;
-      console.log(ballOffsetWidth, ballOffsetHeight);
+
+      ball.style.top = fieldOffsetHeight / 2 - ballOffsetHeight / 2 - 10 + "px";
     </script>
   </body>
 </html>
