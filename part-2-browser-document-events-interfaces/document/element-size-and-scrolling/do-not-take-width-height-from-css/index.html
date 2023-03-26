@@ -27,6 +27,7 @@
       <div id="example-1">
         <h3>Introduction</h3>
         <p>
+          <span id="span">Hello!</span>
           This Ecma Standard is based on several originating technologies, the
           most well known being JavaScript (Netscape) and JScript (Microsoft).
           The language was invented by Brendan Eich at Netscape and first
@@ -66,6 +67,10 @@
       console.log(example1);
 
       console.log(example1.clientWidth, styles.width);
+      console.log(
+        "auto value",
+        getComputedStyle(document.getElementById("span")).width
+      );
     </script>
   </body>
 </html>
