@@ -62,20 +62,25 @@
 
     <script>
       const example = document.getElementById("example");
-      const scrollBarWidth =
+      const scrollbarWidth =
         example.offsetWidth - example.clientWidth - example.clientLeft * 2;
 
-      console.log("scrollbar width", scrollBarWidth);
+      console.log("scrollbar width", scrollbarWidth);
     </script>
 
     <script>
-      function showScrollBarWidth() {
+      function showScrollbarWidth() {
         // create a div with the scroll
         const div = document.createElement("div");
 
         div.style.overflowY = "scroll";
         div.style.width = "50px";
         div.style.height = "50px";
+
+        // must put it in the document, otherwise sizes will be 0
+        document.body.append(div);
+        const scrollbarWidth = div.offsetWidth - div.clientWidth;
+        console.log(scrollbarWidth);
       }
     </script>
   </body>
