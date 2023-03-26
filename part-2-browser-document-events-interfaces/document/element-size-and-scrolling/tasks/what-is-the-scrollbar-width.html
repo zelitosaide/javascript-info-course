@@ -81,6 +81,9 @@
         // must put it in the document, otherwise sizes will be 0
         document.body.append(div);
         const scrollbarWidth = div.offsetWidth - div.clientWidth;
+
+        div.remove();
+
         console.log(scrollbarWidth);
       }
 
