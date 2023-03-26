@@ -65,7 +65,11 @@
 
     <script>
       function showScrollBottom() {
-        console.log("ola");
+        const example = document.getElementById("example");
+        const scrollTop = example.scrollTop;
+        const scrollHeight = example.scrollHeight;
+
+        console.log(scrollHeight);
       }
     </script>
   </body>
