@@ -68,8 +68,10 @@
         const example = document.getElementById("example");
         const scrollTop = example.scrollTop;
         const scrollHeight = example.scrollHeight;
+        const clientHeight = example.clientHeight;
+        const scrollBottom = scrollHeight - scrollTop - clientHeight;
 
-        console.log(scrollHeight);
+        console.log(scrollBottom);
       }
     </script>
   </body>
