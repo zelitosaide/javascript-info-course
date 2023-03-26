@@ -17,6 +17,7 @@
         height: 200px;
         padding: 10px;
         border: 25px solid #e8c48f;
+        box-sizing: border-box;
       }
     </style>
   </head>
@@ -25,5 +26,12 @@
       <div id="example-1"></div>
       <div id="example-2"></div>
     </div>
+
+    <script>
+      const example1 = document.getElementById("example-1");
+      const styles = getComputedStyle(example1);
+
+      console.log(example1.clientWidth, styles.width);
+    </script>
   </body>
 </html>
