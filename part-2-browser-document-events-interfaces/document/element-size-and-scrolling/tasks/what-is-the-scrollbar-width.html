@@ -62,7 +62,12 @@
 
     <script>
       const example = document.getElementById("example");
-      console.log(example);
+      const scrollBarWidth =
+        example.offsetWidth - example.clientWidth - example.clientLeft * 2;
+
+      console.log("scrollbar width", scrollBarWidth);
+
+      console.log();
     </script>
   </body>
 </html>
