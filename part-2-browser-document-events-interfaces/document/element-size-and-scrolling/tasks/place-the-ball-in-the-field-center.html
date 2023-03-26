@@ -44,9 +44,17 @@
       ball.style.top =
         Math.round(field.clientHeight / 2 - ball.offsetHeight / 2) + "px";
 
+      // The code won’t work reliably while <img> has no width/height:
+
+      // We should fix that by adding width/height to <img>:
+      // <img src="ball.png" width="40" height="40" id="ball">
+
+      // …Or provide the size in CSS:
+      // #ball {
+      //   width: 40px;
+      //   height: 40px;
+      // }
       console.log(ball.offsetTop, ball.offsetLeft);
     </script>
   </body>
 </html>
-
-<!-- 43 80 -->
