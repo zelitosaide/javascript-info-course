@@ -164,6 +164,12 @@
       function moveToBottom(elem) {
         elem.scrollIntoView(false);
       }
+
+      // To make the document unscrollable, it’s enough to set document.
+      // body.style.overflow = "hidden". The page will “freeze” at its
+      // current scroll position.
+
+      function disableScroll() {}
     </script>
   </body>
 </html>
