@@ -55,6 +55,12 @@
       beatae consectetur dolores porro temporibus maxime, tempore necessitatibus
       modi alias, animi quibusdam ut excepturi!
     </p>
+    <button
+      type="button"
+      onclick="scrollToTheBeginning()"
+    >
+      window.scrollTo(0, 0)
+    </button>
     <p>
       Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis
       debitis reprehenderit accusantium commodi blanditiis ducimus numquam
@@ -111,6 +117,9 @@
       // coordinates, so that the top-left corner of the visible part has
       // coordinates (pageX, pageY) relative to the document’s top-left
       // corner. It’s like setting scrollLeft/scrollTop.
+
+      // To scroll to the very beginning, we can use scrollTo(0,0).
+      function scrollToTheBeginning() {}
     </script>
   </body>
 </html>
