@@ -44,6 +44,15 @@
       modi alias, animi quibusdam ut excepturi!
     </p>
     <p>
+      The button below scrolls the page to position itself at the window top:
+    </p>
+    <button
+      type="button"
+      onclick="moveToTop(this)"
+    >
+      this.scrollIntoView()
+    </button>
+    <p>
       Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis
       debitis reprehenderit accusantium commodi blanditiis ducimus numquam
       beatae consectetur dolores porro temporibus maxime, tempore necessitatibus
@@ -131,6 +140,10 @@
       // If top=true (that’s the default), then the page will be scrolled
       // to make elem appear on the top of the window. The upper edge of
       // the element will be aligned with the window top.
+
+      function moveToTop(elem) {
+        elem.scrollIntoView();
+      }
     </script>
   </body>
 </html>
