@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-  <body>
+  <body onscroll="showScrollTop()">
     <p>
       Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis
       debitis reprehenderit accusantium commodi blanditiis ducimus numquam
@@ -79,5 +79,13 @@
       beatae consectetur dolores porro temporibus maxime, tempore necessitatibus
       modi alias, animi quibusdam ut excepturi!
     </p>
+
+    <script>
+      function showScrollTop() {
+        // Did not work
+        const body = document.body;
+        console.log("scrollTop", body.scrollTop);
+      }
+    </script>
   </body>
 </html>
