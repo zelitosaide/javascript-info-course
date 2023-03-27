@@ -35,7 +35,14 @@
         document.documentElement.scrollHeight
       );
 
-      const scrollWidth = Math.max(document.body.offsetWidth);
+      const scrollWidth = Math.max(
+        document.body.offsetWidth,
+        document.body.clientWidth,
+        document.body.scrollWidth,
+        document.documentElement.offsetWidth,
+        document.documentElement.clientWidth,
+        document.documentElement.scrollWidth
+      );
       console.log(scrollWidth);
     </script>
     <script src="index.js"></script>
