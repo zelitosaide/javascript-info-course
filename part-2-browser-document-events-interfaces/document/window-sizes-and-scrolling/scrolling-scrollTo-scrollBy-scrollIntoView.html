@@ -25,6 +25,14 @@
     >
       document.body.style.overflow = `hidden`
     </button>
+    <br />
+    <br />
+    <button
+      type="button"
+      onclick="enableScroll()"
+    >
+      document.body.style.overflow = ``
+    </button>
     <p>
       Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis
       debitis reprehenderit accusantium commodi blanditiis ducimus numquam
@@ -172,6 +180,11 @@
       function disableScroll() {
         document.body.style.overflow = "hidden";
       }
+
+      function enableScroll() {}
+
+      // We can use the same technique to freeze the scroll for other
+      // elements, not just for document.body.
     </script>
   </body>
 </html>
