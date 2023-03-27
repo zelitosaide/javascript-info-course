@@ -83,8 +83,11 @@
     <script>
       function showScrollTop() {
         // Did not work
-        const body = document.body;
-        console.log("scrollTop", body.scrollTop);
+        // const body = document.body;
+        // console.log("scrollTop from body", body.scrollTop);
+
+        const html = document.documentElement;
+        console.log("scrollTop form html", html.scrollTop);
       }
     </script>
   </body>
