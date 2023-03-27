@@ -155,7 +155,9 @@
       // If top=false, then the page scrolls to make elem appear at the
       // bottom. The bottom edge of the element will be aligned with the
       // window bottom.
-      function moveToBottom(elem) {}
+      function moveToBottom(elem) {
+        elem.scrollIntoView(false);
+      }
     </script>
   </body>
 </html>
