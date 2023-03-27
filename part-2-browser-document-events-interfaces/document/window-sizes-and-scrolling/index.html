@@ -49,7 +49,10 @@
       const scrollHeight = Math.max(
         document.body.offsetHeight,
         document.body.clientHeight,
-        document.body.scrollHeight
+        document.body.scrollHeight,
+        document.documentElement.offsetHeight,
+        document.documentElement.clientHeight,
+        document.documentElement.scrollHeight
       );
       console.log(scrollHeight);
     </script>
