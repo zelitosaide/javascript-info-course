@@ -7,6 +7,10 @@
       // For instance, if we try to scroll the page with a script in <head>, it won’t work.
 
       // Regular elements can be scrolled by changing scrollTop/scrollLeft.
+
+      // We can do the same for the page using document.documentElement.
+      // scrollTop/scrollLeft (except Safari, where document.body.
+      // scrollTop/Left should be used instead).
     </script>
   </body>
 </html>
