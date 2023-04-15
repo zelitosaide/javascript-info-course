@@ -79,6 +79,10 @@
         message.style.cssText = "position: fixed; color: red";
 
         // assign coordenates, don't forget 'px'!
+        const coords = elem.getBoundingClientRect();
+
+        message.style.left = coords.left + "px";
+        message.style.top = coords.bottom + "px";
       }
 
       console.log(elem3);
