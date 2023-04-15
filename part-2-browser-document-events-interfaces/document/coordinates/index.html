@@ -29,7 +29,7 @@
     </div>
 
     <div>
-      <p id="coords-show-mark">
+      <p>
         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil
         distinctio quam sint tenetur et. Odit labore unde delectus quisquam
         deleniti sint voluptatibus modi? Unde doloribus molestiae quisquam enim.
@@ -66,7 +66,12 @@
 
     <h2>elementFromPoint(x, y)</h2>
 
-    <h2>Using for "fixed" positioning</h2>
+    <button
+      id="coords-show-mark"
+      type="button"
+    >
+      Using for "fixed" positioning
+    </button>
 
     <script>
       const elem3 = document.getElementById("coords-show-mark");
@@ -89,7 +94,9 @@
         return message;
       }
 
-      console.log(elem3);
+      // Usage:
+      // add it for 5 seconds in the document
+      const message = createMessageUnder();
     </script>
 
     <script>
