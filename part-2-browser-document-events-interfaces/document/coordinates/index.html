@@ -71,8 +71,11 @@
       const centerY = document.documentElement.clientHeight / 2;
 
       const elem = document.elementFromPoint(centerX, centerY);
-      elem.style.cssText = "color: white; background: red; padding: 10px";
-      console.log(elem);
+
+      if (elem) {
+        elem.style.cssText = "color: white; background: red; padding: 10px";
+        console.log(elem);
+      }
 
       const elem2 = document.elementFromPoint(10, 1000);
       console.log(elem2);
