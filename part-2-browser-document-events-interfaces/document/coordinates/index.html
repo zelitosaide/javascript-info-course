@@ -55,7 +55,9 @@
     <script>
       const centerX = document.documentElement.clientWidth / 2;
       const centerY = document.documentElement.clientHeight / 2;
-      console.log(centerX, centerY);
+
+      const elem = document.elementFromPoint(centerX, centerY);
+      console.log(elem);
     </script>
 
     <script>
