@@ -48,6 +48,20 @@
 
     <h2>Document Coordenates</h2>
 
+    <script>
+      // get document coordinates of the element
+      function getCoords(elem) {
+        const box = elem.getBoundingClientRect();
+
+        return {
+          top: "",
+          right: "",
+          bottom: "",
+          left: "",
+        };
+      }
+    </script>
+
     <div>
       <p>
         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil
