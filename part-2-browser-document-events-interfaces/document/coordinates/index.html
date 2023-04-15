@@ -97,10 +97,12 @@
         const message = document.createElement("div");
 
         // better to use a css class for the style here
-        message.style.cssText = "position: fixed; color: red";
+        // message.style.cssText = "position: fixed; color: red";
+        message.style.cssText = "position: absolute; color: red";
 
         // assign coordenates, don't forget 'px'!
-        const coords = elem.getBoundingClientRect();
+        // const coords = elem.getBoundingClientRect();
+        const coords = getCoords(elem);
 
         message.style.left = coords.left + "px";
         message.style.top = coords.bottom + "px";
