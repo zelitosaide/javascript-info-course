@@ -73,8 +73,10 @@
 
       function createMessageUnder(elem, html) {
         // create message element
-        const elem = document.createElement("div");
+        const message = document.createElement("div");
+
         // better to use a css class for the style here
+        message.style.cssText = "position: fixed; color: red";
       }
 
       console.log(elem3);
