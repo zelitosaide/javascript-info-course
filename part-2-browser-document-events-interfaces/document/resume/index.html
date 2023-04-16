@@ -12,6 +12,10 @@
       console.log("platform", navigator.platform);
 
       console.log("location", location.href);
+
+      if (confirm("Go to Wikipedia?")) {
+        location.href = "https://wikipedia.org";
+      }
     </script>
 
     <script>
