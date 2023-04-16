@@ -6,6 +6,14 @@
     <h1>2. An example of the DOM</h1>
 
     <script>
+      console.log(
+        "Spaces and newlines before head are ignored for historical reasons"
+      );
+
+      console.log("");
+    </script>
+
+    <script>
       const body = document.body;
       body.style.backgroundColor = "pink";
       console.log(body.tagName);
@@ -20,4 +28,5 @@
       console.log("The text inside a tag is an object as well");
     </script>
   </body>
+  Inserted after body
 </html>
