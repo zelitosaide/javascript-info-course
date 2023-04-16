@@ -5,7 +5,11 @@
 
     <script>
       const body = document.body;
-      console.log(body);
+      body.style.backgroundColor = "pink";
+
+      setTimeout(function () {
+        body.style.backgroundColor = "";
+      }, 1000);
     </script>
 
     <script>
