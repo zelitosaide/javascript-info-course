@@ -2,8 +2,15 @@
 <html>
   <head>
     <title>Walking the DOM</title>
+    <script>
+      console.log("From HEAD", document.body);
+    </script>
   </head>
   <body>
+    <script>
+      console.log("From BODY", document.body);
+    </script>
+
     <script>
       console.log(document);
       console.log(document.firstChild);
