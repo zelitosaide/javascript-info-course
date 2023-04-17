@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <title>Walking the DOM</title>
+  </head>
   <body>
     <script>
       console.log(document);
@@ -10,6 +13,9 @@
       console.log(
         "That's the main entry point to DOM. From it we can access any node."
       );
+
+      console.log("<html>", document.documentElement);
+      console.log("<head>", document.head.outerHTML);
     </script>
   </body>
 </html>
