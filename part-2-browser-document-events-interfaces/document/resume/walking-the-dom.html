@@ -18,6 +18,12 @@
     </div>
 
     <script>
+      for (const node of document.body.childNodes) {
+        console.log(node);
+      }
+    </script>
+
+    <script>
       for (let i = 0; i < document.documentElement.childNodes.length; i++) {
         console.log(i, document.documentElement.childNodes[i]);
       }
