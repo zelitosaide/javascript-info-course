@@ -18,6 +18,17 @@
     </div>
 
     <script>
+      const body = document.body;
+      console.log(body.childNodes);
+
+      const firstChild = body.firstChild;
+      console.log(firstChild === body.childNodes[0]);
+
+      const lastChild = body.lastChild;
+      console.log(lastChild === body.childNodes[body.childNodes.length - 1]);
+    </script>
+
+    <script>
       // for (const node of document.body.childNodes) {
       //   console.log(node);
       // }
