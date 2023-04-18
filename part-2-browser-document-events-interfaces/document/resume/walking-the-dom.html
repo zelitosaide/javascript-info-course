@@ -20,6 +20,12 @@
     <script>
       console.log(body.childNodes.filter);
       console.log(Array.from(body.childNodes).filter);
+
+      const childNodes = body.childNodes;
+      console.log(childNodes);
+      const div = document.createElement("div");
+      body.append(div);
+      console.log(childNodes);
     </script>
 
     <script>
