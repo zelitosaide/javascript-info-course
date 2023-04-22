@@ -18,8 +18,17 @@
     </div>
 
     <script>
-      console.log(document.documentElement.parentNode);
-      console.log(document.documentElement.parentElement);
+      let elem =
+        body.firstElementChild.nextElementSibling.firstElementChild
+          .firstElementChild;
+      while ((elem = elem.parentElement)) {
+        console.log(elem);
+      }
+    </script>
+
+    <script>
+      // console.log(document.documentElement.parentNode);
+      // console.log(document.documentElement.parentElement);
     </script>
 
     <script>
