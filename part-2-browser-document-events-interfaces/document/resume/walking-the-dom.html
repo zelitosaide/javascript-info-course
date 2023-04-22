@@ -34,6 +34,10 @@
           <td>three</td>
           <td>four</td>
         </tr>
+        <tr>
+          <td>five</td>
+          <td>six</td>
+        </tr>
       </tbody>
       <tfoot>
         <tr>
@@ -48,6 +52,13 @@
       const caption = table.caption;
       const tFoot = table.tFoot;
       const tBodies = table.tBodies;
+
+      console.log(tBodies[1].rows[0].sectionRowIndex);
+
+      console.log(
+        (tBodies[1].rows[0].cells[0].style.backgroundColor = "purple")
+      );
+      console.log((tBodies[1].rows[0].cells[0].style.color = "white"));
 
       console.log((tHead.rows[0].cells[0].style.backgroundColor = "green"));
       console.log((tHead.rows[0].cells[0].style.color = "white"));
