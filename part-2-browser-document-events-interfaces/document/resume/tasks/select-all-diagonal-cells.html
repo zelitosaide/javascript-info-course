@@ -49,5 +49,14 @@
         <td>5:5</td>
       </tr>
     </table>
+
+    <script>
+      const table = document.body.firstElementChild;
+
+      for (const row of table.rows) {
+        row.cells[row.rowIndex].style.backgroundColor = "red";
+        row.cells[row.rowIndex].style.color = "white";
+      }
+    </script>
   </body>
 </html>
