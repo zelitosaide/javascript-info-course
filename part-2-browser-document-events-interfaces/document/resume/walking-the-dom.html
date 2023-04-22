@@ -23,14 +23,18 @@
           <th colspan="2">Numbers</th>
         </tr>
       </thead>
-      <tr>
-        <td>one</td>
-        <td>two</td>
-      </tr>
-      <tr>
-        <td>three</td>
-        <td>four</td>
-      </tr>
+      <tbody>
+        <tr>
+          <td>one</td>
+          <td>two</td>
+        </tr>
+      </tbody>
+      <tbody>
+        <tr>
+          <td>three</td>
+          <td>four</td>
+        </tr>
+      </tbody>
       <tfoot>
         <tr>
           <th colspan="2">copyright</th>
@@ -43,7 +47,9 @@
       const tHead = table.tHead;
       const caption = table.caption;
       const tFoot = table.tFoot;
+      const tBodies = table.tBodies;
 
+      console.log(tBodies);
       console.log(tFoot);
       console.log(caption);
       console.log(tHead);
