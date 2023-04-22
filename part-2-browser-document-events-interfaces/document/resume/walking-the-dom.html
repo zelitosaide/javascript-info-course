@@ -18,12 +18,12 @@
     </div>
 
     <script>
-      let elem =
-        body.firstElementChild.nextElementSibling.firstElementChild
-          .firstElementChild;
-      while ((elem = elem.parentElement)) {
-        console.log(elem);
-      }
+      // let elem =
+      //   body.firstElementChild.nextElementSibling.firstElementChild
+      //     .firstElementChild;
+      // while ((elem = elem.parentElement)) {
+      //   console.log(elem);
+      // }
     </script>
 
     <script>
@@ -135,6 +135,12 @@
       // console.log("<html>", document.documentElement);
       // console.log("<head>", document.head);
       // console.log("<body>", document.body);
+    </script>
+
+    <script>
+      for (const elem of document.body.children) {
+        console.log(elem);
+      }
     </script>
   </body>
 </html>
