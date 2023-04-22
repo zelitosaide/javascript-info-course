@@ -2,12 +2,21 @@
 <html>
   <head>
     <title>Walking the DOM</title>
+    <style>
+      table,
+      td {
+        border: 1px solid black;
+      }
+    </style>
     <script>
       console.log("From HEAD", document.body);
     </script>
   </head>
   <body>
     <table id="table">
+      <caption>
+        Numbers
+      </caption>
       <tr>
         <td>one</td>
         <td>two</td>
