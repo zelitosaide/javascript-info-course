@@ -53,12 +53,14 @@
       const tFoot = table.tFoot;
       const tBodies = table.tBodies;
 
-      console.log(tBodies[1].rows[0].sectionRowIndex);
+      console.log(tBodies[1].rows[1].sectionRowIndex);
+      console.log(rows[3].sectionRowIndex);
+      console.log(rows[3].rowIndex);
 
       console.log(
-        (tBodies[1].rows[0].cells[0].style.backgroundColor = "purple")
+        (tBodies[1].rows[1].cells[0].style.backgroundColor = "purple")
       );
-      console.log((tBodies[1].rows[0].cells[0].style.color = "white"));
+      console.log((tBodies[1].rows[1].cells[0].style.color = "white"));
 
       console.log((tHead.rows[0].cells[0].style.backgroundColor = "green"));
       console.log((tHead.rows[0].cells[0].style.color = "white"));
