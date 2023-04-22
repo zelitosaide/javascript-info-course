@@ -21,10 +21,15 @@
       // console.log(body.parentElement);
       // console.log(body.firstElementChild);
       // console.log(body.lastElementChild);
+      // console.log(body.children);
 
-      console.log(body.firstElementChild.parentElement);
-      console.log(body.firstElementChild.nextElementSibling);
-      console.log(body.lastElementChild.previousElementSibling);
+      for (const elem of body.children) {
+        console.log(elem);
+      }
+
+      // console.log(body.firstElementChild.parentElement);
+      // console.log(body.firstElementChild.nextElementSibling);
+      // console.log(body.lastElementChild.previousElementSibling);
     </script>
 
     <script>
