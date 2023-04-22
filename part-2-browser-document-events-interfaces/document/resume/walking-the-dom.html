@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
-  <head>
+  <!-- <head>
     <title>Walking the DOM</title>
     <script>
       console.log("From HEAD", document.body);
     </script>
-  </head>
+  </head> -->
   <body>
     <h1>Children: childNodes, firstChild, lastChild</h1>
 
@@ -19,6 +19,8 @@
 
     <script>
       console.log(document.body.parentNode === document.documentElement);
+      console.log(document.head.nextSibling);
+      console.log(document.body.previousSibling);
     </script>
 
     <script>
