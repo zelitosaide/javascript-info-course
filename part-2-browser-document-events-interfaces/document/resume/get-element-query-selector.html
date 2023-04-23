@@ -1,11 +1,74 @@
 <!DOCTYPE html>
 <html>
   <body>
-    <h2>closest</h2>
+    <form name="my-form">
+      <div class="article">Article</div>
+      <div class="long article">Long article</div>
+    </form>
 
     <script>
       console.log("ola");
     </script>
+
+    <!-- <h1>getElementsBy*</h1> -->
+
+    <!-- <table id="table">
+      <tr>
+        <td>Your age:</td>
+
+        <td>
+          <label>
+            <input
+              type="radio"
+              name="age"
+              value="young"
+              checked
+            />less than 18
+          </label>
+          <label>
+            <input
+              type="radio"
+              name="age"
+              value="mature"
+            />from 18 to 50
+          </label>
+          <label>
+            <input
+              type="radio"
+              name="age"
+              value="senior"
+            />more than 60
+          </label>
+        </td>
+      </tr>
+    </table> -->
+
+    <!-- <script>
+      const inputs = document.getElementsByTagName("input");
+      const inpust2 = document.getElementsByName("age");
+
+      for (const input of inputs) {
+        console.log(input.value, ":", input.checked);
+      }
+    </script> -->
+
+    <!-- <h1>closest</h1> -->
+
+    <!-- <div class="contents">
+      <ul class="book">
+        <li class="chapter">Chapter 1</li>
+        <li class="chapter">Chapter 2</li>
+      </ul>
+    </div> -->
+
+    <!-- <script>
+      const chapter = document.querySelector(".chapter");
+      console.log(chapter.closest(".contents"));
+      console.log(chapter.closest(".book"));
+
+      console.log(chapter.closest("h1"));
+      console.log(chapter.closest("html"));
+    </script> -->
 
     <!-- <h2>matches</h2>
 
