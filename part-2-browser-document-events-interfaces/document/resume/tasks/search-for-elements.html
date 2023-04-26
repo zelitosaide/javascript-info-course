@@ -71,10 +71,28 @@
 
     <script>
       const table = document.getElementById("age-table");
-      console.log(table);
-      console.log(table.querySelectorAll("label"));
-      console.log(table.querySelector("td").innerHTML);
-      console.log(document.getElementsByName("search")[0]);
+
+      const labels1 = table.querySelectorAll("label");
+
+      const labels2 = document.querySelectorAll("#age-table label");
+
+      const td1 = table.rows[0].cells[0];
+
+      const td2 = table.querySelector("td");
+
+      const form1 = document.getElementsByName("search")[0];
+
+      const form2 = document.querySelector("form[name='search']");
+
+      const input1 = form1.querySelector("input");
+
+      const input2 = form1.getElementsByTagName("input")[0];
+
+      const inputs = form1.querySelectorAll("input");
+
+      const lastInput = inputs[inputs.length - 1];
+
+      console.log(lastInput);
     </script>
   </body>
 </html>
