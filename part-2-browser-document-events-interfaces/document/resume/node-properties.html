@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h1>Tasks</h1>
+    <!-- <input
+      type="text"
+      id="elem"
+      value="value"
+    /> -->
+
+    <!-- <a
+      href="https://doxample.com"
+      target="blank"
+      >doxample</a
+    > -->
+
+    <!-- <script>
+      const input = document.querySelector("#elem");
+      const anchor = document.querySelector("a");
+
+      console.log(input.type);
+      console.log(input.id);
+      console.log(input.value);
+
+      console.log(anchor.href);
+      console.log(anchor.target);
+    </script> -->
+
+    <!-- <div id="elem">A blinking element</div> -->
+
+    <!-- <script>
+      const elem = document.querySelector("#elem");
+
+      setInterval(function () {
+        elem.hidden = !elem.hidden;
+      }, 1000);
+    </script> -->
+
+    <!-- <div>Both divs below are hidden!</div>
+    <div hidden>With the attribute "hidden"</div>
+    <div id="elem">JavaScript assigned the property "hidden"</div> -->
+
+    <!-- <script>
+      document.querySelector("#elem").hidden = true;
+    </script> -->
+
+    <!-- <div id="elem1"></div>
+    <div id="elem2"></div> -->
+
+    <!-- <script>
+      const name = prompt("What's your name?", "<b>Winnie-the-Pooh!</b>");
+      document.querySelector("#elem1").innerHTML = name;
+      document.querySelector("#elem2").textContent = name;
+    </script> -->
+
+    <div id="news">
+      <h1>Headline!</h1>
+      <p>Martians attack people!</p>
+    </div>
+
+    <script>
+      const news = document.querySelector("#news");
+      console.log(news.firstElementChild.textContent);
+      console.log(news.lastElementChild.textContent);
+      console.log(news.textContent);
+    </script>
+
+    <!-- Hello -->
+
+    <!-- Este eh um comentario -->
+
+    <!-- <pre>Hello Lohanna 😀</pre> -->
+
+    <!-- <script>
+      const text = document.body.firstChild;
+      console.log(text.data);
+      console.log(text.nodeValue);
+
+      const comment = text.nextSibling;
+      console.log(comment.data);
+      console.log(comment.nodeValue);
+
+      const pre = document.querySelector("pre");
+      console.log(pre.nodeValue);
+    </script> -->
+
+    <!-- <h1>nodeValue/data: text node content</h1> -->
+    <!-- <pre>Hello Lohanna 😀</pre>
+
+    <script>
+      const pre = document.querySelector("pre");
+      pre.outerHTML = "<b>I love you</b>";
+      console.log(pre.outerHTML);
+    </script> -->
+
+    <!-- <script>
+      const pre = document.body.firstElementChild;
+      pre.innerHTML += "<br />I love too much!";
+      // is a shorter way to write:
+      pre.innerHTML = pre.innerHTML + "<br />I love too much!";
+    </script>
+
+    <script>
+      console.log(document.body.firstElementChild.outerHTML);
+    </script> -->
+
+    <!-- <p>A paragraph</p>
+    <div>A div</div>
+
+    <script>
+      alert(document.body.innerHTML);
+      document.body.innerHTML = "<b>The new BODY";
+      console.log(document.body.innerHTML);
+    </script> -->
+    <!-- <script>
+      // console.log(document.body.constructor.name);
+      // console.log(document.body.toString());
+
+      // console.log(document.body instanceof EventTarget);
+      // console.log(document.body instanceof Node);
+      // console.log(document.body instanceof Element);
+      // console.log(document.body instanceof HTMLElement);
+      // console.log(document.body instanceof HTMLBodyElement);
+
+      // console.dir(document.body);
+      // console.dir({ x: 10, y: 12 });
+      // console.log({ x: 10, y: 12 });
+
+      // const elem = document.body;
+
+      // console.log(elem.nodeType);
+      // console.log(elem.firstChild.nodeType);
+      // console.log(document.nodeType);
+
+      console.log(document.body.nodeName);
+      console.log(document.body.tagName);
+    </script> -->
+
+    <!-- Document -->
+
+    <!-- <script>
+      // console.log(document.body.firstChild.nodeName);
+      // console.log(document.body.childNodes[3].nodeName);
+
+      console.log(document.body.firstChild.nodeName);
+      console.log(document.body.firstChild.tagName);
+
+      console.log(document.nodeName);
+      console.log(document.tagName);
+    </script> -->
+  </body>
+</html>
