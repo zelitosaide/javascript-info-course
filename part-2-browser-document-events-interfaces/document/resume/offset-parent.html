@@ -12,7 +12,7 @@
         overflow: auto;
         border: 25px solid lightblue;
         /* padding: 20px; */
-        /* white-space: nowrap; */
+        white-space: nowrap;
       }
 
       #fixed {
@@ -64,15 +64,26 @@
       element.style.height = ${element.scrollHeight}px
     </button>
 
+    <button
+      type="button"
+      onclick="expandWidth()"
+    >
+      element.style.width = ${element.scrollWidth}px
+    </button>
+
     <script>
       const example = document.querySelector("#example");
       console.log(example.clientWidth, example.scrollWidth);
-
       console.log(example.scrollHeight, example.clientHeight);
 
       function expand() {
         const example = document.querySelector("#example");
         example.style.height = example.scrollHeight + "px";
+      }
+
+      function expandWidth() {
+        const example = document.querySelector("#example");
+        example.style.width = example.scrollWidth + "px";
       }
     </script>
 
