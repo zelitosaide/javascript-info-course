@@ -12,7 +12,7 @@
         overflow: auto;
         border: 25px solid lightblue;
         padding: 20px;
-        white-space: nowrap;
+        /* white-space: nowrap; */
       }
 
       #fixed {
@@ -62,6 +62,8 @@
       </p>
     </div>
 
+    <button onclick="scrollToTop()">Scroll to top</button>
+
     <script>
       function showScrollTop(elem) {
         console.log(elem.scrollTop, elem.scrollLeft);
@@ -73,6 +75,11 @@
 
       function handleScrollLeft(elem) {
         elem.scrollLeft += 10;
+      }
+
+      function scrollToTop() {
+        const example = document.querySelector("#example");
+        example.scrollTop = 0;
       }
     </script>
 
