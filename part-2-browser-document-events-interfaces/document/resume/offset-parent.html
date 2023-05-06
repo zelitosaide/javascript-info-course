@@ -11,7 +11,7 @@
         height: 200px;
         overflow: auto;
         border: 25px solid lightblue;
-        padding: 20px;
+        /* padding: 20px; */
         /* white-space: nowrap; */
       }
 
@@ -57,9 +57,23 @@
       </p>
     </div>
 
+    <button
+      type="button"
+      onclick="expand()"
+    >
+      element.style.height = ${element.scrollHeight}px
+    </button>
+
     <script>
       const example = document.querySelector("#example");
       console.log(example.clientWidth, example.scrollWidth);
+
+      console.log(example.scrollHeight, example.clientHeight);
+
+      function expand() {
+        const example = document.querySelector("#example");
+        example.style.height = example.scrollHeight + "px";
+      }
     </script>
 
     <!-- <script>
