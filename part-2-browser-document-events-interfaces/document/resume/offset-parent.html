@@ -12,7 +12,7 @@
         overflow: auto;
         border: 25px solid lightblue;
         padding: 20px;
-        white-space: nowrap;
+        /* white-space: nowrap; */
       }
 
       #fixed {
@@ -57,7 +57,10 @@
       </p>
     </div>
 
-    <h2>scrollWidth/Height</h2>
+    <script>
+      const example = document.querySelector("#example");
+      console.log(example.clientWidth, example.scrollWidth);
+    </script>
 
     <!-- <script>
       const example = document.querySelector("#example");
