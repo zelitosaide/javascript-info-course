@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <script>
+      // Which class does the document belong to?
+      console.log(document.constructor.name);
+
+      // What’s its place in the DOM hierarchy?
+      // console.dir(document);
+      // HTMLDocument
+      // Document
+      // Node
+      // EventTarget
+      // Object
+      console.log(HTMLDocument.prototype.constructor === HTMLDocument);
+
+      console.log(HTMLDocument.prototype.constructor.name);
+      console.log(HTMLDocument.prototype.__proto__.constructor.name);
+      console.log(HTMLDocument.prototype.__proto__.__proto__.constructor.name);
+      console.log(
+        HTMLDocument.prototype.__proto__.__proto__.__proto__.constructor.name
+      );
+      console.log(
+        HTMLDocument.prototype.__proto__.__proto__.__proto__.__proto__
+          .constructor.name
+      );
+
+      // Does it inherit from Node or Element, or maybe HTMLElement?
+      console.log(document instanceof Node);
+      console.log(document instanceof Element);
+      console.log(document instanceof HTMLElement);
+    </script>
+  </body>
+</html>

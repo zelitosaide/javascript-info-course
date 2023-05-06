@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <script>
+      let body = document.body;
+      body.innerHTML = "<!--" + body.tagName + "-->";
+      console.log(body.firstChild.data);
+      console.log(body.firstChild);
+    </script>
+  </body>
+</html>
