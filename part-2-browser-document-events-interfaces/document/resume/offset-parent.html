@@ -62,7 +62,19 @@
       </p>
     </div>
 
-    <button onclick="scrollToTop()">Scroll to top</button>
+    <button
+      type="button"
+      onclick="scrollToTop()"
+    >
+      Scroll to top
+    </button>
+
+    <button
+      type="button"
+      onclick="scrollToBottom()"
+    >
+      Scroll to bottom
+    </button>
 
     <script>
       function showScrollTop(elem) {
@@ -78,8 +90,11 @@
       }
 
       function scrollToTop() {
-        const example = document.querySelector("#example");
-        example.scrollTop = 0;
+        document.querySelector("#example").scrollTop = 0;
+      }
+
+      function scrollToBottom() {
+        document.querySelector("#example").scrollTop = 1e9;
       }
     </script>
 
