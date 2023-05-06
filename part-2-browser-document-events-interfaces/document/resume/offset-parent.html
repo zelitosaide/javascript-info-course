@@ -11,7 +11,7 @@
         height: 200px;
         overflow: auto;
         border: 25px solid lightblue;
-        /* padding: 20px; */
+        padding: 20px;
         white-space: nowrap;
       }
 
@@ -23,7 +23,12 @@
     </style>
   </head>
   <body>
-    <div id="example">
+    <div
+      id="example"
+      onscroll="showScrollTop(this)"
+      onclick="handleScrollTop(this)"
+      ondblclick="handleScrollLeft(this)"
+    >
       <h3>Introduction</h3>
       <p>
         This Ecma Standard is based on several originating technologies, the
@@ -57,7 +62,21 @@
       </p>
     </div>
 
-    <button
+    <script>
+      function showScrollTop(elem) {
+        console.log(elem.scrollTop, elem.scrollLeft);
+      }
+
+      function handleScrollTop(elem) {
+        elem.scrollTop += 10;
+      }
+
+      function handleScrollLeft(elem) {
+        elem.scrollLeft += 10;
+      }
+    </script>
+
+    <!-- <button
       type="button"
       onclick="expand()"
     >
@@ -69,9 +88,9 @@
       onclick="expandWidth()"
     >
       element.style.width = ${element.scrollWidth}px
-    </button>
+    </button> -->
 
-    <script>
+    <!-- <script>
       const example = document.querySelector("#example");
       console.log(example.clientWidth, example.scrollWidth);
       console.log(example.scrollHeight, example.clientHeight);
@@ -85,7 +104,7 @@
         const example = document.querySelector("#example");
         example.style.width = example.scrollWidth + "px";
       }
-    </script>
+    </script> -->
 
     <!-- <script>
       const example = document.querySelector("#example");
