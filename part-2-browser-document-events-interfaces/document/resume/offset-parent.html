@@ -63,13 +63,22 @@
       </p>
     </div>
 
+    <p><b>Hello, how are you?</b></p>
+
     <script>
+      const b = document.querySelector("b");
+      console.log(getComputedStyle(b).width);
+      console.log(b.offsetWidth);
+      console.log(b.clientWidth);
+    </script>
+
+    <!-- <script>
       const example = document.querySelector("#example");
       console.log(example.clientWidth);
       console.log(example.offsetWidth - 25 * 2 - 0);
       // console.log(300 - 25 * 2 - 16);
       console.log(example.offsetWidth);
-    </script>
+    </script> -->
 
     <!-- <script>
       const body = document.body;
