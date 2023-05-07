@@ -63,7 +63,7 @@
       </p>
     </div>
 
-    <p><b style="display: inline-block">Hello</b></p>
+    <p><b>Hello</b></p>
 
     <script>
       const b = document.querySelector("b");
@@ -72,6 +72,7 @@
       console.log(b.clientWidth);
       console.log(b.clientHeight);
       console.log(b.offsetHeight);
+      console.log(getComputedStyle(b).height);
     </script>
 
     <!-- <script>
