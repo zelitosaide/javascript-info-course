@@ -63,13 +63,15 @@
       </p>
     </div>
 
-    <p><b>Hello</b></p>
+    <p><b style="display: inline-block">Hello</b></p>
 
     <script>
       const b = document.querySelector("b");
       console.log(getComputedStyle(b).width);
       console.log(b.offsetWidth);
       console.log(b.clientWidth);
+      console.log(b.clientHeight);
+      console.log(b.offsetHeight);
     </script>
 
     <!-- <script>
