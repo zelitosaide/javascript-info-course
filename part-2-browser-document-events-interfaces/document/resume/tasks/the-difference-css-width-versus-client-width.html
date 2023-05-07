@@ -69,6 +69,14 @@
       // content area without paddings.
       console.log(example.clientWidth);
       console.log(styles.width);
+
+      // If there’s a scrollbar and the browser reserves the space for it,
+      // some browser substract that space from CSS width (cause it’s not
+      // available for content any more), and some do not. The
+      // clientWidth property is always the same: scrollbar size is
+      // substracted if reserved.
+      console.log(styles.width);
+      console.log(example.clientWidth);
     </script>
   </body>
 </html>
