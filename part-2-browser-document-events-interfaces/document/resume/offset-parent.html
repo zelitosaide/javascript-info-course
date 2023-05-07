@@ -13,7 +13,7 @@
         border: 25px solid lightblue;
         padding: 20px;
         white-space: nowrap;
-        box-sizing: border-box;
+        /* box-sizing: border-box; */
       }
 
       #fixed {
@@ -65,8 +65,10 @@
 
     <script>
       const example = document.querySelector("#example");
+      const styles = getComputedStyle(example);
       console.log(example.clientWidth);
-      console.log(example.offsetWidth);
+      console.log(styles.width);
+      console.log(300 - 25 * 2 - 16);
     </script>
 
     <!-- <script>
