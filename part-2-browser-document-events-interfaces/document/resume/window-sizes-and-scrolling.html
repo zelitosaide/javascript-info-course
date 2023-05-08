@@ -21,6 +21,13 @@
     </div>
 
     <script>
+      console.log("Ola");
+      const root = document.querySelector("#root");
+      const child = root.firstElementChild;
+      console.log(root.scrollHeight === child.clientHeight);
+    </script>
+
+    <!-- <script>
       const root = document.querySelector("#root");
       // root.style.height = "100px";
       // root.style.overflowY = "scroll";
@@ -36,7 +43,7 @@
       console.log(child.scrollHeight);
 
       console.log(root.scrollHeight);
-    </script>
+    </script> -->
 
     <!-- <script>
       const html = document.documentElement;
