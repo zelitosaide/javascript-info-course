@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
-  <body onscroll="handleScroll()">
+  <body
+    onscroll="handleScroll()"
+    onclick="handleClick()"
+  >
     <p>
       Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum error ex,
       atque deleniti sapiente culpa quibusdam nihil doloribus at consequuntur
@@ -40,6 +43,19 @@
     </p>
 
     <script>
+      function handleScroll() {
+        // console.log(window.pageYOffset, window.pageXOffset);
+
+        // OR
+        console.log(window.scrollY, window.scrollX);
+      }
+
+      function handleClick() {
+        document.documentElement.scrollTop += 10;
+      }
+    </script>
+
+    <!-- <script>
       const html = document.documentElement;
       const body = document.body;
       function handleScroll() {
@@ -48,7 +64,7 @@
         // Not this
         // console.log(body.scrollTop);
       }
-    </script>
+    </script> -->
 
     <!-- <script>
       const scrollHeight = Math.max(
