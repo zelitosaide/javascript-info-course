@@ -1,20 +1,34 @@
 <!DOCTYPE html>
 <html>
   <body>
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum error ex,
-    atque deleniti sapiente culpa quibusdam nihil doloribus at consequuntur
-    temporibus accusamus dolor non quidem debitis! Error, facilis. Voluptatibus,
-    corrupti. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dicta
-    expedita voluptas aliquam magni accusantium commodi natus facere esse, quae
-    mollitia laboriosam consectetur ea, labore odit quod. Commodi in rerum
-    maxime. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum
-    error ex, atque deleniti sapiente culpa quibusdam nihil doloribus at
-    consequuntur temporibus accusamus dolor non quidem debitis! Error, facilis.
-    Voluptatibus, corrupti. Lorem ipsum dolor sit amet consectetur, adipisicing
-    elit. Dicta expedita voluptas aliquam magni accusantium commodi natus facere
-    esse, quae mollitia laboriosam consectetur ea, labore odit quod. Commodi in
-    rerum maxime.
+    <div id="root">
+      <div>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum error
+        ex, atque deleniti sapiente culpa quibusdam nihil doloribus at
+        consequuntur temporibus accusamus dolor non quidem debitis! Error,
+        facilis. Voluptatibus, corrupti. Lorem ipsum dolor sit amet consectetur,
+        adipisicing elit. Dicta expedita voluptas aliquam magni accusantium
+        commodi natus facere esse, quae mollitia laboriosam consectetur ea,
+        labore odit quod. Commodi in rerum maxime. Lorem ipsum dolor sit amet,
+        consectetur adipisicing elit. Illum error ex, atque deleniti sapiente
+        culpa quibusdam nihil doloribus at consequuntur temporibus accusamus
+        dolor non quidem debitis! Error, facilis. Voluptatibus, corrupti. Lorem
+        ipsum dolor sit amet consectetur, adipisicing elit. Dicta expedita
+        voluptas aliquam magni accusantium commodi natus facere esse, quae
+        mollitia laboriosam consectetur ea, labore odit quod. Commodi in rerum
+        maxime.
+      </div>
+    </div>
+
     <script>
+      const root = document.querySelector("#root");
+      root.style.backgroundColor = "lightblue";
+      console.log(root.clientHeight);
+      console.log(root.offsetHeight);
+      console.log(root.scrollHeight);
+    </script>
+
+    <!-- <script>
       const html = document.documentElement;
       // html.style.whiteSpace = "nowrap";
       html.style.backgroundColor = "lightblue";
@@ -29,6 +43,6 @@
 
       console.log("window.innerWidth", window.innerWidth);
       console.log("window.innerHeight", window.innerHeight);
-    </script>
+    </script> -->
   </body>
 </html>
