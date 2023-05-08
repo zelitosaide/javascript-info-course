@@ -22,9 +22,19 @@
 
     <script>
       const root = document.querySelector("#root");
+      // root.style.height = "100px";
+      // root.style.overflowY = "scroll";
       root.style.backgroundColor = "lightblue";
       console.log(root.clientHeight);
       console.log(root.offsetHeight);
+      console.log(root.scrollHeight);
+
+      const child = root.firstElementChild;
+
+      console.log(child.clientHeight);
+      console.log(child.offsetHeight);
+      console.log(child.scrollHeight);
+
       console.log(root.scrollHeight);
     </script>
 
