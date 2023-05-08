@@ -1,31 +1,81 @@
 <!DOCTYPE html>
 <html>
-  <body>
-    <div id="root">
-      <div>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum error
-        ex, atque deleniti sapiente culpa quibusdam nihil doloribus at
-        consequuntur temporibus accusamus dolor non quidem debitis! Error,
-        facilis. Voluptatibus, corrupti. Lorem ipsum dolor sit amet consectetur,
-        adipisicing elit. Dicta expedita voluptas aliquam magni accusantium
-        commodi natus facere esse, quae mollitia laboriosam consectetur ea,
-        labore odit quod. Commodi in rerum maxime. Lorem ipsum dolor sit amet,
-        consectetur adipisicing elit. Illum error ex, atque deleniti sapiente
-        culpa quibusdam nihil doloribus at consequuntur temporibus accusamus
-        dolor non quidem debitis! Error, facilis. Voluptatibus, corrupti. Lorem
-        ipsum dolor sit amet consectetur, adipisicing elit. Dicta expedita
-        voluptas aliquam magni accusantium commodi natus facere esse, quae
-        mollitia laboriosam consectetur ea, labore odit quod. Commodi in rerum
-        maxime.
-      </div>
-    </div>
+  <body onscroll="handleScroll()">
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum error ex,
+      atque deleniti sapiente culpa quibusdam nihil doloribus at consequuntur
+      temporibus accusamus dolor non quidem debitis! Error, facilis.
+      Voluptatibus, corrupti. Lorem ipsum dolor sit amet consectetur,
+      adipisicing elit. Dicta expedita voluptas aliquam magni accusantium
+      commodi natus facere esse, quae mollitia laboriosam consectetur ea, labore
+      odit quod. Commodi in rerum maxime. Lorem ipsum dolor sit amet,
+      consectetur adipisicing elit. Illum error ex, atque deleniti sapiente
+      culpa quibusdam nihil doloribus at consequuntur temporibus accusamus dolor
+      non quidem debitis! Error, facilis. Voluptatibus, corrupti.
+    </p>
+    <p>
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dicta expedita
+      voluptas aliquam magni accusantium commodi natus facere esse, quae
+      mollitia laboriosam consectetur ea, labore odit quod. Commodi in rerum
+      maxime.
+    </p>
+
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum error ex,
+      atque deleniti sapiente culpa quibusdam nihil doloribus at consequuntur
+      temporibus accusamus dolor non quidem debitis! Error, facilis.
+      Voluptatibus, corrupti. Lorem ipsum dolor sit amet consectetur,
+      adipisicing elit. Dicta expedita voluptas aliquam magni accusantium
+      commodi natus facere esse, quae mollitia laboriosam consectetur ea, labore
+      odit quod. Commodi in rerum maxime. Lorem ipsum dolor sit amet,
+      consectetur adipisicing elit. Illum error ex, atque deleniti sapiente
+      culpa quibusdam nihil doloribus at consequuntur temporibus accusamus dolor
+      non quidem debitis! Error, facilis. Voluptatibus, corrupti.
+    </p>
+    <p>
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dicta expedita
+      voluptas aliquam magni accusantium commodi natus facere esse, quae
+      mollitia laboriosam consectetur ea, labore odit quod. Commodi in rerum
+      maxime.
+    </p>
 
     <script>
+      const html = document.documentElement;
+      const body = document.body;
+      function handleScroll() {
+        console.log(html.scrollTop);
+
+        // Not this
+        // console.log(body.scrollTop);
+      }
+    </script>
+
+    <!-- <script>
+      const scrollHeight = Math.max(
+        document.body.clientHeight,
+        document.documentElement.clientHeight,
+        document.body.offsetHeight,
+        document.documentElement.offsetHeight,
+        document.body.scrollHeight,
+        document.documentElement.scrollHeight
+      );
+
+      console.log(scrollHeight);
+    </script> -->
+
+    <!-- <script>
+      const html = document.documentElement;
+      console.log(html.scrollHeight);
+      console.log(html.clientHeight);
+      console.log(html.offsetHeight);
+    </script> -->
+
+    <!-- <script>
       console.log("Ola");
       const root = document.querySelector("#root");
       const child = root.firstElementChild;
       console.log(root.scrollHeight === child.clientHeight);
-    </script>
+    </script> -->
 
     <!-- <script>
       const root = document.querySelector("#root");
