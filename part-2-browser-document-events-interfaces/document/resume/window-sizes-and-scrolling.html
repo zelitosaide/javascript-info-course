@@ -4,6 +4,12 @@
     onscroll="handleScroll()"
     onclick="handleClick()"
   >
+    <button
+      type="button"
+      onclick="handleScrollToTop()"
+    >
+      Scroll to bottom
+    </button>
     <p>
       Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum error ex,
       atque deleniti sapiente culpa quibusdam nihil doloribus at consequuntur
@@ -51,7 +57,13 @@
       }
 
       function handleClick() {
-        document.documentElement.scrollTop += 10;
+        // document.documentElement.scrollTop += 10;
+        // OR
+        window.scrollBy(0, 10);
+      }
+
+      function handleScrollToTop() {
+        window.scrollTo(0, 1e10);
       }
     </script>
 
