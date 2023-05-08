@@ -4,6 +4,7 @@
     onscroll="handleScroll()"
     onclick="handleClick()"
   >
+    <h3>Forbid the scrolling</h3>
     <button
       type="button"
       onclick="handleScrollToBottom()"
@@ -22,6 +23,13 @@
       culpa quibusdam nihil doloribus at consequuntur temporibus accusamus dolor
       non quidem debitis! Error, facilis. Voluptatibus, corrupti.
     </p>
+
+    <button
+      type="button"
+      onclick="handleScrollIntoView(this)"
+    >
+      this.scrollIntoView()
+    </button>
     <p>
       Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dicta expedita
       voluptas aliquam magni accusantium commodi natus facere esse, quae
@@ -41,6 +49,12 @@
       culpa quibusdam nihil doloribus at consequuntur temporibus accusamus dolor
       non quidem debitis! Error, facilis. Voluptatibus, corrupti.
     </p>
+    <button
+      type="button"
+      onclick="handleScrollIntoView2(this)"
+    >
+      this.scrollIntoView(false)
+    </button>
     <p>
       Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dicta expedita
       voluptas aliquam magni accusantium commodi natus facere esse, quae
@@ -75,6 +89,14 @@
 
       function handleScrollToTop() {
         window.scrollTo(0, 0);
+      }
+
+      function handleScrollIntoView(elem) {
+        elem.scrollIntoView();
+      }
+
+      function handleScrollIntoView2(elem) {
+        elem.scrollIntoView(false);
       }
     </script>
 
