@@ -6,7 +6,7 @@
   >
     <button
       type="button"
-      onclick="handleScrollToTop()"
+      onclick="handleScrollToBottom()"
     >
       Scroll to bottom
     </button>
@@ -48,6 +48,13 @@
       maxime.
     </p>
 
+    <button
+      type="button"
+      onclick="handleScrollToTop()"
+    >
+      Scroll to top
+    </button>
+
     <script>
       function handleScroll() {
         // console.log(window.pageYOffset, window.pageXOffset);
@@ -62,8 +69,12 @@
         window.scrollBy(0, 10);
       }
 
-      function handleScrollToTop() {
+      function handleScrollToBottom() {
         window.scrollTo(0, 1e10);
+      }
+
+      function handleScrollToTop() {
+        window.scrollTo(0, 0);
       }
     </script>
 
