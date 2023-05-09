@@ -52,6 +52,13 @@
       document.body.style.overflow = 'hidden'
     </button>
 
+    <button
+      type="button"
+      onclick="handleUnFreeze()"
+    >
+      document.style.overflow = ''
+    </button>
+
     <p>
       Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum error ex,
       atque deleniti sapiente culpa quibusdam nihil doloribus at consequuntur
@@ -85,11 +92,18 @@
     </button>
 
     <script>
+      const html = document.documentElement;
+      const clientWidth = html.clientWidth;
       function handleFreeze() {
-        const html = document.documentElement;
         document.body.style.overflow = "hidden";
-        console.log(html.clientWidth);
-        console.log("Frozen");
+        console.log(html.clientWidth, clientWidth);
+        if (html.clientWidth > clientWidth) {
+          html.style.paddingRight = html.clientWidth - clientWidth + "px";
+        }
+      }
+
+      function handleUnFreeze() {
+        document.body.style.overflow = "";
       }
     </script>
 
