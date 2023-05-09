@@ -82,6 +82,9 @@
       document.addEventListener("click", function () {
         const elem = document.elementFromPoint(position.x, position.y);
         elem.style.backgroundColor = "pink";
+        setTimeout(function () {
+          elem.style.backgroundColor = "";
+        }, 500);
       });
     </script>
 
