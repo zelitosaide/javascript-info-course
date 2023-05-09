@@ -45,6 +45,13 @@
       maxime.
     </p>
 
+    <button
+      type="button"
+      onclick="handleFreeze()"
+    >
+      document.body.style.overflow = 'hidden'
+    </button>
+
     <p>
       Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum error ex,
       atque deleniti sapiente culpa quibusdam nihil doloribus at consequuntur
@@ -78,11 +85,24 @@
     </button>
 
     <script>
+      function handleFreeze() {
+        const html = document.documentElement;
+        document.body.style.overflow = "hidden";
+        console.log(html.clientWidth);
+        console.log("Frozen");
+      }
+    </script>
+
+    <script>
       function handleScroll() {
         // console.log(window.pageYOffset, window.pageXOffset);
 
         // OR
-        console.log(window.scrollY, window.scrollX);
+        console.log(
+          window.scrollY,
+          window.scrollX,
+          document.documentElement.clientWidth
+        );
       }
 
       function handleClick() {
