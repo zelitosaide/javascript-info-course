@@ -19,7 +19,10 @@
     </style>
   </head>
   <body>
-    <div id="example">
+    <div
+      id="example"
+      onscroll="handleScroll()"
+    >
       <h3>Introduction</h3>
       <p>
         This Ecma Standard is based on several originating technologies, the
@@ -54,6 +57,16 @@
     </div>
 
     <script>
+      const h3 = document.querySelector("h3");
+      h3.style.backgroundColor = "lightcoral";
+
+      function handleScroll() {
+        const coords = h3.getBoundingClientRect();
+        console.log(coords.top, coords.y);
+      }
+    </script>
+
+    <!-- <script>
       const coords = document.querySelector("#example").getBoundingClientRect();
 
       console.log(coords.x, coords.left);
@@ -62,7 +75,7 @@
       console.log(coords.height);
       console.log(coords.right, coords.x + coords.width);
       console.log(coords.bottom, coords.y + coords.height);
-    </script>
+    </script> -->
 
     <!-- <script>
       const example = document.querySelector("#example");
