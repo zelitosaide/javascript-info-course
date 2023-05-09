@@ -72,19 +72,27 @@
       // console.log(document.elementFromPoint(centerX, -10));
       // console.log(document.elementFromPoint(1e5, 1e5));
 
-      let position;
+      // let position;
 
-      document.addEventListener("mousemove", function (e) {
-        // console.log(e.clientX, e.clientY);
-        position = { x: e.clientX, y: e.clientY };
-      });
+      // document.addEventListener("mousemove", function (e) {
+      //   // console.log(e.clientX, e.clientY);
+      //   position = { x: e.clientX, y: e.clientY };
+      // });
 
-      document.addEventListener("click", function () {
-        const elem = document.elementFromPoint(position.x, position.y);
+      // document.addEventListener("click", function (e) {
+      //   const elem = document.elementFromPoint(position.x, position.y);
+      //   elem.style.backgroundColor = "pink";
+      //   setTimeout(function () {
+      //     elem.style.backgroundColor = "";
+      //   }, 2000);
+      // });
+
+      document.addEventListener("click", function (e) {
+        const elem = document.elementFromPoint(e.clientX, e.clientY);
         elem.style.backgroundColor = "pink";
         setTimeout(function () {
           elem.style.backgroundColor = "";
-        }, 500);
+        }, 2000);
       });
     </script>
 
