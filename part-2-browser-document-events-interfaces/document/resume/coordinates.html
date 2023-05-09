@@ -54,6 +54,15 @@
     </div>
 
     <script>
+      const coords = document.querySelector("#example").getBoundingClientRect();
+
+      console.log(coords.x, coords.left);
+      console.log(coords.y, coords.top);
+      console.log(coords.width);
+      console.log(coords.height);
+    </script>
+
+    <!-- <script>
       const example = document.querySelector("#example");
       const coords = example.getBoundingClientRect();
 
@@ -62,6 +71,7 @@
       console.log(coords.x, coords.y);
       console.log(example.offsetLeft, example.offsetTop);
       console.log(coords.right, example.offsetWidth + example.offsetLeft);
-    </script>
+      console.log(coords.bottom, example.offsetHeight + example.offsetTop);
+    </script> -->
   </body>
 </html>
