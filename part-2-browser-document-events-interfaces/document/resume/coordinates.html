@@ -58,6 +58,16 @@
     </div>
 
     <script>
+      const centerX = document.documentElement.clientWidth / 2;
+      const centerY = document.documentElement.clientHeight / 2;
+      const elem = document.elementFromPoint(centerX, centerY);
+      const elems = document.elementsFromPoint(centerX, centerY);
+
+      console.log(elem);
+      console.log(elems);
+    </script>
+
+    <!-- <script>
       const h3 = document.querySelector("h3");
       h3.style.backgroundColor = "lightcoral";
 
@@ -71,7 +81,7 @@
         console.log(coords.height);
         console.log(coords.width);
       }
-    </script>
+    </script> -->
 
     <!-- <script>
       const coords = document.querySelector("#example").getBoundingClientRect();
