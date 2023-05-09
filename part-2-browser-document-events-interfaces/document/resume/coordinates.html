@@ -15,7 +15,7 @@
         position: absolute;
         top: 20px;
         left: 20px;
-        /* white-space: nowrap; */
+        white-space: nowrap;
       }
     </style>
   </head>
@@ -63,10 +63,10 @@
 
       function handleScroll() {
         const coords = h3.getBoundingClientRect();
-
         // console.log(coords.top, coords.y);
         // console.log(coords.bottom);
         // console.log(coords.left, coords.x);
+        console.log(coords.right);
       }
     </script>
 
