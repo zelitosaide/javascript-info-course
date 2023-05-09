@@ -20,10 +20,11 @@
     </style>
   </head>
   <body>
-    <div
+    <!-- <div
       id="example"
       onscroll="handleScroll()"
-    >
+    > -->
+    <div id="example">
       <h3>Introduction</h3>
       <p>
         This Ecma Standard is based on several originating technologies, the
@@ -58,18 +59,30 @@
     </div>
 
     <script>
-      const centerX = document.documentElement.clientWidth / 2;
-      const centerY = document.documentElement.clientHeight / 2;
-      const elem = document.elementFromPoint(centerX, centerY);
-      const elems = document.elementsFromPoint(centerX, centerY);
+      // const centerX = document.documentElement.clientWidth / 2;
+      // const centerY = document.documentElement.clientHeight / 2;
+      // const elem = document.elementFromPoint(centerX, centerY);
+      // const elems = document.elementsFromPoint(centerX, centerY);
 
-      console.log(elem);
-      console.log(elems);
+      // console.log(elem);
+      // console.log(elems);
 
-      console.log(document.elementFromPoint(-10, -10));
-      console.log(document.elementFromPoint(-10, centerY));
-      console.log(document.elementFromPoint(centerX, -10));
-      console.log(document.elementFromPoint(1e5, 1e5));
+      // console.log(document.elementFromPoint(-10, -10));
+      // console.log(document.elementFromPoint(-10, centerY));
+      // console.log(document.elementFromPoint(centerX, -10));
+      // console.log(document.elementFromPoint(1e5, 1e5));
+
+      let position;
+
+      document.addEventListener("mousemove", function (e) {
+        // console.log(e.clientX, e.clientY);
+        position = { x: e.clientX, y: e.clientY };
+      });
+
+      document.addEventListener("click", function () {
+        const elem = document.elementFromPoint(position.x, position.y);
+        console.log(elem);
+      });
     </script>
 
     <!-- <script>
