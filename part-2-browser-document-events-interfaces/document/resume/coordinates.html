@@ -4,6 +4,7 @@
     <style>
       html {
         background-color: lightslategray;
+        padding: 20px;
       }
 
       #example {
@@ -12,9 +13,6 @@
         overflow: auto;
         border: 25px solid lightblue;
         padding: 20px;
-        position: absolute;
-        top: 20px;
-        left: 20px;
         /* white-space: nowrap; */
       }
     </style>
@@ -26,6 +24,12 @@
     > -->
     <div id="example">
       <h3>Introduction</h3>
+      <button
+        type="button"
+        onclick="showMessage(this)"
+      >
+        Show message
+      </button>
       <p>
         This Ecma Standard is based on several originating technologies, the
         most well known being JavaScript (Netscape) and JScript (Microsoft). The
@@ -37,6 +41,13 @@
         the Ecma General Assembly of June 1997.
       </p>
 
+      <button
+        type="button"
+        onclick="showMessage(this)"
+      >
+        Show message
+      </button>
+
       <p>
         That Ecma Standard was submitted to ISO/IEC JTC 1 for adoption under the
         fast-track procedure, and approved as international standard ISO/IEC
@@ -45,6 +56,13 @@
         16262. Changes between the first and the second edition are editorial in
         nature.
       </p>
+
+      <button
+        type="button"
+        onclick="showMessage(this)"
+      >
+        Show message
+      </button>
 
       <p>
         The third edition of the Standard introduced powerful regular
@@ -56,7 +74,123 @@
         Assembly of December 1999 and published as ISO/IEC 16262:2002 in June
         2002.
       </p>
+
+      <button
+        type="button"
+        onclick="showMessage(this)"
+      >
+        Show message
+      </button>
     </div>
+
+    <h1>Document coordenates</h1>
+
+    <p>
+      The third edition of the Standard introduced powerful regular expressions,
+      better string handling, new control statements, try/catch exception
+      handling, tighter definition of errors, formatting for numeric output and
+      minor changes in anticipation of forthcoming internationalisation
+      facilities and future language growth. The third edition of the ECMAScript
+      standard was adopted by the Ecma General Assembly of December 1999 and
+      published as ISO/IEC 16262:2002 in June 2002.
+    </p>
+
+    <p>
+      The third edition of the Standard introduced powerful regular expressions,
+      better string handling, new control statements, try/catch exception
+      handling, tighter definition of errors, formatting for numeric output and
+      minor changes in anticipation of forthcoming internationalisation
+      facilities and future language growth. The third edition of the ECMAScript
+      standard was adopted by the Ecma General Assembly of December 1999 and
+      published as ISO/IEC 16262:2002 in June 2002.
+    </p>
+
+    <p>
+      The third edition of the Standard introduced powerful regular expressions,
+      better string handling, new control statements, try/catch exception
+      handling, tighter definition of errors, formatting for numeric output and
+      minor changes in anticipation of forthcoming internationalisation
+      facilities and future language growth. The third edition of the ECMAScript
+      standard was adopted by the Ecma General Assembly of December 1999 and
+      published as ISO/IEC 16262:2002 in June 2002.
+    </p>
+
+    <p>
+      The third edition of the Standard introduced powerful regular expressions,
+      better string handling, new control statements, try/catch exception
+      handling, tighter definition of errors, formatting for numeric output and
+      minor changes in anticipation of forthcoming internationalisation
+      facilities and future language growth. The third edition of the ECMAScript
+      standard was adopted by the Ecma General Assembly of December 1999 and
+      published as ISO/IEC 16262:2002 in June 2002.
+    </p>
+
+    <p>
+      The third edition of the Standard introduced powerful regular expressions,
+      better string handling, new control statements, try/catch exception
+      handling, tighter definition of errors, formatting for numeric output and
+      minor changes in anticipation of forthcoming internationalisation
+      facilities and future language growth. The third edition of the ECMAScript
+      standard was adopted by the Ecma General Assembly of December 1999 and
+      published as ISO/IEC 16262:2002 in June 2002.
+    </p>
+
+    <p>
+      The third edition of the Standard introduced powerful regular expressions,
+      better string handling, new control statements, try/catch exception
+      handling, tighter definition of errors, formatting for numeric output and
+      minor changes in anticipation of forthcoming internationalisation
+      facilities and future language growth. The third edition of the ECMAScript
+      standard was adopted by the Ecma General Assembly of December 1999 and
+      published as ISO/IEC 16262:2002 in June 2002.
+    </p>
+
+    <p>
+      The third edition of the Standard introduced powerful regular expressions,
+      better string handling, new control statements, try/catch exception
+      handling, tighter definition of errors, formatting for numeric output and
+      minor changes in anticipation of forthcoming internationalisation
+      facilities and future language growth. The third edition of the ECMAScript
+      standard was adopted by the Ecma General Assembly of December 1999 and
+      published as ISO/IEC 16262:2002 in June 2002.
+    </p>
+
+    <script>
+      function getCoords(elem) {
+        const box = elem.getBoundingClientRect();
+
+        return {
+          top: box.top + window.pageYOffset,
+          left: box.left + window.pageXOffset,
+          right: box.right + window.pageXOffset,
+          bottom: box.bottom + window.pageYOffset,
+        };
+      }
+
+      function showMessage(elem) {
+        const message = createMessageUnder(elem, "Hello, world!");
+        document.body.append(message);
+        setTimeout(function () {
+          message.remove();
+        }, 5000);
+      }
+
+      function createMessageUnder(elem, html) {
+        // create message element
+        const message = document.createElement("div");
+        // better to use a css class for the style here
+        message.style.cssText = "position: absolute; color: red";
+        // assign coordinates, don't forget "px"!
+        const coords = getCoords(elem);
+
+        message.style.left = coords.left + "px";
+        message.style.top = coords.bottom + "px";
+
+        message.innerHTML = html;
+
+        return message;
+      }
+    </script>
 
     <script>
       // const centerX = document.documentElement.clientWidth / 2;
@@ -87,13 +221,39 @@
       //   }, 2000);
       // });
 
-      document.addEventListener("click", function (e) {
-        const elem = document.elementFromPoint(e.clientX, e.clientY);
-        elem.style.backgroundColor = "pink";
-        setTimeout(function () {
-          elem.style.backgroundColor = "";
-        }, 2000);
-      });
+      // document.addEventListener("click", function (e) {
+      //   const elem = document.elementFromPoint(e.clientX, e.clientY);
+      //   if (elem) {
+      //     elem.style.backgroundColor = "pink";
+      //     setTimeout(function () {
+      //       elem.style.backgroundColor = "";
+      //     }, 2000);
+      //   }
+      // });
+
+      // function createMessageUnder(elem, html) {
+      //   // create message element
+      //   const message = document.createElement("div");
+      //   // better to use a css class for the style here
+      //   message.style.cssText = "position: fixed; color: red";
+
+      //   // assign coordinates, don't forget "px"!
+      //   const coords = elem.getBoundingClientRect();
+      //   message.style.left = coords.left + "px";
+      //   message.style.top = coords.bottom + "px";
+
+      //   message.innerHTML = html;
+
+      //   return message;
+      // }
+
+      // function showMessage(elem) {
+      //   const message = createMessageUnder(elem, "Hello, world!");
+      //   document.body.append(message);
+      //   setTimeout(function () {
+      //     message.remove();
+      //   }, 5000);
+      // }
     </script>
 
     <!-- <script>
