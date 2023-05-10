@@ -76,11 +76,16 @@
     </div>
 
     <script>
-      console.log("ola");
       const coords = document.querySelector("#coords");
       document.addEventListener("click", function (e) {
         coords.innerHTML = e.clientX + ":" + e.clientY;
       });
+
+      const field = document.querySelector("#field");
+      const fieldCoords = field.getBoundingClientRect();
+
+      console.log(fieldCoords.left, fieldCoords.top);
+      console.log(fieldCoords.right, fieldCoords.bottom);
     </script>
   </body>
 </html>
