@@ -77,6 +77,10 @@
 
     <script>
       console.log("ola");
+      const coords = document.querySelector("#coords");
+      document.addEventListener("click", function (e) {
+        coords.innerHTML = e.clientX + ":" + e.clientY;
+      });
     </script>
   </body>
 </html>
