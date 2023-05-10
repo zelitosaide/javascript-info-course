@@ -85,18 +85,19 @@
       }
 
       function positionAt(anchor, position, elem) {
+        const coords = anchor.getBoundingClientRect();
+
         if (position === "top") {
-          elem.style.top =
-            anchor.getBoundingClientRect().top - elem.offsetHeight + "px";
-          elem.style.left = anchor.getBoundingClientRect().left + "px";
+          elem.style.top = coords.top - elem.offsetHeight + "px";
+          elem.style.left = coords.left + "px";
         }
         if (position === "bottom") {
-          elem.style.left = anchor.getBoundingClientRect().left + "px";
-          elem.style.top = anchor.getBoundingClientRect().bottom + "px";
+          elem.style.left = coords.left + "px";
+          elem.style.top = coords.bottom + "px";
         }
         if (position === "right") {
-          elem.style.left = anchor.getBoundingClientRect().right + "px";
-          elem.style.top = anchor.getBoundingClientRect().top + "px";
+          elem.style.left = coords.right + "px";
+          elem.style.top = coords.top + "px";
         }
       }
     </script>
