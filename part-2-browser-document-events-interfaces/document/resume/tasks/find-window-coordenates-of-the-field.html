@@ -88,8 +88,19 @@
       console.log(fieldCoords.right, fieldCoords.bottom);
 
       console.log(
-        fieldCoords.x + field.clientLeft,
-        fieldCoords.y + field.clientTop
+        fieldCoords.left + field.clientLeft,
+        fieldCoords.top + field.clientTop
+      );
+
+      console.log(
+        fieldCoords.right - field.clientLeft,
+        fieldCoords.bottom - field.clientTop
+      );
+
+      // OR
+      console.log(
+        fieldCoords.right - parseInt(getComputedStyle(field).borderRightWidth),
+        fieldCoords.bottom - parseInt(getComputedStyle(field).borderBottomWidth)
       );
     </script>
   </body>
