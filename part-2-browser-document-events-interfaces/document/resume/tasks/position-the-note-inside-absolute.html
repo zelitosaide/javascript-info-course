@@ -91,6 +91,12 @@
       >
         bottom in
       </button>
+      <button
+        type="button"
+        onclick="rightIn()"
+      >
+        right in
+      </button>
     </p>
 
     <script>
@@ -114,6 +120,10 @@
 
       function bottomIn() {
         showNote(blockquote, "bottom-in", "bottom in");
+      }
+
+      function rightIn() {
+        showNote(blockquote, "right-in", "right in");
       }
 
       function showNote(anchor, position, html) {
@@ -152,6 +162,10 @@
         if (position === "bottom-in") {
           elem.style.left = coords.left + "px";
           elem.style.top = coords.bottom - elem.offsetHeight + "px";
+        }
+        if (position === "right-in") {
+          elem.style.left = coords.right - elem.offsetWidth + "px";
+          elem.style.top = coords.top + "px";
         }
       }
 
