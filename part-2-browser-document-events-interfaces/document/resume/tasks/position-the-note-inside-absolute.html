@@ -78,6 +78,15 @@
       right out
     </button>
 
+    <p>
+      <button
+        type="button"
+        onclick="topIn()"
+      >
+        top in
+      </button>
+    </p>
+
     <script>
       const blockquote = document.querySelector("blockquote");
 
@@ -91,6 +100,10 @@
 
       function rightOut() {
         showNote(blockquote, "right-out", "right out");
+      }
+
+      function topIn() {
+        showNote(blockquote, "top-in", "top in");
       }
 
       function showNote(anchor, position, html) {
@@ -120,6 +133,10 @@
         }
         if (position === "right-out") {
           elem.style.left = coords.right + "px";
+          elem.style.top = coords.top + "px";
+        }
+        if (position === "top-in") {
+          elem.style.left = coords.left + "px";
           elem.style.top = coords.top + "px";
         }
       }
