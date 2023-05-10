@@ -85,6 +85,12 @@
       >
         top in
       </button>
+      <button
+        type="button"
+        onclick="bottomIn()"
+      >
+        bottom in
+      </button>
     </p>
 
     <script>
@@ -104,6 +110,10 @@
 
       function topIn() {
         showNote(blockquote, "top-in", "top in");
+      }
+
+      function bottomIn() {
+        showNote(blockquote, "bottom-in", "bottom in");
       }
 
       function showNote(anchor, position, html) {
@@ -138,6 +148,10 @@
         if (position === "top-in") {
           elem.style.left = coords.left + "px";
           elem.style.top = coords.top + "px";
+        }
+        if (position === "bottom-in") {
+          elem.style.left = coords.left + "px";
+          elem.style.top = coords.bottom - elem.offsetHeight + "px";
         }
       }
 
