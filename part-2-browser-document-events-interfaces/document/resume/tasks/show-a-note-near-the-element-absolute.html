@@ -22,7 +22,7 @@
       }
 
       .note {
-        position: fixed;
+        position: absolute;
         z-index: 1000;
         padding: 5px;
         border: 1px solid black;
@@ -32,7 +32,7 @@
       }
     </style>
   </head>
-  <body>
+  <body style="height: 2000px">
     <p>
       Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit
       sint atque dolorum fuga ad incidunt voluptatum error fugiat animi amet!
@@ -54,10 +54,20 @@
       molestias sit tempore omnis recusandae esse sequi officia sapiente.
     </p>
 
+    <button
+      type="button"
+      onclick="showNoteAbove()"
+    >
+      Show note above
+    </button>
+
     <script>
       const blockquote = document.querySelector("blockquote");
 
-      showNote(blockquote, "top", "note above");
+      function showNoteAbove() {
+        showNote(blockquote, "top", "note above");
+      }
+
       showNote(blockquote, "right", "note at the right");
       showNote(blockquote, "bottom", "note below");
 
@@ -66,6 +76,10 @@
         note.className = "note";
         note.innerHTML = html;
         document.body.append(note);
+
+        setTimeout(function () {
+          note.remove();
+        }, 5000);
 
         positionAt(anchor, position, note);
       }

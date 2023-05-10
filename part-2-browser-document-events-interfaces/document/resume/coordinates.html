@@ -224,6 +224,7 @@
         message.style.cssText = "position: absolute; color: red";
         // assign coordinates, don't forget "px"!
         const coords = getCoords(elem);
+        // const coords = elem.getBoundingClientRect();
 
         message.style.left = coords.left + "px";
         message.style.top = coords.bottom + "px";
