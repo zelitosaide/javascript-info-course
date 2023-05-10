@@ -59,38 +59,38 @@
 
     <button
       type="button"
-      onclick="showNoteAbove()"
+      onclick="topOut()"
     >
-      Show note above
+      top-out
     </button>
 
     <button
       type="button"
-      onclick="showNoteBelow()"
+      onclick="bottomOut()"
     >
-      Show note below
+      bottom out
     </button>
 
     <button
       type="button"
-      onclick="showNoteAtTheRight()"
+      onclick="rightOut()"
     >
-      Show note at the right
+      right out
     </button>
 
     <script>
       const blockquote = document.querySelector("blockquote");
 
-      function showNoteAbove() {
-        showNote(blockquote, "top", "note above");
+      function topOut() {
+        showNote(blockquote, "top-out", "top out");
       }
 
-      function showNoteBelow() {
-        showNote(blockquote, "bottom", "note below");
+      function bottomOut() {
+        showNote(blockquote, "bottom-out", "bottom out");
       }
 
-      function showNoteAtTheRight() {
-        showNote(blockquote, "right", "note at the right");
+      function rightOut() {
+        showNote(blockquote, "right-out", "right out");
       }
 
       function showNote(anchor, position, html) {
@@ -110,15 +110,15 @@
         // const coords = anchor.getBoundingClientRect();
         const coords = getCoords(anchor);
 
-        if (position === "top") {
+        if (position === "top-out") {
           elem.style.top = coords.top - elem.offsetHeight + "px";
           elem.style.left = coords.left + "px";
         }
-        if (position === "bottom") {
+        if (position === "bottom-out") {
           elem.style.left = coords.left + "px";
           elem.style.top = coords.bottom + "px";
         }
-        if (position === "right") {
+        if (position === "right-out") {
           elem.style.left = coords.right + "px";
           elem.style.top = coords.top + "px";
         }
