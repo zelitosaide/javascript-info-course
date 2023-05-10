@@ -61,6 +61,20 @@
       Show note above
     </button>
 
+    <button
+      type="button"
+      onclick="showNoteBelow()"
+    >
+      Show note below
+    </button>
+
+    <button
+      type="button"
+      onclick="showNoteAtTheRight()"
+    >
+      Show note at the right
+    </button>
+
     <script>
       const blockquote = document.querySelector("blockquote");
 
@@ -68,8 +82,13 @@
         showNote(blockquote, "top", "note above");
       }
 
-      showNote(blockquote, "right", "note at the right");
-      showNote(blockquote, "bottom", "note below");
+      function showNoteBelow() {
+        showNote(blockquote, "bottom", "note below");
+      }
+
+      function showNoteAtTheRight() {
+        showNote(blockquote, "right", "note at the right");
+      }
 
       function showNote(anchor, position, html) {
         const note = document.createElement("div");
