@@ -102,6 +102,12 @@
         fieldCoords.right - parseInt(getComputedStyle(field).borderRightWidth),
         fieldCoords.bottom - parseInt(getComputedStyle(field).borderBottomWidth)
       );
+
+      // OR
+      console.log(
+        fieldCoords.left + field.clientLeft + field.clientWidth,
+        fieldCoords.top + field.clientTop + field.clientHeight
+      );
     </script>
   </body>
 </html>
