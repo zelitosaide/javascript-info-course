@@ -85,7 +85,8 @@
       }
 
       function positionAt(anchor, position, elem) {
-        const coords = anchor.getBoundingClientRect();
+        // const coords = anchor.getBoundingClientRect();
+        const coords = getCoords(anchor);
 
         if (position === "top") {
           elem.style.top = coords.top - elem.offsetHeight + "px";
@@ -99,6 +100,17 @@
           elem.style.left = coords.right + "px";
           elem.style.top = coords.top + "px";
         }
+      }
+
+      function getCoords(elem) {
+        const box = elem.getBoundingClientRect();
+
+        return {
+          top: box.top + window.scrollY,
+          left: box.left + window.scrollX,
+          right: box.right + window.scrollX,
+          bottom: box.bottom + window.scrollY,
+        };
       }
     </script>
   </body>
