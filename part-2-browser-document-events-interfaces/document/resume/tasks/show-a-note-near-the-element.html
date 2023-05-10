@@ -1,5 +1,36 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <style>
+      blockquote {
+        background-color: #f9f9f9;
+        border-left: 10px solid #ccc;
+        margin: 0 0 0 100px;
+        padding: 0.5em 10px;
+        quotes: "\201C""\201D""\2018""\2019";
+        display: inline-block;
+      }
+
+      blockquote::before {
+        color: #ccc;
+        content: open-quote;
+        font-size: 4em;
+        line-height: 0.1em;
+        margin-right: 0.25em;
+        vertical-align: -0.4em;
+      }
+
+      .note {
+        position: fixed;
+        z-index: 1000;
+        padding: 5px;
+        border: 1px solid black;
+        background-color: white;
+        text-align: center;
+        font: italic 14px serif;
+      }
+    </style>
+  </head>
   <body>
     <p>
       Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit
@@ -9,9 +40,12 @@
     </p>
 
     <blockquote>
-      Teacher: Why are you late? Student: There was a man who lost a hundred
-      dollar bill. Teacher: That's nice. Were you helping him look for it?
-      Student: No. I was standing on it.
+      Teacher: Why are you late?
+      <br />
+      Student: There was a man who lost a hundred dollar bill.
+      <br />
+      Teacher: That's nice. Were you helping him look for it?
+      <br />Student: No. I was standing on it.
     </blockquote>
 
     <p>
@@ -22,7 +56,36 @@
     </p>
 
     <script>
-      console.log("ola");
+      const blockquote = document.querySelector("blockquote");
+
+      showNote(blockquote, "top", "note above");
+      showNote(blockquote, "right", "note at the right");
+      showNote(blockquote, "bottom", "note below");
+
+      function showNote(anchor, position, html) {
+        const note = document.createElement("div");
+        note.className = "note";
+        note.innerHTML = html;
+        document.body.append(note);
+
+        positionAt(anchor, position, note);
+      }
+
+      function positionAt(anchor, position, elem) {
+        if (position === "top") {
+          elem.style.top =
+            anchor.getBoundingClientRect().top - elem.offsetHeight + "px";
+          elem.style.left = anchor.getBoundingClientRect().left + "px";
+        }
+        if (position === "bottom") {
+          elem.style.left = anchor.getBoundingClientRect().left + "px";
+          elem.style.top = anchor.getBoundingClientRect().bottom + "px";
+        }
+        if (position === "right") {
+          elem.style.left = anchor.getBoundingClientRect().right + "px";
+          elem.style.top = anchor.getBoundingClientRect().top + "px";
+        }
+      }
     </script>
   </body>
 </html>
