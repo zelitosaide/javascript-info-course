@@ -225,7 +225,7 @@
       }, 5000);
     </script> -->
 
-    <p>Somewhere in the page...</p>
+    <!-- <p>Somewhere in the page...</p>
 
     <script>
       const list = [];
@@ -238,6 +238,14 @@
       document.write(document.createElement("hr").outerHTML);
     </script>
 
-    <p>The end.</p>
+    <p>The end.</p> -->
+
+    <script>
+      const div = document.createElement("div");
+      div.className = "alert";
+      const content = document.createTextNode("Hi there!");
+      div.append(content);
+      document.body.append(div);
+    </script>
   </body>
 </html>
