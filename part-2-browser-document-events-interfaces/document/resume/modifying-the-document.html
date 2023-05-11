@@ -205,6 +205,8 @@
       ul.appendChild(lastLi);
       ul.insertBefore(firstLi, ul.firstElementChild);
       ul.replaceChild(secondLi, ul.children[1]);
+      const removedNode = ul.removeChild(ul.children[2]);
+      console.log(removedNode);
     </script>
   </body>
 </html>
