@@ -126,5 +126,18 @@
       second.insertAdjacentElement("afterend", first);
       // second.after(first);
     </script> -->
+
+    <div
+      class="alert"
+      id="div"
+    >
+      <b>Hi there!</b> You've read an important message.
+    </div>
+
+    <script>
+      const div2 = document.querySelector("#div").cloneNode(true);
+      div2.querySelector("b").innerHTML = "Bye there!";
+      document.querySelector("#div").after(div2);
+    </script>
   </body>
 </html>
