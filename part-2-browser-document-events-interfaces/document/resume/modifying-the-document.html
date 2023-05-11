@@ -85,11 +85,10 @@
     <script>
       const ul = document.querySelector("ul");
       const lastLi = document.createElement("li");
-      lastLi.innerHTML = "<b>Before end</b>";
 
       ul.insertAdjacentHTML("beforebegin", "<b>Before begin</b>");
       ul.insertAdjacentHTML("afterbegin", "<li><b>After begin</b></li>");
-      ul.insertAdjacentHTML("beforeend", lastLi.outerHTML);
+      ul.insertAdjacentHTML("beforeend", "<li><b>Before end</b></li>");
       ul.insertAdjacentHTML("afterend", "<b>After end</b>");
     </script>
   </body>
