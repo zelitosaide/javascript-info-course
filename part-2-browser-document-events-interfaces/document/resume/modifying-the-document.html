@@ -89,6 +89,13 @@
       ul.insertAdjacentHTML("afterbegin", "<li><b>After begin</b></li>");
       ul.insertAdjacentHTML("beforeend", "<li><b>Before end</b></li>");
       ul.insertAdjacentHTML("afterend", "<b>After end</b>");
+
+      document.body.insertAdjacentText("beforebegin", "Insert Adjacent Text");
+
+      const div = document.createElement("div");
+      div.className = "alert";
+      div.innerHTML = "Finalmente terminamos!";
+      document.body.insertAdjacentElement("afterend", div);
     </script>
   </body>
 </html>
