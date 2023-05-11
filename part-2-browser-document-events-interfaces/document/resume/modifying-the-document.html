@@ -197,11 +197,14 @@
       const ul = document.querySelector("ul");
       const lastLi = document.createElement("li");
       const firstLi = document.createElement("li");
+      const secondLi = document.createElement("li");
 
       lastLi.innerHTML = "parentElem.appendChild()";
       firstLi.innerHTML = "parentElem.insertBefore(node, referenceElem)";
+      secondLi.innerHTML = "parentElem.replaceChild(node, oldNode)";
       ul.appendChild(lastLi);
       ul.insertBefore(firstLi, ul.firstElementChild);
+      ul.replaceChild(secondLi, ul.children[1]);
     </script>
   </body>
 </html>
