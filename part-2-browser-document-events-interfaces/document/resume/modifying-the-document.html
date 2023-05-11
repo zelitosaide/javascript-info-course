@@ -209,12 +209,20 @@
       console.log(removedNode);
     </script> -->
 
-    <p>Somewhere in the page...</p>
+    <!-- <p>Somewhere in the page...</p>
 
     <script>
       document.write("<b>Hello from JS</b>");
     </script>
 
-    <p>The end.</p>
+    <p>The end.</p> -->
+
+    <p>After five seconds the contents of this page will be replaced...</p>
+
+    <script>
+      setTimeout(function () {
+        document.write("<b>...By this.</b>");
+      }, 5000);
+    </script>
   </body>
 </html>
