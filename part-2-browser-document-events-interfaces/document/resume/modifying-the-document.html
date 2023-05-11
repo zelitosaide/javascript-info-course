@@ -121,7 +121,9 @@
     <script>
       const first = document.querySelector("#first");
       const second = document.querySelector("#second");
-      second.after(first);
+
+      second.insertAdjacentElement("afterend", first);
+      // second.after(first);
     </script>
   </body>
 </html>
