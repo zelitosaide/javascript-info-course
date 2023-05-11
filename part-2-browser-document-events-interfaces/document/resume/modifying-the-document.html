@@ -127,14 +127,14 @@
       // second.after(first);
     </script> -->
 
-    <div
+    <!-- <div
       class="alert"
       id="div"
     >
       <b>Hi there!</b> You've read an important message.
-    </div>
+    </div> -->
 
-    <script>
+    <!-- <script>
       const div2 = document.querySelector("#div").cloneNode(true);
       div2.querySelector("b").innerHTML = "Bye there!";
       document.querySelector("#div").after(div2);
@@ -143,6 +143,24 @@
       const div3 = document.querySelector("#div").cloneNode(false);
       div3.innerHTML = "<strong>Hello there!</strong>";
       div2.after(div3);
+    </script> -->
+
+    <ul id="ul"></ul>
+
+    <script>
+      const ul = document.querySelector("ul");
+
+      function getListContent() {
+        const fragment = new DocumentFragment();
+        for (let i = 0; i < 4; i++) {
+          const li = document.createElement("li");
+          li.append(i);
+          fragment.append(li);
+        }
+        return fragment;
+      }
+
+      ul.append(getListContent());
     </script>
   </body>
 </html>
