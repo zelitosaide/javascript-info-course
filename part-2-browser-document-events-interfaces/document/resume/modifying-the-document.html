@@ -105,7 +105,7 @@
       );
     </script> -->
 
-    <script>
+    <!-- <script>
       const div = document.createElement("div");
       div.className = "alert";
       div.innerHTML = "<b>Hi there!</b> You've read an important message!";
@@ -113,6 +113,15 @@
       setTimeout(function () {
         div.remove();
       }, 5000);
+    </script> -->
+
+    <div id="first">First</div>
+    <div id="second">Second</div>
+
+    <script>
+      const first = document.querySelector("#first");
+      const second = document.querySelector("#second");
+      console.log(first, second);
     </script>
   </body>
 </html>
