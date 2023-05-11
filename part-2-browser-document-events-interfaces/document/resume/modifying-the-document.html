@@ -182,9 +182,26 @@
       ul.append(...getListContent());
     </script> -->
 
-    <script>
+    <!-- <script>
       const node = document.body.append("Ola");
       console.log(node);
+    </script> -->
+
+    <ul>
+      <li>0</li>
+      <li>1</li>
+      <li>2</li>
+    </ul>
+
+    <script>
+      const ul = document.querySelector("ul");
+
+      const lastLi = document.createElement("li");
+      const firstLi = document.createElement("li");
+      lastLi.innerHTML = "parentElem.appendChild()";
+      firstLi.innerHTML = "parentElem.insertBefore(node, referenceElem)";
+      ul.appendChild(lastLi);
+      ul.insertBefore(firstLi, ul.firstElementChild);
     </script>
   </body>
 </html>
