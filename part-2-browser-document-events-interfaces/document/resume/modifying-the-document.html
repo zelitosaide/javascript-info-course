@@ -54,7 +54,7 @@
       ul.replaceWith(newNode);
     </script> -->
 
-    <div
+    <!-- <div
       id="div"
       class="alert"
     ></div>
@@ -63,6 +63,14 @@
       const div = document.querySelector("#div");
 
       div.append("<b>Hello</b>", document.createElement("hr"));
+    </script> -->
+
+    <div id="div"></div>
+
+    <script>
+      const div = document.querySelector("#div");
+      div.insertAdjacentHTML("beforebegin", "<b>Hello</b>");
+      console.log(div);
     </script>
   </body>
 </html>
