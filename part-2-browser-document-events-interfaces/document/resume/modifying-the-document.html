@@ -16,7 +16,7 @@
       <strong>Hi there</strong> You've read an important message.
     </div> -->
 
-    <script>
+    <!-- <script>
       // 1. Create <div> element
       const div = document.createElement("div");
       // 2. Set its class to "alert"
@@ -25,6 +25,33 @@
       div.innerHTML =
         "<strong>Hi there</strong> You've read an important message.";
       document.body.append(div);
+    </script> -->
+
+    <ul id="ul">
+      <li>0</li>
+      <li>1</li>
+      <li>2</li>
+    </ul>
+
+    <script>
+      const ul = document.querySelector("ul");
+
+      ul.before("before");
+      ul.after("after");
+
+      const firstLi = document.createElement("li");
+      firstLi.innerHTML = "prepend";
+      ul.prepend(firstLi);
+
+      const lastLi = document.createElement("li");
+      lastLi.innerHTML = "append";
+      ul.append(lastLi);
+
+      const newNode = document.createElement("div");
+      newNode.className = "alert";
+      newNode.innerHTML = "Replaced";
+
+      ul.replaceWith(newNode);
     </script>
   </body>
 </html>
