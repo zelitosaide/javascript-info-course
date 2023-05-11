@@ -138,6 +138,11 @@
       const div2 = document.querySelector("#div").cloneNode(true);
       div2.querySelector("b").innerHTML = "Bye there!";
       document.querySelector("#div").after(div2);
+
+      // elem.cloneNode() === elem.cloneNode(false)
+      const div3 = document.querySelector("#div").cloneNode(false);
+      div3.innerHTML = "<strong>Hello there!</strong>";
+      div2.after(div3);
     </script>
   </body>
 </html>
