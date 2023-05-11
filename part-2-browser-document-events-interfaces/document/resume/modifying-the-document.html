@@ -145,7 +145,7 @@
       div2.after(div3);
     </script> -->
 
-    <ul id="ul"></ul>
+    <!-- <ul id="ul"></ul>
 
     <script>
       const ul = document.querySelector("ul");
@@ -161,6 +161,25 @@
       }
 
       ul.append(getListContent());
+    </script> -->
+
+    <ul id="ul"></ul>
+
+    <script>
+      const ul = document.querySelector("ul");
+      function getListContent() {
+        const result = [];
+
+        for (let i = 0; i < 4; i++) {
+          const li = document.createElement("li");
+          li.append(i);
+          result.push(li);
+        }
+
+        return result;
+      }
+
+      ul.append(...getListContent());
     </script>
   </body>
 </html>
