@@ -9,8 +9,14 @@
       const ul = document.querySelector("ul");
 
       function clear(elem) {
-        elem.innerHTML = "";
+        for (let i = 0; i < elem.childNodes.length; i++) {
+          console.log(elem.childNodes[i]);
+        }
       }
+
+      // function clear(elem) {
+      //   elem.innerHTML = "";
+      // }
 
       clear(ul);
 
