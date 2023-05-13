@@ -35,7 +35,7 @@
       function recursive(parent, data) {
         if (Object.entries(data)) {
           Object.entries(data).forEach(function ([key, value]) {
-            console.log(value);
+            console.log(key, value);
             recursive(parent, value);
           });
         }
