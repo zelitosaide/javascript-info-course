@@ -12,11 +12,12 @@
         // while (elem.firstChild) {
         //   elem.firstChild.remove();
         // }
-
-        while (elem.lastChild) {
-          elem.lastChild.remove();
-        }
-
+        // while (elem.childNodes.length) {
+        //   elem.childNodes[elem.childNodes.length - 1].remove();
+        // }
+        // while (elem.lastChild) {
+        //   elem.lastChild.remove();
+        // }
         // while (elem.hasChildNodes()) {
         //   elem.firstChild.remove();
         // }
@@ -43,9 +44,9 @@
       //   }
       // }
 
-      // function clear(elem) {
-      //   elem.innerHTML = "";
-      // }
+      function clear(elem) {
+        elem.innerHTML = "";
+      }
 
       clear(ul);
 
