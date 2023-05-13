@@ -9,7 +9,11 @@
       const ul = document.querySelector("ul");
 
       function clear(elem) {
-        while (elem.firstChild) {
+        // while (elem.firstChild) {
+        //   elem.firstChild.remove();
+        // }
+        while (elem.hasChildNodes()) {
+          console.log(elem.firstChild);
           elem.firstChild.remove();
         }
       }
