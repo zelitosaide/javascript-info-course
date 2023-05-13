@@ -8,9 +8,10 @@
     <script>
       const ul = document.querySelector("ul");
 
+      // This won't work
       function clear(elem) {
         for (let i = 0; i < elem.childNodes.length; i++) {
-          console.log(elem.childNodes[i]);
+          elem.childNodes[i].remove();
         }
       }
 
