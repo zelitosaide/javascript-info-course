@@ -9,10 +9,17 @@
       const ul = document.querySelector("ul");
 
       function clear(elem) {
-        for (const node of elem.childNodes) {
-          elem.removeChild(node);
+        while (elem.firstChild) {
+          elem.firstChild.remove();
         }
       }
+
+      // function clear(elem) {
+      //   for (const node of elem.childNodes) {
+      //     // This won't work
+      //     elem.removeChild(node);
+      //   }
+      // }
 
       // This won't work
       // function clear(elem) {
