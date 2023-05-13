@@ -8,12 +8,18 @@
     <script>
       const ul = document.querySelector("ul");
 
-      // This won't work
       function clear(elem) {
         for (const node of elem.childNodes) {
-          node.remove();
+          elem.removeChild(node);
         }
       }
+
+      // This won't work
+      // function clear(elem) {
+      //   for (const node of elem.childNodes) {
+      //     node.remove();
+      //   }
+      // }
 
       // This won't work
       // function clear(elem) {
