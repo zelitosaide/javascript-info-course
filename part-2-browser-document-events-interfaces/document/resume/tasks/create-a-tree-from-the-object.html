@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <div id="container"></div>
+
+    <script>
+      const container = document.querySelector("#container");
+
+      let data = {
+        Fish: {
+          trout: {},
+          salmon: {},
+        },
+
+        Tree: {
+          Huge: {
+            sequoia: {},
+            oak: {},
+          },
+          Flowering: {
+            "apple tree": {},
+            magnolia: {},
+          },
+        },
+      };
+
+      createTree(container, data);
+
+      function createTree(container, data) {
+        const ul = document.createElement("ul");
+        recursive(ul, data);
+        container.append(ul);
+      }
+
+      function recursive(parent, data) {
+        if (Object.entries(data)) {
+          Object.entries(data).forEach(function ([key, value]) {
+            console.log(value);
+            recursive(parent, value);
+          });
+        }
+      }
+    </script>
+  </body>
+</html>
