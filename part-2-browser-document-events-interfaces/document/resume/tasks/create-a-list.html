@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <script>
+      const ul = document.createElement("ul");
+      let content = prompt("Enter the text for the list item");
+
+      while (content) {
+        const li = document.createElement("li");
+        li.textContent = content;
+        ul.append(li);
+        content = prompt("Enter the text for the list item");
+      }
+
+      document.body.append(ul);
+    </script>
+  </body>
+</html>
