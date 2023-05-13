@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <ul>
+      <li>Hello</li>
+      <li>World</li>
+    </ul>
+    <script>
+      const ul = document.querySelector("ul");
+
+      function clear(elem) {
+        elem.innerHTML = "";
+      }
+
+      clear(ul);
+
+      console.log(ul.outerHTML);
+    </script>
+  </body>
+</html>
