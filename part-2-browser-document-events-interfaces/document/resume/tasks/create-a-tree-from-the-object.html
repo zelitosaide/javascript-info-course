@@ -28,15 +28,16 @@
 
       function createTree(container, data) {
         const ul = document.createElement("ul");
-        recursive(ul, data);
         container.append(ul);
+        recursive(ul, data);
       }
 
-      function recursive(parent, data) {
-        if (Object.entries(data)) {
+      function recursive(ul, data) {
+        if (Object.entries(data).length) {
           Object.entries(data).forEach(function ([key, value]) {
-            console.log(key, value);
-            recursive(parent, value);
+            const li = document.createElement("li");
+            li.append(key);
+            ul.append(li);
           });
         }
       }
