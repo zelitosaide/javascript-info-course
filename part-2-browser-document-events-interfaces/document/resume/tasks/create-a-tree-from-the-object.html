@@ -38,6 +38,11 @@
             const li = document.createElement("li");
             li.append(key);
             ul.append(li);
+            if (Object.entries(value).length) {
+              const ul = document.createElement("ul");
+              recursive(ul, value);
+              li.append(ul);
+            }
           });
         }
       }
