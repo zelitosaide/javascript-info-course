@@ -24,16 +24,19 @@
 
     <script>
       const calendar = document.querySelector("#calendar");
-
       createCalendar(calendar, 2023, 5);
 
       function createCalendar(elem, year, month) {
         const date = new Date(year, month - 1);
+        let table =
+          "<table>\n\t<tr>\n\t\t<th>SU</th>\n\t\t<th>MO</th>\n\t\t<th>TU</th>\n\t\t<th>WE</th>\n\t\t<th>TH</th>\n\t\t<th>FR</th>\n\t\t<th>SA</th>\n\t</tr>";
 
         while (date.getMonth() === month - 1) {
           console.log(date.getDate());
           date.setDate(date.getDate() + 1);
         }
+
+        console.log(table);
       }
     </script>
   </body>
