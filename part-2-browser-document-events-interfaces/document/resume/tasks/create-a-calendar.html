@@ -23,19 +23,34 @@
     <div id="calendar"></div>
 
     <script>
+      let initialTableInnerHTML =
+        "<table>\n\t<tr>\n\t\t<th>SU</th>\n\t\t<th>MO</th>\n\t\t<th>TU</th>\n\t\t<th>WE</th>\n\t\t<th>TH</th>\n\t\t<th>FR</th>\n\t\t<th>SA</th>\n\t</tr>\n\t<tr>";
+
       const calendar = document.querySelector("#calendar");
       createCalendar(calendar, 2023, 5);
 
       function createCalendar(elem, year, month) {
         const date = new Date(year, month - 1);
-        let table =
-          "<table>\n\t<tr>\n\t\t<th>SU</th>\n\t\t<th>MO</th>\n\t\t<th>TU</th>\n\t\t<th>WE</th>\n\t\t<th>TH</th>\n\t\t<th>FR</th>\n\t\t<th>SA</th>\n\t</tr>";
+        let table = initialTableInnerHTML;
+
+        for (let i = 0; i < date.getDay(); i++) {
+          table += "\n\t\t<td></td>";
+        }
 
         while (date.getMonth() === month - 1) {
-          console.log(date.getDate());
+          table += "\n\t\t<td>" + date.getDate() + "</td>";
+          if (date.getDate() % 7 === 6) {
+            table += "\n\t</tr>\n\t<tr>";
+          }
           date.setDate(date.getDate() + 1);
         }
 
+        for (let i = date.getDay(); i < 7; i++) {
+          table += "\n\t\t<td></td>";
+        }
+
+        table += "\n\t</tr>\n</table>";
+        elem.innerHTML = table;
         console.log(table);
       }
     </script>
