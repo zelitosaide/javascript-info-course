@@ -47,8 +47,11 @@
     <script>
       for (const li of document.querySelectorAll("li")) {
         const content = li.firstChild.data.trim();
+        const descendants = li.querySelectorAll("li").length;
 
-        console.log(content);
+        if (descendants) {
+          li.firstChild.textContent = content + " [" + descendants + "]";
+        }
       }
     </script>
   </body>
