@@ -27,7 +27,14 @@
 
       createCalendar(calendar, 2023, 5);
 
-      function createCalendar(elem, year, month) {}
+      function createCalendar(elem, year, month) {
+        const date = new Date(year, month - 1);
+
+        while (date.getMonth() === month - 1) {
+          console.log(date.getDate());
+          date.setDate(date.getDate + 1);
+        }
+      }
     </script>
   </body>
 </html>
