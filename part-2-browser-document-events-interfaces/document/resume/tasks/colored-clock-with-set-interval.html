@@ -40,27 +40,29 @@
       let timerId;
 
       function clockStart() {
-        timerId = setInterval(function () {
-          const date = new Date();
-          const hours =
-            date.getHours() < 10 ? "0" + date.getHours() : date.getHours();
+        if (!timerId) {
+          timerId = setInterval(function () {
+            const date = new Date();
+            const hours =
+              date.getHours() < 10 ? "0" + date.getHours() : date.getHours();
 
-          const minutes =
-            date.getMinutes() < 10
-              ? "0" + date.getMinutes()
-              : date.getMinutes();
+            const minutes =
+              date.getMinutes() < 10
+                ? "0" + date.getMinutes()
+                : date.getMinutes();
 
-          const seconds =
-            date.getSeconds() < 10
-              ? "0" + date.getSeconds()
-              : date.getSeconds();
+            const seconds =
+              date.getSeconds() < 10
+                ? "0" + date.getSeconds()
+                : date.getSeconds();
 
-          document.querySelector("#hours").innerHTML = hours;
-          document.querySelector("#minutes").innerHTML = minutes;
-          document.querySelector("#seconds").innerHTML = seconds;
+            document.querySelector("#hours").innerHTML = hours;
+            document.querySelector("#minutes").innerHTML = minutes;
+            document.querySelector("#seconds").innerHTML = seconds;
 
-          console.log(seconds);
-        }, 1000);
+            console.log(seconds);
+          }, 1000);
+        }
       }
 
       function clockStop() {
