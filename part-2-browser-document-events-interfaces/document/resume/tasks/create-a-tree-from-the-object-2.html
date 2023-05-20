@@ -31,6 +31,11 @@
       }
 
       function createTreeDom(obj) {
+        if (!Object.entries(obj).length) return;
+        const ul = document.createElement("ul");
+        for (const key in obj) {
+          console.log(key);
+        }
         return "Hello World";
       }
     </script>
