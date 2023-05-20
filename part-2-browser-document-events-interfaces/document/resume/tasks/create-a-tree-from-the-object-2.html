@@ -34,9 +34,12 @@
         if (!Object.entries(obj).length) return;
         const ul = document.createElement("ul");
         for (const key in obj) {
+          const li = document.createElement("li");
+          li.append(key);
+          ul.append(li);
           console.log(key);
         }
-        return "Hello World";
+        return ul;
       }
     </script>
   </body>
