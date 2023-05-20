@@ -37,6 +37,8 @@
     />
 
     <script>
+      let intervalId;
+
       function clockStart() {
         const date = new Date();
         const hours =
@@ -48,7 +50,7 @@
         const seconds =
           date.getSeconds() < 10 ? "0" + date.getSeconds() : date.getSeconds();
 
-        console.log(hours, minutes, seconds);
+        intervalId = console.log(hours, minutes, seconds);
       }
 
       function clockStop() {
