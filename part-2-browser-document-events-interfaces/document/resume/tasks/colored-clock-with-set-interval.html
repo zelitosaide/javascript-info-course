@@ -37,8 +37,10 @@
     />
 
     <script>
+      let timerId;
+
       function clockStart() {
-        setInterval(function () {
+        timerId = setInterval(function () {
           const date = new Date();
           const hours =
             date.getHours() < 10 ? "0" + date.getHours() : date.getHours();
@@ -56,6 +58,8 @@
           document.querySelector("#hours").innerHTML = hours;
           document.querySelector("#minutes").innerHTML = minutes;
           document.querySelector("#seconds").innerHTML = seconds;
+
+          console.log(seconds);
         }, 1000);
       }
 
