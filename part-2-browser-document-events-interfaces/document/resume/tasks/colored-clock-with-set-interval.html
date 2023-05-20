@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      #hours {
+        color: red;
+      }
+
+      #minutes {
+        color: green;
+      }
+
+      #seconds {
+        color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <p>
+      <span id="hours">hh</span>:<span id="minutes">mm</span>:<span id="seconds"
+        >ss</span
+      >
+    </p>
+
+    <!-- click on this button calls clockStart() -->
+    <input
+      type="button"
+      onclick="clockStart()"
+      value="Start"
+    />
+
+    <!-- click on this button calls clockStop() -->
+    <input
+      type="button"
+      onclick="clockStop()"
+      value="Stop"
+    />
+
+    <script>
+      console.log("log");
+    </script>
+  </body>
+</html>
