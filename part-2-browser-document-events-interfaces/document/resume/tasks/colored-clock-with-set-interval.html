@@ -37,20 +37,24 @@
     />
 
     <script>
-      let intervalId;
-
       function clockStart() {
-        const date = new Date();
-        const hours =
-          date.getHours() < 10 ? "0" + date.getHours() : date.getHours();
+        setInterval(function () {
+          const date = new Date();
+          const hours =
+            date.getHours() < 10 ? "0" + date.getHours() : date.getHours();
 
-        const minutes =
-          date.getMinutes() < 10 ? "0" + date.getMinutes() : date.getMinutes();
+          const minutes =
+            date.getMinutes() < 10
+              ? "0" + date.getMinutes()
+              : date.getMinutes();
 
-        const seconds =
-          date.getSeconds() < 10 ? "0" + date.getSeconds() : date.getSeconds();
+          const seconds =
+            date.getSeconds() < 10
+              ? "0" + date.getSeconds()
+              : date.getSeconds();
 
-        intervalId = console.log(hours, minutes, seconds);
+          intervalId = console.log(hours, minutes, seconds);
+        }, 1000);
       }
 
       function clockStop() {
