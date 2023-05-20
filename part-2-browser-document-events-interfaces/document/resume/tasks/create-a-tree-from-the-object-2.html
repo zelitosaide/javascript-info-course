@@ -23,7 +23,6 @@
       };
 
       const container = document.querySelector("div");
-
       createTree(container, data);
 
       function createTree(container, obj) {
@@ -36,12 +35,10 @@
         for (const key in obj) {
           const li = document.createElement("li");
           li.append(key);
-
           const children = createTreeDom(obj[key]);
           if (children) {
             li.append(children);
           }
-
           ul.append(li);
         }
         return ul;
