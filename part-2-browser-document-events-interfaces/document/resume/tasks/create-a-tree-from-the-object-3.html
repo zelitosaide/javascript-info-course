@@ -30,7 +30,16 @@
       }
 
       function createTreeText(obj) {
-        return "Hello world";
+        let ul = "";
+        let lis = "";
+
+        for (const key in obj) {
+          lis += "<li>" + key + "</li>\n";
+        }
+
+        ul = "<ul>\n" + lis + "</ul>";
+        console.log(ul);
+        return ul;
       }
     </script>
   </body>
