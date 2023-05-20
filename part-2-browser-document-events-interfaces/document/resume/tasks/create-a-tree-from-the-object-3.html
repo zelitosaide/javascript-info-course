@@ -35,9 +35,9 @@
         let lis = "";
 
         for (const key in obj) {
-          lis += "<li>" + key + createTreeText(obj[key]) + "</li>\n";
+          lis += "<li>" + key + createTreeText(obj[key]) + "</li>";
         }
-        ul = "<ul>\n" + lis + "</ul>";
+        ul = "<ul>" + lis + "</ul>";
         return ul;
       }
     </script>
