@@ -38,7 +38,11 @@
       const tBody = table.querySelector("tbody");
       const rows = tBody.querySelectorAll("tr");
 
-      console.log(rows);
+      tBody.append(
+        ...Array.from(rows).sort(function (rowA, rowB) {
+          return rowA.cells[0].innerHTML.localeCompare(rowB.cells[0].innerHTML);
+        })
+      );
     </script>
   </body>
 </html>
