@@ -43,5 +43,13 @@
         </ul>
       </li>
     </ul>
+
+    <script>
+      for (const li of document.querySelectorAll("li")) {
+        const content = li.firstChild.data.trim();
+
+        console.log(content);
+      }
+    </script>
   </body>
 </html>
