@@ -24,11 +24,15 @@
 
       const container = document.querySelector("div");
 
+      createTree(container, data);
+
       function createTree(container, obj) {
         container.append(createTreeDom(obj));
       }
 
-      function createTreeDom(obj) {}
+      function createTreeDom(obj) {
+        return "Hello World";
+      }
     </script>
   </body>
 </html>
