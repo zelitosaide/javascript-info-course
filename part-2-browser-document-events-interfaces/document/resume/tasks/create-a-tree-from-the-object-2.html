@@ -21,6 +21,14 @@
           },
         },
       };
+
+      const container = document.querySelector("div");
+
+      function createTree(container, obj) {
+        container.append(createTreeDom(obj));
+      }
+
+      function createTreeDom(obj) {}
     </script>
   </body>
 </html>
