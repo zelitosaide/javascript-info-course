@@ -4,9 +4,34 @@
     <div id="container"></div>
 
     <script>
+      let data = {
+        Fish: {
+          trout: {},
+          salmon: {},
+        },
+
+        Tree: {
+          Huge: {
+            sequoia: {},
+            oak: {},
+          },
+          Flowering: {
+            "apple tree": {},
+            magnolia: {},
+          },
+        },
+      };
+
       const container = document.querySelector("#container");
-      console.log(container);
-      console.log("ola");
+      createTree(container, data);
+
+      function createTree(container, obj) {
+        container.innerHTML = createTreeText(obj);
+      }
+
+      function createTreeText(obj) {
+        return "Hello world";
+      }
     </script>
   </body>
 </html>
