@@ -36,8 +36,13 @@
         for (const key in obj) {
           const li = document.createElement("li");
           li.append(key);
+
+          const children = createTreeDom(obj[key]);
+          if (children) {
+            li.append(children);
+          }
+
           ul.append(li);
-          console.log(key);
         }
         return ul;
       }
