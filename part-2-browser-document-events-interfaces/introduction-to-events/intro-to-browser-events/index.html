@@ -45,6 +45,12 @@
       id="button4"
     />
 
+    <input
+      type="button"
+      value="Into to addEventHandler Issue"
+      id="button5"
+    />
+
     <script>
       // This won't work!!
       document.querySelector("#button4").setAttribute("onclick", function () {
@@ -55,9 +61,9 @@
         alert("Thanks");
       }
 
-      // document.querySelector("#button3").onclick = sayThanks;
+      document.querySelector("#button3").onclick = sayThanks;
 
-      document.querySelector("#button3").onclick = sayThanks();
+      // document.querySelector("#button3").onclick = sayThanks();
 
       document.querySelector("#button2").onclick = null;
 
