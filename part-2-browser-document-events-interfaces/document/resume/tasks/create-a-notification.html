@@ -37,12 +37,23 @@
 
     <script>
       // shows an element with the text "Hello" near the right-top of the window
-      showNotification({
-        top: 10, // 10px from the top of the window (by default 0px)
-        right: 10, // 10px from the right edge of the window (by default 0px)
-        html: "Hello!", // the HTML of notification
-        className: "welcome", // an additional class for the div (optional)
-      });
+      // showNotification({
+      //   top: 10, // 10px from the top of the window (by default 0px)
+      //   right: 10, // 10px from the right edge of the window (by default 0px)
+      //   html: "Hello!", // the HTML of notification
+      //   className: "welcome", // an additional class for the div (optional)
+      // });
+
+      // test it
+      let i = 1;
+      setInterval(() => {
+        showNotification({
+          top: 10,
+          right: 10,
+          html: "Hello " + i++,
+          className: "welcome",
+        });
+      }, 2000);
 
       function showNotification(options) {
         // const
