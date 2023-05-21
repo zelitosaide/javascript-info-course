@@ -55,13 +55,15 @@
         });
       }, 2000);
 
-      function showNotification(options) {
+      function showNotification({ top = 0, right = 0, html, className }) {
         const alert = document.createElement("div");
         alert.className = "notification";
-        alert.innerHTML = options.html;
-        alert.style.top = options.top + "px";
-        alert.style.right = options.right + "px";
-        alert.classList.add(options.className);
+        alert.innerHTML = html;
+        alert.style.top = top + "px";
+        alert.style.right = right + "px";
+        if (className) {
+          alert.classList.add(className);
+        }
         document.body.append(alert);
 
         setTimeout(function () {
