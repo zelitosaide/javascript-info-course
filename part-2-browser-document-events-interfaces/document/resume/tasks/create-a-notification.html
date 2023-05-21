@@ -56,7 +56,17 @@
       }, 2000);
 
       function showNotification(options) {
-        // const
+        const alert = document.createElement("div");
+        alert.className = "notification";
+        alert.innerHTML = options.html;
+        alert.style.top = options.top + "px";
+        alert.style.right = options.right + "px";
+        alert.classList.add(options.className);
+        document.body.append(alert);
+
+        setTimeout(function () {
+          alert.remove();
+        }, 1500);
       }
     </script>
   </body>
