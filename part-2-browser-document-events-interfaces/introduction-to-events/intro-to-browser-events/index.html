@@ -19,7 +19,18 @@
       value="Say Thank you"
     />
 
+    <input
+      type="button"
+      value="After OR before"
+      id="button2"
+      onclick="console.log('Before')"
+    />
+
     <script>
+      document.querySelector("#button2").onclick = function () {
+        console.log("After");
+      };
+
       document.querySelector("#button1").onclick = function () {
         console.log("Thank you!");
       };
