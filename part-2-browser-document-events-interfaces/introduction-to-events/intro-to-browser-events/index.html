@@ -33,7 +33,21 @@
       Show innerHTML
     </button>
 
+    <input
+      type="button"
+      value="Say thanks"
+      id="button3"
+    />
+
     <script>
+      function sayThanks() {
+        alert("Thanks");
+      }
+
+      // document.querySelector("#button3").onclick = sayThanks;
+
+      document.querySelector("#button3").onclick = sayThanks();
+
       document.querySelector("#button2").onclick = null;
 
       // document.querySelector("#button2").onclick = function () {
