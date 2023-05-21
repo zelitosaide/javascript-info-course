@@ -52,6 +52,14 @@
     />
 
     <script>
+      document.querySelector("#button5").onclick = function () {
+        console.log(1);
+      };
+
+      document.querySelector("#button5").onclick = function () {
+        console.log(2);
+      };
+
       // This won't work!!
       document.querySelector("#button4").setAttribute("onclick", function () {
         console.log("Wau");
