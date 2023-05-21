@@ -39,7 +39,18 @@
       id="button3"
     />
 
+    <input
+      type="button"
+      value="Using setAttribute"
+      id="button4"
+    />
+
     <script>
+      // This won't work!!
+      document.querySelector("#button4").setAttribute("onclick", function () {
+        console.log("Wau");
+      });
+
       function sayThanks() {
         alert("Thanks");
       }
