@@ -3,8 +3,22 @@
   <body>
     <input
       type="button"
+      onclick="countRabbits()"
+      value="Count rabbits!"
+    />
+
+    <input
+      type="button"
       value="Click me!"
       onclick="console.log('Hello world!')"
     />
+
+    <script>
+      function countRabbits() {
+        for (let i = 0; i <= 3; i++) {
+          console.log("Rabbit number " + i);
+        }
+      }
+    </script>
   </body>
 </html>
