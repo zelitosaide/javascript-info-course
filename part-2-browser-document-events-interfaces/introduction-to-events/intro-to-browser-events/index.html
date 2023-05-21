@@ -13,7 +13,17 @@
       onclick="console.log('Hello world!')"
     />
 
+    <input
+      type="button"
+      id="button1"
+      value="Say Thank you"
+    />
+
     <script>
+      document.querySelector("#button1").onclick = function () {
+        console.log("Thank you!");
+      };
+
       function countRabbits() {
         for (let i = 0; i <= 3; i++) {
           alert("Rabbit number " + i);
