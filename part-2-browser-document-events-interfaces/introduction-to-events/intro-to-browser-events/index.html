@@ -111,8 +111,10 @@
         }
       }
 
-      button.addEventListener("mousedown", new Menu());
-      button.addEventListener("mouseup", new Menu());
+      const menu = new Menu();
+
+      button.addEventListener("mousedown", menu);
+      button.addEventListener("mouseup", menu);
 
       const obj = {
         handleEvent(e) {
