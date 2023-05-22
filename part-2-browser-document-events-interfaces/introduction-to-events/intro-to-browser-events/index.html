@@ -82,7 +82,20 @@
       onclick="console.log(event)"
     />
 
+    <input
+      type="button"
+      value="Object handler"
+      id="button10"
+    />
+
     <script>
+      const obj = {
+        handleEvent(e) {
+          console.log(e.target);
+        },
+      };
+
+      document.querySelector("#button10").addEventListener("click", obj);
       // document
       //   .querySelector("#button9")
       //   .addEventListener("click", function (e) {
