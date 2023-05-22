@@ -57,6 +57,12 @@
       id="button6"
     />
 
+    <input
+      type="button"
+      value="Remove event handlers"
+      id="button7"
+    />
+
     <script>
       // element.addEventListener(event, handler, [options]);
       document.querySelector("#button6").addEventListener(
@@ -66,6 +72,17 @@
         },
         { once: true }
       );
+
+      // element.removeEventListener(event, handler, [options]);
+      document.querySelector("#button7").addEventListener("click", handler);
+
+      function handler() {
+        document
+          .querySelector("#button7")
+          .removeEventListener("click", handler);
+
+        console.log("Removed");
+      }
 
       document.querySelector("#button5").onclick = function () {
         console.log(1);
