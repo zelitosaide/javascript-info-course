@@ -51,7 +51,22 @@
       id="button5"
     />
 
+    <input
+      type="button"
+      value="Trigger once"
+      id="button6"
+    />
+
     <script>
+      // element.addEventListener(event, handler, [options]);
+      document.querySelector("#button6").addEventListener(
+        "click",
+        function () {
+          console.log("Bye");
+        },
+        { once: true }
+      );
+
       document.querySelector("#button5").onclick = function () {
         console.log(1);
       };
