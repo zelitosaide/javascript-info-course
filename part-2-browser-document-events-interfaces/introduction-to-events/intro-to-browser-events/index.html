@@ -63,7 +63,25 @@
       id="button7"
     />
 
+    <input
+      type="button"
+      value="Multiple call to addEventListener"
+      id="button8"
+    />
+
     <script>
+      document.querySelector("#button8").onclick = function () {
+        console.log(1);
+      };
+
+      document.querySelector("#button8").addEventListener("click", function () {
+        console.log(2);
+      });
+
+      document.querySelector("#button8").addEventListener("click", function () {
+        console.log(3);
+      });
+
       // element.addEventListener(event, handler, [options]);
       document.querySelector("#button6").addEventListener(
         "click",
