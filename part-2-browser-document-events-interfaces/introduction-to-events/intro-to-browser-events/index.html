@@ -100,16 +100,31 @@
 
       class Menu {
         handleEvent(e) {
-          switch (e.type) {
-            case "mousedown":
-              button.innerHTML = "Mouse button pressed";
-              break;
-            case "mouseup":
-              button.innerHTML = "...and released.";
-              break;
-          }
+          const method = "on" + e.type[0].toUpperCase() + e.type.slice(1);
+          this[method]();
+        }
+
+        onMousedown() {
+          button.innerHTML = "Mouse button pressed";
+        }
+
+        onMouseup() {
+          button.innerHTML = "...and released.";
         }
       }
+
+      // class Menu {
+      //   handleEvent(e) {
+      //     switch (e.type) {
+      //       case "mousedown":
+      //         button.innerHTML = "Mouse button pressed";
+      //         break;
+      //       case "mouseup":
+      //         button.innerHTML = "...and released.";
+      //         break;
+      //     }
+      //   }
+      // }
 
       const menu = new Menu();
 
