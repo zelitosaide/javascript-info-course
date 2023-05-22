@@ -100,6 +100,7 @@
 
       class Menu {
         handleEvent(e) {
+          // mousedown -> onMousedown
           const method = "on" + e.type[0].toUpperCase() + e.type.slice(1);
           this[method](e);
         }
