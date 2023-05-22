@@ -70,6 +70,16 @@
     />
 
     <script>
+      // will never run
+      document.onDOMContentLoaded = function () {
+        console.log("DOM built");
+      };
+
+      // this way it works
+      document.addEventListener("DOMContentLoaded", function () {
+        console.log("DOM built");
+      });
+
       document.querySelector("#button8").onclick = function () {
         console.log(1);
       };
