@@ -88,7 +88,32 @@
       id="button10"
     />
 
+    <button
+      type="button"
+      id="button11"
+    >
+      Using class
+    </button>
+
     <script>
+      const button = document.querySelector("#button11");
+
+      class Menu {
+        handleEvent(e) {
+          switch (e.type) {
+            case "mousedown":
+              button.innerHTML = "Mouse button pressed";
+              break;
+            case "mouseup":
+              button.innerHTML = "...and released.";
+              break;
+          }
+        }
+      }
+
+      button.addEventListener("mousedown", new Menu());
+      button.addEventListener("mouseup", new Menu());
+
       const obj = {
         handleEvent(e) {
           console.log(e.type);
