@@ -101,14 +101,16 @@
       class Menu {
         handleEvent(e) {
           const method = "on" + e.type[0].toUpperCase() + e.type.slice(1);
-          this[method]();
+          this[method](e);
         }
 
-        onMousedown() {
+        onMousedown(e) {
+          console.log(e.type);
           button.innerHTML = "Mouse button pressed";
         }
 
-        onMouseup() {
+        onMouseup(e) {
+          console.log(e.type);
           button.innerHTML = "...and released.";
         }
       }
