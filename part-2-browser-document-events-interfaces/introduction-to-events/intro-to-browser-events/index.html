@@ -69,7 +69,23 @@
       id="button8"
     />
 
+    <input
+      type="button"
+      value="Event object"
+      id="button9"
+    />
+
     <script>
+      document
+        .querySelector("#button9")
+        .addEventListener("click", function (e) {
+          console.log(e.type);
+          console.log(e.target);
+          console.log(e.currentTarget);
+          console.log(e.target === e.currentTarget);
+          console.log(e.clientX + ":" + e.clientY);
+        });
+
       // will never run
       document.onDOMContentLoaded = function () {
         console.log("DOM built");
