@@ -40,7 +40,9 @@
     </div>
 
     <script>
-      console.log("ola");
+      document.getElementById("field").onclick = function (e) {
+        console.log(e.clientX, e.clientY);
+      };
     </script>
   </body>
 </html>
