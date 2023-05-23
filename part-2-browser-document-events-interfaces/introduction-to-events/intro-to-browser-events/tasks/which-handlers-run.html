@@ -6,13 +6,13 @@
       value="Click me!"
     />
     <script>
+      function handler() {
+        alert("1");
+      }
+
       const button = document.querySelector("input");
-      button.addEventListener("click", function () {
-        alert("1");
-      });
-      button.removeEventListener("click", function () {
-        alert("1");
-      });
+      button.addEventListener("click", handler);
+      button.removeEventListener("click", handler);
 
       button.onclick = function () {
         alert("2");
