@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <input
+      type="button"
+      value="Click me!"
+    />
+    <script>
+      const button = document.querySelector("input");
+      button.addEventListener("click", function () {
+        alert("1");
+      });
+      button.removeEventListener("click", function () {
+        alert("1");
+      });
+
+      button.onclick = function () {
+        alert("2");
+      };
+    </script>
+  </body>
+</html>
