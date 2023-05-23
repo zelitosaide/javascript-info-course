@@ -41,18 +41,25 @@
 
     <script>
       const field = document.getElementById("field");
+      const ball = document.getElementById("ball");
 
       field.onclick = function (e) {
         const fieldCoords = this.getBoundingClientRect();
         const ballCoords = {
-          top: e.clientY - fieldCoords.top - field.clientTop,
-          left: e.clientX - fieldCoords.left - field.clientLeft,
+          top:
+            e.clientY -
+            fieldCoords.top -
+            field.clientTop -
+            ball.offsetHeight / 2,
+          left:
+            e.clientX -
+            fieldCoords.left -
+            field.clientLeft -
+            ball.offsetWidth / 2,
         };
 
-        const ball = document.getElementById("ball");
         ball.style.top = ballCoords.top + "px";
         ball.style.left = ballCoords.left + "px";
-        console.log(e.clientX, e.clientY);
       };
     </script>
   </body>
