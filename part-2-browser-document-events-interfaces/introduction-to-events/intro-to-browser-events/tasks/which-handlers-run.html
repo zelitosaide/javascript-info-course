@@ -5,12 +5,31 @@
       type="button"
       value="Click me!"
     />
+
+    <input
+      type="button"
+      value="Multiple handlers"
+    />
     <script>
+      const button = document.querySelector("input");
+      const button2 = document.querySelectorAll("input")[1];
+
+      button2.addEventListener("click", function () {
+        console.log("1");
+      });
+
+      button2.addEventListener("click", function () {
+        console.log("2");
+      });
+
+      button2.onclick = function () {
+        console.log("3");
+      };
+
       function handler() {
         alert("1");
       }
 
-      const button = document.querySelector("input");
       button.addEventListener("click", handler);
       button.removeEventListener("click", handler);
 
