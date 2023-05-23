@@ -40,7 +40,18 @@
     </div>
 
     <script>
-      document.getElementById("field").onclick = function (e) {
+      const field = document.getElementById("field");
+
+      field.onclick = function (e) {
+        const fieldCoords = this.getBoundingClientRect();
+        const ballCoords = {
+          top: e.clientY - fieldCoords.top - field.clientTop,
+          left: e.clientX - fieldCoords.left - field.clientLeft,
+        };
+
+        const ball = document.getElementById("ball");
+        ball.style.top = ballCoords.top + "px";
+        ball.style.left = ballCoords.left + "px";
         console.log(e.clientX, e.clientY);
       };
     </script>
