@@ -45,7 +45,7 @@
       const ball = document.querySelector("#ball");
 
       field.onclick = function (e) {
-        const fieldCoords = this.getBoundingClientRect();
+        const fieldCoords = e.currentTarget.getBoundingClientRect();
 
         const ballCoords = {
           top:
