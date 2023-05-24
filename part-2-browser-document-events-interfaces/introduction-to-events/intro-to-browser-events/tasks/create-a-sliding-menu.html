@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      div {
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div>▶ Sweeties (click me)!</div>
+    <ul hidden>
+      <li>Cake</li>
+      <li>Donut</li>
+      <li>Honey</li>
+    </ul>
+
+    <script>
+      const ul = document.querySelector("ul");
+      const div = document.querySelector("div");
+
+      div.onclick = function () {
+        ul.hidden = !ul.hidden;
+        if (ul.hidden) {
+          div.innerHTML = "▶ Sweeties (click me)!";
+        } else {
+          div.innerHTML = "▼ Sweeties (click me)!";
+        }
+      };
+
+      console.log(div);
+    </script>
+  </body>
+</html>
