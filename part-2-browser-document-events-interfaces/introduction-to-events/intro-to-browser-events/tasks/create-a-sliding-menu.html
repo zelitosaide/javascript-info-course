@@ -16,10 +16,10 @@
     </ul>
 
     <script>
-      const ul = document.querySelector("ul");
       const div = document.querySelector("div");
 
       div.onclick = function () {
+        const ul = document.querySelector("ul");
         ul.hidden = !ul.hidden;
         if (ul.hidden) {
           div.innerHTML = "▶ Sweeties (click me)!";
