@@ -76,8 +76,14 @@
         </p>
       </div>
     </div>
+
     <script>
-      console.log("ola");
+      document.querySelectorAll(".remove-button").forEach(function (button) {
+        button.onclick = function (e) {
+          const parent = button.closest(".pane");
+          parent.hidden = true;
+        };
+      });
     </script>
   </body>
 </html>
