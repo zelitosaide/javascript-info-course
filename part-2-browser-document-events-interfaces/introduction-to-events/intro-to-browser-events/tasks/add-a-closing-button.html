@@ -80,8 +80,7 @@
     <script>
       document.querySelectorAll(".remove-button").forEach(function (button) {
         button.onclick = function (e) {
-          const parent = button.closest(".pane");
-          parent.hidden = true;
+          button.closest(".pane").remove();
         };
       });
     </script>
