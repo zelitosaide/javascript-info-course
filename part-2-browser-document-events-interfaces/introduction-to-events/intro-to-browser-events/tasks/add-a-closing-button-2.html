@@ -79,6 +79,10 @@
           "afterbegin",
           '<button class="remove-button">[x]</button>'
         );
+
+        pane.firstChild.onclick = function () {
+          pane.remove();
+        };
       });
     </script>
   </body>
