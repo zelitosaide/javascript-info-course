@@ -74,7 +74,7 @@
     <script>
       const panes = document.querySelectorAll(".pane");
 
-      panes.forEach(function (pane) {
+      for (const pane of panes) {
         pane.insertAdjacentHTML(
           "afterbegin",
           '<button class="remove-button">[x]</button>'
@@ -83,7 +83,18 @@
         pane.firstChild.onclick = function () {
           pane.remove();
         };
-      });
+      }
+
+      // panes.forEach(function (pane) {
+      //   pane.insertAdjacentHTML(
+      //     "afterbegin",
+      //     '<button class="remove-button">[x]</button>'
+      //   );
+
+      //   pane.firstChild.onclick = function () {
+      //     pane.remove();
+      //   };
+      // });
     </script>
   </body>
 </html>
