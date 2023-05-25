@@ -19,6 +19,14 @@
         font-size: 80%;
         color: green;
       }
+
+      .menu.open .title::before {
+        content: "▼ ";
+      }
+
+      .menu.open ul {
+        display: "";
+      }
       /* div {
         cursor: pointer;
       } */
@@ -36,6 +44,10 @@
         <li>Honey</li>
       </ul>
     </div>
+
+    <script>
+      console.log("ola");
+    </script>
 
     <!-- <div>▶ Sweeties (click me)!</div>
     <ul hidden>
