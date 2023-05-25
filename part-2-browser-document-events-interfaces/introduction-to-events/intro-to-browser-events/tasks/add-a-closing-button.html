@@ -22,6 +22,7 @@
         background-color: #edf5e1;
         padding: 10px 20px 10px;
         border-top: 2px solid #c4df9b;
+        position: relative;
       }
 
       .remove-button {
@@ -33,15 +34,17 @@
         height: 24px;
         width: 24px;
         right: 10px;
+        position: absolute;
       }
     </style>
   </head>
   <body>
     The button code (may need to adjust CSS):
-    <button class="remove-button">[x]</button>
+    <!-- <button class="remove-button">[x]</button> -->
 
     <div>
       <div class="pane">
+        <button class="remove-button">[x]</button>
         <h3>Horse</h3>
         <p>
           The horse is one of two extant subspecies of Equus ferus. It is an
@@ -52,6 +55,7 @@
         </p>
       </div>
       <div class="pane">
+        <button class="remove-button">[x]</button>
         <h3>Donkey</h3>
         <p>
           The donkey or ass (Equus africanus asinus) is a domesticated member of
@@ -61,6 +65,7 @@
         </p>
       </div>
       <div class="pane">
+        <button class="remove-button">[x]</button>
         <h3>Cat</h3>
         <p>
           The domestic cat (Latin: Felis catus) is a small, typically furry,
