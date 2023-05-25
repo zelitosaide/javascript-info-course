@@ -41,7 +41,6 @@
   <body>
     <div>
       <div class="pane">
-        <button class="remove-button">[x]</button>
         <h3>Horse</h3>
         <p>
           The horse is one of two extant subspecies of Equus ferus. It is an
@@ -52,7 +51,6 @@
         </p>
       </div>
       <div class="pane">
-        <button class="remove-button">[x]</button>
         <h3>Donkey</h3>
         <p>
           The donkey or ass (Equus africanus asinus) is a domesticated member of
@@ -74,7 +72,14 @@
     </div>
 
     <script>
-      console.log("ola, tudo bem?");
+      const panes = document.querySelectorAll(".pane");
+
+      panes.forEach(function (pane) {
+        pane.insertAdjacentHTML(
+          "afterbegin",
+          '<button class="remove-button">[x]</button>'
+        );
+      });
     </script>
   </body>
 </html>
