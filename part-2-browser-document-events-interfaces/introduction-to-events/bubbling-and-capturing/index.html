@@ -60,6 +60,8 @@
         event.target.style.backgroundColor = "yellow";
 
         setTimeout(function () {
+          console.log("Target = " + event.target.tagName);
+          console.log("This = " + this.tagName);
           event.target.style.backgroundColor = "";
         }, 1000);
       };
