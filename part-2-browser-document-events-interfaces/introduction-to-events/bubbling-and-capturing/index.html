@@ -53,7 +53,21 @@
       </div>
     </form>
 
+    <div>
+      <button
+        type="button"
+        onclick="handleClick(event)"
+      >
+        Click me!
+      </button>
+    </div>
+
     <script>
+      function handleClick(e) {
+        console.log(e.type);
+        e.stopPropagation();
+      }
+
       const form = document.querySelector("form");
 
       form.onclick = function (event) {
