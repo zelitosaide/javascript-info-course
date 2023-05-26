@@ -61,7 +61,8 @@
         for (let i = 1; i <= 3; i++) {
           button.addEventListener("click", function (e) {
             if (i === 1 && button.id) {
-              console.log(i, button.id);
+              e[button.id]();
+              pre.textContent += `Event handler for event 1 calling ${button.id}()\n`;
             }
             console.log(button.innerText);
           });
