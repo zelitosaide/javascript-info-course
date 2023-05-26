@@ -58,10 +58,12 @@
 
       form.onclick = function (event) {
         event.target.style.backgroundColor = "yellow";
+        const currentTarget = event.currentTarget.tagName;
 
         setTimeout(() => {
           console.log("Target = " + event.target.tagName);
           console.log("This = " + this.tagName);
+          console.log("This = " + currentTarget);
           event.target.style.backgroundColor = "";
         }, 1000);
       };
