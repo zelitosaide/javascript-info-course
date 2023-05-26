@@ -55,7 +55,10 @@
 
     <script>
       const form = document.querySelector("form");
-      console.log(form);
+
+      form.onclick = function (event) {
+        console.log(event);
+      };
     </script>
 
     <!-- <div onclick="alert('The handler!')">
