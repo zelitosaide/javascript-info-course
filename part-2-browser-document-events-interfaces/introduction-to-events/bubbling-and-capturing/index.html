@@ -2,14 +2,17 @@
 <html>
   <head>
     <style>
-      body * {
+      /* body * {
         border: 1px solid blue;
         margin: 10px;
-      }
+      } */
     </style>
   </head>
   <body>
-    <div onclick="alert('The handler!')">
+    A click shows both <code>event.target</code> and <code>this</code> to
+    compare.
+
+    <!-- <div onclick="alert('The handler!')">
       <em
         >If you click on <code>EM</code>, the handler on
         <code>DIV</code> runs.</em
@@ -22,6 +25,6 @@
         Div
         <p onclick="alert('p')">P</p>
       </div>
-    </form>
+    </form> -->
   </body>
 </html>
