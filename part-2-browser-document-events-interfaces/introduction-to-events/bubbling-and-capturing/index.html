@@ -57,7 +57,11 @@
       const form = document.querySelector("form");
 
       form.onclick = function (event) {
-        console.log(event);
+        event.target.style.backgroundColor = "yellow";
+
+        setTimeout(function () {
+          event.target.style.backgroundColor = "";
+        }, 1000);
       };
     </script>
 
