@@ -54,12 +54,18 @@
       const pre = document.querySelector("pre");
 
       document.addEventListener("click", function () {
-        pre.innerText = "";
+        pre.textContent = "";
       });
 
       document.querySelectorAll("button").forEach(function (button) {
         for (let i = 1; i <= 3; i++) {
-          console.log(i);
+          button.addEventListener("click", function (e) {
+            if (i === 1 && button.id) {
+              e[button.id]();
+              pre.textContent += `Event handler for event 1 calling ${button.id}()\n`;
+            }
+            pre.textContent += `Click event ${i} processed on "${button.textContent}" button\n`;
+          });
         }
       });
     </script>
