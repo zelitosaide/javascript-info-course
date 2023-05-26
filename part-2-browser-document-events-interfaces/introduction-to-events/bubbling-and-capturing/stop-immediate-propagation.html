@@ -18,6 +18,7 @@
         border: 2px solid black;
         border-radius: 30px;
         margin: 10px;
+        cursor: pointer;
       }
     </style>
   </head>
@@ -50,7 +51,15 @@
     <pre></pre>
 
     <script>
-      console.log("stopImmediatePropagation");
+      const pre = document.querySelector("pre");
+
+      document.addEventListener("click", function () {
+        pre.innerText = "";
+      });
+
+      document.querySelectorAll("button").forEach(function (button) {
+        console.log(button);
+      });
     </script>
   </body>
 </html>
