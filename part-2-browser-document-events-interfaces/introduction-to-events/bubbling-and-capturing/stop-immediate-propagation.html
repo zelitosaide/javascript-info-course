@@ -34,13 +34,13 @@
           <button type="button">allow propagation</button> <br />
           <button
             type="button"
-            id="stop-propagation"
+            id="stopPropagation"
           >
             stop propagation</button
           ><br />
           <button
             type="button"
-            id="stop-immediate-propagation"
+            id="stopImmediatePropagation"
           >
             immediate stop propagation
           </button>
@@ -58,7 +58,9 @@
       });
 
       document.querySelectorAll("button").forEach(function (button) {
-        console.log(button);
+        for (let i = 1; i <= 3; i++) {
+          console.log(i);
+        }
       });
     </script>
   </body>
