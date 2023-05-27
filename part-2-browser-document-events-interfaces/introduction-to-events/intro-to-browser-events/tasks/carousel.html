@@ -1,5 +1,18 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <style>
+      body {
+        padding: 10px;
+      }
+
+      #carousel {
+        position: relative;
+        width: 398px;
+        background-color: #eee;
+      }
+    </style>
+  </head>
   <body>
     <div id="carousel">
       <button type="button">⇦</button>
@@ -72,7 +85,7 @@
 
     <script>
       let i = 1;
-      for (let li of document.querySelectorAll("li")) {
+      for (let li of carousel.querySelectorAll("li")) {
         li.style.position = "relative";
         li.insertAdjacentHTML(
           "beforeend",
