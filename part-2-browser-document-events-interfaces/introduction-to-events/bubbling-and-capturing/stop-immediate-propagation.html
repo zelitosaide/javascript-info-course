@@ -56,9 +56,11 @@
       document.addEventListener(
         "click",
         function () {
-          pre.textContent = "";
-        },
-        true
+          setTimeout(function () {
+            pre.textContent = "";
+          }, 1000);
+        }
+        // true
       );
 
       document.querySelectorAll("button").forEach(function (button) {
