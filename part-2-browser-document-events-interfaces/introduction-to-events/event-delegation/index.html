@@ -119,6 +119,9 @@
 
       table.onclick = function (e) {
         const target = e.target;
+        if (target.tagName !== "TD") {
+          return;
+        }
         highlight(target);
       };
 
