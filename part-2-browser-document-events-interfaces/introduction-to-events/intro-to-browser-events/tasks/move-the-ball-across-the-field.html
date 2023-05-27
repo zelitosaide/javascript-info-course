@@ -67,6 +67,10 @@
           ballCoords.left = 0;
         }
 
+        if (ballCoords.left + ball.clientWidth > field.clientWidth) {
+          ballCoords.left = field.clientWidth - ball.clientWidth;
+        }
+
         ball.style.top = ballCoords.top + "px";
         ball.style.left = ballCoords.left + "px";
       };
