@@ -56,6 +56,7 @@
       document.addEventListener(
         "click",
         function (e) {
+          alert("ola");
           // setTimeout(function () {
           pre.textContent = "";
           console.log(e.target.tagName);
@@ -63,7 +64,7 @@
 
           // }, 1000);
         },
-        true
+        false
       );
 
       document.querySelectorAll("button").forEach(function (button) {
