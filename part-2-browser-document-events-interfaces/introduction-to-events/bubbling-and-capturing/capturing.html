@@ -18,6 +18,15 @@
     </form>
 
     <script>
+      for (const elem of document.querySelectorAll("*")) {
+        elem.addEventListener(
+          "click",
+          function () {
+            console.log(`Capturing ${elem.tagName}`);
+          },
+          { capture: false }
+        );
+      }
       // document.addEventListener(
       //   "click",
       //   function (e) {
