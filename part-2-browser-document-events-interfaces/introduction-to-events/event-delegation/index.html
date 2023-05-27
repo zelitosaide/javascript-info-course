@@ -116,6 +116,7 @@
 
     <script>
       const table = document.getElementById("bagua-table");
+      let selectedId;
 
       table.onclick = function (e) {
         const target = e.target;
@@ -126,7 +127,11 @@
       };
 
       function highlight(node) {
+        if (selectedId) {
+          selectedId.classList.remove("highlight");
+        }
         node.classList.add("highlight");
+        selectedId = node;
       }
     </script>
   </body>
