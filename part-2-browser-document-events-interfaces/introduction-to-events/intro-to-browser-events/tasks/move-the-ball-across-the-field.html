@@ -59,8 +59,18 @@
             ball.offsetWidth / 2,
         };
 
+        if (ballCoords.top < 0) {
+          ballCoords.top = 0;
+        }
+
+        if (ballCoords.left < 0) {
+          ballCoords.left = 0;
+        }
+
         ball.style.top = ballCoords.top + "px";
         ball.style.left = ballCoords.left + "px";
+
+        console.log(ballCoords);
       };
     </script>
   </body>
