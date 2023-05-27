@@ -167,14 +167,14 @@
       let position = 0;
 
       carousel.querySelector(".prev").onclick = function (e) {
-        position += width * (count - 1);
+        position += width * count;
         position = Math.min(position, 0);
         list.style.marginLeft = position + "px";
       };
 
       carousel.querySelector(".next").onclick = function (e) {
-        position -= width * (count - 1);
-        position = Math.max(position, -width * (listitems.length - count));
+        position -= width * count;
+        position = Math.max(position, -width * (listItems.length - count));
         list.style.marginLeft = position + "px";
       };
     </script>
