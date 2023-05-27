@@ -168,6 +168,7 @@
 
       carousel.querySelector(".prev").onclick = function (e) {
         position += width * (count - 1);
+        position = Math.min(position, 0);
         list.style.marginLeft = position + "px";
       };
 
