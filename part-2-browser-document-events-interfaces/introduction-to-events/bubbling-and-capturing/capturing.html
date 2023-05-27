@@ -24,6 +24,14 @@
           function () {
             console.log(`Capturing ${elem.tagName}`);
           },
+          { capture: true }
+        );
+
+        elem.addEventListener(
+          "click",
+          function () {
+            console.log(`Bubbling ${elem.tagName}`);
+          },
           { capture: false }
         );
       }
