@@ -24,7 +24,7 @@
         elem.addEventListener(
           "click",
           function (e) {
-            // e.stopPropagation();
+            e.stopPropagation();
             console.log(
               `Capturing ${elem.tagName} eventPhase: ${e.eventPhase}`
             );
@@ -35,7 +35,7 @@
         elem.addEventListener(
           "click",
           function (e) {
-            e.stopPropagation();
+            // e.stopPropagation();
             console.log(`Bubbling ${elem.tagName} eventPhase: ${e.eventPhase}`);
           },
           { capture: false }
