@@ -59,6 +59,8 @@
           // setTimeout(function () {
           pre.textContent = "";
           console.log(e.target.tagName);
+          console.log(e.person);
+
           // }, 1000);
         },
         true
@@ -71,15 +73,20 @@
               e[button.id]();
               pre.textContent += `Event handler for event 1 calling ${button.id}()\n`;
             }
+            e.person = {
+              firstName: "zelito",
+              lastName: "saide",
+            };
             pre.textContent += `Click event ${i} processed on "${button.textContent}" button\n`;
           });
         }
       });
 
       document.querySelectorAll("div").forEach(function (div) {
-        div.addEventListener("click", function () {
+        div.addEventListener("click", function (e) {
           const data = div.firstChild.data.trim();
           pre.textContent += `Click event processed on "${data}"\n`;
+          console.log(e.person.firstName);
         });
       });
     </script>
