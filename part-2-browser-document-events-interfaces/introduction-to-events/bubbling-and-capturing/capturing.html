@@ -18,19 +18,25 @@
     </form>
 
     <script>
+      // addEventListener(..., true)
+      // removeEventListener(..., true)
       for (const elem of document.querySelectorAll("*")) {
         elem.addEventListener(
           "click",
-          function () {
-            console.log(`Capturing ${elem.tagName}`);
+          function (e) {
+            // e.stopPropagation();
+            console.log(
+              `Capturing ${elem.tagName} eventPhase: ${e.eventPhase}`
+            );
           },
           { capture: true }
         );
 
         elem.addEventListener(
           "click",
-          function () {
-            console.log(`Bubbling ${elem.tagName}`);
+          function (e) {
+            e.stopPropagation();
+            console.log(`Bubbling ${elem.tagName} eventPhase: ${e.eventPhase}`);
           },
           { capture: false }
         );
