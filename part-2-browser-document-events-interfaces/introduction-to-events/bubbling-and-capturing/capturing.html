@@ -9,6 +9,14 @@
         },
         { capture: true }
       );
+
+      document.addEventListener(
+        "click",
+        function (e) {
+          console.log(e.target.tagName);
+        },
+        true
+      );
     </script>
   </body>
 </html>
