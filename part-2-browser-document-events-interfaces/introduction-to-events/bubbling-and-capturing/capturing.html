@@ -1,22 +1,38 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <style>
+      body * {
+        margin: 10px;
+        border: 1px solid blue;
+      }
+    </style>
+  </head>
   <body>
-    <script>
-      document.addEventListener(
-        "click",
-        function (e) {
-          console.log(e.type);
-        },
-        { capture: true }
-      );
+    <form>
+      FORM
+      <div>
+        DIV
+        <p>p</p>
+      </div>
+    </form>
 
-      document.addEventListener(
-        "click",
-        function (e) {
-          console.log(e.target.tagName);
-        },
-        true
-      );
+    <script>
+      // document.addEventListener(
+      //   "click",
+      //   function (e) {
+      //     console.log(e.type);
+      //   },
+      //   { capture: true }
+      // );
+
+      // document.addEventListener(
+      //   "click",
+      //   function (e) {
+      //     console.log(e.target.tagName);
+      //   },
+      //   true
+      // );
     </script>
   </body>
 </html>
