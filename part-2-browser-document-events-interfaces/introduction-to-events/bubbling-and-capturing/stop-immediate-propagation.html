@@ -72,6 +72,13 @@
           });
         }
       });
+
+      document.querySelectorAll("div").forEach(function (div) {
+        div.addEventListener("click", function () {
+          const data = div.firstChild.data.trim();
+          pre.textContent += `Click event processed on "${data}"\n`;
+        });
+      });
     </script>
   </body>
 </html>
