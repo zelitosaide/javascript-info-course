@@ -114,7 +114,34 @@
       </tr>
     </table>
 
+    <div id="menu">
+      <button type="button">Save</button>
+      <button type="button">Load</button>
+      <button type="button">Search</button>
+    </div>
+
     <script>
+      class Menu {
+        save() {
+          console.log("saving");
+        }
+
+        load() {
+          console.log("loading");
+        }
+
+        search() {
+          console.log("searching");
+        }
+
+        onClick(e) {
+          const action = e.target.dataset.action;
+          if (action) {
+            this[action]();
+          }
+        }
+      }
+
       const table = document.getElementById("bagua-table");
       let selectedId;
 
