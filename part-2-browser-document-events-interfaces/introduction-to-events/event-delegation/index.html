@@ -119,15 +119,20 @@
       let selectedId;
 
       table.onclick = function (e) {
-        const target = e.target;
+        let target = e.target;
+
+        if (!table.contains(target)) {
+          return;
+        }
 
         if (!target.closest("td")) {
           return;
         }
 
-        // if (target.tagName !== "TD") {
-        //   return;
-        // }
+        if (target.tagName !== "TD") {
+          target = target.closest("td");
+        }
+
         highlight(target);
       };
 
