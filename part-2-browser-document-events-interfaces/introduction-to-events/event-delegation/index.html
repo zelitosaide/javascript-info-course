@@ -118,6 +118,18 @@
       const table = document.getElementById("bagua-table");
       let selectedId;
 
+      table.onclick = function (e) {
+        let target = e.target;
+
+        while (target !== this) {
+          if (target.tagName === "TD") {
+            highlight(target);
+            return;
+          }
+          target = target.parentNode;
+        }
+      };
+
       // table.onclick = function (e) {
       //   let target = e.target;
 
