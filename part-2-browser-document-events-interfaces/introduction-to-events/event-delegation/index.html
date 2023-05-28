@@ -118,23 +118,23 @@
       const table = document.getElementById("bagua-table");
       let selectedId;
 
-      table.onclick = function (e) {
-        let target = e.target;
+      // table.onclick = function (e) {
+      //   let target = e.target;
 
-        if (!table.contains(target)) {
-          return;
-        }
+      //   if (!table.contains(target)) {
+      //     return;
+      //   }
 
-        if (!target.closest("td")) {
-          return;
-        }
+      //   if (!target.closest("td")) {
+      //     return;
+      //   }
 
-        if (target.tagName !== "TD") {
-          target = target.closest("td");
-        }
+      //   if (target.tagName !== "TD") {
+      //     target = target.closest("td");
+      //   }
 
-        highlight(target);
-      };
+      //   highlight(target);
+      // };
 
       function highlight(node) {
         if (selectedId) {
