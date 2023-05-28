@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <a
+      href="/"
+      onclick="return handleClick()"
+      >Click here</a
+    >
+    or
+    <a
+      href="/"
+      onclick="preventDefault(event)"
+      >here</a
+    >
+    <script>
+      function handleClick() {
+        console.log("ola, tudo bem?");
+        return false;
+      }
+
+      function preventDefault(e) {
+        console.log("prevent default");
+        e.preventDefault();
+      }
+    </script>
+  </body>
+</html>
