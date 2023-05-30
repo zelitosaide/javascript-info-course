@@ -139,7 +139,22 @@
 
     <h4>Behavior: Toggle</h4>
 
+    <button data-toggle-id="subscribe-mail">
+      show the subscription form
+    </button>
+
+    <form id="subscribe-mail" hidden>
+      Your name <input type="email">
+    </form>
+
     <script>
+      document.addEventListener("click", function(e) {
+        const target = e.target;
+        if (!target.dataset.toggleId) {
+          return;
+        }
+      });
+
       class Menu {
         constructor(elem) {
           // this._elem = elem;
