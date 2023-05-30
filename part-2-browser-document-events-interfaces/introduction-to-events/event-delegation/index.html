@@ -153,6 +153,9 @@
         if (!target.dataset.toggleId) {
           return;
         }
+
+        const form = document.getElementById(target.dataset.toggleId);
+        form.hidden = !form.hidden
       });
 
       class Menu {
