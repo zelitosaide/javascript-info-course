@@ -59,8 +59,10 @@
       }
 
       tree.addEventListener("click", function(e) {
+        if (e.target.nodeName !== 'SPAN') {
+          return;
+        }
         const ul = e.target.nextSibling;
-
         if (ul) {
           ul.hidden = !ul.hidden
         }
