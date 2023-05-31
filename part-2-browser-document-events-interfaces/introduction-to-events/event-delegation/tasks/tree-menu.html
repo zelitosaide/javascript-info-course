@@ -47,6 +47,13 @@
 
     <script>
       const tree = document.getElementById('tree');
+      
+      for (const li of tree.querySelectorAll("li")) {
+        const data = li.firstChild.data.trim();
+        const span = document.createElement("span");
+        span.append(data);
+        li.firstChild.replaceWith(span);
+      }
 
       tree.addEventListener("click", function(e) {
         const ul = e.target.querySelector("ul");
