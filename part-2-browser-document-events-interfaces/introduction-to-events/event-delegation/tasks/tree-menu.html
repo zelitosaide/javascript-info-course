@@ -2,8 +2,11 @@
 <html>
   <head>
     <style>
-      li {
+      li span {
         cursor: pointer;
+      }
+      li span:hover {
+        font-weight: bold;
       }
     </style>
   </head>
@@ -56,7 +59,8 @@
       }
 
       tree.addEventListener("click", function(e) {
-        const ul = e.target.querySelector("ul");
+        const ul = e.target.nextSibling;
+
         if (ul) {
           ul.hidden = !ul.hidden
         }
