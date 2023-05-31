@@ -24,8 +24,8 @@
     <table id="grid">
       <thead>
         <tr>
-          <th data-type="string">Age</th>
-          <th data-type="number">Name</th>
+          <th data-type="number">Age</th>
+          <th data-type="string">Name</th>
         </tr>
       </thead>
       <tbody>
@@ -53,7 +53,25 @@
     </table>
       
     <script>
-      console.log("sortable table");
+      const table = document.getElementById("grid");
+      table.addEventListener("click", function(e) {
+        const target = e.target;
+
+        if (target.tagName !== 'TH') {
+          return;
+        }
+
+        const type = target.dataset.type;
+        const rows = Array.from(table.querySelector("tbody").rows);
+
+        if (type === "number") {
+          table.tBodies[0].append(...rows.sort(function(rowA, rowB) {
+            
+          }));
+        } else if (type === "string") {
+
+        }
+      });
     </script>
   </body>
 </html>
