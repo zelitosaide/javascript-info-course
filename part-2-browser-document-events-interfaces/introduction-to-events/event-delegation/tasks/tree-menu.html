@@ -49,7 +49,10 @@
       const tree = document.getElementById('tree');
 
       tree.addEventListener("click", function(e) {
-        console.log(e.target);
+        const ul = e.target.querySelector("ul");
+        if (ul) {
+          ul.hidden = !ul.hidden
+        }
       });
     </script>
   </body>
