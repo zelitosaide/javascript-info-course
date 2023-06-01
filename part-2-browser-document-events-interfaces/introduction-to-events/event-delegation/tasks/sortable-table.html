@@ -68,10 +68,12 @@
     
       function sortTable(type, index) {
         const rows = Array.from(table.querySelector("tbody").rows);
+        const tBody = table.querySelector('tbody');
 
         switch(type) {
           case "number": 
-            table.tBodies[0].append(...rows.sort(function(rowA, rowB) {
+            // table.tBodies[0].append(...rows.sort(function(rowA, rowB) {
+            tBody.append(...rows.sort(function(rowA, rowB) {
               const a = +rowA.cells[index].innerHTML;
               const b = +rowB.cells[index].innerHTML;
 
@@ -81,7 +83,8 @@
             }));
             break;
           case "string":
-            table.tBodies[0].append(...rows.sort(function(rowA, rowB) {
+            // table.tBodies[0].append(...rows.sort(function(rowA, rowB) {
+            tBody.append(...rows.sort(function(rowA, rowB) {
               const a = rowA.cells[index].innerHTML.toLowerCase();
               const b = rowB.cells[index].innerHTML.toLowerCase();
 
