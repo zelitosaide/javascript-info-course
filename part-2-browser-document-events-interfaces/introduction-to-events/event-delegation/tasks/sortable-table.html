@@ -56,6 +56,7 @@
       const table = document.getElementById("grid");
       table.addEventListener("click", function(e) {
         const target = e.target;
+        console.log(target);
 
         if (target.tagName !== 'TH') {
           return;
