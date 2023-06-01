@@ -56,7 +56,7 @@
       const table = document.getElementById("grid");
       table.addEventListener("click", function(e) {
         const target = e.target;
-        console.log(target);
+        const index = target.cellIndex;
 
         if (target.tagName !== 'TH') {
           return;
@@ -67,7 +67,12 @@
 
         if (type === "number") {
           table.tBodies[0].append(...rows.sort(function(rowA, rowB) {
-            
+            const a = +rowA.cells[index].innerHTML;
+            const b = +rowB.cells[index].innerHTML;
+
+            if (a < b) return -1;
+            if (a > b) return 1;
+            return 0;
           }));
         } else if (type === "string") {
 
