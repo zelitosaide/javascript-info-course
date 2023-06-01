@@ -56,36 +56,43 @@
       const table = document.getElementById("grid");
       table.addEventListener("click", function(e) {
         const target = e.target;
-        const index = target.cellIndex;
 
         if (target.tagName !== 'TH') {
           return;
         }
 
         const type = target.dataset.type;
+        const index = target.cellIndex;
+        sortTable(type, index);
+      });
+    
+      function sortTable(type, index) {
         const rows = Array.from(table.querySelector("tbody").rows);
 
-        if (type === "number") {
-          table.tBodies[0].append(...rows.sort(function(rowA, rowB) {
-            const a = +rowA.cells[index].innerHTML;
-            const b = +rowB.cells[index].innerHTML;
+        switch(type) {
+          case "number": 
+            table.tBodies[0].append(...rows.sort(function(rowA, rowB) {
+              const a = +rowA.cells[index].innerHTML;
+              const b = +rowB.cells[index].innerHTML;
 
-            if (a < b) return -1;
-            if (a > b) return 1;
-            return 0;
-          }));
-        } else if (type === "string") {
-          table.tBodies[0].append(...rows.sort(function(rowA, rowB) {
-            const a = rowA.cells[index].innerHTML.toLowerCase();
-            const b = rowB.cells[index].innerHTML.toLowerCase();
-            console.log(a, b);
+              if (a < b) return -1;
+              if (a > b) return 1;
+              return 0;
+            }));
+            break;
+          case "string":
+            table.tBodies[0].append(...rows.sort(function(rowA, rowB) {
+              const a = rowA.cells[index].innerHTML.toLowerCase();
+              const b = rowB.cells[index].innerHTML.toLowerCase();
 
-            if (a < b) return -1;
-            if (a > b) return 1;
-            return 0
-          }));
+              if (a < b) return -1;
+              if (a > b) return 1;  
+              return 0;
+            }));
+            break;
+          default: console.log("Invalid option!");
         }
-      });
+      }
     </script>
   </body>
 </html>
