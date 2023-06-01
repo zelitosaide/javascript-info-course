@@ -74,17 +74,20 @@
         switch(type) {
           case "number":
             compare = function (rowA, rowB) {
-              return rowA.cells[index].innerHTNL - rowB.cells[index].innerHTNL;
+              return rowA.cells[index].innerHTML - rowB.cells[index].innerHTML;
             };
             break;
           case "string":
             compare = function (rowA, rowB) {
-              return rowA.cells[index].innerHTNL > rowB.cells[index].innerHTNL
-                ? -1 : 1;
+              return rowA.cells[index].innerHTML > rowB.cells[index].innerHTML
+                ? 1 : -1;
             };
             break;
+          default: console.log("Ops!")
         }
-        console.log(type, index);
+        
+        rowsArray.sort(compare);
+        tbody.append(...rowsArray);
       }
     </script>
   </body>
