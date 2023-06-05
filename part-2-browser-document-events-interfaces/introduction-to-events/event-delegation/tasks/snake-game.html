@@ -27,7 +27,7 @@
         background-color: black;
       }
 
-      .food {
+      #food {
         position: absolute;
         left: 100px;
         top: 0;
@@ -40,7 +40,7 @@
   <body>
     <div id="container">
       <div id="snake"></div>
-      <div class="food"></div>
+      <div id="food"></div>
     </div>
 
     <script>
@@ -48,8 +48,18 @@
       let intervalId;
       const speed = 50;
 
+      // Food
+      const food = document.getElementById("food");
+      const foodCoords = food.getBoundingClientRect();
+
       function move(horizontal = true, value) {
         const styles = getComputedStyle(snake);
+        const snakeCoords = snake.getBoundingClientRect();
+
+        if (snakeCoords.right >= foodCoords.left) {
+          console.log("snakeCoords: " + snakeCoords.right + ", foodCoords: " + foodCoords.left);
+        }
+
         if (horizontal) {
           const left = +styles.left.split("px")[0];
           snake.style.left = left + value + "px";
