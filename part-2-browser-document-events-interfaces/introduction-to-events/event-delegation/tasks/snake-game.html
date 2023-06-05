@@ -57,6 +57,8 @@
         const snakeCoords = snake.getBoundingClientRect();
 
         if (food.offsetParent && snakeCoords.right >= foodCoords.left) {
+          snake.style.width = snake.getBoundingClientRect().width + 16 + "px";
+          // console.log(snake.getBoundingClientRect().width);
           console.log("snakeCoords: " + snakeCoords.right + ", foodCoords: " + foodCoords.left);
           food.remove();
         }
