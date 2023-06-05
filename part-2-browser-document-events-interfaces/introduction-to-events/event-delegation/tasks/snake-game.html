@@ -56,8 +56,9 @@
         const styles = getComputedStyle(snake);
         const snakeCoords = snake.getBoundingClientRect();
 
-        if (snakeCoords.right >= foodCoords.left) {
+        if (food.offsetParent && snakeCoords.right >= foodCoords.left) {
           console.log("snakeCoords: " + snakeCoords.right + ", foodCoords: " + foodCoords.left);
+          food.remove();
         }
 
         if (horizontal) {
