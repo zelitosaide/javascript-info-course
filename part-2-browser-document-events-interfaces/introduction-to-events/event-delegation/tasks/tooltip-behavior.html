@@ -57,7 +57,7 @@
         if (tooltip.offsetWidth > target.offsetWidth && buttonCoords.left <= 8) {
           tooltip.style.left = buttonCoords.left + "px";
         } else {
-          tooltip.style.left = buttonCoords.left + "px";
+          tooltip.style.left = buttonCoords.left + target.offsetWidth / 2 - tooltip.offsetWidth / 2 + "px";
         }
       }
 
