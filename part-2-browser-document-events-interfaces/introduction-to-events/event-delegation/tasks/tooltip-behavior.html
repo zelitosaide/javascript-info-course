@@ -3,7 +3,7 @@
   <head>
     <style>
       body {
-        background-color: lightslategray;
+        /* background-color: lightslategray; */
       }
     </style>
   </head>
@@ -23,7 +23,23 @@
     </button>
 
     <script>
-      console.log("Tooltip behavior");
+      document.onmouseover = function(e) {
+        const target = e.target;
+        if (!target.dataset.tooltip) {
+          return;
+        }
+
+        console.log(target);
+      }
+
+      document.onmouseout = function(e) {
+        const target = e.target;
+        if (!target.dataset.tooltip) {
+          return;
+        }
+
+        console.log(target);
+      }
     </script>
   </body>
 </html>
