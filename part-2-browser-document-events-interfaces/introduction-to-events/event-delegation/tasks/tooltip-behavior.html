@@ -54,8 +54,8 @@
         tooltip.innerHTML = target.dataset.tooltip;
         tooltip.style.top = buttonCoords.top - tooltip.offsetHeight - 5 + "px";
 
-        if (tooltip.offsetWidth > target.offsetWidth) {
-          console.log("bug");
+        if (tooltip.offsetWidth > target.offsetWidth && buttonCoords.left <= 8) {
+          tooltip.style.left = buttonCoords.left + "px";
         }
       }
 
