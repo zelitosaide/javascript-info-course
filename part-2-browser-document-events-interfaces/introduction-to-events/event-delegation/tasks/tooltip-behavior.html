@@ -4,6 +4,7 @@
     <style>
       body {
         /* background-color: lightslategray; */
+        height: 2000px;
       }
 
       .tooltip {
@@ -15,6 +16,7 @@
         border: 1px solid #b3c9ce;
         color: #333;
         background-color: #fff;
+        box-shadow: 3px 3px 3px rgba(0, 0, 0, .3);
       }
     </style>
   </head>
@@ -42,10 +44,11 @@
 
         const buttonCoords = target.getBoundingClientRect();
         const tooltip = document.createElement("span");
+        document.body.append(tooltip);
+
         tooltip.className = "tooltip";
         tooltip.innerHTML = target.dataset.tooltip;
-
-        document.body.append(tooltip)
+        tooltip.style.top = buttonCoords.top - 5 - tooltip.offsetHeight + "px";
       }
 
       document.onmouseout = function(e) {
