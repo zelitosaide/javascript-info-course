@@ -53,10 +53,17 @@
         const buttonCoords = target.getBoundingClientRect();
         const tooltip = document.createElement("span");
         document.body.append(tooltip);
-
         tooltip.className = "tooltip";
         tooltip.innerHTML = target.dataset.tooltip;
-        tooltip.style.top = buttonCoords.top - tooltip.offsetHeight - 5 + "px";
+        
+        tooltip.style.top = buttonCoords.top + "px";
+        // tooltip.style.top = buttonCoords.top - tooltip.offsetHeight - 5 + "px";
+        console.log(
+          tooltip.offsetHeight, 
+          tooltip.getBoundingClientRect().height,
+          tooltip.clientHeight,
+          getComputedStyle(tooltip).height
+        )
 
         if (tooltip.offsetWidth > target.offsetWidth && buttonCoords.left <= 8) {
           tooltip.style.left = buttonCoords.left + "px";
