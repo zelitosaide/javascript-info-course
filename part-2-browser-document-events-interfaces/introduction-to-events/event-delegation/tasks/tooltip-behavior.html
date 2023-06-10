@@ -27,8 +27,12 @@
     <p>
       LaLaLa LaLaLa LaLaLa LaLaLa LaLaLa LaLaLa LaLaLa LaLaLa LaLaLa
     </p>
-
-    <button data-tooltip="The Tooltip is longer than the element">
+    <div>
+      <button data-tooltip="HTML<br />Tooltip">
+        One more button
+      </button>
+    </div>
+    <button data-tooltip="The tooltip is longer than the element">
       Short button
     </button>
     <button data-tooltip="HTML<br />Tooltip">
@@ -48,7 +52,7 @@
 
         tooltip.className = "tooltip";
         tooltip.innerHTML = target.dataset.tooltip;
-        tooltip.style.top = buttonCoords.top - 5 - tooltip.offsetHeight + "px";
+        tooltip.style.top = buttonCoords.top - tooltip.offsetHeight - 5 + "px";
       }
 
       document.onmouseout = function(e) {
