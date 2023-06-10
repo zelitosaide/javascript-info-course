@@ -5,6 +5,12 @@
       body {
         /* background-color: lightslategray; */
       }
+
+      .tooltip {
+        position: fixed;
+        padding: 10px 20px;
+        border: 1px solid #b3c9ce;
+      }
     </style>
   </head>
   <body>
@@ -29,7 +35,12 @@
           return;
         }
 
-        console.log(target);
+        const buttonCoords = target.getBoundingClientRect();
+        const tooltip = document.createElement("span");
+        tooltip.className = "tooltip";
+        tooltip.innerHTML = target.dataset.tooltip;
+
+        document.body.append(tooltip)
       }
 
       document.onmouseout = function(e) {
@@ -38,7 +49,7 @@
           return;
         }
 
-        console.log(target);
+        document.querySelector(".tooltip").remove();
       }
     </script>
   </body>
