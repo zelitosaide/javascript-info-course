@@ -53,6 +53,10 @@
         tooltip.className = "tooltip";
         tooltip.innerHTML = target.dataset.tooltip;
         tooltip.style.top = buttonCoords.top - tooltip.offsetHeight - 5 + "px";
+
+        if (tooltip.offsetWidth > target.offsetWidth) {
+          console.log("bug");
+        }
       }
 
       document.onmouseout = function(e) {
@@ -60,7 +64,6 @@
         if (!target.dataset.tooltip) {
           return;
         }
-
         document.querySelector(".tooltip").remove();
       }
     </script>
