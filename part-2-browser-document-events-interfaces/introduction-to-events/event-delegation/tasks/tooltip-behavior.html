@@ -44,7 +44,7 @@
     <br>
     <br>
     <br>
-    
+
     <div>  
       <button data-tooltip="HTML<br />Tooltip">
         One more button
@@ -63,11 +63,7 @@
         document.body.append(tooltip);
         tooltip.className = "tooltip";
         tooltip.innerHTML = target.dataset.tooltip;
-        
-        // tooltip.style.top = buttonCoords.top + "px";
-        // tooltip.style.top = buttonCoords.top - tooltip.offsetHeight - 5 + "px";
-        tooltip.style.top = buttonCoords.top - tooltip.clientHeight - 5 + "px";
-        console.log(tooltip.offsetHeight)
+        tooltip.style.top = buttonCoords.top - tooltip.offsetHeight - 5 + "px";
 
         if (tooltip.offsetWidth > target.offsetWidth && buttonCoords.left <= 8) {
           tooltip.style.left = buttonCoords.left + "px";
