@@ -39,9 +39,17 @@
     <button data-tooltip="The tooltip is longer than the element">
       Short button
     </button>
-    <button data-tooltip="HTML<br />Tooltip">
-      One more button
-    </button>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    
+    <div>  
+      <button data-tooltip="HTML<br />Tooltip">
+        One more button
+      </button>
+    </div>
 
     <script>
       document.onmouseover = function(e) {
@@ -56,14 +64,10 @@
         tooltip.className = "tooltip";
         tooltip.innerHTML = target.dataset.tooltip;
         
-        tooltip.style.top = buttonCoords.top + "px";
+        // tooltip.style.top = buttonCoords.top + "px";
         // tooltip.style.top = buttonCoords.top - tooltip.offsetHeight - 5 + "px";
-        console.log(
-          tooltip.offsetHeight, 
-          tooltip.getBoundingClientRect().height,
-          tooltip.clientHeight,
-          getComputedStyle(tooltip).height
-        )
+        tooltip.style.top = buttonCoords.top - tooltip.clientHeight - 5 + "px";
+        console.log(tooltip.offsetHeight)
 
         if (tooltip.offsetWidth > target.offsetWidth && buttonCoords.left <= 8) {
           tooltip.style.left = buttonCoords.left + "px";
