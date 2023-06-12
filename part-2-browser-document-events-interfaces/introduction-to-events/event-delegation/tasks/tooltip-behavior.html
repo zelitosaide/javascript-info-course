@@ -49,6 +49,9 @@
       <button data-tooltip="HTML<br />Tooltip">
         One more button
       </button>
+      <button data-tooltip="The tooltip is longer than the element">
+        Short button
+      </button>
     </div>
 
     <script>
@@ -64,6 +67,7 @@
         document.body.append(tooltip);
 
         tooltip.style.top = buttonCoords.top - tooltip.offsetHeight - 5 + "px";
+        tooltip.style.left = buttonCoords.left + target.offsetWidth / 2 - tooltip.offsetWidth / 2 + "px";
         const tooltipCoords = tooltip.getBoundingClientRect();
 
         if (tooltipCoords.top < 0) {
