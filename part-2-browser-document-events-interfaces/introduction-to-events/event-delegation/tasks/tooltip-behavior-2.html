@@ -28,8 +28,23 @@
       Scroll the page to make buttons appear on the top, 
       check if the tooltips show up correctly.
     </p>
+
     <script>
-      console.log("ola, tudo bem?");
+      document.onmouseover = function(e) {
+        const target = e.target;
+
+        if (!target.dataset.tooltip) {
+          return;
+        }
+      }
+
+      document.onmouseout = function(e) {
+        const target = e.target;
+
+        if (!target.dataset.tooltip) {
+          return;
+        }
+      }
     </script>
   </body>
 </html>
