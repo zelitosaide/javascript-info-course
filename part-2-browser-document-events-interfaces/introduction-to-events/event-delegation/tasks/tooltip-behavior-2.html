@@ -52,6 +52,11 @@
         if (!target.dataset.tooltip) {
           return;
         }
+
+        if (tooltip) {
+          tooltip.remove();
+          tooltip = null;
+        }
       }
     </script>
   </body>
