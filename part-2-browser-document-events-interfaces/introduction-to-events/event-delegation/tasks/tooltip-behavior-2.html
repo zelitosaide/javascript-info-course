@@ -6,6 +6,18 @@
         background-color: lightslategrey;
         height: 2000px;
       }
+
+      .tooltip {
+        position: fixed;
+        padding: 10px 20px;
+        border: 1px solid #b3c9ce;
+        border-radius: 4px;
+        text-align: center;
+        font: italic 14px/1.3 sans-serif;
+        color: #333;
+        background: #fff;
+        box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
+      }
     </style>
   </head>
   <body>
@@ -46,11 +58,19 @@
         document.body.append(tooltip);
 
         const buttonCoords = target.getBoundingClientRect();
-        const left = buttonCoords.left + target.offsetWidth / 2 - tooltip.offsetWidth / 2;
+
+        let left = buttonCoords.left + target.offsetWidth / 2 - tooltip.offsetWidth / 2;
         if (left < 0) {
           left = 0;
         }
-        console.log(buttonCoords);
+        
+        let top = buttonCoords.top - tooltip.offsetHeight - 5;
+        if (top < 0) {
+          top = 0;
+        }
+
+        tooltip.style.left = left + "px";
+        tooltip.style.top = top + "px";
       }
 
       document.onmouseout = function(e) {
