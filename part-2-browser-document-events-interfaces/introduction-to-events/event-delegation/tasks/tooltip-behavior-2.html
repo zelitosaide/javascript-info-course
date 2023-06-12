@@ -44,6 +44,13 @@
         tooltip.className = "tooltip";
         tooltip.innerHTML = target.dataset.tooltip;
         document.body.append(tooltip);
+
+        const buttonCoords = target.getBoundingClientRect();
+        const left = buttonCoords.left + target.offsetWidth / 2 - tooltip.offsetWidth / 2;
+        if (left < 0) {
+          left = 0;
+        }
+        console.log(buttonCoords);
       }
 
       document.onmouseout = function(e) {
