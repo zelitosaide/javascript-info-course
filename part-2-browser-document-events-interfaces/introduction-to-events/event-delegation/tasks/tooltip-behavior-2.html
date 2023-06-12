@@ -30,12 +30,20 @@
     </p>
 
     <script>
+      let tooltip;
+
       document.onmouseover = function(e) {
         const target = e.target;
 
         if (!target.dataset.tooltip) {
           return;
         }
+
+        // ...create the tooltip element
+        tooltip = document.createElement("div");
+        tooltip.className = "tooltip";
+        tooltip.innerHTML = target.dataset.tooltip;
+        document.body.append(tooltip);
       }
 
       document.onmouseout = function(e) {
