@@ -68,10 +68,15 @@
 
         tooltip.style.top = buttonCoords.top - tooltip.offsetHeight - 5 + "px";
         tooltip.style.left = buttonCoords.left + target.offsetWidth / 2 - tooltip.offsetWidth / 2 + "px";
+        
         const tooltipCoords = tooltip.getBoundingClientRect();
 
         if (tooltipCoords.top < 0) {
           tooltip.style.top = buttonCoords.bottom + 5 + "px";
+        }
+
+        if (tooltipCoords.left < 8) {
+          tooltip.style.left = buttonCoords.left + "px";
         }
       }
 
