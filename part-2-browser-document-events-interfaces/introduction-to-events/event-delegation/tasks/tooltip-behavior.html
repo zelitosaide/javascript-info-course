@@ -58,9 +58,13 @@
           return;
         }        
         const tooltip = document.createElement("div");
+        const buttonCoords = target.getBoundingClientRect();
         tooltip.className = "tooltip";
         tooltip.innerHTML = target.dataset.tooltip;
         document.body.append(tooltip);
+        
+        tooltip.style.top = buttonCoords.top - 5 + "px";
+        console.log(tooltip.getBoundingClientRect());
       }
 
       document.onmouseout = function(e) {
@@ -68,6 +72,8 @@
         if (!target.dataset.tooltip) {
           return;
         }
+
+        document.querySelector(".tooltip").remove();
       }
     </script>
   </body>
