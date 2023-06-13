@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <p>
+      Right-click for the document menu (added a check 
+      for event.defaultPrevented)
+    </p>
+    <button>Right-click for the button menu</button>
+
+    <script>
+      document.querySelector("button").oncontextmenu = function(e) {
+        e.preventDefault();
+        console.log(e.target.nodeName);
+      }
+
+      document.oncontextmenu = function(e) {
+        if (!e.defaultPrevented) {
+          return;
+        }
+        e.preventDefault();
+        console.log(e.currentTarget.nodeName);
+      }
+    </script>
+  </body>
+</html>
