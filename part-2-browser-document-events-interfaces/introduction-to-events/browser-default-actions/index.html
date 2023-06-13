@@ -26,6 +26,11 @@
       </li>
     </ul>
 
+    <form>
+      <button type="submit" onclick="return false;">Submit</button>
+      <button type="submit" onclick="event.preventDefault();">One more submit</button>
+    </form>
+
     <script>
       function handleClick() {
         console.log("Bye!");
