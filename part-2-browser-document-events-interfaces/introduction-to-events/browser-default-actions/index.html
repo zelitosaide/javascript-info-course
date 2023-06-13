@@ -98,6 +98,22 @@
         console.log(href);
         return false;
       }
+
+      document.addEventListener("touchmove", function() {
+        console.log("Hii");
+        // if passive is true, means the browser won't cancell the scrolling
+        // if passive is false, means the browser will first process all handlers
+        // and then if preventDefault() is not called anywhere, it can proceed 
+        // with scrolling.
+      }, { passive: true });
+
+      document.addEventListener("touchstart", function() {
+        console.log("Hii");
+        // if passive is true, means the browser won't cancell the scrolling
+        // if passive is false, means the browser will first process all handlers
+        // and then if preventDefault() is not called anywhere, it can proceed 
+        // with scrolling.
+      }, { passive: true });
     </script>
   </body>
 </html>
