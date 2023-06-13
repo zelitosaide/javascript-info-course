@@ -147,10 +147,16 @@
         alert(e.currentTarget.nodeName);
       }
 
+      // Right-click for the button menu (fixed with event.stopPropagation)
       document.getElementById("button2").oncontextmenu = function(e) {
         e.preventDefault();
         e.stopPropagation();
         alert(e.target.nodeName);
+      }
+
+      document.oncontextmenu = function(e) {
+        e.preventDefault();
+        alert("Document context menu");
       }
     </script>
   </body>
