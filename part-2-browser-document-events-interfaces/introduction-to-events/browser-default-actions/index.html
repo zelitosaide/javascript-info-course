@@ -2,35 +2,38 @@
 <html>
   <head>
     <style>
-      a {
-        display: block;
-      }
+      
     </style>
   </head>
   <body>
-    <a href="/" onclick="return false">Return false</a>
+    <ul>
+      <li>
+        [1] - <a href="/" onclick="return false">Return false</a>
+      </li>
+      <li>
+        [2] - <a href="/" onclick="">Don't return false</a>
+      </li>
+      <li>
+        [3] - <a href="/" onclick="event.preventDefault()">Prevent default</a>
+      </li>
+      <li>
+        [4] - <a href="/" onclick="return handleClick()">handle click</a>
+      </li>
+      <li>
+        [5] - <a href="/" onclick="handlePreventDefault(event)">
+          handle prevent default
+        </a>
+      </li>
+    </ul>
 
-    <a href="/" onclick="">Don't return false</a>
-
-    <a
-      href="/"
-      onclick="return handleClick()"
-      >Click here</a
-    >
-    or
-    <a
-      href="/"
-      onclick="preventDefault(event)"
-      >here</a
-    >
     <script>
       function handleClick() {
-        console.log("ola, tudo bem?");
+        console.log("Bye!");
         return false;
       }
 
-      function preventDefault(e) {
-        console.log("prevent default");
+      function handlePreventDefault(e) {
+        console.log(e.type);
         e.preventDefault();
       }
     </script>
