@@ -63,6 +63,15 @@
       </ul>
     </div>
 
+    <form>
+      <input 
+        type="text" 
+        value="Focus works" 
+        onfocus="this.value = ''" 
+        onblur="this.value='Focus works'"
+      >
+    </form>
+
     <script>
       function handleClick() {
         console.log("Bye!");
