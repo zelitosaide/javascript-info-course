@@ -146,6 +146,11 @@
         e.preventDefault();
         alert(e.currentTarget.nodeName);
       }
+
+      document.getElementById("button2").oncontextmenu = function(e) {
+        e.preventDefault();
+        alert(e.target.nodeName);
+      }
     </script>
   </body>
 </html>
