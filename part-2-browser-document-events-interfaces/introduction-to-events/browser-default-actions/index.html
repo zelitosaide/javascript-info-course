@@ -1,6 +1,17 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <style>
+      a {
+        display: block;
+      }
+    </style>
+  </head>
   <body>
+    <a href="/" onclick="return false">Return false</a>
+
+    <a href="/" onclick="">Don't return false</a>
+
     <a
       href="/"
       onclick="return handleClick()"
