@@ -134,6 +134,11 @@
         e.preventDefault();
         alert(e.target.nodeName);
       }
+
+      document.oncontextmenu = function(e) {
+        e.preventDefault();
+        alert(e.currentTarget.nodeName);
+      }
     </script>
   </body>
 </html>
