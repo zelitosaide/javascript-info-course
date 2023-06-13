@@ -10,15 +10,15 @@
     <script>
       document.querySelector("button").oncontextmenu = function(e) {
         e.preventDefault();
-        console.log(e.target.nodeName);
+        alert(e.target.nodeName);
       }
 
       document.oncontextmenu = function(e) {
-        if (!e.defaultPrevented) {
+        if (e.defaultPrevented) {
           return;
         }
         e.preventDefault();
-        console.log(e.currentTarget.nodeName);
+        alert(e.currentTarget.nodeName);
       }
     </script>
   </body>
