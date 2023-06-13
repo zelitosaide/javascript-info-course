@@ -51,6 +51,13 @@
       }
 
       document.getElementById("menu").onclick = function(e) {
+        const target = e.target;
+        if (target.nodeName !== "A") {
+          return;
+        }
+        const href = target.getAttribute("href");
+        console.log(href);
+
         return false;
       }
     </script>
