@@ -85,6 +85,13 @@
       </button>
     </div>
 
+    <div>
+      <p>Right-click here for the document context menu</p>
+      <button id="button1">
+        Right-click here for the button context menu
+      </button>
+    </div>
+
     <script>
       function handleClick() {
         console.log("Bye!");
@@ -122,6 +129,11 @@
         // and then if preventDefault() is not called anywhere, it can proceed 
         // with scrolling.
       }, { passive: true });
+
+      document.getElementById("button1").oncontextmenu = function(e) {
+        e.preventDefault();
+        alert(e.target.nodeName);
+      }
     </script>
   </body>
 </html>
