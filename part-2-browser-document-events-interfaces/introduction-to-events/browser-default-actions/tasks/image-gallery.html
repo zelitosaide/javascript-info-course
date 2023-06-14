@@ -71,7 +71,20 @@
       </li>
     </ul>
     <script>
-      console.log("Ola tudo bem?");
+      document.getElementById("thumbs").onclick = function(e) {
+        const target = e.target.closest("a");
+        if (!target) {
+          return;
+        }
+        showThumbnail(target.href, target.title);
+        return false;
+      }
+
+      function showThumbnail(href, title) {
+        const largeImg = document.getElementById("largeImg");
+        largeImg.src = href;
+        largeImg.alt = title;
+      }
     </script>
   </body>
 </html>
