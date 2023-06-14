@@ -27,6 +27,11 @@
         /* text-decoration: none; */
         background-color: #007ead;
       }
+
+      #outer {
+        background-color: lightcoral;
+        padding: 10px;
+      }
     </style>
   </head>
   <body>
@@ -100,6 +105,14 @@
     </div>
 
     <h3>Nested context menus architecture</h3>
+
+    <div id="outer">
+      <div id="middle">
+        <div id="inner">
+          <button>Click here!</button>
+        </div>
+      </div>
+    </div>
 
     <script>
       function handleClick() {
