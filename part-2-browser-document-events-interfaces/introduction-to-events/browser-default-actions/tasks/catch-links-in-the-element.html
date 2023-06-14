@@ -24,7 +24,10 @@
         if (!link) {
           return;
         }
-        console.log(e.target);
+
+        if (!confirm("Leave for " + link.href + "?")) {
+          e.preventDefault();
+        }
       }
     </script>
   </body>
