@@ -17,9 +17,15 @@
         about modern standards?
       </p>
     </fieldset>
-    
+
     <script>
-      console.log("Ola tudo bem?");
+      document.getElementById("contents").onclick = function(e) {
+        const link = e.target.closest("a");
+        if (!link) {
+          return;
+        }
+        console.log(e.target);
+      }
     </script>
   </body>
 </html>
