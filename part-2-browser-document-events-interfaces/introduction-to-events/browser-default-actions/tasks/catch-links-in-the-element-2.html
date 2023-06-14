@@ -18,8 +18,14 @@
       </p>
     </fieldset>
 
+    <a href="/" id="external">Click here!</a>
+
     <script>
       const contents = document.getElementById("contents");
+
+      document.getElementById("external").onclick = function (e) {
+        return false;
+      }
 
       contents.onclick = function(e) {
         const target = e.target.closest("a");
