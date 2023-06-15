@@ -13,8 +13,10 @@
       function handleClick(e) {
         console.log(`isTrusted: ${e.isTrusted}`);
       }
-
       document.querySelector("button").dispatchEvent(event);
+
+      const helloEvent = new Event("hello", { bubbles: true });
+      document.querySelector("h3").dispatchEvent(helloEvent);
     </script>
   </body>
 </html>
