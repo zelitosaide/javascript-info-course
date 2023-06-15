@@ -1,15 +1,19 @@
 <!DOCTYPE html>
 <html>
   <body>
-    <button onclick="alert('Click')">Autoclick</button>
+    <button onclick="handleClick(event)">Autoclick</button>
     <script>
-      const event = new Event("zas", { 
+      const event = new Event("click", { 
         bubbles: false, 
         cancelable: false, 
         composed: false 
       });
 
-      console.log(event);
+      function handleClick(e) {
+        alert(e.isTrusted);
+      }
+
+      document.querySelector("button").dispatchEvent(event);
     </script>
   </body>
 </html>
