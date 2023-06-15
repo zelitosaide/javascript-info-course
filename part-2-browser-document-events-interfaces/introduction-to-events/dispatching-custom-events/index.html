@@ -16,6 +16,9 @@
       document.querySelector("button").dispatchEvent(event);
 
       const helloEvent = new Event("hello", { bubbles: true });
+      document.querySelector("h3").addEventListener("hello", function(e) {
+        console.log(`${e.type}: ${e.target.nodeName}`)
+      });
       document.querySelector("h3").dispatchEvent(helloEvent);
     </script>
   </body>
