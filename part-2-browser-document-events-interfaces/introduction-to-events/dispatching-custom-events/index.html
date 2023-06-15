@@ -21,8 +21,8 @@
       });
 
       document.addEventListener("hello", function(e) {
-        console.log(`${e.type}: ${e.target.nodeName}`);
-      });
+        console.log(`${e.type}: ${e.target.nodeName}, ${e.currentTarget.nodeName}`);
+      }, { capture: true });
       document.querySelector("h3").dispatchEvent(helloEvent);
     </script>
   </body>
