@@ -1,8 +1,15 @@
 <!DOCTYPE html>
 <html>
   <body>
+    <h1>Hello for John!</h1>
     <script>
-      console.log("Ola tudo bem?");
+      const event = new CustomEvent("hello", {
+        bubbles: true,
+        cancelable: true,
+        detail: {
+          name: "John"
+        }
+      });
     </script>
   </body>
 </html>
