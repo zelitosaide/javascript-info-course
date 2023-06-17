@@ -19,17 +19,16 @@
 
         const dispatch = rabbit.dispatchEvent(event);
 
-        console.log(dispatch);
-
         if (!dispatch) {
-          console.log("The action was prevented by a handler")
+          console.log("The action was prevented by a handler");
         } else {
-          console.log("Ola, tudo bem?");
-          // rabbit.hidden = true;
+          rabbit.hidden = true;
         }
       }
 
-      console.log("Ola, tudo bem?");
+      rabbit.addEventListener("hide", function(e) {
+        e.preventDefault();
+      });
     </script>
   </body>
 </html>
