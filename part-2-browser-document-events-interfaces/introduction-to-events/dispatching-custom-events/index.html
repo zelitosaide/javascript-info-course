@@ -33,9 +33,19 @@
         clientX: 100,
         clientY: 100
       });
+
+      const genericEvent = new Event("click", {
+        bubbles: true,
+        cancelable: true,
+        clientX: 100,
+        clientY: 100
+      });
       
       console.log(mouseEvent.clientX);
       console.log(mouseEvent.clientY);
+      
+      console.log(genericEvent.clientX);
+      console.log(genericEvent.clientY);
     </script>
   </body>
 </html>
