@@ -26,6 +26,16 @@
         console.log(`${e.type}: ${e.target.nodeName}, ${e.currentTarget.nodeName}`);
       }, { capture: true });
       document.querySelector("h3").dispatchEvent(helloEvent);
+
+      const mouseEvent = new MouseEvent("click", {
+        bubbles: true,
+        cancelable: true,
+        clientX: 100,
+        clientY: 100
+      });
+      
+      console.log(mouseEvent.clientX);
+      console.log(mouseEvent.clientY);
     </script>
   </body>
 </html>
