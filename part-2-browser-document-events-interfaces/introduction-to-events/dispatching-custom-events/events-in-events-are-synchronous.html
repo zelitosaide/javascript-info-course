@@ -2,6 +2,8 @@
 <html>
   <body>
     <button>Menu (click me!)</button>
+    <button id="btn">Menu 2 (click me!)</button>
+
     <script>
       const menu = document.querySelector("button");
       menu.onclick = function() {
@@ -16,6 +18,26 @@
 
       document.addEventListener("menu-open", function() {
         console.log("Ola tudo bem?")
+      });
+
+      const menu2 = document.getElementById("btn");
+      
+      menu2.onclick = function() {
+        console.log("v2: ", 1);
+
+        run(menu2);
+
+        console.log("v2: ", 2);
+      }
+
+      function run(elem) {
+        elem.dispatchEvent(new CustomEvent("menu-open-2", {
+          bubbles: true
+        }));
+      }
+
+      document.addEventListener("menu-open-2", function() {
+        console.log("Ola, tudo bem v2?");
       });
     </script>
   </body>
