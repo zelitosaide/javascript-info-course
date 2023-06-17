@@ -1,8 +1,22 @@
 <!DOCTYPE html>
 <html>
   <body>
+    <button>Menu (click me!)</button>
     <script>
-      console.log("Ola tudo bem?");
+      const menu = document.querySelector("button");
+      menu.onclick = function() {
+        console.log(1);
+
+        menu.dispatchEvent(new CustomEvent("menu-open", {
+          bubbles: true
+        }));
+
+        console.log(2);
+      }
+
+      document.addEventListener("menu-open", function() {
+        console.log("Ola tudo bem?")
+      });
     </script>
   </body>
 </html>
