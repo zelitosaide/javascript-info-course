@@ -8,7 +8,27 @@
       =\_Y_/=
        {>o<} 
     </pre>
+    <button onclick="hide()">Hide()</button>
     <script>
+      const rabbit = document.getElementById("rabbit");
+
+      function hide() {
+        const event = new CustomEvent("hide", {
+          cancelable: true // without that flag preventDefault doesn't work
+        });
+
+        const dispatch = rabbit.dispatchEvent(event);
+
+        console.log(dispatch);
+
+        if (!dispatch) {
+          console.log("The action was prevented by a handler")
+        } else {
+          console.log("Ola, tudo bem?");
+          // rabbit.hidden = true;
+        }
+      }
+
       console.log("Ola, tudo bem?");
     </script>
   </body>
