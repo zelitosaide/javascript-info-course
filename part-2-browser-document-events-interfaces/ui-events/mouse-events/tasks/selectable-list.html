@@ -36,6 +36,14 @@
         li.onclick = function(e) {
           if (e.ctrlKey || e.metaKey) {
             li.classList.toggle("selected");
+          } else {
+            ul.querySelectorAll("li").forEach(function(aux) {
+              if (aux === li) {
+                aux.classList.add("selected");
+              } else {
+                aux.classList.remove("selected");
+              }
+            });
           }
         }
       });
