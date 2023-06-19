@@ -7,6 +7,7 @@
       const input = document.querySelector("input");
       input.onmousemove = function(e) {
         this.value = e.clientX + ":" + e.clientY;
+        console.log(e.pageX, e.pageY);
       } 
     </script>
   </body>
