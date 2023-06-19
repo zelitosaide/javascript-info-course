@@ -32,7 +32,13 @@
         }
       });
 
-      console.log(ul);
+      ul.querySelectorAll("li").forEach(function(li) {
+        li.onclick = function(e) {
+          if (e.ctrlKey || e.metaKey) {
+            li.classList.toggle("selected");
+          }
+        }
+      });
     </script>
   </body>
 </html>
