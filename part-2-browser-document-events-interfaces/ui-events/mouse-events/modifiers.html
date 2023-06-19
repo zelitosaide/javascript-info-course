@@ -7,10 +7,12 @@
     <script>
       const button = document.querySelector("#button");
       button.onclick = function (e) {
-        console.log(e.shiftKey);
-        
         if (e.shiftKey) {
           console.log("You pressed a shift key");
+        }
+
+        if (e.altKey) {
+          console.log("You pressed a alt/opt key");
         }
       }
     </script>
