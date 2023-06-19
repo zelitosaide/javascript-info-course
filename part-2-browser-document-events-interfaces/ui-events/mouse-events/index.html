@@ -58,6 +58,14 @@
       event.which
     </button>
 
+    <h2>event.buttons: <span style="color: red;">it doesn't work</span></h2>
+    <button
+      oncontextmenu="event.preventDefault();"
+      onmouseup="console.log(event.buttons)"
+    >
+      Click me!
+    </button>
+
     <script>
       const button = document.querySelector("#mouse-button");
       button.addEventListener("mouseup", function(e) {
