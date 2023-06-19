@@ -5,8 +5,8 @@
 
     <script>
       const input = document.querySelector("input");
-      input.onmousemove = function() {
-        console.log(this.value);
+      input.onmousemove = function(e) {
+        this.value = e.clientX + ":" + e.clientY;
       } 
     </script>
   </body>
