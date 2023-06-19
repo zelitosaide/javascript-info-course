@@ -47,6 +47,18 @@
       Click me with right or the left mouse button
     </button>
 
-    <script></script>
+    <h2>Mouse button</h2>
+    <button id="mouse-button" oncontextmenu="event.preventDefault()">
+      Click here with your mouse...
+    </button>
+    <p id="log"></p>
+
+    <script>
+      const button = document.querySelector("#mouse-button");
+      button.addEventListener("mouseup", function(e) {
+        const log = document.querySelector("#log");
+        console.log(e.button);
+      });
+    </script>
   </body>
 </html>
