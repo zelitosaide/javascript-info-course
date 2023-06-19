@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html>
   <body>
+    <input type="text" value="Mouse over me">
+
     <script>
-      console.log("Ola, tudo bem?");
-      document.addEventListener("contextmenu", function(e) {
-        e.preventDefault();
-        console.log(e.ctrlKey);
-      });
+      const input = document.querySelector("input");
+      input.onmousemove = function() {
+        console.log(this.value);
+      } 
     </script>
   </body>
 </html>
