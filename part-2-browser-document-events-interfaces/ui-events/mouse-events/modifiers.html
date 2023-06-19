@@ -1,8 +1,18 @@
 <!DOCTYPE html>
 <html>
   <body>
+    <h2>Modifiers</h2>
+    <button id="button">Alt+Shift+Click on me!</button>
+
     <script>
-      console.log("Ola, tudo bem?");
+      const button = document.querySelector("#button");
+      button.onclick = function (e) {
+        console.log(e.shiftKey);
+        
+        if (e.shiftKey) {
+          console.log("You pressed a shift key");
+        }
+      }
     </script>
   </body>
 </html>
