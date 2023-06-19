@@ -57,7 +57,25 @@
       const button = document.querySelector("#mouse-button");
       button.addEventListener("mouseup", function(e) {
         const log = document.querySelector("#log");
-        console.log(e.button);
+        switch (e.button) {
+          case 0:
+            log.textContent = "Left button clicked.";
+            break;
+          case 1:
+            log.textContent = "Middle button clicked.";
+            break;
+          case 2: 
+            log.textContent = "Right button clicked.";
+            break;
+          case 3:
+            log.textContent = "Fourth button clicked.";
+            break;
+          case 4:
+            log.textContent = "Fifth button clicked.";
+            break;
+          default:
+            log.textContent = `Unknown button code: ${e.button}`;
+        }
       });
     </script>
   </body>
