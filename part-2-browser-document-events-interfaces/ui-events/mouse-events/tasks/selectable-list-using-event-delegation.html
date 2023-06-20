@@ -37,18 +37,22 @@
         if (e.metaKey || e.ctrlKey) {
           toggleSelect(target);
         } else {
-          for (const li of ul.querySelectorAll("li")) {
-            if (li === target) {
-              target.classList.add("selected");
-            } else {
-              li.classList.remove("selected");
-            }
-          }
+          singleSelect(target);
         }
       }
 
       function toggleSelect(li) {
         li.classList.toggle("selected");
+      }
+
+      function singleSelect(li) {
+        for (const l of ul.querySelectorAll("li")) {
+          if (l === target) {
+            li.classList.add("selected");
+          } else {
+            l.classList.remove("selected");
+          }
+        }
       }
     </script>
   </body>
