@@ -35,7 +35,7 @@
         }
 
         if (e.metaKey || e.ctrlKey) {
-          target.classList.toggle("selected");
+          toggleSelect(target);
         } else {
           for (const li of ul.querySelectorAll("li")) {
             if (li === target) {
@@ -45,6 +45,10 @@
             }
           }
         }
+      }
+
+      function toggleSelect(li) {
+        li.classList.toggle("selected");
       }
     </script>
   </body>
