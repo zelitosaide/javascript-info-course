@@ -20,9 +20,9 @@
       }
 
       box.onmouseleave = function(e) {
-        console.log(e.clientX);
+        console.log("target:", e.target.nodeName);
+        console.log("relatedTarget:", e.relatedTarget.nodeName);
       }
-      // console.log(box);
     </script>
   </body>
 </html>
