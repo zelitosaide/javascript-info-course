@@ -24,6 +24,10 @@
 
     <script>
       const ul = document.querySelector("ul");
+      ul.onmousedown = function() {
+        return false;
+      }
+      
       ul.onclick = function(e) {
         const target = e.target;
         if (target.nodeName !== "LI") {
