@@ -30,6 +30,13 @@
           return;
         }
         
+        for (const li of ul.querySelectorAll("li")) {
+          if (li === target) {
+            target.classList.add("selected");
+          } else {
+            li.classList.remove("selected");
+          }
+        }
       }
     </script>
   </body>
