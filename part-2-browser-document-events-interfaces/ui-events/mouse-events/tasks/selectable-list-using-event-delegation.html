@@ -21,9 +21,16 @@
       <li>Kanga</li>
       <li>Rabbit. Just rabbit.</li>
     </ul>
-    
+
     <script>
-      console.log("Ola, tudo bem?");
+      const ul = document.querySelector("ul");
+      ul.onclick = function(e) {
+        const target = e.target;
+        if (target.nodeName !== "LI") {
+          return;
+        }
+        
+      }
     </script>
   </body>
 </html>
