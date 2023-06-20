@@ -46,13 +46,21 @@
       }
 
       function singleSelect(li) {
-        for (const elem of ul.querySelectorAll("li")) {
-          if (elem === li) {
-            li.classList.add("selected");
-          } else {
-            elem.classList.remove("selected");
-          }
+        // for (const elem of ul.querySelectorAll("li")) {
+        //   if (elem === li) {
+        //     li.classList.add("selected");
+        //   } else {
+        //     elem.classList.remove("selected");
+        //   }
+        // }
+
+        // Or
+        const selected = ul.querySelectorAll(".selected");
+        console.log(selected);
+        for (const elem of selected) {
+          elem.classList.remove("selected");
         }
+        li.classList.add("selected");
       }
     </script>
   </body>
