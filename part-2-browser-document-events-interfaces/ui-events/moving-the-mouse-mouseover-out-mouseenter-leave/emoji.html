@@ -189,16 +189,17 @@
 
     <script>
       const container = document.getElementById("container");
+      const log = document.querySelector("textarea");
       container.onmouseover = function(e) {
         this.style.backgroundColor = "black";
-        const log = document.querySelector("textarea");
         log.value += e.type + "\n";
+        log.scrollTop = log.scrollHeight;
       }
 
       container.onmouseout = function(e) {
         this.style.backgroundColor = "";
-        const log = document.querySelector("textarea");
         log.value += e.type + "\n";
+        log.scrollTop = log.scrollHeight;
       }
     </script>
   </body>
