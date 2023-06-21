@@ -190,21 +190,19 @@
     <script>
       const container = document.getElementById("container");
       const log = document.querySelector("textarea");
+      container.onmouseover = container.onmouseout = handler;
 
-      container.onmouseover = function(e) {
+      function handler(e) {
         const target = !e.target ? "null" : e.target.className || e.target.nodeName;
-        const relatedTarget = !e.relatedTarget ? "null" : e.relatedTarget.className || e.relatedTarget.nodeName
-        e.target.style.backgroundColor = "black";
+        const relatedTarget = !e.relatedTarget ? "null" : e.relatedTarget.className || e.relatedTarget.nodeName;
         log.value += e.type + ":  target=" + target + ",  relatedTarget=" + relatedTarget + "\n";
         log.scrollTop = log.scrollHeight;
-      }
 
-      container.onmouseout = function(e) {
-        const target = !e.target ? "null" : e.target.className || e.target.nodeName;
-        const relatedTarget = !e.relatedTarget ? "null" : e.relatedTarget.className || e.relatedTarget.nodeName
-        e.target.style.backgroundColor = "";
-        log.value += e.type + ":  target=" + target + ",  relatedTarget=" + relatedTarget + "\n";
-        log.scrollTop = log.scrollHeight;
+        if (e.type === "mouseover") {
+          e.target.style.backgroundColor = "black";
+        } else {
+          e.target.style.backgroundColor = "";
+        }
       }
     </script>
   </body>
