@@ -190,15 +190,18 @@
     <script>
       const container = document.getElementById("container");
       const log = document.querySelector("textarea");
+
       container.onmouseover = function(e) {
+        const name = e.target.className || e.target.nodeName;
         this.style.backgroundColor = "black";
-        log.value += e.type + "\n";
+        log.value += e.type + ":  target=" + name + "\n";
         log.scrollTop = log.scrollHeight;
       }
 
       container.onmouseout = function(e) {
+        const name = e.target.className || e.target.nodeName;
         this.style.backgroundColor = "";
-        log.value += e.type + "\n";
+        log.value += e.type + ":  target=" + name + "\n";
         log.scrollTop = log.scrollHeight;
       }
     </script>
