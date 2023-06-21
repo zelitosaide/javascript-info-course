@@ -192,8 +192,8 @@
       const log = document.querySelector("textarea");
 
       container.onmouseover = function(e) {
-        const target = e.target.className || e.target.nodeName;
-        const relatedTarget = e.relatedTarget.className || e.relatedTarget.nodeName
+        const target = !e.target ? "null" : e.target.className || e.target.nodeName;
+        const relatedTarget = !e.relatedTarget ? "null" : e.relatedTarget.className || e.relatedTarget.nodeName
         this.style.backgroundColor = "black";
         log.value += e.type + ":  target=" + target + ",  relatedTarget=" + relatedTarget + "\n";
         log.scrollTop = log.scrollHeight;
