@@ -184,16 +184,21 @@
       </div>
     </div>
 
-    <textarea id="log">Events will show up here!</textarea>
+    <textarea id="log">Events will show up here!
+</textarea>
 
     <script>
       const container = document.getElementById("container");
       container.onmouseover = function(e) {
         this.style.backgroundColor = "black";
+        const log = document.querySelector("textarea");
+        log.value += e.type + "\n";
       }
 
       container.onmouseout = function(e) {
         this.style.backgroundColor = "";
+        const log = document.querySelector("textarea");
+        log.value += e.type + "\n";
       }
     </script>
   </body>
