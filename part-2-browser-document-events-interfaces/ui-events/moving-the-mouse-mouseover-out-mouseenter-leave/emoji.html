@@ -193,15 +193,17 @@
 
       container.onmouseover = function(e) {
         const target = e.target.className || e.target.nodeName;
+        const relatedTarget = e.relatedTarget.className || e.relatedTarget.nodeName
         this.style.backgroundColor = "black";
-        log.value += e.type + ":  target=" + target + "\n";
+        log.value += e.type + ":  target=" + target + ",  relatedTarget=" + relatedTarget + "\n";
         log.scrollTop = log.scrollHeight;
       }
 
       container.onmouseout = function(e) {
         const target = e.target.className || e.target.nodeName;
+        const relatedTarget = e.relatedTarget.className || e.relatedTarget.nodeName
         this.style.backgroundColor = "";
-        log.value += e.type + ":  target=" + target + "\n";
+        log.value += e.type + ":  target=" + target + ",  relatedTarget=" + relatedTarget + "\n";
         log.scrollTop = log.scrollHeight;
       }
     </script>
