@@ -16,12 +16,20 @@
       const box = document.querySelector(".box");
       box.onmouseover = function(e) {
         console.log("target:", e.target.nodeName);
-        console.log("relatedTarget:", e.relatedTarget.nodeName);
+        if (!e.relatedTarget) {
+          console.log("relatedTarget: null");
+        } else {
+          console.log("relatedTarget:", e.relatedTarget.nodeName);
+        }
       }
 
       box.onmouseleave = function(e) {
         console.log("target:", e.target.nodeName);
-        console.log("relatedTarget:", e.relatedTarget.nodeName);
+        if (!e.relatedTarget) {
+          console.log("relatedTarget: null");
+        } else {
+          console.log("relatedTarget:", e.relatedTarget.nodeName);
+        }
       }
     </script>
   </body>
