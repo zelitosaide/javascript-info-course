@@ -194,7 +194,7 @@
       container.onmouseover = function(e) {
         const target = !e.target ? "null" : e.target.className || e.target.nodeName;
         const relatedTarget = !e.relatedTarget ? "null" : e.relatedTarget.className || e.relatedTarget.nodeName
-        this.style.backgroundColor = "black";
+        e.target.style.backgroundColor = "black";
         log.value += e.type + ":  target=" + target + ",  relatedTarget=" + relatedTarget + "\n";
         log.scrollTop = log.scrollHeight;
       }
@@ -202,7 +202,7 @@
       container.onmouseout = function(e) {
         const target = !e.target ? "null" : e.target.className || e.target.nodeName;
         const relatedTarget = !e.relatedTarget ? "null" : e.relatedTarget.className || e.relatedTarget.nodeName
-        this.style.backgroundColor = "";
+        e.target.style.backgroundColor = "";
         log.value += e.type + ":  target=" + target + ",  relatedTarget=" + relatedTarget + "\n";
         log.scrollTop = log.scrollHeight;
       }
