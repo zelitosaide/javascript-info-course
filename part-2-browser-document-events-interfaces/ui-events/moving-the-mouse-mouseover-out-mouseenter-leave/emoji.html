@@ -156,7 +156,7 @@
         background-color: #d96065;
         border-radius: 50%;
       }
-      
+
       .smiley-red {
         background-color: #ee9295;
         border: 5px solid #e27378;
@@ -187,7 +187,14 @@
     <textarea id="log">Events will show up here!</textarea>
 
     <script>
-      console.log("T");
+      const container = document.getElementById("container");
+      container.onmouseover = function(e) {
+        this.style.backgroundColor = "black";
+      }
+
+      container.onmouseout = function(e) {
+        this.style.backgroundColor = "";
+      }
     </script>
   </body>
 </html>
