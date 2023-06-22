@@ -17,7 +17,6 @@
     <script>
       const box = document.querySelector(".box");
       box.onmouseover = function(e) {
-        console.log("target:", e.target.nodeName);
         if (!e.relatedTarget) {
           console.log("relatedTarget: null");
         } else {
@@ -26,7 +25,6 @@
       }
 
       box.onmouseleave = function(e) {
-        console.log("target:", e.target.nodeName);
         if (!e.relatedTarget) {
           console.log("relatedTarget: null");
         } else {
