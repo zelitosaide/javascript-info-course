@@ -43,12 +43,19 @@
     </div>
 
     <script>
+      const container = document.getElementById("container");
       let i = 1;
-      document.getElementById("container").childNodes.forEach(function(node) {
+      container.childNodes.forEach(function(node) {
         if (node.nodeName !== "DIV") return;
 
         node.dataset.name = "div-" + i++;
       });
+
+      container.onmouseover = container.onmouseout = function(e) {
+        if (!e.target.dataset.name) return;
+        
+        console.log(e.target.dataset?.name, e.type);
+      }
 
       const box = document.querySelector(".box");
       box.onmouseover = function(e) {
