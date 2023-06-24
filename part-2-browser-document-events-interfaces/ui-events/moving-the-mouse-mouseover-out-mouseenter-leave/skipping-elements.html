@@ -41,7 +41,16 @@
         while(type.length < 11) {
           type += " ";
         }
-        console.log(type);
+        log(type + " target=" + e.target.id);
+        return false;
+      }
+
+      let lastMessageTime = 0;
+      let lastMessage = "";
+      let repeatCounter = 1;
+      
+      function log(message) {
+
       }
 
       function clearText() {
