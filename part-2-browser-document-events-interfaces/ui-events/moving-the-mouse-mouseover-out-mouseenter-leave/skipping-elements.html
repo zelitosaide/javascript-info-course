@@ -48,6 +48,7 @@
       let lastMessageTime = 0;
       let lastMessage = "";
       let repeatCounter = 1;
+      const text = document.getElementById("text");
 
       function log(message) {
         if (lastMessageTime === 0) {
@@ -58,7 +59,6 @@
         if (time - lastMessageTime > 500) {
           message = "------------------------------\n" + message;
         }
-        const text = document.getElementById("text");
         if (lastMessage === message) {
           repeatCounter++;
           if (repeatCounter === 2) {
@@ -78,7 +78,8 @@
       }
 
       function clearText() {
-        console.log("Cleared!");
+        lastMessage = "";
+        text.value = "";
       }
     </script>
   </body>
