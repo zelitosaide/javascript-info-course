@@ -8,6 +8,17 @@
         height: 120px;
         position: relative;
       }
+
+      #child {
+        background-color: #FFDE99;
+        width: 50%;
+        height: 50%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
       textarea {
         display: block;
         width: 300px;
@@ -24,6 +35,15 @@
     <input type="button" value="Clear" onclick="clearText()">
 
     <script>
+      const parent = document.getElementById("parent");
+      parent.onmouseover = parent.onmouseout = function(e) {
+        let type = e.type;
+        while(type.length < 11) {
+          type += " ";
+        }
+        console.log(type);
+      }
+
       function clearText() {
         console.log("Cleared!");
       }
