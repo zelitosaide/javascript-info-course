@@ -48,7 +48,7 @@
       let lastMessageTime = 0;
       let lastMessage = "";
       let repeatCounter = 1;
-      
+
       function log(message) {
 
       }
@@ -56,6 +56,11 @@
       function clearText() {
         console.log("Cleared!");
       }
+
+      const date = new Date();
+      setTimeout(function() {
+        console.log(new Date() - date);
+      }, 1000);
     </script>
   </body>
 </html>
