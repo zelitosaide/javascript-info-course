@@ -23,7 +23,7 @@
 
       #container div {
         width: 16.66%;
-        height: 90px;
+        height: 80px;
         background-color: antiquewhite;
       }
     </style>
@@ -43,6 +43,13 @@
     </div>
 
     <script>
+      let i = 1;
+      document.getElementById("container").childNodes.forEach(function(node) {
+        if (node.nodeName !== "DIV") return;
+
+        node.dataset.name = "div-" + i++;
+      });
+
       const box = document.querySelector(".box");
       box.onmouseover = function(e) {
         if (!e.relatedTarget) {
