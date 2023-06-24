@@ -36,7 +36,7 @@
 
     <script>
       const parent = document.getElementById("parent");
-      parent.onmouseover = parent.onmouseout = function(e) {
+      parent.onmouseover = parent.onmouseout = parent.onmousemove = function(e) {
         let type = e.type;
         while(type.length < 11) {
           type += " ";
