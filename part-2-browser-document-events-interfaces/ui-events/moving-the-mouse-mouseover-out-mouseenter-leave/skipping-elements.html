@@ -62,6 +62,8 @@
         const text = document.getElementById("text");
         text.value += message + "\n";
         text.scrollTop = text.scrollHeight;
+
+        lastMessageTime = time;
       }
 
       function clearText() {
