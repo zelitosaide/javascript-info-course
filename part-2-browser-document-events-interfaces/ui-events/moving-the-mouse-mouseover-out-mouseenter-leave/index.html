@@ -42,6 +42,8 @@
       <div></div>
     </div>
 
+    <h3>Mouseout when leaving for a child</h3>
+
     <script>
       const container = document.getElementById("container");
       let i = 1;
@@ -53,7 +55,7 @@
 
       container.onmouseover = container.onmouseout = function(e) {
         if (!e.target.dataset.name) return;
-        
+
         console.log(e.target.dataset?.name, e.type);
       }
 
