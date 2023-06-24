@@ -60,7 +60,12 @@
         }
         const text = document.getElementById("text");
         if (lastMessage === message) {
-          console.log("igual");
+          repeatCounter++;
+          if (repeatCounter === 2) {
+            text.value = text.value.trim() + " x 2\n";
+          } else {
+            text.value = text.value.slice(0, text.value.lastIndexOf("x") + 1) + repeatCounter + "\n";
+          }
         } else {
           repeatCounter = 1;
           text.value += message + "\n";
