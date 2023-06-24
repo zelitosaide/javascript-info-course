@@ -1,5 +1,14 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <style>
+      textarea {
+        display: block;
+        width: 300px;
+        height: 140px;
+      }
+    </style>
+  </head>
   <body>
     <div id="parent">
       Parent
@@ -7,9 +16,11 @@
     </div>
     <textarea id="text"></textarea>
     <input type="button" value="Clear" onclick="clearText()">
-    
+
     <script>
-      console.log("Ola, tudo bme?");
+      function clearText() {
+        console.log("Cleared!");
+      }
     </script>
   </body>
 </html>
