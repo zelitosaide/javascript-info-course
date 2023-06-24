@@ -58,12 +58,18 @@
         if (time - lastMessageTime > 500) {
           message = "------------------------------\n" + message;
         }
-
         const text = document.getElementById("text");
-        text.value += message + "\n";
+        if (lastMessage === message) {
+          console.log("igual");
+        } else {
+          repeatCounter = 1;
+          text.value += message + "\n";
+        }
+
         text.scrollTop = text.scrollHeight;
 
         lastMessageTime = time;
+        lastMessage = message;
       }
 
       function clearText() {
