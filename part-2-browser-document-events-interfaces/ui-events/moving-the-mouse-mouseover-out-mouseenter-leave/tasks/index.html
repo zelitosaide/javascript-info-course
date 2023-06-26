@@ -65,11 +65,17 @@
       }
 
       let lastMessage = "";
+      let messageCounter = 0;
 
       function log(message) {
         if (lastMessage === message) {
-          console.log("Igual");
+          messageCounter++;
+          console.log("Igual", messageCounter);
+        } else {
+          messageCounter = 0;
+          console.log("Diferente");
         }
+
         textarea.value += message + "\n";
         textarea.scrollTop = textarea.scrollHeight;
         lastMessage = message;
