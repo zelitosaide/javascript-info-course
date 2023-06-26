@@ -6,11 +6,36 @@
         margin: 0;
         font-family:Arial, Helvetica, sans-serif;
       }
+
+      #parent {
+        background-color: lightpink;
+        width: 200px;
+        height: 200px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+
+      }
+
+      #child {
+        background-color: lightgreen;
+        width: 100px;
+        height: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
     </style>
   </head>
   <body>
-    <h1>Ola, tudo bem?</h1>
-    
+    <div id="parent">
+      Parent
+      <div id="child">
+        Child
+      </div>
+    </div>
+
     <script>
       console.log("Ola, tudo bem?");
     </script>
