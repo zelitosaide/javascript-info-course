@@ -61,22 +61,24 @@
         while(type.length < 11) {
           type += " ";
         }
-        log(type + " target=" + e.target.id);
+        log(type + " target=" + e.target.id, type);
       }
 
       let lastMessage = "";
-      let messageCounter = 0;
+      let counter = 1;
 
-      function log(message) {
+      function log(message, type) {
         if (lastMessage === message) {
-          messageCounter++;
-          console.log("Igual", messageCounter);
+          counter++;
+          const index = textarea.value.lastIndexOf(type);
+          const text = textarea.value.slice(0, index);
+          textarea.value = text + message + " x" + counter + "\n";
         } else {
-          messageCounter = 0;
+          counter = 1;
           console.log("Diferente");
+          textarea.value += message + "\n";
         }
 
-        textarea.value += message + "\n";
         textarea.scrollTop = textarea.scrollHeight;
         lastMessage = message;
       }
