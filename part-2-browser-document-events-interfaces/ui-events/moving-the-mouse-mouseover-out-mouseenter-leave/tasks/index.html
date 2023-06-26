@@ -4,7 +4,10 @@
     <style>
       body {
         margin: 0;
-        font-family:Arial, Helvetica, sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-family: Arial, Helvetica, sans-serif;
       }
 
       #parent {
@@ -26,6 +29,16 @@
         align-items: center;
         justify-content: center;
       }
+
+      textarea {
+        margin-top: 20px;
+        width: 300px;
+        height: 150px;
+      }
+
+      button {
+        margin-top: 10px;
+      }
     </style>
   </head>
   <body>
@@ -35,9 +48,14 @@
         Child
       </div>
     </div>
+    <textarea></textarea>
+    <button>Clear</button>
 
     <script>
-      console.log("Ola, tudo bem?");
+      const parent = document.getElementById("parent");
+      const child = document.getElementById("child");
+      const button = document.querySelector("button");
+      const textarea = document.querySelector("textarea");
     </script>
   </body>
 </html>
