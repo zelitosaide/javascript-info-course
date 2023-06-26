@@ -66,7 +66,8 @@
       }
 
       function log(message) {
-        console.log(message);
+        textarea.value += message + "\n";
+        textarea.scrollTop = textarea.scrollHeight;
       }
     </script>
   </body>
