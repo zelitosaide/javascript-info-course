@@ -56,6 +56,18 @@
       const child = document.getElementById("child");
       const button = document.querySelector("button");
       const textarea = document.querySelector("textarea");
+
+      parent.onmouseover = parent.onmouseout = parent.onmousemove = function(e) {
+        let type = e.type;
+        while(type.length < 11) {
+          type += " ";
+        }
+        log(type + " target=" + e.target.id);
+      }
+
+      function log(message) {
+        console.log(message);
+      }
     </script>
   </body>
 </html>
