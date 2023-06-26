@@ -2,85 +2,12 @@
 <html>
   <head>
     <style>
-      #parent {
-        background-color: #99C0C3;
-        width: 160px;
-        height: 120px;
-        position: relative;
-      }
 
-      #child {
-        background-color: #FFDE99;
-        width: 50%;
-        height: 50%;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-      }
-
-      textarea {
-        display: block;
-        width: 300px;
-        height: 140px;
-      }
     </style>
   </head>
   <body>
-    <div id="parent">
-      Parent
-      <div id="child">Child</div>
-    </div>
-    <textarea id="text"></textarea>
-    <input type="button" value="Clear" onclick="clearText()">
-
     <script>
-      const parent = document.getElementById("parent");
-      parent.onmouseover = parent.onmouseout = parent.onmousemove = function(e) {
-        let type = e.type;
-        while(type.length < 11) {
-          type += " ";
-        }
-        log(type + " target=" + e.target.id);
-        return false;
-      }
-
-      let lastMessageTime = 0;
-      let lastMessage = "";
-      let repeatCounter = 1;
-      const text = document.getElementById("text");
-
-      function log(message) {
-        if (lastMessageTime === 0) {
-          lastMessageTime = new Date();
-        }
-
-        let time = new Date();
-        if (time - lastMessageTime > 500) {
-          message = "------------------------------\n" + message;
-        }
-        if (lastMessage === message) {
-          repeatCounter++;
-          if (repeatCounter === 2) {
-            text.value = text.value.trim() + " x 2\n";
-          } else {
-            text.value = text.value.slice(0, text.value.lastIndexOf("x") + 1) + repeatCounter + "\n";
-          }
-        } else {
-          repeatCounter = 1;
-          text.value += message + "\n";
-        }
-
-        text.scrollTop = text.scrollHeight;
-
-        lastMessageTime = time;
-        lastMessage = message;
-      }
-
-      function clearText() {
-        lastMessage = "";
-        text.value = "";
-      }
+      console.log("Ola, tudo bem?");
     </script>
   </body>
 </html>
