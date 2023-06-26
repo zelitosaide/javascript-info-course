@@ -64,14 +64,14 @@
         while(type.length < 11) {
           type += " ";
         }
-        log(type + " target=" + e.target.id, type);
+        log(type + " target=" + e.target.id);
       }
 
       let lastMessage = "";
       let counter = 1;
       let lastTime = 0;
 
-      function log(message, type) {
+      function log(message) {
         if (lastTime === 0) {
           lastTime = new Date();
         }
@@ -84,7 +84,7 @@
 
         if (lastMessage === message) {
           counter++;
-          const index = textarea.value.lastIndexOf(type);
+          const index = textarea.value.lastIndexOf(message);
           const text = textarea.value.slice(0, index);
           textarea.value = text + message + " x" + counter + "\n";
         } else {
