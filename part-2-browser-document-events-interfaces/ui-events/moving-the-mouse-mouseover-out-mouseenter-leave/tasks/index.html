@@ -69,6 +69,10 @@
         textarea.value += message + "\n";
         textarea.scrollTop = textarea.scrollHeight;
       }
+
+      button.onclick = function() {
+        textarea.value = "";
+      }
     </script>
   </body>
 </html>
