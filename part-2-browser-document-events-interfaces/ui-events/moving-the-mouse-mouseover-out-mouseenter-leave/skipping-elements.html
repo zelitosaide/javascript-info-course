@@ -62,6 +62,37 @@
 
     <script>
       const textarea = document.querySelector("textarea");
+      const parent = document.getElementById("parent");
+
+      parent.onmouseover = parent.onmouseout = parent.onmousemove = function(e) {
+        let type = e.type;
+        while (type.length < 11) type += " ";
+        log(`${type} target=${e.target.id}`);
+      }
+
+      let lastMessage = "";
+      let lastTime = null;
+
+      function log(message) {
+        if (lastTime === null) {
+          lastTime = new Date();
+        }
+
+        const time = new Date();
+        if (time - lastTime > 500) {
+          message = "------------------------------\n" + message;
+        }
+
+        if (lastMessage === message) {
+
+        } else {
+          textarea.value += message + "\n";
+        }
+        textarea.scrollTop = textarea.scrollHeight;
+        lastMessage = message;
+        lastTime = time;
+      }
+
       document.querySelector("button").onclick = function() {
         textarea.value = "";
         textarea.focus();
