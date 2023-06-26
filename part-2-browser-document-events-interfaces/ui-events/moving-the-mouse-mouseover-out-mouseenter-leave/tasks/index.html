@@ -54,7 +54,6 @@
     <script>
       const parent = document.getElementById("parent");
       const child = document.getElementById("child");
-      const button = document.querySelector("button");
       const textarea = document.querySelector("textarea");
 
       parent.onmouseover = parent.onmouseout = parent.onmousemove = function(e) {
@@ -65,12 +64,18 @@
         log(type + " target=" + e.target.id);
       }
 
+      let lastMessage = "";
+
       function log(message) {
+        if (lastMessage === message) {
+          console.log("Igual");
+        }
         textarea.value += message + "\n";
         textarea.scrollTop = textarea.scrollHeight;
+        lastMessage = message;
       }
 
-      button.onclick = function() {
+      document.querySelector("button").onclick = function() {
         textarea.value = "";
       }
     </script>
