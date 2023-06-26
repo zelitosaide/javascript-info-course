@@ -72,6 +72,7 @@
 
       let lastMessage = "";
       let lastTime = null;
+      let counter = 1;
 
       function log(message) {
         if (lastTime === null) {
@@ -84,8 +85,15 @@
         }
 
         if (lastMessage === message) {
-
+          counter++;
+          if (counter === 2) {
+            textarea.value = textarea.value.trim() + " x" + counter + "\n";
+          } else {
+            const index = textarea.value.lastIndexOf("x") + 1;
+            textarea.value = textarea.value.slice(0, index) + counter + "\n";
+          }
         } else {
+          counter = 1;
           textarea.value += message + "\n";
         }
         textarea.scrollTop = textarea.scrollHeight;
