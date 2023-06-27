@@ -26,6 +26,21 @@
         height: 80px;
         background-color: antiquewhite;
       }
+
+      #parent {
+        width: 200px;
+        height: 150px;
+        background-color: lightcoral;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      #child {
+        width: 100px;
+        height: 75px;
+        background-color: aliceblue;
+      }
     </style>
   </head>
   <body>
@@ -43,6 +58,9 @@
     </div>
 
     <h3>Mouseout when leaving for a child</h3>
+    <div id="parent">
+      <div id="child"></div>
+    </div>
 
     <script>
       const container = document.getElementById("container");
