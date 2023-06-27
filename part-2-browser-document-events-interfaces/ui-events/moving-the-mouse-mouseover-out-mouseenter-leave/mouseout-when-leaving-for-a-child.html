@@ -68,7 +68,7 @@
         const seconds = date.getSeconds();
         const type = e.type;
         const target = e.target.id;
-        textarea.value += `${hours}:${minutes}:${seconds} | ${type} [target: ${target}]\n`;
+        textarea.value += `${hours}:${minutes}:${seconds} | ${type} [target: ${target}]\n`.replace(/(:|^)(\d\D)/, '$10$2');
         textarea.scrollTop = textarea.scrollHeight;
       }
 
