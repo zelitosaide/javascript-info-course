@@ -147,15 +147,18 @@
 
     <script>
       const table = document.querySelector("table");
+      const textarea = document.querySelector("textarea");
+
       table.onmouseover = table.onmouseout = function(e) {
         if (e.type === "mouseover") {
           e.target.style.backgroundColor = "pink";
+          textarea.value += `over -> ${e.target.nodeName}\n`;
         } else {
+          textarea.value += `out -> ${e.target.nodeName}\n`;
           e.target.style.backgroundColor = "";
         }
+        textarea.scrollTop = textarea.scrollHeight;
       }
-
-      const textarea = document.querySelector("textarea");
 
       document.querySelector("button").onclick = function() {
         textarea.value = "";
