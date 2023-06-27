@@ -41,6 +41,11 @@
         height: 75px;
         background-color: aliceblue;
       }
+
+      #child-2 {
+        width: 200px;
+        height: 150px;
+      }
     </style>
   </head>
   <body>
@@ -70,14 +75,13 @@
     <script>
       const parent2 = document.getElementById("parent-2");
       parent2.onmouseenter = parent2.onmouseleave = function(e) {
-        console.log(e.type);
+        console.log(e.type, e.target.id);
       }
 
       // const child2 = parent2.firstElementChild;
       // child2.onmouseenter = child2.onmouseleave = function(e) {
       //   console.log(e.target.id, e.type);
       // }
-
 
       const parent = document.getElementById("parent");
       const child = parent.firstElementChild;
