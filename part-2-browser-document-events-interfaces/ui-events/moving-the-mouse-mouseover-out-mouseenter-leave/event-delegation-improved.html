@@ -146,7 +146,43 @@
     <button>Clear</button>
 
     <script>
-      console.log("Ola, tudo bem?");
+      const table = document.querySelector("table");
+      const textarea = document.querySelector("textarea");
+      let currentElem = null;
+
+      table.onmouseover = function(e) {
+        // before entering a new element, the mouse always leaves the previous one
+        // if currentElem is set, we didn't leave the previous <td>,
+        // that's a mouseover inside it, ignore the event
+        if (currentElem) return;
+
+        const target = e.target.closest("td");
+        
+        // we moved not into a <td> - ignore
+        if (!target) return;
+
+        // moved into <td>, but outside of our table (possible in case of nested tables)
+        // ignore
+        if (!table.contains(target)) return;
+
+        // hooray! we entered a new <td>
+        currentElem = target;
+        onEnter(currentElem);
+      }
+
+      // any functions to handle entering/leaving an element
+      function onEnter(elem) {
+        elem.style.backgroundColor = "pink";
+
+        // show that in textarea
+        textarea.value += `over -> ${elem.tagName}.${elem.className}\n`;
+        textarea.scrollTop = 1e9;
+      }
+
+      document.querySelector("button").onclick = function() {
+        textarea.value = "";
+        textarea.focus();
+      }
     </script>
   </body>
 </html>
