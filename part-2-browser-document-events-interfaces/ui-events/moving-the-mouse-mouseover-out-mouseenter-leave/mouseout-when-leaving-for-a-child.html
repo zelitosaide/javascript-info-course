@@ -58,7 +58,12 @@
     <button>Clear</button>
 
     <script>
-      console.log("Ola, tudo bem?");
+      const textarea = document.querySelector("textarea");
+
+      document.querySelector("button").onclick = function() {
+        textarea.value = "";
+        textarea.focus();
+      }
     </script>
   </body>
 </html>
