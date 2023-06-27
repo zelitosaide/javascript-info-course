@@ -146,6 +146,15 @@
     <button>Clear</button>
 
     <script>
+      const table = document.querySelector("table");
+      table.onmouseover = table.onmouseout = function(e) {
+        if (e.type === "mouseover") {
+          e.target.style.backgroundColor = "pink";
+        } else {
+          e.target.style.backgroundColor = "";
+        }
+      }
+
       const textarea = document.querySelector("textarea");
 
       document.querySelector("button").onclick = function() {
