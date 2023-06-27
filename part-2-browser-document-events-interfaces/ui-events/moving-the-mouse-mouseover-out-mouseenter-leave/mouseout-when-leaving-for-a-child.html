@@ -59,6 +59,16 @@
 
     <script>
       const textarea = document.querySelector("textarea");
+      const parent = document.getElementById("parent");
+
+      parent.onmouseover = parent.onmouseout = function(e) {
+        const date = new Date();
+        const hours = date.getHours();
+        const minutes = date.getMinutes();
+        const seconds = date.getSeconds();
+        textarea.value += `${hours}:${minutes}:${seconds}\n`;
+        textarea.scrollTop = textarea.scrollHeight;
+      }
 
       document.querySelector("button").onclick = function() {
         textarea.value = "";
