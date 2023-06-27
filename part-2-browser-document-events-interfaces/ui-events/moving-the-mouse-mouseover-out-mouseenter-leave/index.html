@@ -63,6 +63,13 @@
     </div>
 
     <script>
+      const parent = document.getElementById("parent");
+      const child = parent.firstElementChild;
+
+      parent.onmouseover = parent.onmouseout = child.onmouseover = function(e) {
+        console.log(e.target.id, e.type);
+      }
+
       const container = document.getElementById("container");
       let i = 1;
       container.childNodes.forEach(function(node) {
