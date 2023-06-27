@@ -201,6 +201,14 @@
         textarea.scrollTop = 1e9;
       }
 
+      function onLeave(elem) {
+        elem.style.backgroundColor = "";
+
+        // show that in textarea
+        textarea.value += `out <- ${elem.tagName}.${elem.className}\n`;
+        textarea.scrollTop = 1e9;
+      }
+
       document.querySelector("button").onclick = function() {
         textarea.value = "";
         textarea.focus();
