@@ -61,6 +61,17 @@
       const parent = document.getElementById("parent");
       const textarea = document.querySelector("textarea");
 
+      parent.onmouseenter = parent.onmouseleave = function(e) {
+        const date = new Date();
+        const hours = date.getHours();
+        const minutes = date.getMinutes();
+        const seconds = date.getSeconds();
+        const type = e.type;
+        const target = e.target.id;
+        textarea.value += `${hours}:${minutes}:${seconds} | ${type} [target: ${target}]\n`.replace(/(:|^)(\d\D)/, '$10$2');
+        textarea.scrollTop = textarea.scrollHeight;
+      }
+
       document.querySelector("button").onclick = function() {
         textarea.value = "";
         textarea.focus();
