@@ -66,8 +66,22 @@
       const parent = document.getElementById("parent");
       const child = parent.firstElementChild;
 
-      parent.onmouseover = parent.onmouseout = child.onmouseover = function(e) {
-        console.log(e.target.id, e.type);
+      parent.onmouseover = function(e) {
+        console.log("type", e.type);
+        console.log("target", e.target.id);
+        console.log("relatedTarget", e.relatedTarget.id || e.relatedTarget.nodeName);
+      }
+
+      parent.onmouseout = function(e) {
+        console.log("--------------------")
+        console.log("type", e.type);
+        console.log("target", e.target.id);
+        console.log("relatedTarget", e.relatedTarget.id || e.relatedTarget.nodeName);
+        // check if still inside the element
+        if (e.target.contains(e.relatedTarget)) {
+          console.log("It is inside the element");
+          return;
+        }
       }
 
       const container = document.getElementById("container");
