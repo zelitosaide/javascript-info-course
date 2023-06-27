@@ -32,7 +32,7 @@
 
       textarea {
         margin-top: 20px;
-        width: 300px;
+        width: 350px;
         height: 150px;
         border: 1px solid #aaa;
         border-radius: 4px;
@@ -66,7 +66,9 @@
         const hours = date.getHours();
         const minutes = date.getMinutes();
         const seconds = date.getSeconds();
-        textarea.value += `${hours}:${minutes}:${seconds}\n`;
+        const type = e.type;
+        const target = e.target.id;
+        textarea.value += `${hours}:${minutes}:${seconds} | ${type} [target: ${target}]\n`;
         textarea.scrollTop = textarea.scrollHeight;
       }
 
