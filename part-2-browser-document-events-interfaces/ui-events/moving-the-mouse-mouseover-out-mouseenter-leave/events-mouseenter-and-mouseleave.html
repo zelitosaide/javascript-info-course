@@ -54,5 +54,17 @@
     <div id="parent">
       <div id="child"></div>
     </div>
+    <textarea></textarea>
+    <button>Clear</button>
+
+    <script>
+      const parent = document.getElementById("parent");
+      const textarea = document.querySelector("textarea");
+
+      document.querySelector("button").onclick = function() {
+        textarea.value = "";
+        textarea.focus();
+      }
+    </script>
   </body>
 </html>
