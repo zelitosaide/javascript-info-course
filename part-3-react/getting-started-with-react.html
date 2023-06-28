@@ -16,8 +16,7 @@
 
         return (
           <div>
-            {/* Nesting the Header component */}
-            <Header />
+            <Header title="Develop. Preview. Ship. 🚀" />
             <button onClick={function() { setCount(count + 1); }}>
               Click me {count}
             </button>
@@ -25,8 +24,8 @@
         );
       }
 
-      function Header() {
-        return <h1>Develop. Preview. Ship. 🚀</h1>;
+      function Header({ title }) {
+        return <h1>{title}</h1>;
       }
 
       ReactDOM.render(<HomePage />, app);
