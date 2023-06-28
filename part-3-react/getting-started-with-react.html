@@ -11,17 +11,25 @@
     <script type="text/jsx">
       const app = document.getElementById("app");
 
-      function Header() {
+      function HomePage() {
         const [count, setCount] = React.useState(0);
 
         return (
-          <h1 onClick={function() { setCount(count + 1); }}>
-            Develop. Preview. Ship. 🚀 {count}
-          </h1>
+          <div>
+            {/* Nesting the Header component */}
+            <Header />
+            <button onClick={function() { setCount(count + 1); }}>
+              Click me {count}
+            </button>
+          </div>
         );
       }
 
-      ReactDOM.render(<Header />, app);
+      function Header() {
+        return <h1>Develop. Preview. Ship. 🚀</h1>;
+      }
+
+      ReactDOM.render(<HomePage />, app);
     </script>
   </body>
 </html>
