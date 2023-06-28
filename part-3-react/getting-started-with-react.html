@@ -12,9 +12,10 @@
       const app = document.getElementById("app");
 
       function HomePage() {
-        const [likes, setLikes] = React.useState(0);
         const names = ["Ada Lovelace", "Grace Hopper", "Margaret Hamilton"];
-
+        
+        const [likes, setLikes] = React.useState(0);
+        
         function handleClick() {
           setLikes(likes + 1);
         }
