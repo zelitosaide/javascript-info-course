@@ -12,20 +12,22 @@
       const app = document.getElementById("app");
 
       function HomePage() {
-        const [count, setCount] = React.useState(0);
+        const names = ["Ada Lovelace", "Grace Hopper", "Margaret Hamilton"];
 
         return (
           <div>
             <Header title="Develop. Preview. Ship. 🚀" />
-            <button onClick={function() { setCount(count + 1); }}>
-              Click me {count}
-            </button>
+            <ul>
+              {names.map(function(name) {
+                return <li key={name}>{name}</li>;
+              })}
+            </ul>
           </div>
         );
       }
 
       function Header({ title }) {
-        return <h1>{title}</h1>;
+        return <h1>{title ? title : "Default title"}</h1>;
       }
 
       ReactDOM.render(<HomePage />, app);
