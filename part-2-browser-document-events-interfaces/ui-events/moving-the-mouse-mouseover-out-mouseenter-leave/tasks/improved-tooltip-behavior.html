@@ -52,8 +52,12 @@
         </a>
       </p>
     </div>
+    
     <script>
-      console.log("Ola, tudo bem?");
+      const house = document.getElementById("house");
+      house.onmouseover = function (e) {
+        if (!e.target.dataset.tooltip) return;
+      }
     </script>
   </body>
 </html>
