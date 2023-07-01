@@ -52,7 +52,16 @@
     <div id="tooltip" hidden>Tooltip</div>
 
     <script>
-      console.log("Ola, tudo bem?");
+      "use strict";
+      class HoverIntent {
+        constructor({ sensitivity = 0.1, interval = 100, elem, over, out }) {
+          this.sensitivity = sensitivity;
+          this.interval = interval;
+          this.elem = elem;
+          this.over = over;
+          this.out = out;
+        }
+      }
     </script>
   </body>
 </html>
