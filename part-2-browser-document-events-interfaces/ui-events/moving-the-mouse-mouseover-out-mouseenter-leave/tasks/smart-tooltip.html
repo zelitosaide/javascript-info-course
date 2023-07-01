@@ -60,6 +60,17 @@
           this.elem = elem;
           this.over = over;
           this.out = out;
+
+          // make sure "this" is the object in event handlers.
+          this.onMouseMove = this.onMouseMove.bind(this);
+          this.onMouseOver = this.onMouseOver.bind(this);
+          this.onMouseOut = this.onMouseOut.bind(this);
+
+          // and in time-measuring function (called from setInterval)
+          this.trackSpeed = this.trackSpeed.bind(this);
+
+          elem.addEventListener("mouseover", this.onMouseOver);
+          elem.addEventListener("mouseout", this.onMouseOut);
         }
       }
     </script>
