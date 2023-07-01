@@ -71,18 +71,21 @@
       const house = document.getElementById("house");
       
       house.onmouseover = function (e) {
-        const tooltip = e.target.dataset.tooltip;
-        if (!tooltip) return;
-        
-        const elem = document.createElement("span");
-        elem.className = "tooltip";
-        elem.append(tooltip);
-        document.body.append(elem);
+        const tooltipElem = e.target.closest("[data-tooltip]");
+        if (!tooltipElem) return;
+
+        showTooltip(null, tooltipElem.dataset.tooltip);
       }
 
-      house.onmouseout = function (e) {
-        if (!e.relatedTarget.dataset.tooltip) return;
+      house.onmouseout = function () {
         document.querySelector(".tooltip").remove();
+      }
+
+      function showTooltip(anchorElem, message) {
+        const span = document.createElement("span");
+        span.append(message);
+        span.className = "tooltip";
+        document.body.append(span);
       }
     </script>
   </body>
