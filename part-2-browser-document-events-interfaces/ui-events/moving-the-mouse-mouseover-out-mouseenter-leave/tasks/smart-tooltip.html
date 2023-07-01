@@ -27,6 +27,19 @@
         top: 0;
         left: 0;
       }
+
+      #tooltip {
+        position: absolute;
+        padding: 10px 20px;
+        border: 1px solid #b3c9ce;
+        border-radius: 4px;
+        text-align: center;
+        font: italic 14px/1.3 sans-serif;
+        color: #333;
+        background-color: #fff;
+        z-index: 100000;
+        box-shadow: 3px 3px 3px rgba(0, 0, 0, .3);
+      }
     </style>
   </head>
   <body>
@@ -36,7 +49,7 @@
       <span class="seconds">00</span>
     </div>
 
-    <div id="tooltip">Tooltip</div>
+    <div id="tooltip" hidden>Tooltip</div>
 
     <script>
       console.log("Ola, tudo bem?");
