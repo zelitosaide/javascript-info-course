@@ -90,13 +90,13 @@
         }
       }
 
+      const clock = document.getElementById("elem");
+
       const obj = new HoverIntent({ 
-        elem: document.body, 
+        elem: clock, 
         over: function() {}, 
         out: function() {}
       });
-
-      obj.onMouseOver();
     </script>
   </body>
 </html>
