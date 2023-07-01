@@ -85,6 +85,15 @@
         span.append(message);
         span.className = "tooltip";
         document.body.append(span);
+
+        const coords = anchorElem.getBoundingClientRect();
+        let top = coords.top - span.offsetHeight - 5;
+
+        if (top < 0) {
+          span.style.top = coords.bottom + 5 + "px";
+        } else {
+          span.style.top = top + "px";
+        }
       }
     </script>
   </body>
