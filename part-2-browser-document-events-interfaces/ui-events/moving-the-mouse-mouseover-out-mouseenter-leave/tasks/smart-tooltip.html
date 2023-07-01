@@ -91,11 +91,16 @@
       }
 
       const clock = document.getElementById("elem");
+      const tooltip = document.getElementById("tooltip");
 
       const obj = new HoverIntent({ 
         elem: clock, 
-        over: function() {}, 
-        out: function() {}
+        over() {
+          tooltip.hidden = false;
+        }, 
+        out() {
+          tooltip.hidden = true;
+        }
       });
     </script>
   </body>
