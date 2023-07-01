@@ -68,13 +68,20 @@
 
     <script>
       const house = document.getElementById("house");
-      house.onmouseover = function (e) {
+      
+      house.onmouseover = house.onmouseout = function (e) {
         const tooltip = e.target.dataset.tooltip;
         if (!tooltip) return;
+        
         const elem = document.createElement("span");
-        elem.className = "tooltip";
-        elem.append(tooltip);
-        document.body.append(elem);
+
+        if (e.type === "mouseover") {
+          elem.className = "tooltip";
+          elem.append(tooltip);
+          document.body.append(elem);
+        } else {
+          document.querySelector(".tooltip").remove();
+        }
       }
     </script>
   </body>
