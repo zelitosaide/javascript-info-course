@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      #ball {
+        /* cursor: grabbing; */
+      }
+    </style>
+  </head>
+  <body>
+    <img src="https://en.js.cx/clipart/ball.svg" id="ball">
+
+    <script>
+      const ball = document.getElementById("ball");
+      ball.onmousedown = function(e) {
+        // (1) prepare to moving: make absolute and on top by z-index
+        ball.style.position = "absolute";
+        ball.style.zIndex = 1000;
+        ball.style.cursor = "grabbing";
+      }
+    </script>
+  </body>
+</html>
