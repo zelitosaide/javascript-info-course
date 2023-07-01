@@ -2,10 +2,42 @@
 <html>
   <head>
     <style>
+      body {
+        margin: 0;
+      }
 
+      .hours {
+        color: red;
+      }
+
+      .minutes {
+        color: green;
+      }
+
+      .seconds {
+        color: blue;
+      }
+
+      .clock {
+        padding: 5px;
+        border: 1px dashed black;
+        display: inline-block;
+        background-color: yellow;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
     </style>
   </head>
   <body>
+    <div id="elem" class="clock">
+      <span class="hours">12</span> :
+      <span class="minutes">30</span> :
+      <span class="seconds">00</span>
+    </div>
+
+    <div id="tooltip">Tooltip</div>
+
     <script>
       console.log("Ola, tudo bem?");
     </script>
