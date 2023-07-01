@@ -23,6 +23,7 @@
         margin-top: 100px;
         width: 400px;
         border: 1px solid brown;
+        padding-bottom: 40px;
       }
 
       #roof {
@@ -69,19 +70,19 @@
     <script>
       const house = document.getElementById("house");
       
-      house.onmouseover = house.onmouseout = function (e) {
+      house.onmouseover = function (e) {
         const tooltip = e.target.dataset.tooltip;
         if (!tooltip) return;
         
         const elem = document.createElement("span");
+        elem.className = "tooltip";
+        elem.append(tooltip);
+        document.body.append(elem);
+      }
 
-        if (e.type === "mouseover") {
-          elem.className = "tooltip";
-          elem.append(tooltip);
-          document.body.append(elem);
-        } else {
-          document.querySelector(".tooltip").remove();
-        }
+      house.onmouseout = function (e) {
+        if (!e.relatedTarget.dataset.tooltip) return;
+        document.querySelector(".tooltip").remove();
       }
     </script>
   </body>
