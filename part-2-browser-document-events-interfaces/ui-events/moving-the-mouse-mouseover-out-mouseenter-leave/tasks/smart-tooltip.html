@@ -72,7 +72,29 @@
           elem.addEventListener("mouseover", this.onMouseOver);
           elem.addEventListener("mouseout", this.onMouseOut);
         }
+
+        onMouseOver() {
+          console.log(this);
+        }
+
+        onMouseOut() {
+          console.log(this);
+        }
+
+        onMouseMove() {
+          console.log(this);
+        }
+
+        trackSpeed() {
+          console.log(this);
+        }
       }
+
+      new HoverIntent({ 
+        elem: document.body, 
+        over: function() {}, 
+        out: function() {}
+      });
     </script>
   </body>
 </html>
