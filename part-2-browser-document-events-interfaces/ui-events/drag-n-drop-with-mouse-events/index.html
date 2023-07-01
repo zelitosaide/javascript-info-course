@@ -1,5 +1,17 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <style>
+      .dragging {
+        position: absolute;
+        z-index: 1000;
+      }
+
+      .grabbing {
+        cursor: grabbing;
+      }
+    </style>
+  </head>
   <body>
     <img src="https://en.js.cx/clipart/ball.svg" id="ball">
 
@@ -12,9 +24,8 @@
 
       ball.onmousedown = function(e) {
         // (1) prepare to moving: make absolute and on top by z-index
-        ball.style.position = "absolute";
-        ball.style.zIndex = 1000;
-        ball.style.cursor = "grabbing";
+        ball.classList.add("dragging");
+        ball.classList.add("grabbing");
 
         // move it out of any current parents directly into body
         // to make it positioned relative to the body
@@ -28,8 +39,8 @@
 
         // (3) drop the ball, remove unneeded handlers
         ball.onmouseup = function() {
-          ball.style.cursor = "auto";
           document.removeEventListener("mousemove", onMouseMove);
+          ball.classList.remove("grabbing");
         }
       }
 
