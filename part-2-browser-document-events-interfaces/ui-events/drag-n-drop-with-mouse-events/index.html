@@ -5,6 +5,11 @@
 
     <script>
       const ball = document.getElementById("ball");
+
+      ball.ondragstart = function() {
+        return false;
+      }
+
       ball.onmousedown = function(e) {
         // (1) prepare to moving: make absolute and on top by z-index
         ball.style.position = "absolute";
@@ -25,10 +30,6 @@
         ball.onmouseup = function() {
           ball.style.cursor = "auto";
           document.removeEventListener("mousemove", onMouseMove);
-        }
-
-        ball.ondragstart = function() {
-          return false;
         }
       }
 
