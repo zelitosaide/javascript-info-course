@@ -96,6 +96,8 @@
       const obj = new HoverIntent({ 
         elem: clock, 
         over() {
+          tooltip.style.top = clock.getBoundingClientRect().bottom + 5 + "px";
+          tooltip.style.left = clock.getBoundingClientRect().left + 5 + "px";
           tooltip.hidden = false;
         }, 
         out() {
