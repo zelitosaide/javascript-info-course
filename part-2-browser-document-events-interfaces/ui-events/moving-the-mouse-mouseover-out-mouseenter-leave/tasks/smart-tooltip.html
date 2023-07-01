@@ -90,11 +90,13 @@
         }
       }
 
-      new HoverIntent({ 
+      const obj = new HoverIntent({ 
         elem: document.body, 
         over: function() {}, 
         out: function() {}
       });
+
+      obj.onMouseOver();
     </script>
   </body>
 </html>
