@@ -1,12 +1,5 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <style>
-      #ball {
-        /* cursor: grabbing; */
-      }
-    </style>
-  </head>
   <body>
     <img src="https://en.js.cx/clipart/ball.svg" id="ball">
 
@@ -30,6 +23,7 @@
 
         // (3) drop the ball, remove unneeded handlers
         ball.onmouseup = function() {
+          ball.style.cursor = "auto";
           document.removeEventListener("mousemove", onMouseMove);
         }
 
