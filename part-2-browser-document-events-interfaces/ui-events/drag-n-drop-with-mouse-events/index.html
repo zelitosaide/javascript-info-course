@@ -32,6 +32,10 @@
         ball.onmouseup = function() {
           document.removeEventListener("mousemove", onMouseMove);
         }
+
+        ball.ondragstart = function() {
+          return false;
+        }
       }
 
       // centers the ball at (pageX, pageY) coordinates
@@ -42,7 +46,6 @@
 
       function onMouseMove(e) {
         moveTo(e.pageX, e.pageY);
-        console.log(e.pageX, e.pageY);
       }
     </script>
   </body>
