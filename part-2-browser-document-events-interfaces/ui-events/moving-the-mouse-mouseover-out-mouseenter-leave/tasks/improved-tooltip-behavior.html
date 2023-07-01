@@ -59,7 +59,7 @@
         Soon they met a man. 
         <a 
           href="https://en.wikipedia.org/wiki/The_Three_Little_Pigs"
-          data-tooltip="Read on…"
+          data-tooltip="Read on..."
         >
           Hover over me
         </a>
@@ -88,12 +88,13 @@
 
         const coords = anchorElem.getBoundingClientRect();
         let top = coords.top - span.offsetHeight - 5;
+        let left = coords.right - anchorElem.offsetWidth / 2 - span.offsetWidth / 2;
 
-        if (top < 0) {
-          span.style.top = coords.bottom + 5 + "px";
-        } else {
-          span.style.top = top + "px";
-        }
+        if (top < 0) top = coords.bottom + 5;
+        if (left < 0) left = 8;
+
+        span.style.top = top + "px";
+        span.style.left = left + "px";
       }
     </script>
   </body>
