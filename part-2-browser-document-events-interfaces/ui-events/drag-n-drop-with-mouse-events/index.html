@@ -17,6 +17,17 @@
         ball.style.position = "absolute";
         ball.style.zIndex = 1000;
         ball.style.cursor = "grabbing";
+
+        // move it out of any current parents directly into body
+        // to make it positioned relative to the body
+        document.body.append(ball);
+
+        moveTo(e.pageX, e.pageY);
+      }
+
+      function moveTo(pageX, pageY) {
+        ball.style.left = pageX - ball.offsetWidth / 2 + "px";
+        ball.style.top = pageY - ball.offsetHeight / 2 + "px";
       }
     </script>
   </body>
