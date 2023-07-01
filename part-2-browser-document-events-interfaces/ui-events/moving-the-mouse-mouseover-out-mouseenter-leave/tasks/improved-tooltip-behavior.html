@@ -23,7 +23,6 @@
         margin-top: 50px;
         width: 400px;
         border: 1px solid brown;
-        padding-bottom: 40px;
       }
 
       #roof {
@@ -71,10 +70,10 @@
       const house = document.getElementById("house");
       
       house.onmouseover = function (e) {
-        const tooltipElem = e.target.closest("[data-tooltip]");
-        if (!tooltipElem) return;
+        const anchorElem = e.target.closest("[data-tooltip]");
+        if (!anchorElem) return;
 
-        showTooltip(null, tooltipElem.dataset.tooltip);
+        showTooltip(anchorElem, anchorElem.dataset.tooltip);
       }
 
       house.onmouseout = function () {
