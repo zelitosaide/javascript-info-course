@@ -74,15 +74,17 @@
         }
 
         onMouseOver(e) {
-          console.log(e.type);
+          // console.log(e.type);
         }
 
         onMouseOut(e) {
-          console.log(e.type);
+          // console.log(e.type);
         }
 
-        onMouseMove() {
-          console.log(this);
+        onMouseMove(e) {
+          this.lastX = e.pageX;
+          this.lastY = e.pageY;
+          this.lastTime = Date.now();
         }
 
         trackSpeed(e) {
@@ -103,7 +105,7 @@
         out() {
           tooltip.hidden = true;
         }
-      });
+      }).onMouseMove();
     </script>
   </body>
 </html>
