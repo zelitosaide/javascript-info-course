@@ -74,17 +74,15 @@
         }
 
         onMouseOver(e) {
-          // console.log(e.type);
+          console.log(e);
         }
 
         onMouseOut(e) {
-          // console.log(e.type);
+          console.log(e);
         }
 
         onMouseMove(e) {
-          this.lastX = e.pageX;
-          this.lastY = e.pageY;
-          this.lastTime = Date.now();
+          console.log(e);
         }
 
         trackSpeed(e) {
@@ -95,7 +93,7 @@
       const clock = document.getElementById("elem");
       const tooltip = document.getElementById("tooltip");
 
-      new HoverIntent({ 
+      const obj = new HoverIntent({ 
         elem: clock, 
         over() {
           tooltip.style.top = clock.getBoundingClientRect().bottom + 5 + "px";
@@ -105,7 +103,7 @@
         out() {
           tooltip.hidden = true;
         }
-      }).onMouseMove();
+      });
     </script>
   </body>
 </html>
