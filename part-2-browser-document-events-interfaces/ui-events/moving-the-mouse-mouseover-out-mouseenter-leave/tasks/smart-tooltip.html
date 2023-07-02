@@ -73,12 +73,12 @@
           elem.addEventListener("mouseout", this.onMouseOut);
         }
 
-        onMouseOver() {
-          console.log(this);
+        onMouseOver(e) {
+          console.log(e.type);
         }
 
-        onMouseOut() {
-          console.log(this);
+        onMouseOut(e) {
+          console.log(e.type);
         }
 
         onMouseMove() {
