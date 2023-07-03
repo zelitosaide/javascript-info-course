@@ -28,11 +28,14 @@
         // to make it positioned relative to the body
         document.body.append(ball);
 
+        // move our absolutely positioned ball under the pointer
+        moveTo(e.pageX, e.pageY);
+
         // (2) move the ball on mousemove
         document.addEventListener("mousemove", onMouseMove);
 
+        // (3) drop the ball, remove unneeded handlers
         ball.onmouseup = function() {
-          console.log("up");
           ball.classList.remove("grabbing");
           document.removeEventListener("mousemove", onMouseMove);
           ball.onmouseup = null;
@@ -42,6 +45,7 @@
           moveTo(e.pageX, e.pageY);
         }
 
+        // centers the ball at (pageX, pageY) coordinates
         function moveTo(pageX, pageY) {
           ball.style.top = pageY - ball.offsetHeight / 2 + "px";
           ball.style.left = pageX - ball.offsetWidth / 2 + "px";
