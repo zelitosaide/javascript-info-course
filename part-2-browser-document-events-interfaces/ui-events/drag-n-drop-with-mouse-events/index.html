@@ -20,6 +20,10 @@
     <script>
       const ball = document.getElementById("ball");
 
+      ball.ondragstart = function(e) {
+        e.preventDefault();
+      }
+
       ball.onmousedown = function(e) {
         // (1) prepare to moving: make absolute and on top by z-index
         ball.className = "dragging grabbing";
