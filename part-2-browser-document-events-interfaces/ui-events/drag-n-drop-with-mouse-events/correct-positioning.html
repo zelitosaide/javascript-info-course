@@ -17,8 +17,6 @@
     <h2>Drag and drop algorithm</h2>
     <img src="https://en.js.cx/clipart/ball.svg" id="ball">
 
-    <h2>Correct positioning</h2>
-
     <script>
       const ball = document.getElementById("ball");
 
@@ -27,6 +25,9 @@
       }
 
       ball.onmousedown = function(e) {
+        const shiftX = e.clientX - ball.getBoundingClientRect().left;
+        const shiftY = e.clientY - ball.getBoundingClientRect().top;
+
         // (1) prepare to moving: make absolute and on top by z-index
         ball.className = "dragging grabbing";
 
@@ -53,8 +54,8 @@
 
         // centers the ball at (pageX, pageY) coordinates
         function moveTo(pageX, pageY) {
-          ball.style.top = pageY - ball.offsetHeight / 2 + "px";
-          ball.style.left = pageX - ball.offsetWidth / 2 + "px";
+          ball.style.top = pageY - shiftY + "px";
+          ball.style.left = pageX - shiftX + "px";
         }
       };
 
