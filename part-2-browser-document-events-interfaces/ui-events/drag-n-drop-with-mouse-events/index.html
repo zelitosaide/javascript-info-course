@@ -32,12 +32,30 @@
         document.addEventListener("mousemove", onMouseMove);
 
         ball.onmouseup = function() {
+          console.log("up");
           ball.classList.remove("grabbing");
           document.removeEventListener("mousemove", onMouseMove);
+          ball.onmouseup = null;
         };
+
+        function onMouseMove(e) {
+          moveTo(e.pageX, e.pageY);
+        }
+
+        function moveTo(pageX, pageY) {
+          ball.style.top = pageY - ball.offsetHeight / 2 + "px";
+          ball.style.left = pageX - ball.offsetWidth / 2 + "px";
+        }
       };
 
-      function onMouseMove(e) {}
+      // function onMouseMove(e) {
+      //   moveTo(e.pageX, e.pageY);
+      // }
+
+      // function moveTo(pageX, pageY) {
+      //   ball.style.top = pageY - ball.offsetHeight / 2 + "px";
+      //   ball.style.left = pageX - ball.offsetWidth / 2 + "px";
+      // }
     </script>
   </body>
 </html>
