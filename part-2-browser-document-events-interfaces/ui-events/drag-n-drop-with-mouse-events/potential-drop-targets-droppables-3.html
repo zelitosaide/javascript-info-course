@@ -33,6 +33,26 @@
 
     <script>
       const ball = document.getElementById("ball");
+
+      ball.onmousedown = function(e) {
+        const shiftX = e.clientX - ball.getBoundingClientRect().left;
+        const shiftY = e.clientY - ball.getBoundingClientRect().top;
+
+        ball.className = "dragging grabbing";
+        document.body.append(ball);
+
+        moveTo(e.clientX, e.clientY);
+
+        ball.onmouseup = function() {
+          ball.classList.remove("grabbing");
+          ball.onmouseup = null;
+        }
+
+        function moveTo(pageX, pageY) {
+          ball.style.left = pageX - shiftX + "px";
+          ball.style.top = pageY - shiftY + "px";
+        }
+      };
       
       ball.ondragstart = function() {
         return false;
