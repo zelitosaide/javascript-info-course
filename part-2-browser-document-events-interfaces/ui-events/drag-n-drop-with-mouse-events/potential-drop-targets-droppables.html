@@ -9,9 +9,24 @@
       style="width: 50px; height: 50px; position: absolute; background-color: red;"
       onmouseover="console.log(this.style.backgroundColor)"  
     ></div>
+
+    <p style="position: absolute; top: 50px;">
+      The problem is that, while we’re <strong>dragging</strong>, the draggable element is always above other elements. And mouse events only happen on the top element, not on those below it.
+    </p>
     
     <script>
-      
+      document.onmouseover = function (e) {
+        const target = document.elementFromPoint(e.clientX, e.clientY);
+
+        if (document.documentElement === target) return;
+        if (!target.tagName) return;
+
+        target.style.backgroundColor = "green";
+
+        setTimeout(function() {
+          target.style.backgroundColor = "";
+        }, 500);
+      }
     </script>
   </body>
 </html>
