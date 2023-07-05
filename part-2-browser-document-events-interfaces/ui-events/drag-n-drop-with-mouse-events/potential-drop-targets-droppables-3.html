@@ -70,10 +70,18 @@
 
           if (droppableBelow) {
             currentDroppable = droppableBelow;
-            currentDroppable.style.backgroundColor = "pink";
+            enterDroppable(currentDroppable);
           } else if (currentDroppable) {
-            currentDroppable.style.backgroundColor = "";
+            leaveDroppable(currentDroppable);
           }
+        }
+
+        function enterDroppable(elem) {
+          elem.style.backgroundColor = "pink";
+        }
+
+        function leaveDroppable(elem) {
+          elem.style.backgroundColor = "";
         }
       };
       
