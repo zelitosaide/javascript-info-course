@@ -11,7 +11,7 @@
     ></div>
 
     <p style="position: absolute; top: 50px;">
-      The problem is that, while we’re <strong>dragging</strong>, the draggable element is always above other elements. And mouse events only happen on the top element, not on those below it.
+      The problem is that, while we’re <span>dragging</span>, the draggable element is always above other elements. And mouse events only happen on the top element, not on those below it.
     </p>
     
     <script>
@@ -21,11 +21,7 @@
         if (document.documentElement === target) return;
         if (!target.tagName) return;
 
-        target.style.backgroundColor = "green";
-
-        setTimeout(function() {
-          target.style.backgroundColor = "";
-        }, 500);
+        console.log(target.nodeName);
       }
     </script>
   </body>
