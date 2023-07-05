@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      #gate {
+        cursor: pointer;
+        margin-bottom: 100px;
+        width: 83px;
+        height: 46px;
+        display: block;
+      }
+
+      #ball {
+        width: 40px;
+        height: 40px;
+      }
+
+      .dragging {
+        position: absolute;
+        z-index: 1000;
+      }
+      
+      .grabbing {
+        opacity: 0.6;
+        cursor: grabbing;
+      }
+    </style>
+  </head>
+  <body>
+    <p>Drag the ball.</p>
+    <img src="https://en.js.cx/clipart/soccer-gate.svg" id="gate" class="droppable">
+    <img src="https://en.js.cx/clipart/ball.svg" id="ball">
+
+    <script>
+      const ball = document.getElementById("ball");
+      
+      ball.ondragstart = function() {
+        return false;
+      }
+    </script>
+  </body>
+</html>
