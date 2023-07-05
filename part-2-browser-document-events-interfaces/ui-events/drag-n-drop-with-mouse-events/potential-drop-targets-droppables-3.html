@@ -33,6 +33,7 @@
 
     <script>
       const ball = document.getElementById("ball");
+      let currentDroppable = null;
 
       ball.onmousedown = function(e) {
         const shiftX = e.clientX - ball.getBoundingClientRect().left;
