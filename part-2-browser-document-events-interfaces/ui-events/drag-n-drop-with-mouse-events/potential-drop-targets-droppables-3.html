@@ -58,6 +58,12 @@
 
         function onMouseMove(e) {
           moveTo(e.pageX, e.pageY);
+
+          ball.hidden = true;
+          const elemBelow = document.elementFromPoint(e.clientX, e.clientY);
+          ball.hidden = false;
+
+          
         }
       };
       
