@@ -33,6 +33,7 @@
 
     <script>
       const ball = document.getElementById("ball");
+      let currentDroppable = null;
 
       ball.onmousedown = function (e) {
         const shiftX = e.clientX - ball.getBoundingClientRect().left;
@@ -64,7 +65,28 @@
           ball.hidden = true;
           const elemBelow = document.elementFromPoint(e.clientX, e.clientY);
           ball.hidden = false;
-          console.log(elemBelow);
+          
+          if (!elemBelow) return;
+
+          const droppableBelow = elemBelow.closest(".droppable");
+
+          if (currentDroppable !== droppableBelow) {
+            if (currentDroppable) {
+              leaveDroppable(currentDroppable);
+            }
+            currentDroppable = droppableBelow;
+            if (currentDroppable) {
+              enterDroppable(currentDroppable);
+            }
+          }
+        }
+
+        function leaveDroppable(elem) {
+          elem.style.backgroundColor = "";
+        }
+
+        function enterDroppable(elem) {
+          elem.style.backgroundColor = "pink";
         }
 
         // centers the ball at (pageX, pageY) coordinates
