@@ -1,11 +1,17 @@
 <!DOCTYPE html>
 <html>
   <body>
-    <p>
-      The problem is that, while we’re dragging, the draggable element is always above other elements. And mouse events only happen on the top element, not on those below it.
-    </p>
+    <div 
+      style="width: 50px; height: 50px; position: absolute; background-color: blue;"
+      onmouseover="console.log(this.style.backgroundColor)"
+    ></div>
+    <div 
+      style="width: 50px; height: 50px; position: absolute; background-color: red;"
+      onmouseover="console.log(this.style.backgroundColor)"  
+    ></div>
+    
     <script>
-      console.log("Ola tudo bem?");
+      
     </script>
   </body>
 </html>
