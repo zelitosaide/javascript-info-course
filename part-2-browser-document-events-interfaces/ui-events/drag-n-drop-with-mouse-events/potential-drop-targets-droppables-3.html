@@ -67,6 +67,13 @@
           if (!elemBelow) return;
 
           const droppableBelow = elemBelow.closest(".droppable");
+
+          if (droppableBelow) {
+            currentDroppable = droppableBelow;
+            currentDroppable.style.backgroundColor = "pink";
+          } else if (currentDroppable) {
+            currentDroppable.style.backgroundColor = "";
+          }
         }
       };
       
