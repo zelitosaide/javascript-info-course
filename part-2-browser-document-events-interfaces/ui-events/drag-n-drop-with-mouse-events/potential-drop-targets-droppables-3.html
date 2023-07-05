@@ -41,22 +41,29 @@
         ball.className = "dragging grabbing";
         document.body.append(ball);
 
-        moveTo(e.clientX, e.clientY);
+        moveTo(e.pageX, e.pageY);
+
+        document.addEventListener("mousemove", onMouseMove);
 
         ball.onmouseup = function() {
+          document.removeEventListener("mousemove", onMouseMove);
           ball.classList.remove("grabbing");
           ball.onmouseup = null;
-        }
+        };
 
         function moveTo(pageX, pageY) {
           ball.style.left = pageX - shiftX + "px";
           ball.style.top = pageY - shiftY + "px";
         }
+
+        function onMouseMove(e) {
+          moveTo(e.pageX, e.pageY);
+        }
       };
       
       ball.ondragstart = function() {
         return false;
-      }
+      };
     </script>
   </body>
 </html>
