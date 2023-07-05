@@ -63,7 +63,9 @@
           const elemBelow = document.elementFromPoint(e.clientX, e.clientY);
           ball.hidden = false;
 
-          
+          if (!elemBelow) return;
+
+          const droppableBelow = elemBelow.closest(".droppable");
         }
       };
       
