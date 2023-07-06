@@ -45,6 +45,7 @@
 
         thumb.onmouseup = function() {
           thumb.classList.remove("grabbing");
+          document.removeEventListener("mousemove", onMouseMove);
         }
 
         function onMouseMove(e) {
