@@ -20,6 +20,10 @@
         left: 10px;
         top: -5px;
       }
+
+      .grabbing {
+        cursor: grabbing;
+      }
     </style>
   </head>
   <body>
@@ -28,7 +32,15 @@
     </div>
 
     <script>
-      console.log("Ola tudo bem?");
+      const thumb = document.querySelector(".thumb");
+
+      thumb.onmousedown = function(e) {
+        thumb.classList.add("grabbing");
+
+        thumb.onmouseup = function() {
+          thumb.classList.remove("grabbing");
+        }
+      }
     </script>
   </body>
 </html>
