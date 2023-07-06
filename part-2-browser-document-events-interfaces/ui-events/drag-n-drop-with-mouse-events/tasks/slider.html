@@ -33,9 +33,20 @@
 
     <script>
       const thumb = document.querySelector(".thumb");
+      const slider = document.getElementById("slider");
 
       thumb.onmousedown = function(e) {
+        const shiftX = e.clientX 
+          - thumb.getBoundingClientRect().left 
+          + slider.getBoundingClientRect().left;
+
         thumb.classList.add("grabbing");
+
+        moveTo(e.pageX);
+
+        function moveTo(pageX) {
+          thumb.style.left = pageX - shiftX + "px";
+        }
 
         thumb.onmouseup = function() {
           thumb.classList.remove("grabbing");
