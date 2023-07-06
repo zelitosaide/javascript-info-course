@@ -50,13 +50,15 @@
           document.removeEventListener("mousemove", onMouseMove);
           ball.classList.remove("grabbing");
           ball.onmouseup = null;
-          
+
+          // On mouseup we can intellectually finalize the drop: change data, move elements around.
           if (currentDroppable) {
             console.log("Goal");
           }
         };
 
         function moveTo(pageX, pageY) {
+          // We can limit dragging by a certain area or direction.
           ball.style.left = pageX - shiftX + "px";
           ball.style.top = pageY - shiftY + "px";
         }
