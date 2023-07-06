@@ -68,10 +68,14 @@
 
           const droppableBelow = elemBelow.closest(".droppable");
 
-          console.log(currentDroppable?.nodeName, droppableBelow?.nodeName);
-
           if (droppableBelow !== currentDroppable) {
-            
+            if (currentDroppable) {
+              leaveDroppable(currentDroppable);
+            }
+            currentDroppable = droppableBelow;
+            if (currentDroppable) {
+              enterDroppable(currentDroppable);
+            }
           }
         }
 
