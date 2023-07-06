@@ -48,18 +48,7 @@
           document.removeEventListener("mousemove", onMouseMove);
         }
 
-        function onMouseMove(e) {
-          const thumbRight = e.pageX + (thumb.getBoundingClientRect().right - e.pageX);
-          const sliderRight = slider.getBoundingClientRect().right;
-
-          console.log(thumbRight, sliderRight, e.pageX);
-
-          if (thumbRight < sliderRight) {
-            moveTo(e.pageX);
-          } else {
-            
-          }
-        }
+        function onMouseMove(e) { }
 
         function moveTo(pageX) {
           thumb.style.left = pageX - shiftX + "px";
