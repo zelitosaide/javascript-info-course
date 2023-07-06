@@ -36,20 +36,23 @@
       const slider = document.getElementById("slider");
 
       thumb.onmousedown = function(e) {
-        const shiftX = e.clientX 
-          - thumb.getBoundingClientRect().left 
-          + slider.getBoundingClientRect().left;
+        const shiftX = e.clientX - thumb.getBoundingClientRect().left + slider.getBoundingClientRect().left;
 
         thumb.classList.add("grabbing");
-
         moveTo(e.pageX);
 
-        function moveTo(pageX) {
-          thumb.style.left = pageX - shiftX + "px";
-        }
+        document.addEventListener("mousemove", onMouseMove);
 
         thumb.onmouseup = function() {
           thumb.classList.remove("grabbing");
+        }
+
+        function onMouseMove(e) {
+          moveTo(e.pageX);
+        }
+
+        function moveTo(pageX) {
+          thumb.style.left = pageX - shiftX + "px";
         }
       }
     </script>
