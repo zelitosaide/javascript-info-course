@@ -50,6 +50,10 @@
           document.removeEventListener("mousemove", onMouseMove);
           ball.classList.remove("grabbing");
           ball.onmouseup = null;
+          
+          if (currentDroppable) {
+            console.log("Goal");
+          }
         };
 
         function moveTo(pageX, pageY) {
