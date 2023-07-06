@@ -39,8 +39,6 @@
         const shiftX = e.clientX - thumb.getBoundingClientRect().left + slider.getBoundingClientRect().left;
 
         thumb.classList.add("grabbing");
-        moveTo(e.pageX);
-
         document.addEventListener("mousemove", onMouseMove);
 
         thumb.onmouseup = function() {
@@ -48,10 +46,10 @@
           document.removeEventListener("mousemove", onMouseMove);
         }
 
-        function onMouseMove(e) { }
+        function onMouseMove(e) {
+          let left = e.pageX - shiftX;
 
-        function moveTo(pageX) {
-          thumb.style.left = pageX - shiftX + "px";
+          thumb.style.left = left + "px";
         }
       }
     </script>
