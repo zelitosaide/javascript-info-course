@@ -70,13 +70,8 @@
 
           console.log(currentDroppable?.nodeName, droppableBelow?.nodeName);
 
-          if (droppableBelow) {
-            currentDroppable = droppableBelow;
-            enterDroppable(currentDroppable);
-            console.log("Entrou");
-          } else if (currentDroppable) {
-            console.log("Limpou");
-            leaveDroppable(currentDroppable);
+          if (droppableBelow !== currentDroppable) {
+            
           }
         }
 
