@@ -30,7 +30,14 @@
       const thumb = document.querySelector(".thumb");
 
       thumb.onmousedown = function(e) {
-        console.log(e.type);
+        const shift = e.clientX - thumb.getBoundingClientRect().left;
+
+        document.addEventListener("mousemove", onMouseMove);
+
+        function onMouseMove(e) {
+          thumb.style.left = e.pageX - shift + "px";
+        }
+        console.log(shift);
       };
     </script>
   </body>
