@@ -27,7 +27,11 @@
     </div>
 
     <script>
-      console.log("ola");
+      const thumb = document.querySelector(".thumb");
+
+      thumb.onmousedown = function(e) {
+        console.log(e.type);
+      };
     </script>
   </body>
 </html>
