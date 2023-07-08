@@ -39,12 +39,14 @@
         e.preventDefault(); 
 
         const shift = e.clientX - thumb.getBoundingClientRect().left + slider.getBoundingClientRect().left;
+        document.body.classList.add("grabbing");
         thumb.classList.add("grabbing");
 
         document.addEventListener("mousemove", onMouseMove);
         document.addEventListener("mouseup", onMouseUp);
 
         function onMouseUp(e) {
+          document.body.classList.remove("grabbing");
           thumb.classList.remove("grabbing");
           document.removeEventListener("mousemove", onMouseMove);
           document.removeEventListener("mouseup", onMouseUp);
