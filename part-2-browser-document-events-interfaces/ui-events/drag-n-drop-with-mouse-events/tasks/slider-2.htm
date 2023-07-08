@@ -23,7 +23,7 @@
   </head>
   <body>
     <div id="slider" class="slider">
-      <div class="thumb">A</div>
+      <div class="thumb"></div>
     </div>
 
     <script>
@@ -31,6 +31,9 @@
       const slider = document.getElementById("slider");
 
       thumb.onmousedown = function(e) {
+        // prevent selection start (browser action)
+        e.preventDefault(); 
+
         const shift = e.clientX - thumb.getBoundingClientRect().left + slider.getBoundingClientRect().left;
 
         document.addEventListener("mousemove", onMouseMove);
