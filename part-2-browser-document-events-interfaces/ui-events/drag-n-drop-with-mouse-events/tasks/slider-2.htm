@@ -45,7 +45,11 @@
           if (left < 0) {
             left = 0;
           }
-          console.log(left);
+
+          if (left > 300) {
+            left = 300;
+          }
+          
           thumb.style.left = left + "px";
         }
       };
