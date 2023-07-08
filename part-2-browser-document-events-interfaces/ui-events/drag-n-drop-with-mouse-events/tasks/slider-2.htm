@@ -41,15 +41,17 @@
 
         function onMouseMove(e) {
           let left = e.pageX - shift;
+          const min = 0, 
+            max = slider.clientWidth - thumb.clientWidth;
 
-          if (left < 0) {
-            left = 0;
+          if (left < min) {
+            left = min;
           }
 
-          if (left > 300) {
-            left = 300;
+          if (left > max) {
+            left = max;
           }
-          
+
           thumb.style.left = left + "px";
         }
       };
