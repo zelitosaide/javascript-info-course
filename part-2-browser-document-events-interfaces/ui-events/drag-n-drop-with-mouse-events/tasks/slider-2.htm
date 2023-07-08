@@ -23,7 +23,7 @@
   </head>
   <body>
     <div id="slider" class="slider">
-      <div class="thumb"></div>
+      <div class="thumb">A</div>
     </div>
 
     <script>
@@ -34,10 +34,12 @@
         const shift = e.clientX - thumb.getBoundingClientRect().left + slider.getBoundingClientRect().left;
 
         document.addEventListener("mousemove", onMouseMove);
+        document.addEventListener("mouseup", onMouseUp);
 
-        thumb.onmouseup = function(e) {
+        function onMouseUp(e) {
           document.removeEventListener("mousemove", onMouseMove);
-        };
+          document.removeEventListener("mouseup", onMouseUp);
+        }
 
         function onMouseMove(e) {
           let left = e.pageX - shift;
