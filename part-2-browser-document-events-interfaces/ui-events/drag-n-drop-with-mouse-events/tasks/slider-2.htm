@@ -28,16 +28,20 @@
 
     <script>
       const thumb = document.querySelector(".thumb");
+      const slider = document.getElementById("slider");
 
       thumb.onmousedown = function(e) {
-        const shift = e.clientX - thumb.getBoundingClientRect().left;
+        const shift = e.clientX - thumb.getBoundingClientRect().left + slider.getBoundingClientRect().left;
 
         document.addEventListener("mousemove", onMouseMove);
+
+        thumb.onmouseup = function(e) {
+          document.removeEventListener("mousemove", onMouseMove);
+        };
 
         function onMouseMove(e) {
           thumb.style.left = e.pageX - shift + "px";
         }
-        console.log(shift);
       };
     </script>
   </body>
