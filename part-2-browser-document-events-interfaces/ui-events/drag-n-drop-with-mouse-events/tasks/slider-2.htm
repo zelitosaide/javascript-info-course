@@ -19,6 +19,10 @@
         left: 10px;
         top: -5px;
       }
+
+      .grabbing {
+        cursor: grabbing;
+      }
     </style>
   </head>
   <body>
@@ -35,11 +39,13 @@
         e.preventDefault(); 
 
         const shift = e.clientX - thumb.getBoundingClientRect().left + slider.getBoundingClientRect().left;
+        thumb.classList.add("grabbing");
 
         document.addEventListener("mousemove", onMouseMove);
         document.addEventListener("mouseup", onMouseUp);
 
         function onMouseUp(e) {
+          thumb.classList.remove("grabbing");
           document.removeEventListener("mousemove", onMouseMove);
           document.removeEventListener("mouseup", onMouseUp);
         }
