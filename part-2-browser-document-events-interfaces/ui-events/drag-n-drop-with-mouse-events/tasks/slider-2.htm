@@ -40,7 +40,13 @@
         };
 
         function onMouseMove(e) {
-          thumb.style.left = e.pageX - shift + "px";
+          let left = e.pageX - shift;
+
+          if (left < 0) {
+            left = 0;
+          }
+          console.log(left);
+          thumb.style.left = left + "px";
         }
       };
     </script>
