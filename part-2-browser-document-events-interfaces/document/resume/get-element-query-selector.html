@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <div id="hello">
+      Hello
+      <div id="how">
+        how
+        <div id="are">
+          are
+          <div id="you">you?</div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      console.log(hello.contains(how));
+      console.log(hello.contains(are));
+      console.log(hello.contains(you));
+    </script>
+    <!-- <h1>Live collections</h1> -->
+
+    <!-- <div>First div</div> -->
+
+    <!-- <script>
+      const divs = document.querySelectorAll("div");
+      console.log(divs);
+    </script> -->
+
+    <!-- <div>Second div</div> -->
+
+    <!-- <script>
+      console.log(divs);
+    </script> -->
+
+    <!-- <div>First div</div> -->
+
+    <!-- <script>
+      const divs = document.getElementsByTagName("div");
+      console.log(divs.length);
+    </script> -->
+
+    <!-- <div>Second div</div> -->
+
+    <!-- <script>
+      console.log(divs.length);
+    </script> -->
+
+    <!-- <form name="my-form">
+      <div class="article">Article</div>
+      <div class="long article">Long article</div>
+    </form> -->
+
+    <!-- <script>
+      const form = document.getElementsByName("my-form")[0];
+      const articles = form.getElementsByClassName("article");
+      console.log(articles.length);
+
+      for (const article of articles) {
+        console.log(article.innerHTML);
+      }
+    </script> -->
+
+    <!-- <h1>getElementsBy*</h1> -->
+
+    <!-- <table id="table">
+      <tr>
+        <td>Your age:</td>
+
+        <td>
+          <label>
+            <input
+              type="radio"
+              name="age"
+              value="young"
+              checked
+            />less than 18
+          </label>
+          <label>
+            <input
+              type="radio"
+              name="age"
+              value="mature"
+            />from 18 to 50
+          </label>
+          <label>
+            <input
+              type="radio"
+              name="age"
+              value="senior"
+            />more than 60
+          </label>
+        </td>
+      </tr>
+    </table> -->
+
+    <!-- <script>
+      const inputs = document.getElementsByTagName("input");
+      const inpust2 = document.getElementsByName("age");
+
+      for (const input of inputs) {
+        console.log(input.value, ":", input.checked);
+      }
+    </script> -->
+
+    <!-- <h1>closest</h1> -->
+
+    <!-- <div class="contents">
+      <ul class="book">
+        <li class="chapter">Chapter 1</li>
+        <li class="chapter">Chapter 2</li>
+      </ul>
+    </div> -->
+
+    <!-- <script>
+      const chapter = document.querySelector(".chapter");
+      console.log(chapter.closest(".contents"));
+      console.log(chapter.closest(".book"));
+
+      console.log(chapter.closest("h1"));
+      console.log(chapter.closest("html"));
+    </script> -->
+
+    <!-- <h2>matches</h2>
+
+    <a href="http://example.com/file.zip">...</a>
+    <a href="http://ya.ru">...</a> -->
+
+    <!-- <script>
+      for (const elem of document.body.children) {
+        if (elem.matches('a[href$="zip"]')) {
+          console.log("The archive reference", elem.href);
+        }
+      }
+    </script> -->
+
+    <!-- <h2>querySelector</h2> -->
+
+    <!-- <script>
+      console.log(
+        document.querySelectorAll("h2")[0] === document.querySelector("h2")
+      );
+    </script> -->
+
+    <!-- <h2>querySelectorAll</h2>
+
+    <ul>
+      <li>the</li>
+      <li>test</li>
+    </ul>
+
+    <ul>
+      <li>has</li>
+      <li>passed</li>
+    </ul> -->
+
+    <!-- <script>
+      const elements = document.querySelectorAll("ul > li:last-child");
+
+      for (const elem of elements) {
+        console.log(elem);
+      }
+    </script> -->
+
+    <!-- <div id="elem">
+      <div id="elem-content">Element</div>
+    </div>
+
+    <button
+      id="elem"
+      type="button"
+    >
+      Say Hello
+    </button> -->
+
+    <!-- <script>
+      console.log(
+        (document.getElementById("elem").style.backgroundColor = "red")
+      );
+
+      // console.log((elem.style.color = "white"));
+
+      console.log((window["elem-content"].style.padding = "5px 10px"));
+
+      // var elem = 5;
+
+      // console.log(elem);
+
+      console.log(document.getElementById("elem"));
+
+      console.log("Only document.getElementById not elem.getElementById");
+    </script> -->
+  </body>
+</html>

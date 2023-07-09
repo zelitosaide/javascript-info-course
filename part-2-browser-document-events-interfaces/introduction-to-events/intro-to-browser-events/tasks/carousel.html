@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body {
+        padding: 10px;
+      }
+
+      .carousel {
+        position: relative;
+        width: 398px;
+        padding: 10px 40px;
+        border: 1px solid #ccc;
+        border-radius: 15px;
+        background-color: #eee;
+      }
+
+      .carousel img {
+        width: 130px;
+        height: 130px;
+      }
+
+      .arrow {
+        position: absolute;
+        top: 60px;
+        padding: 0;
+        background-color: #ddd;
+        border-radius: 15px;
+        border: 1px solid grey;
+        font-size: 24px;
+        line-height: 24px;
+        color: #444;
+        display: block;
+      }
+
+      .arrow:focus {
+        outline: none;
+      }
+
+      .arrow:hover {
+        background-color: #ccc;
+        cursor: pointer;
+      }
+
+      .prev {
+        left: 7px;
+      }
+
+      .next {
+        right: 7px;
+      }
+
+      .gallery {
+        width: 390px;
+        overflow: hidden;
+      }
+
+      .gallery ul {
+        height: 130px;
+        width: 9999px;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        transition: margin-left 250ms;
+        /* remove white-space between inline-block'ed li */
+        /* http://davidwalsh.name/remove-whitespace-inline-block */
+        font-size: 0;
+      }
+
+      .gallery li {
+        display: inline-block;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      id="carousel"
+      class="carousel"
+    >
+      <button
+        class="arrow prev"
+        type="button"
+      >
+        ⇦
+      </button>
+      <div class="gallery">
+        <ul>
+          <li>
+            <img
+              src="https://en.js.cx/carousel/1.png"
+              alt=""
+            />
+          </li>
+          <li>
+            <img
+              src="https://en.js.cx/carousel/2.png"
+              alt=""
+            />
+          </li>
+          <li>
+            <img
+              src="https://en.js.cx/carousel/3.png"
+              alt=""
+            />
+          </li>
+          <li>
+            <img
+              src="https://en.js.cx/carousel/4.png"
+              alt=""
+            />
+          </li>
+          <li>
+            <img
+              src="https://en.js.cx/carousel/5.png"
+              alt=""
+            />
+          </li>
+          <li>
+            <img
+              src="https://en.js.cx/carousel/6.png"
+              alt=""
+            />
+          </li>
+          <li>
+            <img
+              src="https://en.js.cx/carousel/7.png"
+              alt=""
+            />
+          </li>
+          <li>
+            <img
+              src="https://en.js.cx/carousel/8.png"
+              alt=""
+            />
+          </li>
+          <li>
+            <img
+              src="https://en.js.cx/carousel/9.png"
+              alt=""
+            />
+          </li>
+          <li>
+            <img
+              src="https://en.js.cx/carousel/10.png"
+              alt=""
+            />
+          </li>
+        </ul>
+      </div>
+      <button
+        class="arrow next"
+        type="button"
+      >
+        ⇨
+      </button>
+    </div>
+
+    <script>
+      const carousel = document.getElementById("carousel");
+      const list = carousel.querySelector("ul");
+      const listItems = carousel.querySelectorAll("li");
+
+      const width = 130;
+      const count = 3;
+
+      let position = 0;
+
+      carousel.querySelector(".prev").onclick = function (e) {
+        position += width * count;
+        position = Math.min(position, 0);
+        list.style.marginLeft = position + "px";
+      };
+
+      carousel.querySelector(".next").onclick = function (e) {
+        position -= width * count;
+        position = Math.max(position, -width * (listItems.length - count));
+        list.style.marginLeft = position + "px";
+      };
+    </script>
+  </body>
+</html>

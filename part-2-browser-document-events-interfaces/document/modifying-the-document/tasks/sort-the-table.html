@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <table id="table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Surname</th>
+          <th>Age</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>John</td>
+          <td>Smith</td>
+          <td>10</td>
+        </tr>
+        <tr>
+          <td>Pete</td>
+          <td>Brown</td>
+          <td>15</td>
+        </tr>
+        <tr>
+          <td>Ann</td>
+          <td>Lee</td>
+          <td>5</td>
+        </tr>
+        <tr>
+          <td>...</td>
+          <td>...</td>
+          <td>...</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <script>
+      const tbody = document.getElementById("table").querySelector("tbody");
+
+      const sortedContent = Array.from(tbody.querySelectorAll("tr")).sort(
+        function (rowA, rowB) {
+          const x = rowA.cells[0].innerHTML.toLowerCase();
+          const y = rowB.cells[0].innerHTML.toLowerCase();
+
+          if (x < y) {
+            return -1;
+          }
+          if (x > y) {
+            return 1;
+          }
+          return 0;
+        }
+      );
+
+      // OR
+      const sortedContent2 = Array.from(tbody.querySelectorAll("tr")).sort(
+        function (rowA, rowB) {
+          return rowA.cells[0].innerHTML.localeCompare(rowB.cells[0].innerHTML);
+        }
+      );
+
+      tbody.append(...sortedContent2);
+    </script>
+  </body>
+</html>

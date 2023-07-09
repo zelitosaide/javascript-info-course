@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <div>
+      <p>Hello, world!</p>
+    </div>
+
+    <script>
+      const elem = document.body.firstElementChild;
+      console.log(elem.lastChild.nextSibling === null);
+      console.log(elem.children[0].previousSibling === null);
+    </script>
+  </body>
+</html>

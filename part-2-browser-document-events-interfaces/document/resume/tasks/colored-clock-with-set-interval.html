@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      #hours {
+        color: red;
+      }
+
+      #minutes {
+        color: green;
+      }
+
+      #seconds {
+        color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <span id="hours">hh</span>:<span id="minutes">mm</span>:<span id="seconds"
+        >ss</span
+      >
+    </div>
+
+    <!-- click on this button calls clockStart() -->
+    <input
+      type="button"
+      onclick="clockStart()"
+      value="Start"
+    />
+
+    <!-- click on this button calls clockStop() -->
+    <input
+      type="button"
+      onclick="clockStop()"
+      value="Stop"
+    />
+
+    <script>
+      let timerId;
+
+      function clockStart() {
+        update();
+        if (!timerId) {
+          timerId = setInterval(update, 1000);
+        }
+      }
+
+      function update() {
+        const date = new Date();
+        const hours =
+          date.getHours() < 10 ? "0" + date.getHours() : date.getHours();
+        const minutes =
+          date.getMinutes() < 10 ? "0" + date.getMinutes() : date.getMinutes();
+        const seconds =
+          date.getSeconds() < 10 ? "0" + date.getSeconds() : date.getSeconds();
+
+        document.querySelector("#hours").innerHTML = hours;
+        document.querySelector("#minutes").innerHTML = minutes;
+        document.querySelector("#seconds").innerHTML = seconds;
+      }
+
+      function clockStop() {
+        clearInterval(timerId);
+        timerId = null;
+      }
+    </script>
+  </body>
+</html>

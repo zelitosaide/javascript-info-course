@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <body>
+    <script>
+      const html = document.documentElement;
+      const parentOfBody = document.body.parentNode;
+      alert(html === parentOfBody);
+      const head = document.head;
+      const body = head.nextSibling.nextSibling;
+      alert(body);
+      alert(body.previousSibling.previousSibling);
+    </script>
+  </body>
+</html>

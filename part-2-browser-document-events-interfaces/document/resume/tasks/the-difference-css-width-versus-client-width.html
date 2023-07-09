@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      #example {
+        width: 300px;
+        height: 200px;
+        overflow: auto;
+        border: 25px solid lightblue;
+        padding: 20px;
+        /* white-space: nowrap; */
+      }
+    </style>
+  </head>
+  <body>
+    <div id="example">
+      <h3>Introduction</h3>
+      <p>
+        This Ecma Standard is based on several originating technologies, the
+        most well known being JavaScript (Netscape) and JScript (Microsoft). The
+        language was invented by Brendan Eich at Netscape and first appeared in
+        that company's Navigator 2.0 browser. It has appeared in all subsequent
+        browsers from Netscape and in all browsers from Microsoft starting with
+        Internet Explorer 3.0. The development of this Standard started in
+        November 1996. The first edition of this Ecma Standard was adopted by
+        the Ecma General Assembly of June 1997.
+      </p>
+
+      <p>
+        That Ecma Standard was submitted to ISO/IEC JTC 1 for adoption under the
+        fast-track procedure, and approved as international standard ISO/IEC
+        16262, in April 1998. The Ecma General Assembly of June 1998 approved
+        the second edition of ECMA-262 to keep it fully aligned with ISO/IEC
+        16262. Changes between the first and the second edition are editorial in
+        nature.
+      </p>
+
+      <p>
+        The third edition of the Standard introduced powerful regular
+        expressions, better string handling, new control statements, try/catch
+        exception handling, tighter definition of errors, formatting for numeric
+        output and minor changes in anticipation of forthcoming
+        internationalisation facilities and future language growth. The third
+        edition of the ECMAScript standard was adopted by the Ecma General
+        Assembly of December 1999 and published as ISO/IEC 16262:2002 in June
+        2002.
+      </p>
+    </div>
+
+    <p><b>Hello</b></p>
+
+    <script>
+      const example = document.querySelector("#example");
+      const styles = getComputedStyle(example);
+      const b = document.querySelector("b");
+      // Differences:
+      // 1. clientWidth is numeric, while getComputedStyle(elem).width
+      // returns a string with px at the end.
+      console.log(typeof example.clientWidth);
+      console.log(typeof styles.width);
+
+      // 2. getComputedStyle may return non-numeric width like "auto" for
+      // an inline element.
+      console.log(getComputedStyle(b).width);
+      console.log(b.clientWidth);
+
+      // 3. clientWidth is the inner content area of the element plus
+      // paddings, while CSS width (with standard box-sizing) is the inner
+      // content area without paddings.
+      console.log(example.clientWidth);
+      console.log(styles.width);
+
+      // If there’s a scrollbar and the browser reserves the space for it,
+      // some browser substract that space from CSS width (cause it’s not
+      // available for content any more), and some do not. The
+      // clientWidth property is always the same: scrollbar size is
+      // substracted if reserved.
+      console.log(styles.width);
+      console.log(example.clientWidth);
+    </script>
+  </body>
+</html>

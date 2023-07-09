@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h1>1. DOM tree</h1>
+
+    <h1>2. An example of the DOM</h1>
+
+    <h1>3. Autocorrection</h1>
+
+    <h1>4. Other node types</h1>
+
+    <h1>5. Interactions with console</h1>
+
+    <script>
+      console.log(
+        "There are 12 node types. In practice we usually work 4 of them: document, element nodes, text nodes, and comment"
+      );
+    </script>
+
+    <!-- comment -->
+    <script>
+      console.log(
+        "Spaces and newlines before head are ignored for historical reasons"
+      );
+
+      console.log(
+        "If we put something after body, the that is  automatically is moved inside the body, at the end."
+      );
+    </script>
+
+    <script>
+      const body = document.body;
+      body.style.backgroundColor = "pink";
+      console.log(body.tagName);
+
+      setTimeout(function () {
+        body.style.backgroundColor = "";
+      }, 1000);
+    </script>
+
+    <script>
+      console.log("Every HTML tag is an object");
+      console.log("The text inside a tag is an object as well");
+    </script>
+  </body>
+  Inserted after body
+</html>

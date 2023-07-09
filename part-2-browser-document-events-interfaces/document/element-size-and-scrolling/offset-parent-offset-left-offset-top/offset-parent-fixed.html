@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      #main {
+        position: fixed;
+        top: 50px;
+        left: 50px;
+        border: 10px solid black;
+        width: 400px;
+        height: 300px;
+      }
+      #example {
+        border: 20px solid #e8c48f;
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        width: 300px;
+        height: 200px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="main">
+      <div id="example">...</div>
+    </div>
+
+    <script>
+      const example = document.getElementById("example");
+
+      console.log("offsetParent", example.offsetParent);
+      console.log("offsetLeft", example.offsetLeft);
+      console.log("offsetTop", example.offsetTop);
+    </script>
+  </body>
+</html>

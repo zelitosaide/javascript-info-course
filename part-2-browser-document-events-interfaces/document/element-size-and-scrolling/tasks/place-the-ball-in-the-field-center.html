@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      #field {
+        width: 200px;
+        border: 10px groove black;
+        background-color: #00ff00;
+        position: relative;
+      }
+
+      #ball {
+        position: absolute;
+        /* OR */
+        /* width: 40px;
+        height: 40px; */
+      }
+    </style>
+  </head>
+  <body>
+    <div id="field">
+      <img
+        src="https://en.js.cx/clipart/ball.svg"
+        id="ball"
+        width="40"
+        height="40"
+      />
+      . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+      . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+      . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+      . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+      . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    </div>
+
+    <script>
+      const field = document.getElementById("field");
+      const fieldOffsetWidth = field.offsetWidth;
+      const fieldOffsetHeight = field.offsetHeight;
+
+      const ball = document.getElementById("ball");
+      const ballOffsetWidth = ball.offsetWidth;
+      const ballOffsetHeight = ball.offsetHeight;
+
+      // ball.style.top = fieldOffsetHeight / 2 - ballOffsetHeight / 2 - 10 + "px";
+      // ball.style.left = fieldOffsetWidth / 2 - ballOffsetWidth / 2 - 10 + "px";
+
+      ball.style.left =
+        Math.round(field.clientWidth / 2 - ball.offsetWidth / 2) + "px";
+      ball.style.top =
+        Math.round(field.clientHeight / 2 - ball.offsetHeight / 2) + "px";
+
+      // The code won’t work reliably while <img> has no width/height:
+
+      // We should fix that by adding width/height to <img>:
+      // <img src="ball.png" width="40" height="40" id="ball">
+
+      // …Or provide the size in CSS:
+      // #ball {
+      //   width: 40px;
+      //   height: 40px;
+      // }
+      console.log(ball.offsetTop, ball.offsetLeft);
+    </script>
+  </body>
+</html>

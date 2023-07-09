@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <button>Menu (click me!)</button>
+    <button id="btn">Menu 2 (click me!)</button>
+
+    <script>
+      const menu = document.querySelector("button");
+      menu.onclick = function() {
+        console.log(1);
+
+        menu.dispatchEvent(new CustomEvent("menu-open", {
+          bubbles: true
+        }));
+
+        console.log(2);
+      }
+
+      document.addEventListener("menu-open", function() {
+        console.log("Ola tudo bem?")
+      });
+
+      const menu2 = document.getElementById("btn");
+      
+      menu2.onclick = function() {
+        console.log("v2: ", 1);
+        // instead of doing this
+        // run(menu2);
+
+        // do this
+        setTimeout(function() {
+          run(menu2);
+        });
+
+        console.log("v2: ", 2);
+        // or this
+        // run(menu2);
+      }
+
+      function run(elem) {
+        elem.dispatchEvent(new CustomEvent("menu-open-2", {
+          bubbles: true
+        }));
+      }
+
+      document.addEventListener("menu-open-2", function() {
+        console.log("Ola, tudo bem v2?");
+      });
+    </script>
+  </body>
+</html>

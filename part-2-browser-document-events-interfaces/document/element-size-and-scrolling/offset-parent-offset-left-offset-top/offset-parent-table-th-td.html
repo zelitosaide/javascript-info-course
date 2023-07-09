@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      table,
+      th,
+      td {
+        border: 1px solid black;
+      }
+
+      th,
+      td {
+        width: 200px;
+        height: 100px;
+        display: inline-block;
+        padding: 10px;
+      }
+
+      #thead,
+      #tdata {
+        border: 10px solid #e8c48f;
+      }
+    </style>
+  </head>
+  <body>
+    <table>
+      <thead id="_thead">
+        <tr id="tr">
+          <th id="th">
+            <div id="thead"></div>
+          </th>
+        </tr>
+      </thead>
+      <tbody id="tbody">
+        <tr>
+          <td id="td">
+            <div id="tdata"></div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <script>
+      // For th
+      const thead = document.getElementById("thead");
+      console.log("th:::offsetParent", thead.offsetParent);
+      console.log("th:::offsetTop", thead.offsetTop);
+      console.log("th:::offsetLeft", thead.offsetLeft);
+
+      // For td
+      const tdata = document.getElementById("tdata");
+      console.log("td:::offsetParent", tdata.offsetParent);
+      console.log("td:::offsetTop", tdata.offsetTop);
+      console.log("td:::offsetLeft", tdata.offsetLeft);
+
+      // For table
+      const tbody = document.getElementById("tbody");
+      const _thead = document.getElementById("_thead");
+      const tr = document.getElementById("tr");
+      const th = document.getElementById("th");
+      const td = document.getElementById("td");
+      console.log("offsetParent of tbody", tbody.offsetParent);
+      console.log("offsetParent of _thead", _thead.offsetParent);
+      console.log("offsetParent of tr", tr.offsetParent);
+      console.log("offsetParent of th", th.offsetParent);
+      console.log("offsetParent of td", td.offsetParent);
+    </script>
+  </body>
+</html>

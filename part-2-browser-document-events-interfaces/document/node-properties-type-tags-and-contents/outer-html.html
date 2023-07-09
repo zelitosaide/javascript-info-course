@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    Hello
+    <!-- Comment -->
+    <div>Hello, world!</div>
+
+    <script>
+      let text = document.body.firstChild;
+      console.log(text.nodeValue, text.data);
+
+      let comment = text.nextSibling;
+      console.log(comment.nodeValue, comment.data);
+    </script>
+
+    <script>
+      let div = document.querySelector("div");
+
+      // replace div.outerHTML with <p>...</p>
+      div.outerHTML = "<p>A <b>new</b> element</p>";
+
+      // Wow! 'div' is still the same!
+      console.log(div.outerHTML);
+
+      console.log(document.querySelector("p").outerHTML);
+    </script>
+  </body>
+</html>

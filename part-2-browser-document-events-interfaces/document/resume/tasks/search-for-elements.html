@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <form name="search">
+      <label
+        >Search the site:
+        <input
+          type="text"
+          name="search"
+      /></label>
+      <input
+        type="submit"
+        value="Search!"
+      />
+    </form>
+    <hr />
+    <form name="search-person">
+      Search the visitors:
+      <table id="age-table">
+        <tbody>
+          <tr>
+            <td>Age:</td>
+            <td id="age-list">
+              <label
+                ><input
+                  type="radio"
+                  name="age"
+                  value="young"
+                />less than 18</label
+              >
+              <label
+                ><input
+                  type="radio"
+                  name="age"
+                  value="mature"
+                />18-50</label
+              >
+              <label
+                ><input
+                  type="radio"
+                  name="age"
+                  value="senior"
+                />more than 50</label
+              >
+            </td>
+          </tr>
+          <tr>
+            <td>Additionally:</td>
+            <td>
+              <input
+                type="text"
+                name="info[0]"
+              />
+              <input
+                type="text"
+                name="info[1]"
+              />
+              <input
+                type="text"
+                name="info[2]"
+              />
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <input
+        type="submit"
+        value="Search!"
+      />
+    </form>
+
+    <script>
+      const table = document.getElementById("age-table");
+
+      const labels1 = table.querySelectorAll("label");
+
+      const labels2 = document.querySelectorAll("#age-table label");
+
+      const td1 = table.rows[0].cells[0];
+
+      const td2 = table.querySelector("td");
+
+      const form1 = document.getElementsByName("search")[0];
+
+      const form2 = document.querySelector("form[name='search']");
+
+      const input1 = form1.querySelector("input");
+
+      const input2 = form1.getElementsByTagName("input")[0];
+
+      const inputs = form1.querySelectorAll("input");
+
+      const lastInput = inputs[inputs.length - 1];
+
+      console.log(lastInput);
+    </script>
+  </body>
+</html>

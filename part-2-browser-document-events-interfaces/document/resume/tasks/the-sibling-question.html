@@ -1,0 +1,17 @@
+<html>
+  <body>
+    <!-- 
+      If elem – is an arbitrary DOM element node…
+
+      1. Is it true that elem.lastChild.nextSibling is always null?
+      2. Is it true that elem.children[0].previousSibling is always null?
+    -->
+    <h1>The <span>sibling</span> question</h1>
+
+    <script>
+      const elem = document.body.firstElementChild;
+      console.log(elem.lastChild.nextSibling, true);
+      console.log(elem.children[0].previousSibling);
+    </script>
+  </body>
+</html>

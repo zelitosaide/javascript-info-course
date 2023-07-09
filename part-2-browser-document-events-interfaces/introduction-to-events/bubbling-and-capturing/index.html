@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      /* body * {
+        border: 1px solid blue;
+        margin: 10px;
+      } */
+      form {
+        background-color: green;
+        position: relative;
+        width: 150px;
+        height: 150px;
+        text-align: center;
+        cursor: pointer;
+      }
+
+      div {
+        background-color: blue;
+        position: absolute;
+        top: 25px;
+        left: 25px;
+        width: 100px;
+        height: 100px;
+      }
+
+      p {
+        background-color: red;
+        position: absolute;
+        top: 25px;
+        left: 25px;
+        width: 50px;
+        height: 50px;
+        line-height: 50px;
+        margin: 0;
+      }
+
+      body {
+        line-height: 25px;
+        font-size: 16px;
+      }
+    </style>
+  </head>
+  <body onclick="console.log(`The bubbling doesn't reach here`)">
+    A click shows both <code>event.target</code> and <code>this</code> to
+    compare.
+
+    <form id="form">
+      FORM
+      <div>
+        DIV
+        <p>P</p>
+      </div>
+    </form>
+
+    <div>
+      <button
+        type="button"
+        onclick="handleClick(event)"
+      >
+        Click me!
+      </button>
+    </div>
+
+    <script>
+      function handleClick(e) {
+        console.log(e.type);
+        e.stopPropagation();
+      }
+
+      const form = document.querySelector("form");
+
+      form.onclick = function (event) {
+        event.target.style.backgroundColor = "yellow";
+        const currentTarget = event.currentTarget.tagName;
+
+        setTimeout(() => {
+          console.log("Target = " + event.target.tagName);
+          console.log("This = " + this.tagName);
+          console.log("This = " + currentTarget);
+          event.target.style.backgroundColor = "";
+        }, 1000);
+      };
+    </script>
+
+    <!-- <div onclick="alert('The handler!')">
+      <em
+        >If you click on <code>EM</code>, the handler on
+        <code>DIV</code> runs.</em
+      >
+    </div>
+
+    <form onclick="alert('form')">
+      Form
+      <div onclick="alert('div')">
+        Div
+        <p onclick="alert('p')">P</p>
+      </div>
+    </form> -->
+  </body>
+</html>

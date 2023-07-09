@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <ul>
+      <li>Hello</li>
+      <li>World</li>
+    </ul>
+    <script>
+      const ul = document.querySelector("ul");
+
+      function clear(elem) {
+        // while (elem.firstChild) {
+        //   elem.firstChild.remove();
+        // }
+        // while (elem.childNodes.length) {
+        //   elem.childNodes[elem.childNodes.length - 1].remove();
+        // }
+        // while (elem.lastChild) {
+        //   elem.lastChild.remove();
+        // }
+        // while (elem.hasChildNodes()) {
+        //   elem.firstChild.remove();
+        // }
+      }
+
+      // function clear(elem) {
+      //   for (const node of elem.childNodes) {
+      //     // This won't work
+      //     elem.removeChild(node);
+      //   }
+      // }
+
+      // This won't work
+      // function clear(elem) {
+      //   for (const node of elem.childNodes) {
+      //     node.remove();
+      //   }
+      // }
+
+      // This won't work
+      // function clear(elem) {
+      //   for (let i = 0; i < elem.childNodes.length; i++) {
+      //     elem.childNodes[i].remove();
+      //   }
+      // }
+
+      function clear(elem) {
+        elem.innerHTML = "";
+      }
+
+      clear(ul);
+
+      console.log(ul.outerHTML);
+    </script>
+  </body>
+</html>

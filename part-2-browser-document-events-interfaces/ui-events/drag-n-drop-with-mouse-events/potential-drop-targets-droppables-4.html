@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      #gate {
+        cursor: pointer;
+        margin-bottom: 100px;
+        width: 83px;
+        height: 46px;
+        display: block;
+      }
+
+      #ball {
+        width: 40px;
+        height: 40px;
+      }
+
+      .dragging {
+        position: absolute;
+        z-index: 1000;
+      }
+      
+      .grabbing {
+        opacity: 0.6;
+        cursor: grabbing;
+      }
+    </style>
+  </head>
+  <body>
+    <p>Drag the ball.</p>
+    <img src="https://en.js.cx/clipart/soccer-gate.svg" id="gate" class="droppable">
+    <img src="https://en.js.cx/clipart/ball.svg" id="ball">
+
+    <script>
+      const ball = document.getElementById("ball");
+      let currentDroppable = null;
+
+      ball.onmousedown = function(e) {
+        const shiftX = e.clientX - ball.getBoundingClientRect().left;
+        const shiftY = e.clientY - ball.getBoundingClientRect().top;
+
+        ball.className = "dragging grabbing";
+        document.body.append(ball);
+
+        moveTo(e.pageX, e.pageY);
+
+        document.addEventListener("mousemove", onMouseMove);
+
+        ball.onmouseup = function() {
+          document.removeEventListener("mousemove", onMouseMove);
+          ball.classList.remove("grabbing");
+          ball.onmouseup = null;
+
+          // On mouseup we can intellectually finalize the drop: change data, move elements around.
+          if (currentDroppable) {
+            console.log("Goal");
+          }
+        };
+
+        function moveTo(pageX, pageY) {
+          // We can limit dragging by a certain area or direction.
+          ball.style.left = pageX - shiftX + "px";
+          ball.style.top = pageY - shiftY + "px";
+        }
+
+        function onMouseMove(e) {
+          moveTo(e.pageX, e.pageY);
+
+          ball.hidden = true;
+          const elemBelow = document.elementFromPoint(e.clientX, e.clientY);
+          ball.hidden = false;
+
+          if (!elemBelow) return;
+
+          const droppableBelow = elemBelow.closest(".droppable");
+
+          if (droppableBelow !== currentDroppable) {
+            if (currentDroppable) {
+              leaveDroppable(currentDroppable);
+            }
+            currentDroppable = droppableBelow;
+            if (currentDroppable) {
+              enterDroppable(currentDroppable);
+            }
+          }
+        }
+
+        function enterDroppable(elem) {
+          elem.style.backgroundColor = "pink";
+        }
+
+        function leaveDroppable(elem) {
+          elem.style.backgroundColor = "";
+        }
+      };
+      
+      ball.ondragstart = function() {
+        return false;
+      };
+    </script>
+  </body>
+</html>

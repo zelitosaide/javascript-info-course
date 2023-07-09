@@ -1,0 +1,22 @@
+{
+  "name": "javascript-info-course",
+  "version": "1.0.0",
+  "description": "JavaScript Course",
+  "type": "module",
+  "main": "index.js",
+  "repository": "https://github.com/zelitosaide/javascript-info-course.git",
+  "author": "zelitosaide <zelitosaide83@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  },
+  "scripts": {
+    "dev": "next dev"
+  }
+  ,
+  "dependencies": {
+    "next": "^13.4.7",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <ol id="elem">
+      <li>Hello 1</li>
+      <li>Hello 2</li>
+      <li>Hello 3</li>
+      <li>Hello 4</li>
+      <li>Hello 5</li>
+      <li>Hello 6</li>
+    </ol>
+
+    <script>
+      function clear(elem) {
+        // NOT this
+        // for (let i = 0; i < elem.children.length; i++) {
+        //   elem.children[i].remove();
+        // }
+        // OR this
+        // for (const node of elem.children) {
+        //   node.remove();
+        // }
+        // BUT this
+        while (elem.firstChild) {
+          elem.firstChild.remove();
+        }
+
+        // OR this
+        elem.innerHTML = "";
+      }
+
+      clear(document.getElementById("elem"));
+    </script>
+  </body>
+</html>

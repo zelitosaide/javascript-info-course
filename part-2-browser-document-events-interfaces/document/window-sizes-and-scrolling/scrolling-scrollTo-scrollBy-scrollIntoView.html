@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <p>
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis
+      debitis reprehenderit accusantium commodi blanditiis ducimus numquam
+      beatae consectetur dolores porro temporibus maxime, tempore necessitatibus
+      modi alias, animi quibusdam ut excepturi!
+    </p>
+    <p>
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis
+      debitis reprehenderit accusantium commodi blanditiis ducimus numquam
+      beatae consectetur dolores porro temporibus maxime, tempore necessitatibus
+      modi alias, animi quibusdam ut excepturi!
+    </p>
+    <p>
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis
+      debitis reprehenderit accusantium commodi blanditiis ducimus numquam
+      beatae consectetur dolores porro temporibus maxime, tempore necessitatibus
+      modi alias, animi quibusdam ut excepturi!
+    </p>
+    <button
+      type="button"
+      onclick="disableScroll()"
+    >
+      document.body.style.overflow = `hidden`
+    </button>
+    <br />
+    <br />
+    <button
+      type="button"
+      onclick="enableScroll()"
+    >
+      document.body.style.overflow = ``
+    </button>
+    <p>
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis
+      debitis reprehenderit accusantium commodi blanditiis ducimus numquam
+      beatae consectetur dolores porro temporibus maxime, tempore necessitatibus
+      modi alias, animi quibusdam ut excepturi!
+    </p>
+    <p>
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis
+      debitis reprehenderit accusantium commodi blanditiis ducimus numquam
+      beatae consectetur dolores porro temporibus maxime, tempore necessitatibus
+      modi alias, animi quibusdam ut excepturi!
+    </p>
+    <button
+      type="button"
+      onclick="scroll10pxDown()"
+    >
+      window.scrollBy(0, 10)
+    </button>
+    <p>
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis
+      debitis reprehenderit accusantium commodi blanditiis ducimus numquam
+      beatae consectetur dolores porro temporibus maxime, tempore necessitatibus
+      modi alias, animi quibusdam ut excepturi!
+    </p>
+    <p>
+      The button below scrolls the page to position itself at the window top:
+    </p>
+    <button
+      type="button"
+      onclick="moveToTop(this)"
+    >
+      this.scrollIntoView()
+    </button>
+    <p>
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis
+      debitis reprehenderit accusantium commodi blanditiis ducimus numquam
+      beatae consectetur dolores porro temporibus maxime, tempore necessitatibus
+      modi alias, animi quibusdam ut excepturi!
+    </p>
+    <p>And this button scrolls the page to position itself at the bottom:</p>
+    <button
+      type="button"
+      onclick="moveToBottom(this)"
+    >
+      this.scrollIntoView(false)
+    </button>
+    <p>
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis
+      debitis reprehenderit accusantium commodi blanditiis ducimus numquam
+      beatae consectetur dolores porro temporibus maxime, tempore necessitatibus
+      modi alias, animi quibusdam ut excepturi!
+    </p>
+    <button
+      type="button"
+      onclick="scrollToTheBeginning()"
+    >
+      window.scrollTo(0, 0)
+    </button>
+    <p>
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis
+      debitis reprehenderit accusantium commodi blanditiis ducimus numquam
+      beatae consectetur dolores porro temporibus maxime, tempore necessitatibus
+      modi alias, animi quibusdam ut excepturi!
+    </p>
+    <p>
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis
+      debitis reprehenderit accusantium commodi blanditiis ducimus numquam
+      beatae consectetur dolores porro temporibus maxime, tempore necessitatibus
+      modi alias, animi quibusdam ut excepturi!
+    </p>
+    <p>
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis
+      debitis reprehenderit accusantium commodi blanditiis ducimus numquam
+      beatae consectetur dolores porro temporibus maxime, tempore necessitatibus
+      modi alias, animi quibusdam ut excepturi!
+    </p>
+    <p>
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis
+      debitis reprehenderit accusantium commodi blanditiis ducimus numquam
+      beatae consectetur dolores porro temporibus maxime, tempore necessitatibus
+      modi alias, animi quibusdam ut excepturi!
+    </p>
+    <p>
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis
+      debitis reprehenderit accusantium commodi blanditiis ducimus numquam
+      beatae consectetur dolores porro temporibus maxime, tempore necessitatibus
+      modi alias, animi quibusdam ut excepturi!
+    </p>
+
+    <script>
+      // To scroll the page with JavaScript, its DOM must be fully built.
+
+      // For instance, if we try to scroll the page with a script in <head>, it won’t work.
+
+      // Regular elements can be scrolled by changing scrollTop/scrollLeft.
+
+      // We can do the same for the page using document.documentElement.
+      // scrollTop/scrollLeft (except Safari, where document.body.
+      // scrollTop/Left should be used instead).
+
+      // Alternatively, there’s a simpler, universal solution: special
+      // methods window.scrollBy(x,y) and window.scrollTo(pageX,pageY).
+
+      // The method scrollBy(x,y) scrolls the page relative to its
+      // current position. For instance, scrollBy(0,10) scrolls the page
+      // 10px down.
+      function scroll10pxDown() {
+        window.scrollBy(0, 10);
+      }
+
+      // The method scrollTo(pageX,pageY) scrolls the page to absolute
+      // coordinates, so that the top-left corner of the visible part has
+      // coordinates (pageX, pageY) relative to the document’s top-left
+      // corner. It’s like setting scrollLeft/scrollTop.
+
+      // To scroll to the very beginning, we can use scrollTo(0,0).
+      function scrollToTheBeginning() {
+        window.scrollTo(0, 0);
+      }
+
+      // These methods work for all browsers the same way.
+
+      // The call to elem.scrollIntoView(top) scrolls the page to make
+      // elem visible. It has one argument:
+
+      // If top=true (that’s the default), then the page will be scrolled
+      // to make elem appear on the top of the window. The upper edge of
+      // the element will be aligned with the window top.
+
+      function moveToTop(elem) {
+        elem.scrollIntoView();
+      }
+
+      // If top=false, then the page scrolls to make elem appear at the
+      // bottom. The bottom edge of the element will be aligned with the
+      // window bottom.
+      function moveToBottom(elem) {
+        elem.scrollIntoView(false);
+      }
+
+      // To make the document unscrollable, it’s enough to set document.
+      // body.style.overflow = "hidden". The page will “freeze” at its
+      // current scroll position.
+
+      function disableScroll() {
+        document.body.style.overflow = "hidden";
+      }
+
+      function enableScroll() {
+        document.body.style.overflow = "";
+      }
+
+      // We can use the same technique to freeze the scroll for other
+      // elements, not just for document.body.
+    </script>
+  </body>
+</html>

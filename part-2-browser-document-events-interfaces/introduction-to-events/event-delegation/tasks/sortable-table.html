@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      table {
+        border-collapse: collapse;
+      }
+
+      th, td {
+        border: 1px solid black;
+        padding: 4px;
+      }
+
+      th {
+        cursor: pointer;
+      }
+
+      th:hover {
+        background-color: yellow;
+      }
+    </style>
+  </head>
+  <body>
+    <table id="grid">
+      <thead>
+        <tr>
+          <th data-type="number">Age</th>
+          <th data-type="string">Name</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>5</td>
+          <td>John</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Pete</td>
+        </tr>
+        <tr>
+          <td>12</td>
+          <td>Ann</td>
+        </tr>
+        <tr>
+          <td>9</td>
+          <td>Eugene</td>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>Ilya</td>
+        </tr>
+      </tbody>
+    </table>
+      
+    <script>
+      const table = document.getElementById("grid");
+      table.addEventListener("click", function(e) {
+        const target = e.target;
+
+        if (target.tagName !== 'TH') {
+          return;
+        }
+
+        const type = target.dataset.type;
+        const index = target.cellIndex;
+        sortTable(type, index);
+      });
+    
+      function sortTable(type, index) {
+        const rows = Array.from(table.querySelector("tbody").rows);
+        const tBody = table.querySelector('tbody');
+
+        switch(type) {
+          case "number": 
+            // table.tBodies[0].append(...rows.sort(function(rowA, rowB) {
+            tBody.append(...rows.sort(function(rowA, rowB) {
+              const a = +rowA.cells[index].innerHTML;
+              const b = +rowB.cells[index].innerHTML;
+
+              if (a < b) return -1;
+              if (a > b) return 1;
+              return 0;
+            }));
+            break;
+          case "string":
+            // table.tBodies[0].append(...rows.sort(function(rowA, rowB) {
+            tBody.append(...rows.sort(function(rowA, rowB) {
+              const a = rowA.cells[index].innerHTML.toLowerCase();
+              const b = rowB.cells[index].innerHTML.toLowerCase();
+
+              if (a < b) return -1;
+              if (a > b) return 1;  
+              return 0;
+            }));
+            break;
+          default: console.log("Invalid option!");
+        }
+      }
+    </script>
+  </body>
+</html>

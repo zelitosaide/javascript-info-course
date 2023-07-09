@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <div id="container"></div>
+
+    <script>
+      let data = {
+        Fish: {
+          trout: {},
+          salmon: {},
+        },
+
+        Tree: {
+          Huge: {
+            sequoia: {},
+            oak: {},
+          },
+          Flowering: {
+            "apple tree": {},
+            magnolia: {},
+          },
+        },
+      };
+
+      const container = document.querySelector("#container");
+      createTree(container, data);
+
+      function createTree(container, obj) {
+        container.innerHTML = createTreeText(obj);
+      }
+
+      function createTreeText(obj) {
+        if (!Object.entries(obj).length) return "";
+        let ul = "";
+        let lis = "";
+
+        for (const key in obj) {
+          lis += "<li>" + key + createTreeText(obj[key]) + "</li>";
+        }
+        ul = "<ul>" + lis + "</ul>";
+        return ul;
+      }
+    </script>
+  </body>
+</html>

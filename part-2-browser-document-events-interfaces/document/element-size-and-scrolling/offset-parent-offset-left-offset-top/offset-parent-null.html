@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      #display-none {
+        display: none;
+      }
+      #chat {
+        position: fixed;
+        top: 50px;
+        left: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="display-none">Hidden</div>
+    <div id="chat">Chat</div>
+
+    <script>
+      const displayNone = document.getElementById("display-none");
+      const notInTheDocument = document.createElement("div");
+
+      const body = document.body;
+      const html = document.documentElement;
+
+      const chat = document.getElementById("chat");
+
+      console.log("offsetParent of a hidden elem", displayNone.offsetParent);
+      console.log(
+        "offsetParent of element is not in the document",
+        notInTheDocument.offsetParent
+      );
+
+      console.log("offsetParent of body", body.offsetParent);
+      console.log("offsetParent of html", html.offsetParent);
+      console.log(
+        "offsetParent of element with position:fixed (only in chrome)",
+        chat.offsetParent
+      );
+    </script>
+  </body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <a name="list">the list</a>
+    <ul>
+      <li><a href="http://google.com">http://google.com</a></li>
+      <li><a href="/tutorial">/tutorial.html</a></li>
+      <li><a href="local/path">local/path</a></li>
+      <li><a href="ftp://ftp.com/my.zip">ftp://ftp.com/my.zip</a></li>
+      <li><a href="http://nodejs.org">http://nodejs.org</a></li>
+      <li><a href="http://internal.com/test">http://internal.com/test</a></li>
+    </ul>
+
+    <script>
+      const selector = 'a[href*="://"]:not([href^="http://internal.com"])';
+      const anchors = document.querySelectorAll(selector);
+
+      anchors.forEach(function (anchor) {
+        anchor.style.color = "orange";
+      });
+
+      // const anchors = document.querySelectorAll("a");
+
+      // for (const anchor of anchors) {
+      //   const href = anchor.getAttribute("href");
+      //   if (!href) continue;
+
+      //   if (href.startsWith("http://internal.com")) continue;
+
+      //   if (!href.includes("://")) continue;
+
+      //   anchor.style.color = "orange";
+      // }
+
+      // for (const anchor of anchors) {
+      //   const href = anchor.getAttribute("href");
+      //   const isExternal =
+      //     href.includes("://") && !href.startsWith("http://internal.com");
+
+      //   if (isExternal) {
+      //     anchor.style.color = "orange";
+      //   }
+      // }
+    </script>
+  </body>
+</html>

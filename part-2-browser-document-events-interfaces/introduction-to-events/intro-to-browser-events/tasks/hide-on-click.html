@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <input
+      type="button"
+      value="Click to hide the text"
+      id="hider"
+    />
+    <div id="text">Text</div>
+
+    <script>
+      document.querySelector("#hider").onclick = function () {
+        // document.querySelector("#text").style.display = "none";
+        document.querySelector("#text").hidden = true;
+      };
+    </script>
+  </body>
+</html>

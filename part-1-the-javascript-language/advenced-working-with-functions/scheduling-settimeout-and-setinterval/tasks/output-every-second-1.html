@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <script>
+      function printNumbers(from, to) {
+        let timerId = setTimeout(function count() {
+          console.log(from++);
+          if (from <= to) {
+            timerId = setTimeout(count, 1000);
+          } else {
+            clearTimeout(timerId);
+          }
+        }, 1000);
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h1>1. Browser environment, specs</h1>
+
+    <h1>2. DOM (Document Object Model)</h1>
+
+    <h1>3. BOM (Browser Object Model)</h1>
+
+    <p>The function alert/confirm/prompt are also a part of the BOM</p>
+
+    <script>
+      console.log("userAgent", navigator.userAgent);
+      console.log("platform", navigator.platform);
+
+      console.log("location", location.href);
+
+      if (confirm("Go to Wikipedia?")) {
+        location.href = "https://wikipedia.org";
+      }
+    </script>
+
+    <script>
+      // change the background color to red
+      document.body.style.backgroundColor = "red";
+
+      // change it back after 1 second
+      setTimeout(function () {
+        document.body.style.backgroundColor = "";
+      }, 1000);
+    </script>
+
+    <script>
+      function sayHi() {
+        console.log("Browser environment, specs: window as global object");
+      }
+
+      // global functions are methods of the global object:
+      window.sayHi();
+
+      // And we can use it as a browser window, to show the window height:
+      console.log(
+        "Browser environment, specs: window as a browser window",
+        window.innerHeight
+      );
+    </script>
+  </body>
+</html>

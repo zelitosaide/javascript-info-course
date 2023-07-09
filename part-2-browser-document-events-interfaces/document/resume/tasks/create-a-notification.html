@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      .notification {
+        position: fixed;
+        z-index: 1000;
+        padding: 5px;
+        border: 1px solid black;
+        font-size: 20px;
+        background: white;
+        text-align: center;
+      }
+
+      .welcome {
+        background: #b80000;
+        color: yellow;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Notification is on the right</h2>
+
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum
+      aspernatur quam ex eaque inventore quod voluptatem adipisci omnis nemo
+      nulla fugit iste numquam ducimus cumque minima porro ea quidem maxime
+      necessitatibus beatae labore soluta voluptatum magnam consequatur sit
+      laboriosam velit excepturi laborum sequi eos placeat et quia deleniti?
+      Corrupti velit impedit autem et obcaecati fuga debitis nemo ratione iste
+      veniam amet dicta hic ipsam unde cupiditate incidunt aut iure ipsum
+      officiis soluta temporibus. Tempore dicta ullam delectus numquam
+      consectetur quisquam explicabo culpa excepturi placeat quo sequi molestias
+      reprehenderit hic at nemo cumque voluptates quidem repellendus maiores
+      unde earum molestiae ad.
+    </p>
+
+    <script>
+      // shows an element with the text "Hello" near the right-top of the window
+      // showNotification({
+      //   top: 10, // 10px from the top of the window (by default 0px)
+      //   right: 10, // 10px from the right edge of the window (by default 0px)
+      //   html: "Hello!", // the HTML of notification
+      //   className: "welcome", // an additional class for the div (optional)
+      // });
+
+      // test it
+      let i = 1;
+      setInterval(() => {
+        showNotification({
+          top: 10,
+          right: 10,
+          html: "Hello " + i++,
+          className: "welcome",
+        });
+      }, 2000);
+
+      function showNotification({ top = 0, right = 0, html, className }) {
+        const alert = document.createElement("div");
+        alert.className = "notification";
+        alert.innerHTML = html;
+        alert.style.top = top + "px";
+        alert.style.right = right + "px";
+        if (className) {
+          alert.classList.add(className);
+        }
+        document.body.append(alert);
+
+        setTimeout(function () {
+          alert.remove();
+        }, 1500);
+      }
+    </script>
+  </body>
+</html>

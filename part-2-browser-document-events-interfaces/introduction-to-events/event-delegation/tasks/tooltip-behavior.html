@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body {
+        background-color: lightgreen;
+        height: 2000px;
+      }
+
+      .tooltip {
+        position: fixed;
+        padding: 10px 20px;
+        border-radius: 4px;
+        text-align: center;
+        font: italic 14px/1.3 sans-serif;
+        border: 1px solid #b3c9ce;
+        color: #333;
+        background-color: #fff;
+        box-shadow: 3px 3px 3px rgba(0, 0, 0, .3);
+      }
+    </style>
+  </head>
+  <body>
+    <p>
+      LaLaLa LaLaLa LaLaLa LaLaLa LaLaLa LaLaLa LaLaLa LaLaLa LaLaLa
+    </p>
+    <p>
+      LaLaLa LaLaLa LaLaLa LaLaLa LaLaLa LaLaLa LaLaLa LaLaLa LaLaLa
+    </p>
+    <div>
+      <button data-tooltip="HTML<br />Tooltip">
+        One more button
+      </button>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <button data-tooltip="The tooltip is longer than the element">
+      Short button
+    </button>
+
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <div>  
+      <button data-tooltip="HTML<br />Tooltip">
+        One more button
+      </button>
+      <button data-tooltip="The tooltip is longer than the element">
+        Short button
+      </button>
+    </div>
+
+    <script>
+      document.onmouseover = function(e) {
+        const target = e.target;
+        if (!target.dataset.tooltip) {
+          return;
+        }        
+        const tooltip = document.createElement("div");
+        const buttonCoords = target.getBoundingClientRect();
+        tooltip.className = "tooltip";
+        tooltip.innerHTML = target.dataset.tooltip;
+        document.body.append(tooltip);
+
+        tooltip.style.top = buttonCoords.top - tooltip.offsetHeight - 5 + "px";
+        tooltip.style.left = buttonCoords.left + target.offsetWidth / 2 - tooltip.offsetWidth / 2 + "px";
+        
+        const tooltipCoords = tooltip.getBoundingClientRect();
+
+        if (tooltipCoords.top < 0) {
+          tooltip.style.top = buttonCoords.bottom + 5 + "px";
+        }
+
+        if (tooltipCoords.left < 8) {
+          tooltip.style.left = buttonCoords.left + "px";
+        }
+      }
+
+      document.onmouseout = function(e) {
+        const target = e.target;
+        if (!target.dataset.tooltip) {
+          return;
+        }
+        document.querySelector(".tooltip").remove();
+      }
+    </script>
+  </body>
+</html>

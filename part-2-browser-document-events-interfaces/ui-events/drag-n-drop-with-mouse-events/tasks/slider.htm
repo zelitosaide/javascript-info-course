@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      .slider {
+        background-color: #E0E0E0;
+        width: 310px;
+        height: 15px;
+        margin: 5px;
+        border-radius: 5px;
+      }
+
+      .thumb {
+        width: 10px;
+        height: 25px;
+        background-color: blue;
+        position: relative;
+        border-radius: 3px;
+        cursor: pointer;
+        left: 10px;
+        top: -5px;
+      }
+
+      .grabbing {
+        cursor: grabbing;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="slider" class="slider">
+      <div class="thumb"></div>
+    </div>
+
+    <script>
+      const thumb = document.querySelector(".thumb");
+      const slider = document.getElementById("slider");
+
+      thumb.onmousedown = function(e) {
+        // prevent selection start (browser action)
+        e.preventDefault(); 
+
+        const shift = e.clientX - thumb.getBoundingClientRect().left + slider.getBoundingClientRect().left;
+        document.body.classList.add("grabbing");
+        thumb.classList.add("grabbing");
+
+        document.addEventListener("mousemove", onMouseMove);
+        document.addEventListener("mouseup", onMouseUp);
+
+        function onMouseUp(e) {
+          document.body.classList.remove("grabbing");
+          thumb.classList.remove("grabbing");
+          document.removeEventListener("mousemove", onMouseMove);
+          document.removeEventListener("mouseup", onMouseUp);
+        }
+
+        function onMouseMove(e) {
+          let left = e.pageX - shift;
+          const min = 0, 
+            max = slider.clientWidth - thumb.clientWidth;
+
+          if (left < min) {
+            left = min;
+          }
+
+          if (left > max) {
+            left = max;
+          }
+
+          thumb.style.left = left + "px";
+        }
+      };
+    </script>
+  </body>
+</html>

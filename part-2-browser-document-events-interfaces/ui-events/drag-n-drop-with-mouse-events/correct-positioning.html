@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      .dragging {
+        position: absolute;
+        z-index: 1000;
+      }
+      
+      .grabbing {
+        opacity: 0.6;
+        cursor: grabbing;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Drag and drop algorithm</h2>
+    <img src="https://en.js.cx/clipart/ball.svg" id="ball">
+
+    <script>
+      const ball = document.getElementById("ball");
+
+      ball.ondragstart = function(e) {
+        e.preventDefault();
+      }
+
+      ball.onmousedown = function(e) {
+        const shiftX = e.clientX - ball.getBoundingClientRect().left;
+        const shiftY = e.clientY - ball.getBoundingClientRect().top;
+
+        // (1) prepare to moving: make absolute and on top by z-index
+        ball.className = "dragging grabbing";
+
+        // move it out of any current parents directly into body
+        // to make it positioned relative to the body
+        document.body.append(ball);
+
+        // move our absolutely positioned ball under the pointer
+        moveTo(e.pageX, e.pageY);
+
+        // (2) move the ball on mousemove
+        document.addEventListener("mousemove", onMouseMove);
+
+        // (3) drop the ball, remove unneeded handlers
+        ball.onmouseup = function() {
+          ball.classList.remove("grabbing");
+          document.removeEventListener("mousemove", onMouseMove);
+          ball.onmouseup = null;
+        };
+
+        function onMouseMove(e) {
+          moveTo(e.pageX, e.pageY);
+        }
+
+        // centers the ball at (pageX, pageY) coordinates
+        function moveTo(pageX, pageY) {
+          ball.style.top = pageY - shiftY + "px";
+          ball.style.left = pageX - shiftX + "px";
+        }
+      };
+
+      // Quando clicas depois de realizar o drag and drop ele deixa a bola:
+      // function onMouseMove(e) {
+      //   moveTo(e.pageX, e.pageY);
+      // }
+
+      // function moveTo(pageX, pageY) {
+      //   ball.style.top = pageY - ball.offsetHeight / 2 + "px";
+      //   ball.style.left = pageX - ball.offsetWidth / 2 + "px";
+      // }
+    </script>
+  </body>
+</html>

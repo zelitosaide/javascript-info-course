@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body * {
+        margin: 10px;
+        border: 1px solid blue;
+      }
+    </style>
+  </head>
+  <body>
+    <form>
+      FORM
+      <div>
+        DIV
+        <p>p</p>
+      </div>
+    </form>
+
+    <script>
+      // addEventListener(..., true)
+      // removeEventListener(..., true)
+      for (const elem of document.querySelectorAll("*")) {
+        elem.addEventListener(
+          "click",
+          function (e) {
+            e.stopPropagation();
+            console.log(
+              `Capturing ${elem.tagName} eventPhase: ${e.eventPhase}`
+            );
+          },
+          { capture: true }
+        );
+
+        elem.addEventListener(
+          "click",
+          function (e) {
+            // e.stopPropagation();
+            console.log(`Bubbling ${elem.tagName} eventPhase: ${e.eventPhase}`);
+          },
+          { capture: false }
+        );
+      }
+      // document.addEventListener(
+      //   "click",
+      //   function (e) {
+      //     console.log(e.type);
+      //   },
+      //   { capture: true }
+      // );
+
+      // document.addEventListener(
+      //   "click",
+      //   function (e) {
+      //     console.log(e.target.tagName);
+      //   },
+      //   true
+      // );
+    </script>
+  </body>
+</html>

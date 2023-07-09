@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <input type="text" value="Mouse over me">
+
+    <script>
+      const input = document.querySelector("input");
+      input.onmousemove = function(e) {
+        this.value = e.clientX + ":" + e.clientY;
+      } 
+
+      document.addEventListener("mousemove", function(e) {
+        console.log(e.pageX, e.pageY);
+      });
+    </script>
+  </body>
+</html>

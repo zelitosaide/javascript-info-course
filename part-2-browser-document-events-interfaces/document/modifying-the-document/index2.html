@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      .alert {
+        padding: 15px;
+        border: 1px solid #d6e9c6;
+        border-radius: 4px;
+        color: #3c763d;
+        background-color: #dff0d8;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      id="html-example"
+      class="alert"
+    >
+      <strong>Hi there!</strong> You've read an important message.
+    </div>
+
+    <ol id="ol">
+      <li>0</li>
+      <li>1</li>
+      <li>2</li>
+    </ol>
+
+    <div id="div"></div>
+
+    <script>
+      document
+        .getElementById("div")
+        .before("<p>Hello World!</p>", document.createElement("hr"));
+
+      setTimeout(function () {
+        document.getElementById("div").previousElementSibling.remove();
+        document.getElementById("div").previousSibling.remove();
+        document.getElementById("div").remove();
+      }, 4000);
+    </script>
+
+    <ul id="ul"></ul>
+
+    <script>
+      document.getElementById("ul").append(...document.querySelectorAll("li"));
+
+      setTimeout(function () {
+        document.getElementById("ul").remove();
+      }, 5000);
+    </script>
+
+    <script>
+      setTimeout(function () {
+        document.getElementById("html-example").remove();
+      }, 1000);
+    </script>
+
+    <div id="using-adjacent-html"></div>
+
+    <script>
+      const usingAdjacentHtml = document.getElementById("using-adjacent-html");
+      usingAdjacentHtml.insertAdjacentHTML("afterbegin", "<p>After Begin</p>");
+      usingAdjacentHtml.insertAdjacentHTML("beforeend", "<p>Before End</p>");
+      usingAdjacentHtml.insertAdjacentHTML("afterend", "<p>After End</p>");
+      usingAdjacentHtml.insertAdjacentHTML(
+        "beforebegin",
+        "<p>Before Begin</p>"
+      );
+
+      setTimeout(function () {
+        usingAdjacentHtml.nextElementSibling.remove();
+        usingAdjacentHtml.previousElementSibling.remove();
+        usingAdjacentHtml.remove();
+      }, 6000);
+    </script>
+
+    <ul id="ul-id">
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+    </ul>
+
+    <script>
+      const ulElem = document.getElementById("ul-id");
+      ulElem.insertAdjacentHTML("beforebegin", "<p>Before Begin</p>");
+      ulElem.insertAdjacentHTML("afterbegin", "<li>After Begin</li>");
+      ulElem.insertAdjacentHTML("beforeend", "<li>Before End</li>");
+      ulElem.insertAdjacentHTML("afterend", "<p>After End</p>");
+      ulElem.insertAdjacentHTML("beforebegin", "<!-- Comment -->");
+
+      setTimeout(function () {
+        ulElem.previousElementSibling.remove();
+        ulElem.previousSibling.remove();
+        ulElem.nextElementSibling.remove();
+        ulElem.remove();
+      }, 7000);
+    </script>
+
+    <script>
+      document.body.insertAdjacentHTML(
+        "afterbegin",
+        "<div class='alert'><strong>Hi there!</strong> You've read an important message.</div>"
+      );
+
+      setTimeout(function () {
+        document.querySelector(".alert").remove();
+      }, 8000);
+    </script>
+
+    <script>
+      const removedDiv = document.createElement("div");
+      removedDiv.className = "alert";
+      removedDiv.innerHTML =
+        "<strong>Hi there!</strong> You've read an important message.";
+      document.body.append(removedDiv);
+
+      setTimeout(function () {
+        removedDiv.remove();
+      }, 9000);
+    </script>
+
+    <div id="first">First</div>
+    <div id="second">Second</div>
+
+    <script>
+      // no need to call remove
+      document.getElementById("second").after(document.getElementById("first")); // take #second and after it insert #first
+
+      setTimeout(function () {
+        document.getElementById("first").remove();
+        document.getElementById("second").remove();
+      }, 10000);
+    </script>
+
+    <div
+      class="alert"
+      id="div-1"
+    >
+      <strong>Hi there!</strong> You've read an important message.
+    </div>
+
+    <script>
+      const div2 = document.getElementById("div-1").cloneNode(true); // clone the message
+      div2.querySelector("strong").innerHTML = "Bye there!"; // change the clone
+
+      document.getElementById("div-1").after(div2); // show the clone after the existing div
+
+      const div3 = document.getElementById("div-1").cloneNode(false);
+      console.log(div3.outerHTML);
+
+      setTimeout(function () {
+        document.getElementById("div-1").remove();
+        document.getElementById("div-1").remove();
+      }, 11000);
+    </script>
+
+    <ul id="ul-with-fragment"></ul>
+
+    <script>
+      function getListContent() {
+        const fragment = new DocumentFragment();
+        for (let i = 1; i <= 4; i++) {
+          const li = document.createElement("li");
+          li.append(i);
+          fragment.append(li);
+        }
+        return fragment;
+      }
+
+      const ulWithFragment = document.getElementById("ul-with-fragment");
+
+      ulWithFragment.append(getListContent());
+
+      setTimeout(function () {
+        ulWithFragment.remove();
+      }, 12000);
+    </script>
+
+    <ul id="ul-with-array"></ul>
+
+    <script>
+      function getListContentUsingArray() {
+        const result = [];
+        for (let i = 1; i <= 4; i++) {
+          const li = document.createElement("li");
+          li.append(i);
+          result.push(li);
+        }
+        return result;
+      }
+
+      const ulWithArray = document.getElementById("ul-with-array");
+      ulWithArray.append(...getListContentUsingArray());
+
+      setTimeout(function () {
+        ulWithArray.remove();
+      }, 13000);
+    </script>
+
+    <ol id="old-school-list">
+      <li>1-</li>
+      <li>2-</li>
+      <li>3-</li>
+    </ol>
+
+    <script>
+      const oldSchoolList = document.getElementById("old-school-list");
+      const listItem = document.createElement("li");
+      listItem.innerHTML = "Append Child";
+      const appendChild = oldSchoolList.appendChild(listItem);
+
+      // parentElem.insertBefore(node, nextSibling)
+      const listItem2 = document.createElement("li");
+      listItem2.innerHTML = "Insert Before";
+      const nextSibling = oldSchoolList.children[1];
+
+      const insertBefore = oldSchoolList.insertBefore(listItem2, nextSibling);
+
+      const insertAsFirstElement = document.createElement("li");
+      insertAsFirstElement.innerHTML = "Insert as First Element";
+      oldSchoolList.insertBefore(
+        insertAsFirstElement,
+        oldSchoolList.firstChild
+      );
+
+      // parentElem.replaceChild(node, oldChild)
+      const oldChild = oldSchoolList.children[4];
+      const newNode = document.createElement("li");
+      newNode.innerHTML = "Replaced Child";
+      const replacedNode = oldSchoolList.replaceChild(newNode, oldChild);
+
+      // parentElem.removeChild(node)
+      const removedChild = oldSchoolList.removeChild(
+        oldSchoolList.lastElementChild
+      );
+
+      setTimeout(function () {
+        oldSchoolList.remove();
+      }, 14000);
+    </script>
+
+    <p>Somewhere in the page...</p>
+    <script>
+      document.write("<h4>Hello from JS</h4>");
+    </script>
+    <p>The end</p>
+
+    <script>
+      setTimeout(function () {
+        document.write("<h4 style='color:red'>...Bye</h4>");
+      }, 15000);
+    </script>
+
+    <script src="index2.js"></script>
+  </body>
+</html>
+
+<!-- https://mundoeducacao.uol.com.br/fisica/resistores.htm -->

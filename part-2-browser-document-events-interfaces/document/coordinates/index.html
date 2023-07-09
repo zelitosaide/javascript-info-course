@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      h1 {
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Element Coordinate: getBoundingClientRect</h1>
+
+    <div>
+      <p>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil
+        distinctio quam sint tenetur et. Odit labore unde delectus quisquam
+        deleniti sint voluptatibus modi? Unde doloribus molestiae quisquam enim.
+        Dolorem, reiciendis!
+      </p>
+    </div>
+
+    <div>
+      <p id="coords-show-mark">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil
+        distinctio quam sint tenetur et. Odit labore unde delectus quisquam
+        deleniti sint voluptatibus modi? Unde doloribus molestiae quisquam enim.
+        Dolorem, reiciendis!
+      </p>
+    </div>
+
+    <div>
+      <p>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil
+        distinctio quam sint tenetur et. Odit labore unde delectus quisquam
+        deleniti sint voluptatibus modi? Unde doloribus molestiae quisquam enim.
+        Dolorem, reiciendis!
+      </p>
+    </div>
+
+    <div>
+      <p>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil
+        distinctio quam sint tenetur et. Odit labore unde delectus quisquam
+        deleniti sint voluptatibus modi? Unde doloribus molestiae quisquam enim.
+        Dolorem, reiciendis!
+      </p>
+    </div>
+
+    <h2>Document Coordenates</h2>
+
+    <script>
+      // get document coordinates of the element
+      function getCoords(elem) {
+        const box = elem.getBoundingClientRect();
+
+        return {
+          top: box.top + window.pageYOffset,
+          right: box.right + window.pageXOffset,
+          bottom: box.bottom + window.pageYOffset,
+          left: box.left + window.pageXOffset,
+        };
+      }
+    </script>
+
+    <div>
+      <p>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil
+        distinctio quam sint tenetur et. Odit labore unde delectus quisquam
+        deleniti sint voluptatibus modi? Unde doloribus molestiae quisquam enim.
+        Dolorem, reiciendis!
+      </p>
+    </div>
+
+    <div>
+      <p>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil
+        distinctio quam sint tenetur et. Odit labore unde delectus quisquam
+        deleniti sint voluptatibus modi? Unde doloribus molestiae quisquam enim.
+        Dolorem, reiciendis!
+      </p>
+    </div>
+
+    <h2>elementFromPoint(x, y)</h2>
+
+    <button
+      onclick="handleClick()"
+      type="button"
+    >
+      Using for "fixed" positioning
+    </button>
+
+    <script>
+      const elem3 = document.getElementById("coords-show-mark");
+
+      function createMessageUnder(elem, html) {
+        // create message element
+        const message = document.createElement("div");
+
+        // better to use a css class for the style here
+        // message.style.cssText = "position: fixed; color: red";
+        message.style.cssText = "position: absolute; color: red";
+
+        // assign coordenates, don't forget 'px'!
+        // const coords = elem.getBoundingClientRect();
+        const coords = getCoords(elem);
+
+        message.style.left = coords.left + "px";
+        message.style.top = coords.bottom + "px";
+
+        message.innerHTML = html;
+
+        return message;
+      }
+
+      // Usage:
+      // add it for 5 seconds in the document
+
+      function handleClick() {
+        const message = createMessageUnder(elem3, "Hello, world!");
+        document.body.append(message);
+        setTimeout(function () {
+          message.remove();
+        }, 5000);
+      }
+    </script>
+
+    <script>
+      const centerX = document.documentElement.clientWidth / 2;
+      const centerY = document.documentElement.clientHeight / 2;
+
+      const elem = document.elementFromPoint(centerX, centerY);
+
+      if (elem) {
+        // elem.style.cssText = "color: white; background: red; padding: 10px";
+        console.log(elem);
+      }
+
+      const elem2 = document.elementFromPoint(10, 1000);
+      console.log(elem2);
+    </script>
+
+    <script>
+      const h1 = document.querySelector("h1");
+      console.log(h1.getBoundingClientRect());
+    </script>
+  </body>
+</html>

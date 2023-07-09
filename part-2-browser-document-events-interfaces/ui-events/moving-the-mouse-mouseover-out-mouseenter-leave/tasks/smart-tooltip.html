@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body {
+        margin: 0;
+      }
+
+      .hours {
+        color: red;
+      }
+
+      .minutes {
+        color: green;
+      }
+
+      .seconds {
+        color: blue;
+      }
+
+      .clock {
+        padding: 5px;
+        border: 1px dashed black;
+        display: inline-block;
+        background-color: yellow;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+
+      #tooltip {
+        position: absolute;
+        padding: 10px 20px;
+        border: 1px solid #b3c9ce;
+        border-radius: 4px;
+        text-align: center;
+        font: italic 14px/1.3 sans-serif;
+        color: #333;
+        background-color: #fff;
+        z-index: 100000;
+        box-shadow: 3px 3px 3px rgba(0, 0, 0, .3);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="elem" class="clock">
+      <span class="hours">12</span> :
+      <span class="minutes">30</span> :
+      <span class="seconds">00</span>
+    </div>
+
+    <div id="tooltip" hidden>Tooltip</div>
+
+    <h1 style="color: red; margin-top: 60px;">Ainda por terminar!!!</h1>
+
+    <script>
+      "use strict";
+      class HoverIntent {
+        constructor({ sensitivity = 0.1, interval = 100, elem, over, out }) {
+          this.sensitivity = sensitivity;
+          this.interval = interval;
+          this.elem = elem;
+          this.over = over;
+          this.out = out;
+
+          // make sure "this" is the object in event handlers.
+          this.onMouseMove = this.onMouseMove.bind(this);
+          this.onMouseOver = this.onMouseOver.bind(this);
+          this.onMouseOut = this.onMouseOut.bind(this);
+
+          // and in time-measuring function (called from setInterval)
+          this.trackSpeed = this.trackSpeed.bind(this);
+
+          elem.addEventListener("mouseover", this.onMouseOver);
+          elem.addEventListener("mouseout", this.onMouseOut);
+        }
+
+        onMouseOver(e) {
+          console.log(e);
+        }
+
+        onMouseOut(e) {
+          console.log(e);
+        }
+
+        onMouseMove(e) {
+          console.log(e);
+        }
+
+        trackSpeed(e) {
+          console.log(e);
+        }
+      }
+
+      const clock = document.getElementById("elem");
+      const tooltip = document.getElementById("tooltip");
+
+      const obj = new HoverIntent({ 
+        elem: clock, 
+        over() {
+          tooltip.style.top = clock.getBoundingClientRect().bottom + 5 + "px";
+          tooltip.style.left = clock.getBoundingClientRect().left + 5 + "px";
+          tooltip.hidden = false;
+        }, 
+        out() {
+          tooltip.hidden = true;
+        }
+      });
+    </script>
+  </body>
+</html>

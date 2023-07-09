@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        background-color: lightcoral;
+      }
+
+      #container {
+        position: relative;
+        width: 400px;
+        height: 300px;
+        background-color: lightsteelblue;
+        margin: 20px auto;
+      }
+
+      #snake {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 16px;
+        height: 16px;
+        background-color: black;
+      }
+
+      #food {
+        position: absolute;
+        left: 100px;
+        top: 0;
+        width: 16px;
+        height: 16px;
+        background-color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <div id="snake"></div>
+      <div id="food"></div>
+    </div>
+
+    <script>
+      const snake = document.getElementById("snake");
+      let intervalId;
+      const speed = 50;
+
+      // Food
+      const food = document.getElementById("food");
+      const foodCoords = food.getBoundingClientRect();
+
+      function move(horizontal = true, value) {
+        const styles = getComputedStyle(snake);
+        const snakeCoords = snake.getBoundingClientRect();
+
+        if (food.offsetParent && snakeCoords.right >= foodCoords.left) {
+          snake.style.width = snake.getBoundingClientRect().width + 16 + "px";
+          // console.log(snake.getBoundingClientRect().width);
+          console.log("snakeCoords: " + snakeCoords.right + ", foodCoords: " + foodCoords.left);
+          food.remove();
+        }
+
+        if (horizontal) {
+          const left = +styles.left.split("px")[0];
+          snake.style.left = left + value + "px";
+        } else {
+          const top = +styles.top.split("px")[0];
+          snake.style.top = top + value + "px";
+        }
+      }
+
+      function changeDirection(direction) {
+        const styles = getComputedStyle(snake);
+        clearInterval(intervalId);
+
+        switch(direction) {
+          case "ArrowLeft":
+            move(true, -5);
+            intervalId = setInterval(function() {
+              move(true, -5);
+            }, speed);
+            break;
+          case "ArrowRight":
+            move(true, 5);
+            intervalId = setInterval(function() {
+              move(true, 5);
+            }, speed);
+            break;
+          case "ArrowDown":
+            move(false, 5);
+            intervalId = setInterval(function() {
+              move(false, 5);
+            }, speed);
+            break;
+          case "ArrowUp":
+            move(false, -5);
+            intervalId = setInterval(function() {
+              move(false, -5);
+            }, speed);
+            break;
+        }
+      }
+
+      document.addEventListener("keydown", function(e) {
+        changeDirection(e.key);
+      });
+    </script>
+  </body>
+</html>

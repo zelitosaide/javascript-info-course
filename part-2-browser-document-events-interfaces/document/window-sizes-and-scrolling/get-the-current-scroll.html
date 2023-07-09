@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+  <body onscroll="showScrollTop()">
+    <p>
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis
+      debitis reprehenderit accusantium commodi blanditiis ducimus numquam
+      beatae consectetur dolores porro temporibus maxime, tempore necessitatibus
+      modi alias, animi quibusdam ut excepturi!
+    </p>
+    <p>
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis
+      debitis reprehenderit accusantium commodi blanditiis ducimus numquam
+      beatae consectetur dolores porro temporibus maxime, tempore necessitatibus
+      modi alias, animi quibusdam ut excepturi!
+    </p>
+    <p>
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis
+      debitis reprehenderit accusantium commodi blanditiis ducimus numquam
+      beatae consectetur dolores porro temporibus maxime, tempore necessitatibus
+      modi alias, animi quibusdam ut excepturi!
+    </p>
+    <p>
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis
+      debitis reprehenderit accusantium commodi blanditiis ducimus numquam
+      beatae consectetur dolores porro temporibus maxime, tempore necessitatibus
+      modi alias, animi quibusdam ut excepturi!
+    </p>
+    <p>
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis
+      debitis reprehenderit accusantium commodi blanditiis ducimus numquam
+      beatae consectetur dolores porro temporibus maxime, tempore necessitatibus
+      modi alias, animi quibusdam ut excepturi!
+    </p>
+    <p>
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis
+      debitis reprehenderit accusantium commodi blanditiis ducimus numquam
+      beatae consectetur dolores porro temporibus maxime, tempore necessitatibus
+      modi alias, animi quibusdam ut excepturi!
+    </p>
+    <p>
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis
+      debitis reprehenderit accusantium commodi blanditiis ducimus numquam
+      beatae consectetur dolores porro temporibus maxime, tempore necessitatibus
+      modi alias, animi quibusdam ut excepturi!
+    </p>
+    <p>
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis
+      debitis reprehenderit accusantium commodi blanditiis ducimus numquam
+      beatae consectetur dolores porro temporibus maxime, tempore necessitatibus
+      modi alias, animi quibusdam ut excepturi!
+    </p>
+    <p>
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis
+      debitis reprehenderit accusantium commodi blanditiis ducimus numquam
+      beatae consectetur dolores porro temporibus maxime, tempore necessitatibus
+      modi alias, animi quibusdam ut excepturi!
+    </p>
+    <p>
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis
+      debitis reprehenderit accusantium commodi blanditiis ducimus numquam
+      beatae consectetur dolores porro temporibus maxime, tempore necessitatibus
+      modi alias, animi quibusdam ut excepturi!
+    </p>
+    <p>
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis
+      debitis reprehenderit accusantium commodi blanditiis ducimus numquam
+      beatae consectetur dolores porro temporibus maxime, tempore necessitatibus
+      modi alias, animi quibusdam ut excepturi!
+    </p>
+    <p>
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis
+      debitis reprehenderit accusantium commodi blanditiis ducimus numquam
+      beatae consectetur dolores porro temporibus maxime, tempore necessitatibus
+      modi alias, animi quibusdam ut excepturi!
+    </p>
+    <p>
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis
+      debitis reprehenderit accusantium commodi blanditiis ducimus numquam
+      beatae consectetur dolores porro temporibus maxime, tempore necessitatibus
+      modi alias, animi quibusdam ut excepturi!
+    </p>
+
+    <script>
+      function showScrollTop() {
+        // Did not work
+        // const body = document.body;
+        // console.log("scrollTop from body", body.scrollTop);
+
+        // But this work
+        const html = document.documentElement;
+
+        // Or this
+        const pageYOffset = window.pageYOffset;
+        const pageXOffset = window.pageXOffset;
+
+        // Or this
+        // Also available as window properties scrollX and scrollY
+        const scrollY = window.scrollY;
+        const scrollX = window.scrollX;
+        console.log(
+          "scrollTop form html",
+          html.scrollTop,
+          pageYOffset,
+          scrollY
+        );
+
+        console.log("scrollLeft", html.scrollLeft, pageXOffset, scrollX);
+      }
+    </script>
+  </body>
+</html>

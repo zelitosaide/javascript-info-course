@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      /* styles rely on the custom attribute "order-state" */
+      .order[order-state="new"],
+      .order[data-order-state="new"] {
+        color: green;
+      }
+      .order[order-state="pending"],
+      .order[data-order-state="pending"] {
+        color: blue;
+      }
+      .order[order-state="canceled"],
+      .order[data-order-state="canceled"] {
+        color: red;
+      }
+    </style>
+  </head>
+  <body
+    id="test"
+    something="no-standard"
+    type="..."
+    data-about="Elephants"
+  >
+    <div
+      id="order"
+      class="order"
+      data-order-state="new"
+    >
+      A new order.
+    </div>
+
+    <div
+      class="order"
+      data-order-state="pending"
+    >
+      A pending order.
+    </div>
+
+    <div
+      class="order"
+      data-order-state="canceled"
+    >
+      A canceled order.
+    </div>
+
+    <script>
+      // read
+      console.log(order.dataset.orderState);
+
+      // modify
+      order.dataset.orderState = "pending";
+
+      console.log("DATA SET", document.body.dataset.about);
+    </script>
+
+    <div
+      class="order"
+      order-state="new"
+    >
+      A new order.
+    </div>
+
+    <div
+      class="order"
+      order-state="pending"
+    >
+      A pending order.
+    </div>
+
+    <div
+      class="order"
+      order-state="canceled"
+    >
+      A canceled order.
+    </div>
+
+    <!-- mark the div to show "name" here -->
+    <div show-info="name"></div>
+    <!-- and age here -->
+    <div show-info="age"></div>
+
+    <script>
+      // the code finds an element with the mark and shows what's requested
+      const user = {
+        name: "Pete",
+        age: 25,
+      };
+
+      for (const div of document.querySelectorAll("[show-info]")) {
+        // insert the corresponding info into the field
+        const field = div.getAttribute("show-info");
+        div.innerHTML = user[field]; // first Pete into "name", then 25 into "age"
+      }
+    </script>
+
+    <a
+      id="a"
+      href="#hello"
+    >
+      link
+    </a>
+
+    <script>
+      // attritbute
+      console.log(a.getAttribute("href"));
+
+      // property
+      console.log(a.href);
+    </script>
+
+    <div
+      id="div"
+      style="color: red; font-size: 120%"
+    >
+      Hello
+    </div>
+
+    <script>
+      console.log(div.getAttribute("style"));
+      console.log(div.style["font-size"]);
+      console.log(div.style.color);
+    </script>
+
+    <label>
+      checkbox
+      <input
+        id="checkbox"
+        type="checkbox"
+        checked
+      />
+    </label>
+
+    <script>
+      console.log(checkbox.getAttribute("checked"));
+      console.log(checkbox.checked);
+    </script>
+
+    <label>
+      Name:
+      <input type="text" />
+    </label>
+
+    <script>
+      const input = document.querySelector("input");
+
+      // attribute => property
+      input.setAttribute("id", "id");
+      console.log(input.id); // id (updated)
+
+      // property => attribute
+      input.id = "newId";
+      console.log(input.getAttribute("id")); // newId (updated)
+
+      console.log("-------------");
+
+      // attribute => property
+      input.setAttribute("value", ":::Zelito");
+      console.log(input.value); // :::Zelito
+
+      // NOT property => attribute
+      input.value = ":::newValue";
+      console.log(input.getAttribute("value")); // Zelito (not updated!)
+
+      console.log(input.outerHTML);
+    </script>
+
+    <h1>Attributes and Properties</h1>
+
+    <script>
+      const hasSomething = document.body.hasAttribute("something");
+
+      if (hasSomething) {
+        const something = document.body.getAttribute("something");
+        console.log(something);
+      }
+
+      document.body.setAttribute("nome", "zelito");
+
+      if (document.body.hasAttribute("type")) {
+        document.body.removeAttribute("type");
+      }
+
+      const attributes = document.body.attributes;
+
+      for (const { name, value } of attributes) {
+        console.log(name + ":" + value);
+      }
+    </script>
+
+    <div
+      id="elem"
+      about="Elephant"
+    ></div>
+
+    <script>
+      console.log("ID: " + elem.getAttribute("ID"));
+      elem.setAttribute("Test", 123);
+
+      console.log("TEST: " + elem.getAttribute("TEST"));
+
+      console.log(elem.outerHTML);
+
+      for (const attr of elem.attributes) {
+        console.log(attr.name + " = " + attr.value);
+      }
+    </script>
+
+    <input
+      id="input"
+      type="text"
+    />
+
+    <script>
+      console.log(input.type);
+      console.log(test.type);
+    </script>
+
+    <script>
+      console.log(document.body.id);
+      // non-standard attribute doesn't yield a property
+
+      console.log(document.body.something); // undefined
+    </script>
+    <script src="index.js"></script>
+  </body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <p 
+      ondblclick="console.log('dblclick');"
+    >
+      Double click me
+    </p>
+
+    Before...
+    <b 
+      ondblclick="console.log('Ups, you double clicked me!')"
+      onmousedown="event.preventDefault();"
+    >
+      Double click me
+    </b>
+    ...After
+
+    <script>
+      console.log("Ola, tudo bem?");
+    </script>
+  </body>
+</html>

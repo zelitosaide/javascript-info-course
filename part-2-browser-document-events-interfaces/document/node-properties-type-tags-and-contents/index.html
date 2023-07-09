@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <!--comment-->
+    <p>A paragraph</p>
+    <div>A div</div>
+
+    <script>
+      console.log(document.body.innerHTML);
+      document.body.innerHTML = "The new BODY!";
+      console.log(document.body.innerHTML);
+    </script>
+
+    <script>
+      document.body.innerHTML = "<b>Test";
+      console.log(document.body.innerHTML);
+    </script>
+
+    <script>
+      document.body.innerHTML = '<script>console.log("Ola")';
+      document.body.innerHTML += "<div>Hello";
+      document.body.innerHTML += "How goes?";
+    </script>
+
+    <div id="elem">Hello <b>world</b></div>
+
+    <script>
+      alert(typeof elem.outerHTML + elem.outerHTML);
+    </script>
+
+    <script>
+      console.log(
+        document.getElementById("elem").outerHTML,
+        typeof document.getElementById("elem").outerHTML
+      );
+    </script>
+    <script src="index.js"></script>
+  </body>
+</html>

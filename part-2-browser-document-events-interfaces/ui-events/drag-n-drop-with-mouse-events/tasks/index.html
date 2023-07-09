@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      #box {
+        width: 20px;
+        height: 20px;
+        background-color: lightcoral;
+      }
+
+      .dragging {
+        position: absolute;
+        z-index: 1000;
+      }
+
+      .grabbing {
+        cursor: grabbing;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="box"></div>
+
+    <script type="text/javascript">
+      const box = document.getElementById("box");
+
+      box.ondragstart = function(e) {
+        e.preventDefault();
+      }
+
+      box.onmousedown = function(e) {
+        box.classList.add("dragging");
+        box.classList.add("grabbing");
+
+        function onMouseMove(e) {
+          box.style.top = e.pageY - box.clientHeight / 2 + "px";
+          box.style.left = e.pageX - box.clientWidth / 2 + "px";
+        }
+
+        document.addEventListener("mousemove", onMouseMove);
+
+        box.onmouseup = function() {
+          box.classList.remove("grabbing");
+          document.removeEventListener("mousemove", onMouseMove);
+        }
+      }
+    </script>
+  </body>
+</html>

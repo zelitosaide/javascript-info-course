@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <script>
+      /** instead of:
+        let timerId = setInterval(() => alert('tick'), 2000);
+      */
+
+      let timer = setTimeout(function tick() {
+        console.log("tick");
+        timer = setTimeout(tick, 2000);
+      }, 2000);
+
+      let delay = 5000;
+
+      let timerId = setTimeout(function request() {
+        // ...send request...
+
+        if (/*request failed due to server overload*/ false) {
+          // increase the interval to the next run
+          delay *= 2;
+        }
+
+        timerId = setTimeout(request, delay);
+      }, delay);
+
+      let i = 1;
+
+      setInterval(function () {
+        func(i++);
+      }, 100);
+
+      let j = 1;
+
+      setTimeout(function run() {
+        func(j++);
+        setTimeout(run, 100);
+      }, 100);
+
+      function func(number) {
+        console.log(number);
+      }
+    </script>
+  </body>
+</html>

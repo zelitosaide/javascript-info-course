@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body {
+        background-color: lightcoral;
+      }
+
+      .snake {
+        width: 16px;
+        height: 16px;
+        background-color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container"></div>
+
+    <script>
+      const snake = [1, 5];
+
+      drawSnake();
+
+      function drawSnake() {
+        snake.forEach(function(item) {
+          const square = document.createElement("div");
+          square.className = "snake";
+        });
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body {
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      #parent {
+        background-color: lightpink;
+        width: 200px;
+        height: 200px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+
+      }
+
+      #child {
+        background-color: lightgreen;
+        width: 100px;
+        height: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      textarea {
+        margin-top: 20px;
+        width: 300px;
+        height: 150px;
+        border: 4px solid #BAE0BA;
+        border-radius: 4px;
+        padding: 6px;
+      }
+
+      button {
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="parent">
+      Parent
+      <div id="child">
+        Child
+      </div>
+    </div>
+    <textarea></textarea>
+    <button>Clear</button>
+
+    <script>
+      const parent = document.getElementById("parent");
+      const child = document.getElementById("child");
+      const textarea = document.querySelector("textarea");
+
+      parent.onmouseover = parent.onmouseout = parent.onmousemove = function(e) {
+        let type = e.type;
+        while(type.length < 11) {
+          type += " ";
+        }
+        log(type + " target=" + e.target.id);
+      }
+
+      let lastMessage = "";
+      let counter = 1;
+      let lastTime = 0;
+
+      function log(message) {
+        if (lastTime === 0) {
+          lastTime = new Date();
+        }
+
+        const time = new Date();
+
+        if (time - lastTime > 500) {
+          message = "------------------------------\n" + message;
+        }
+
+        if (lastMessage === message) {
+          counter++;
+          const index = textarea.value.lastIndexOf(message);
+          const text = textarea.value.slice(0, index);
+          textarea.value = text + message + " x" + counter + "\n";
+        } else {
+          counter = 1;
+          textarea.value += message + "\n";
+        }
+
+        textarea.scrollTop = textarea.scrollHeight;
+        lastMessage = message;
+        lastTime = time;
+      }
+
+      document.querySelector("button").onclick = function() {
+        textarea.value = "";
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h2>Object handlers</h2>
+    <input
+      type="button"
+      onclick="countRabbits()"
+      value="Count rabbits!"
+    />
+
+    <input
+      type="button"
+      value="Click me!"
+      onclick="console.log('Hello world!')"
+    />
+
+    <input
+      type="button"
+      id="button1"
+      value="Say Thank you"
+    />
+
+    <input
+      type="button"
+      value="After OR before"
+      id="button2"
+      onclick="console.log('Before')"
+    />
+
+    <button
+      type="button"
+      onclick="alert(this.innerHTML)"
+    >
+      Show innerHTML
+    </button>
+
+    <input
+      type="button"
+      value="Say thanks"
+      id="button3"
+    />
+
+    <input
+      type="button"
+      value="Using setAttribute"
+      id="button4"
+    />
+
+    <input
+      type="button"
+      value="Into to addEventHandler Issue"
+      id="button5"
+    />
+
+    <input
+      type="button"
+      value="Trigger once"
+      id="button6"
+    />
+
+    <input
+      type="button"
+      value="Remove event handlers"
+      id="button7"
+    />
+
+    <input
+      type="button"
+      value="Multiple call to addEventListener"
+      id="button8"
+    />
+
+    <input
+      type="button"
+      value="Event object"
+      id="button9"
+    />
+
+    <input
+      type="button"
+      value="From HTML attribute"
+      onclick="console.log(event)"
+    />
+
+    <input
+      type="button"
+      value="Object handler"
+      id="button10"
+    />
+
+    <button
+      type="button"
+      id="button11"
+    >
+      Using class
+    </button>
+
+    <script>
+      const button = document.querySelector("#button11");
+
+      class Menu {
+        handleEvent(e) {
+          // mousedown -> onMousedown
+          const method = "on" + e.type[0].toUpperCase() + e.type.slice(1);
+          this[method](e);
+        }
+
+        onMousedown(e) {
+          console.log(e.type);
+          button.innerHTML = "Mouse button pressed";
+        }
+
+        onMouseup(e) {
+          console.log(e.type);
+          button.innerHTML = "...and released.";
+        }
+      }
+
+      // class Menu {
+      //   handleEvent(e) {
+      //     switch (e.type) {
+      //       case "mousedown":
+      //         button.innerHTML = "Mouse button pressed";
+      //         break;
+      //       case "mouseup":
+      //         button.innerHTML = "...and released.";
+      //         break;
+      //     }
+      //   }
+      // }
+
+      const menu = new Menu();
+
+      button.addEventListener("mousedown", menu);
+      button.addEventListener("mouseup", menu);
+
+      const obj = {
+        handleEvent(e) {
+          console.log(e.type);
+        },
+      };
+
+      document.querySelector("#button10").addEventListener("click", obj);
+      // document
+      //   .querySelector("#button9")
+      //   .addEventListener("click", function (e) {
+      //     console.log(e.type);
+      //     console.log(e.target);
+      //     console.log(e.currentTarget);
+      //     console.log(e.target === e.currentTarget);
+      //     console.log(e.clientX + ":" + e.clientY);
+      //   });
+
+      document.querySelector("#button9").onclick = function (e) {
+        console.log(e.type);
+        console.log(e.target);
+        console.log(e.currentTarget);
+        console.log(e.target === e.currentTarget);
+        console.log(e.clientX + ":" + e.clientY);
+      };
+
+      // will never run
+      document.onDOMContentLoaded = function () {
+        console.log("DOM built");
+      };
+
+      // this way it works
+      document.addEventListener("DOMContentLoaded", function () {
+        console.log("DOM built");
+      });
+
+      document.querySelector("#button8").onclick = function () {
+        console.log(1);
+      };
+
+      document.querySelector("#button8").addEventListener("click", function () {
+        console.log(2);
+      });
+
+      document.querySelector("#button8").addEventListener("click", function () {
+        console.log(3);
+      });
+
+      // element.addEventListener(event, handler, [options]);
+      document.querySelector("#button6").addEventListener(
+        "click",
+        function () {
+          console.log("Bye");
+        },
+        { once: true }
+      );
+
+      // element.removeEventListener(event, handler, [options]);
+      document.querySelector("#button7").addEventListener("click", handler);
+
+      function handler() {
+        document
+          .querySelector("#button7")
+          .removeEventListener("click", handler);
+
+        console.log("Removed");
+      }
+
+      document.querySelector("#button5").onclick = function () {
+        console.log(1);
+      };
+
+      document.querySelector("#button5").onclick = function () {
+        console.log(2);
+      };
+
+      // This won't work!!
+      document.querySelector("#button4").setAttribute("onclick", function () {
+        console.log("Wau");
+      });
+
+      function sayThanks() {
+        alert("Thanks");
+      }
+
+      document.querySelector("#button3").onclick = sayThanks;
+
+      // document.querySelector("#button3").onclick = sayThanks();
+
+      document.querySelector("#button2").onclick = null;
+
+      // document.querySelector("#button2").onclick = function () {
+      //   console.log("After");
+      // };
+
+      document.querySelector("#button1").onclick = function () {
+        console.log("Thank you!");
+      };
+
+      function countRabbits() {
+        for (let i = 0; i <= 3; i++) {
+          alert("Rabbit number " + i);
+        }
+      }
+    </script>
+  </body>
+</html>

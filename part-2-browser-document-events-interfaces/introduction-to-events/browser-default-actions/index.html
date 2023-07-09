@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      .menu li {
+        margin: 0;
+        display: inline-block;
+      }
+
+      .menu > li a {
+        display: inline-block;
+        margin: 0 2px;
+        outline: none;
+        text-align: center;
+        text-decoration: none;
+        font: 14px/100% sans-serif;
+        padding: 0.5em 2em 0.55em;
+        text-shadow: 0 1px 1px rgba(0, 0, 0, .3);
+        border-radius: 0.5em;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, .2);
+        color: #d9eef7;
+        border: 1px solid #0076a3;
+        background-color: #0095cd;
+      }
+
+      .menu > li:hover a {
+        /* text-decoration: none; */
+        background-color: #007ead;
+      }
+    </style>
+  </head>
+  <body>
+    <ul>
+      <li>
+        [1] - <a href="/" onclick="return false">Return false</a>
+      </li>
+      <li>
+        [2] - <a href="/" onclick="">Don't return false</a>
+      </li>
+      <li>
+        [3] - <a href="/" onclick="event.preventDefault()">Prevent default</a>
+      </li>
+      <li>
+        [4] - <a href="/" onclick="return handleClick()">handle click</a>
+      </li>
+      <li>
+        [5] - <a href="/" onclick="handlePreventDefault(event)">
+          handle prevent default
+        </a>
+      </li>
+      <li>
+        [6] - <input onclick="return false;" type="checkbox"> Accept
+      </li>
+    </ul>
+
+    <form>
+      <button type="submit" onclick="return false;">Submit</button>
+      <button type="submit" onclick="event.preventDefault();">One more submit</button>
+    </form>
+
+    <div>
+      <ul id="menu" class="menu">
+        <li><a href="/html">HTML</a></li>
+        <li><a href="/javascript">JavaScript</a></li>
+        <li><a href="/css">CSS</a></li>
+      </ul>
+    </div>
+
+    <form>
+      <input 
+        type="text" 
+        value="Focus works" 
+        onfocus="this.value = ''" 
+        onblur="this.value='Focus works'"
+      >
+      <input 
+        type="text" 
+        value="Click me"
+        onmousedown="return false;"
+        onfocus="this.value='Ola, tudo bem?'"
+      >
+    </form>
+
+    <div style="margin-top: 10px;">
+      <button>Right-click shows browser context menu</button>
+      <button oncontextmenu="alert('Ola'); return false;">
+        Right-click shows our context menu
+      </button>
+    </div>
+
+    <div>
+      <p>Right-click here for the document context menu</p>
+      <button id="button1">
+        Right-click here for the button context menu
+      </button>
+    </div>
+
+    <div style="background-color: lightskyblue; margin-top: 10px;">
+      <p>Right-click for the document menu</p>
+      <button id="button2">
+        Right-click for the button menu (fixed with event.stopPropagation)
+      </button>
+    </div>
+
+    <script>
+      function handleClick() {
+        console.log("Bye!");
+        return false;
+      }
+
+      function handlePreventDefault(e) {
+        console.log(e.type);
+        e.preventDefault();
+      }
+
+      document.getElementById("menu").onclick = function(e) {
+        const target = e.target;
+        if (target.nodeName !== "A") {
+          return;
+        }
+        const href = target.getAttribute("href");
+        console.log(href);
+        return false;
+      }
+
+      // use passive: true
+      document.addEventListener("touchmove", function() {
+        console.log("Hii");
+        // if passive is true, means the browser won't cancell the scrolling
+        // if passive is false, means the browser will first process all handlers
+        // and then if preventDefault() is not called anywhere, it can proceed 
+        // with scrolling.
+      }, { passive: true });
+
+      document.addEventListener("touchstart", function() {
+        console.log("Hii");
+        // if passive is true, means the browser won't cancell the scrolling
+        // if passive is false, means the browser will first process all handlers
+        // and then if preventDefault() is not called anywhere, it can proceed 
+        // with scrolling.
+      }, { passive: true });
+
+      document.getElementById("button1").oncontextmenu = function(e) {
+        e.preventDefault();
+        alert(e.target.nodeName);
+      }
+
+      document.oncontextmenu = function(e) {
+        e.preventDefault();
+        alert(e.currentTarget.nodeName);
+      }
+
+      // Right-click for the button menu (fixed with event.stopPropagation)
+      document.getElementById("button2").oncontextmenu = function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        alert(e.target.nodeName);
+      }
+
+      document.oncontextmenu = function(e) {
+        e.preventDefault();
+        alert("Document context menu");
+      }
+    </script>
+  </body>
+</html>
