@@ -98,6 +98,17 @@
         if (!e.target.classList.contains("draggable")) {
           return;
         }
+        
+        const draggable = e.target;
+
+        const shiftX = e.clientX - draggable.getBoundingClientRect().left;
+        const shiftY = e.clientY - draggable.getBoundingClientRect().top;
+
+        document.body.append(draggable);
+        draggable.style.position = "absolute";
+        draggable.style.zIndex = 1000;
+
+        console.log(shiftX, shiftY);
       };
     </script>
   </body>
