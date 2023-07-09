@@ -108,7 +108,12 @@
         draggable.style.position = "absolute";
         draggable.style.zIndex = 1000;
 
-        console.log(shiftX, shiftY);
+        moveTo(e.pageX, e.pageY);
+
+        function moveTo(pageX, pageY) {
+          draggable.style.left = pageX - shiftX + "px";
+          draggable.style.top = pageY - shiftY + "px";
+        }
       };
     </script>
   </body>
