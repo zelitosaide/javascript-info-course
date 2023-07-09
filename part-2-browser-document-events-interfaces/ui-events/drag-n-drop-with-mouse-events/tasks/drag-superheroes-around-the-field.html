@@ -133,10 +133,10 @@
           }
           
           const offsetHeight = draggable.getBoundingClientRect().bottom - e.clientY;
-         
-          // if (e.pageY + offsetHeight < scrollHeight) {
-          //   window.scrollBy(0, 10);
-          // }
+    
+          if (e.pageY + offsetHeight < scrollHeight && e.clientY + offsetHeight > document.documentElement.clientHeight) {
+            window.scrollBy(0, 10);
+          }
 
           moveTo(e.pageX, e.pageY);
         }
