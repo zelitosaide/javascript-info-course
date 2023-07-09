@@ -98,7 +98,7 @@
         document.body.offsetHeight, document.documentElement.offsetHeight,
         document.body.clientHeight, document.documentElement.clientHeight
       );
-      
+
       document.onmousedown = function(e) {
         e.preventDefault();
         
@@ -132,8 +132,13 @@
             window.scrollBy(0, -10);
           }
           
+          const offsetHeight = draggable.getBoundingClientRect().bottom - e.clientY;
+         
+          // if (e.pageY + offsetHeight < scrollHeight) {
+          //   window.scrollBy(0, 10);
+          // }
+
           moveTo(e.pageX, e.pageY);
-          console.log(e.pageY, scrollHeight);
         }
 
         function moveTo(pageX, pageY) {
