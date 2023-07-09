@@ -19,8 +19,6 @@
         width: 130px;
         height: 128px;
         float: left;
-        background-color: lightcoral;
-        margin: 4px;
       }
 
       #hero1 {
@@ -109,6 +107,12 @@
         draggable.style.zIndex = 1000;
 
         moveTo(e.pageX, e.pageY);
+
+        draggable.addEventListener("mousemove", onMouseMove);
+
+        function onMouseMove(e) {
+          console.log(e.type);
+        }
 
         function moveTo(pageX, pageY) {
           draggable.style.left = pageX - shiftX + "px";
