@@ -80,9 +80,7 @@
       of the document, no dragging outside of it.
     </p>
 
-    <div id="field">
-
-    </div>
+    <div id="field"></div>
 
     <div class="hero draggable" id="hero1"></div>
     <div class="hero draggable" id="hero2"></div>
@@ -95,6 +93,12 @@
 
     <div style="clear:both"></div>
 
-    <script></script>
+    <script>
+      document.onmousedown = function(e) {
+        if (!e.target.classList.contains("draggable")) {
+          return;
+        }
+      };
+    </script>
   </body>
 </html>
