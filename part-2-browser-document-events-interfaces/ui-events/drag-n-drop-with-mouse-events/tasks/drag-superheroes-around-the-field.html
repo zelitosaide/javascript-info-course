@@ -19,6 +19,7 @@
         width: 130px;
         height: 128px;
         float: left;
+        background-color: lightseagreen;
       }
 
       #hero1 {
@@ -97,9 +98,6 @@
         document.body.offsetHeight, document.documentElement.offsetHeight,
         document.body.clientHeight, document.documentElement.clientHeight
       );
-      
-      console.log(window.scrollY)
-      console.log(document.documentElement.scrollHeight)
 
       document.onmousedown = function(e) {
         e.preventDefault();
@@ -130,7 +128,11 @@
         }
 
         function onMouseMove(e) {
+          if (e.clientY - shiftY < 0 && window.scrollY > 0) {
+            window.scrollBy(0, -10);
+          }
           moveTo(e.pageX, e.pageY);
+          console.log(e.pageY);
         }
 
         function moveTo(pageX, pageY) {
