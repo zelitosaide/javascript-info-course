@@ -93,12 +93,12 @@
     <div style="clear:both"></div>
 
     <script>
-      let scrollHeight = Math.max(
+      const scrollHeight = Math.max(
         document.body.scrollHeight, document.documentElement.scrollHeight,
         document.body.offsetHeight, document.documentElement.offsetHeight,
         document.body.clientHeight, document.documentElement.clientHeight
       );
-
+      
       document.onmousedown = function(e) {
         e.preventDefault();
         
@@ -131,8 +131,9 @@
           if (e.clientY - shiftY < 0 && window.scrollY > 0) {
             window.scrollBy(0, -10);
           }
+          
           moveTo(e.pageX, e.pageY);
-          console.log(e.pageY);
+          console.log(e.pageY, scrollHeight);
         }
 
         function moveTo(pageX, pageY) {
