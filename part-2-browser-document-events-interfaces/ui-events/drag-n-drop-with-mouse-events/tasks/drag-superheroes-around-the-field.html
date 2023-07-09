@@ -93,11 +93,17 @@
 
     <script>
       document.onmousedown = function(e) {
+        e.preventDefault();
+        
         if (!e.target.classList.contains("draggable")) {
           return;
         }
         
         const draggable = e.target;
+        
+        draggable.ondragstart = function() {
+          return false;
+        }
 
         const shiftX = e.clientX - draggable.getBoundingClientRect().left;
         const shiftY = e.clientY - draggable.getBoundingClientRect().top;
@@ -111,7 +117,6 @@
         draggable.addEventListener("mousemove", onMouseMove);
 
         draggable.onmouseup = function(e) {
-          console.log("up");
           draggable.removeEventListener("mousemove", onMouseMove);
         }
 
