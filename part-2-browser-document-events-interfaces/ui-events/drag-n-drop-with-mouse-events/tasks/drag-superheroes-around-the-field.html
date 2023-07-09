@@ -110,8 +110,12 @@
 
         draggable.addEventListener("mousemove", onMouseMove);
 
+        draggable.onmouseup = function(e) {
+          document.removeEventListener("mousemove", onMouseMove);
+        }
+
         function onMouseMove(e) {
-          console.log(e.type);
+          moveTo(e.pageX, e.pageY);
         }
 
         function moveTo(pageX, pageY) {
