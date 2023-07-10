@@ -130,6 +130,9 @@
         }
 
         function onMouseMove(e) {
+          if (draggable.getBoundingClientRect().top < 0 && window.scrollY > 0) {
+            window.scrollBy(0, -10);
+          }
           moveTo(e.clientX, e.clientY);
         }
 
