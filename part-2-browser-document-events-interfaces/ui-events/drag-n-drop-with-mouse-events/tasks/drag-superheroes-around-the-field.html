@@ -134,12 +134,6 @@
         }
 
         function onMouseMove(e) {
-          // if (draggable.getBoundingClientRect().top < 0) {
-          //   window.scrollBy(0, -10);
-          // }
-          if (Math.ceil(draggable.getBoundingClientRect().bottom) > document.documentElement.clientHeight) {
-            window.scrollBy(0, +10);
-          }
           moveTo(e.clientX, e.clientY);
         }
 
@@ -148,6 +142,11 @@
           if (top < 0) {
             window.scrollBy(0, -10);
             top = 0;
+          }
+
+          if (Math.ceil(top + draggable.offsetHeight) > document.documentElement.clientHeight) {
+            window.scrollBy(0, +10);
+            top = document.documentElement.clientHeight - draggable.offsetHeight;
           }
           draggable.style.left = clientX - shiftX + "px";
           draggable.style.top = top + "px";
