@@ -124,6 +124,8 @@
         draggable.addEventListener("mousemove", onMouseMove);
 
         draggable.onmouseup = function(e) {
+          draggable.style.position = "absolute";
+          draggable.style.top = e.pageY - shiftY + "px";
           draggable.removeEventListener("mousemove", onMouseMove);
         }
 
