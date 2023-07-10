@@ -116,10 +116,10 @@
         const shiftY = e.clientY - draggable.getBoundingClientRect().top;
 
         document.body.append(draggable);
-        draggable.style.position = "absolute";
+        draggable.style.position = "fixed";
         draggable.style.zIndex = 1000;
 
-        moveTo(e.pageX, e.pageY);
+        moveTo(e.clientX, e.clientY);
 
         draggable.addEventListener("mousemove", onMouseMove);
 
@@ -128,22 +128,12 @@
         }
 
         function onMouseMove(e) {
-          if (e.clientY - shiftY < 0 && window.scrollY > 0) {
-            window.scrollBy(0, -10);
-          }
-          
-          const offsetHeight = draggable.getBoundingClientRect().bottom - e.clientY;
-    
-          if (e.pageY + offsetHeight < scrollHeight && e.clientY + offsetHeight > document.documentElement.clientHeight) {
-            window.scrollBy(0, 10);
-          }
-
-          moveTo(e.pageX, e.pageY);
+          moveTo(e.clientX, e.clientY);
         }
 
-        function moveTo(pageX, pageY) {
-          draggable.style.left = pageX - shiftX + "px";
-          draggable.style.top = pageY - shiftY + "px";
+        function moveTo(clientX, clientY) {
+          draggable.style.left = clientX - shiftX + "px";
+          draggable.style.top = clientY - shiftY + "px";
         }
       };
     </script>
