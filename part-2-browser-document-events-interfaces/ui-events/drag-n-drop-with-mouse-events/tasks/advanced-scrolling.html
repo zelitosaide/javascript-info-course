@@ -23,13 +23,7 @@
       elem.style.backgroundColor = "pink";
 
       document.onmousemove = function(e) {
-        docScrollHeight = Math.max(
-          document.body.scrollHeight, document.documentElement.scrollHeight,
-          document.body.offsetHeight, document.documentElement.offsetHeight,
-          document.body.clientHeight, document.documentElement.clientHeight
-        );
-        
-        console.log(e.clientY, windowHeight, e.clientY + window.scrollY, docScrollHeight);
+        console.log(e.clientY, windowHeight, e.clientY + window.scrollY, docScrollHeight, window.scrollY);
         if (e.clientY > windowHeight - 50) {
           console.log("Ops");
           window.scrollBy(0, 10);
