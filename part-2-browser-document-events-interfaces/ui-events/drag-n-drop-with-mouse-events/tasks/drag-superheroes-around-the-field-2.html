@@ -133,7 +133,22 @@
         }
 
         function onMouseMove(e) {
-          console.log(windowHeight, docScrollHeight, draggable.getBoundingClientRect().bottom);
+          // console.log(windowHeight, docScrollHeight, Math.ceil(e.clientY - shiftY + draggable.clientHeight));
+      
+          // if (Math.ceil(e.clientY - shiftY + draggable.clientHeight) > windowHeight) {  
+          //   const scroll = Math.min(10, docScrollHeight - (draggable.getBoundingClientRect().bottom + window.scrollY + 10));
+          //   console.log(10, docScrollHeight - (draggable.getBoundingClientRect().bottom + window.scrollY + 10), scroll);          
+          // }
+          
+          
+          if (Math.ceil(e.clientY - shiftY + draggable.clientHeight) > windowHeight) {
+            const scroll = Math.min(10, docScrollHeight - (draggable.getBoundingClientRect().bottom + window.scrollY + 10));
+            if (scroll > 0) {
+              console.log(scroll);
+              window.scrollBy(0, scroll);
+            }
+          }
+          
           moveTo(e.clientX, e.clientY);
         }
 
