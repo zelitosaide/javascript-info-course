@@ -8,9 +8,24 @@
     </style>
   </head>
   <body>
+    <div></div>
     <script>
+      const docScrollHeight = Math.max(
+        document.body.scrollHeight, document.documentElement.scrollHeight,
+        document.body.offsetHeight, document.documentElement.offsetHeight,
+        document.body.clientHeight, document.documentElement.clientHeight
+      );
+      const windowHeight = document.documentElement.clientHeight;
+        
+      const elem = document.querySelector("div");
+      elem.style.height = windowHeight - 50 + "px";
+      elem.style.backgroundColor = "pink";
+
       document.onmousemove = function(e) {
-        console.log(e.clientY);
+        console.log(e.clientY, windowHeight, docScrollHeight);
+        if (e.clientY > windowHeight - 50) {
+          window.scrollBy(0, 10);
+        }
       };
     </script>
   </body>
