@@ -99,6 +99,8 @@
         document.body.clientHeight, document.documentElement.clientHeight
       );
 
+      const windowHeight = document.documentElement.clientHeight;
+
       document.onmousedown = function(e) {
         e.preventDefault();
         
@@ -131,6 +133,7 @@
         }
 
         function onMouseMove(e) {
+          console.log(windowHeight);
           moveTo(e.clientX, e.clientY);
         }
 
