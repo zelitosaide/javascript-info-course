@@ -138,16 +138,16 @@
 
         function moveTo(clientX, clientY) {
           let top = clientY - shiftY;
-
-          
-
           const draggableHeight = Math.round(top + draggable.offsetHeight);
 
           if (draggableHeight > windowHeight) {
             window.scrollBy(0, 10);
           }
 
-          console.log(draggableHeight, docScrollHeight, window.scrollY + draggableHeight);
+          if (docScrollHeight < window.scrollY + draggableHeight) {
+            top = windowHeight - draggable.offsetHeight;
+          }
+
           draggable.style.left = clientX - shiftX + "px";
           draggable.style.top = top + "px";
         }
