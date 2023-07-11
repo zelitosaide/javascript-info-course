@@ -126,9 +126,6 @@
         draggable.onmouseup = function(e) {
           let top = e.pageY - shiftY;
           draggable.style.position = "absolute";
-          if (e.clientY - shiftY < 0) {
-            top = 0;
-          }
           draggable.style.top = top + "px";
           draggable.removeEventListener("mousemove", onMouseMove);
         }
@@ -139,15 +136,6 @@
 
         function moveTo(clientX, clientY) {
           let top = clientY - shiftY;
-          if (top < 0) {
-            window.scrollBy(0, -10);
-            top = 0;
-          }
-
-          if (Math.ceil(top + draggable.offsetHeight) > document.documentElement.clientHeight) {
-            window.scrollBy(0, +10);
-            top = document.documentElement.clientHeight - draggable.offsetHeight;
-          }
           draggable.style.left = clientX - shiftX + "px";
           draggable.style.top = top + "px";
         }
