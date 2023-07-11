@@ -138,7 +138,7 @@
 
         function moveTo(clientX, clientY) {
           let top = clientY - shiftY;
-          const draggableHeight = top + draggable.offsetHeight;
+          const draggableHeight = Math.round(top + draggable.offsetHeight);
           console.log(draggableHeight, windowHeight);
           draggable.style.left = clientX - shiftX + "px";
           draggable.style.top = top + "px";
