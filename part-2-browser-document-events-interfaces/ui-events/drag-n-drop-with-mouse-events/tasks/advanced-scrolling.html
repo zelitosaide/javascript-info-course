@@ -11,7 +11,7 @@
   <body>
     <div></div>
     <script>
-      const docScrollHeight = Math.max(
+      let docScrollHeight = Math.max(
         document.body.scrollHeight, document.documentElement.scrollHeight,
         document.body.offsetHeight, document.documentElement.offsetHeight,
         document.body.clientHeight, document.documentElement.clientHeight
@@ -23,8 +23,15 @@
       elem.style.backgroundColor = "pink";
 
       document.onmousemove = function(e) {
-        console.log(e.clientY, windowHeight, e.pageY, docScrollHeight);
+        docScrollHeight = Math.max(
+          document.body.scrollHeight, document.documentElement.scrollHeight,
+          document.body.offsetHeight, document.documentElement.offsetHeight,
+          document.body.clientHeight, document.documentElement.clientHeight
+        );
+        
+        console.log(e.clientY, windowHeight, e.clientY + window.scrollY, docScrollHeight);
         if (e.clientY > windowHeight - 50) {
+          console.log("Ops");
           window.scrollBy(0, 10);
         }
       };
