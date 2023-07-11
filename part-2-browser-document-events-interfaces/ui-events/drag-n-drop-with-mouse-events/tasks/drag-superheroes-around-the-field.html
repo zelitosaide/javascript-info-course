@@ -93,11 +93,13 @@
     <div style="clear:both"></div>
 
     <script>
-      const scrollHeight = Math.max(
+      let docScrollHeight = Math.max(
         document.body.scrollHeight, document.documentElement.scrollHeight,
         document.body.offsetHeight, document.documentElement.offsetHeight,
         document.body.clientHeight, document.documentElement.clientHeight
       );
+
+      const windowHeight = document.documentElement.clientHeight;
 
       document.onmousedown = function(e) {
         e.preventDefault();
@@ -124,12 +126,9 @@
         draggable.addEventListener("mousemove", onMouseMove);
 
         draggable.onmouseup = function(e) {
-          let top = e.pageY - shiftY;
-          draggable.style.position = "absolute";
-          if (e.clientY - shiftY < 0) {
-            top = 0;
-          }
+          let top = draggable.getBoundingClientRect().top + window.scrollY;
           draggable.style.top = top + "px";
+          draggable.style.position = "absolute";
           draggable.removeEventListener("mousemove", onMouseMove);
         }
 
@@ -139,15 +138,20 @@
 
         function moveTo(clientX, clientY) {
           let top = clientY - shiftY;
+          const draggableHeight = Math.round(top + draggable.offsetHeight);
+
+          // Scroll top handling
           if (top < 0) {
-            window.scrollBy(0, -10);
             top = 0;
+            window.scrollBy(0, -10);
           }
 
-          if (Math.ceil(top + draggable.offsetHeight) > document.documentElement.clientHeight) {
-            window.scrollBy(0, +10);
-            top = document.documentElement.clientHeight - draggable.offsetHeight;
+          // Scroll bottom handling
+          if (draggableHeight > windowHeight) {
+            window.scrollBy(0, 10);
+            top = windowHeight - draggable.offsetHeight;
           }
+
           draggable.style.left = clientX - shiftX + "px";
           draggable.style.top = top + "px";
         }
