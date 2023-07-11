@@ -140,11 +140,12 @@
           let top = clientY - shiftY;
           const draggableHeight = Math.round(top + draggable.offsetHeight);
 
-          if (draggableHeight > windowHeight) {
-            window.scrollBy(0, 10);
+          if (docScrollHeight < window.scrollY + draggableHeight) {
+            top = windowHeight - draggable.offsetHeight;
           }
 
-          if (docScrollHeight < window.scrollY + draggableHeight) {
+          if (draggableHeight > windowHeight) {
+            window.scrollBy(0, 10);
             top = windowHeight - draggable.offsetHeight;
           }
 
