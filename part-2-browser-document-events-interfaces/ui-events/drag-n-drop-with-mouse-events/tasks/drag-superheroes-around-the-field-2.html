@@ -93,7 +93,7 @@
     <div style="clear:both"></div>
 
     <script>
-      const docScrollHeight = Math.max(
+      let docScrollHeight = Math.max(
         document.body.scrollHeight, document.documentElement.scrollHeight,
         document.body.offsetHeight, document.documentElement.offsetHeight,
         document.body.clientHeight, document.documentElement.clientHeight
@@ -138,8 +138,20 @@
 
         function moveTo(clientX, clientY) {
           let top = clientY - shiftY;
+
           const draggableHeight = Math.round(top + draggable.offsetHeight);
-          console.log(draggableHeight, windowHeight);
+
+          if (draggableHeight > windowHeight) {
+            window.scrollBy(0, 10);
+          }
+
+          docScrollHeight = Math.max(
+            document.body.scrollHeight, document.documentElement.scrollHeight,
+            document.body.offsetHeight, document.documentElement.offsetHeight,
+            document.body.clientHeight, document.documentElement.clientHeight
+          );
+
+          console.log(draggableHeight, docScrollHeight);
           draggable.style.left = clientX - shiftX + "px";
           draggable.style.top = top + "px";
         }
