@@ -140,6 +140,7 @@
           let top = clientY - shiftY;
           const draggableHeight = Math.round(top + draggable.offsetHeight);
 
+          // Scroll bottom handling
           if (docScrollHeight < window.scrollY + draggableHeight) {
             top = windowHeight - draggable.offsetHeight;
           }
