@@ -4,6 +4,7 @@
     <style>
       body {
         height: 2000px;
+        margin: 0;
       }
     </style>
   </head>
@@ -22,7 +23,7 @@
       elem.style.backgroundColor = "pink";
 
       document.onmousemove = function(e) {
-        console.log(e.clientY, windowHeight, docScrollHeight);
+        console.log(e.clientY, windowHeight, e.pageY, docScrollHeight);
         if (e.clientY > windowHeight - 50) {
           window.scrollBy(0, 10);
         }
