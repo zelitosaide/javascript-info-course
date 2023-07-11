@@ -139,19 +139,15 @@
         function moveTo(clientX, clientY) {
           let top = clientY - shiftY;
 
+          
+
           const draggableHeight = Math.round(top + draggable.offsetHeight);
 
           if (draggableHeight > windowHeight) {
             window.scrollBy(0, 10);
           }
 
-          docScrollHeight = Math.max(
-            document.body.scrollHeight, document.documentElement.scrollHeight,
-            document.body.offsetHeight, document.documentElement.offsetHeight,
-            document.body.clientHeight, document.documentElement.clientHeight
-          );
-
-          console.log(draggableHeight, docScrollHeight);
+          console.log(draggableHeight, docScrollHeight, window.scrollY + draggableHeight);
           draggable.style.left = clientX - shiftX + "px";
           draggable.style.top = top + "px";
         }
