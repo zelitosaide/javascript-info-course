@@ -25,10 +25,14 @@
 
     <h3>Pointer event properties</h3>
 
-    <span>Properties</span>
+    <span id="properties">Properties</span>
 
     <script>
-      console.log("Ola, tudo bem?");
+      const properties = document.getElementById("properties");
+
+      properties.onpointerdown = function(e) {
+        console.log(e.type);
+      };
     </script>
   </body>
 </html>
