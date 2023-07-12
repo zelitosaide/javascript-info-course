@@ -120,14 +120,19 @@
           document.addEventListener("mousemove", onMouseMove);
           draggable.addEventListener("mouseup", onMouseUp);
 
-          function onMouseMove(e) {
-            console.log(e.type);
-          }
+          shiftX = e.clientX - draggable.getBoundingClientRect().left;
+          shiftY = e.clientY - draggable.getBoundingClientRect().top;
 
-          function onMouseUp(e) {}
+          draggable.style.position = "fixed";
 
-          console.log(elem.nodeName, clientX, clientY);
+          moveTo(clientX, clientY);
         }
+
+        function onMouseMove(e) {
+          console.log(e.type);
+        }
+
+        function onMouseUp(e) {}
       });
     </script>
   </body>
