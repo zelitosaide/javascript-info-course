@@ -167,6 +167,15 @@
 
             newY = Math.min(newY, document.documentElement.clientHeight - draggable.offsetHeight);
           }
+
+          if (newY < 0) {
+            let scrollY = Math.min(-newY, 10);
+            if (scrollY < 0) scrollY = 0;
+
+            window.scrollBy(0, -scrollY);
+
+            newY = Math.max(newY, 0);
+          }
         }
       });
     </script>
