@@ -183,6 +183,9 @@
           if (newX > document.documentElement.clientWidth - draggable.offsetWidth) {
             newX = document.documentElement.clientWidth - draggable.offsetWidth;
           }
+
+          draggable.style.left = newX + "px";
+          draggable.style.top = newY + "px";
         }
       });
     </script>
