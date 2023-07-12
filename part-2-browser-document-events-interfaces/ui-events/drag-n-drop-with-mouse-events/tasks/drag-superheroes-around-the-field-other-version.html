@@ -96,6 +96,8 @@
     <div style="clear:both"></div>
 
     <script>
+      let isDragging = false;
+
       document.addEventListener("mousedown", function(e) {
         const draggable = e.target.closest(".draggable");
         if (!draggable) return;
@@ -107,6 +109,16 @@
         }
 
         let coords, shiftX, shiftY;
+
+        startDrag(draggable, e.clientX, e.clientY);
+
+        function startDrag(elem, clientX, clientY) {
+          if (isDragging) return;
+
+          isDragging = true;
+
+          console.log(elem.nodeName, clientX, clientY);
+        }
       });
     </script>
   </body>
