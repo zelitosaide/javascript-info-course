@@ -95,6 +95,10 @@
 
     <div style="clear:both"></div>
 
-    <script></script>
+    <script>
+      document.addEventListener("mousedown", function(e) {
+        const draggable = e.target.closest(".draggable");
+      });
+    </script>
   </body>
 </html>
