@@ -10,6 +10,25 @@
       background-color: lightpink;
       margin: 12px;
     }
+
+    .slider {
+      border-radius: 5px;
+      background: #E0E0E0;
+      width: 310px;
+      height: 15px;
+      margin: 5px;
+    }
+
+    .thumb {
+      width: 10px;
+      height: 25px;
+      border-radius: 3px;
+      position: relative;
+      left: 10px;
+      top: -5px;
+      background: blue;
+      cursor: pointer;
+    }
   </style>
   <body>
     <h2>Pointer events</h2>
@@ -28,6 +47,12 @@
     <span id="properties">Properties</span>
 
     <h3>Multi touch</h3>
+
+    <h3>Pointer Capturing</h3>
+
+    <div id="slider" class="slider">
+      <div class="thumb"></div>
+    </div>
 
     <script>
       const properties = document.getElementById("properties");
