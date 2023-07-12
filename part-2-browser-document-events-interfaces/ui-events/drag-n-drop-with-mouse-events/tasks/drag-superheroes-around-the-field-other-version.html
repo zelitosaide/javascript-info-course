@@ -154,7 +154,17 @@
           let newY = clientY - shiftY;
 
           const newBottom = newY + draggable.offsetHeight;
-          console.log(newBottom);
+
+          if (newBottom > document.documentElement.clientHeight) {
+            // window-relative coordinate of document end
+            const docBottom = document.documentElement.getBoundingClientRect().bottom;
+
+            let scrollY = Math.min(docBottom - newBottom, 10);
+
+            if (scrollY < 0) scrollY = 0;
+
+            window.scrollBy(0, scrollY);
+          }
         }
       });
     </script>
