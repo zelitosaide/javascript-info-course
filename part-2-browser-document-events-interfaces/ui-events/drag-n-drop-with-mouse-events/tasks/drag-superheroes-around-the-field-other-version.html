@@ -98,6 +98,13 @@
     <script>
       document.addEventListener("mousedown", function(e) {
         const draggable = e.target.closest(".draggable");
+        if (!draggable) return;
+
+        e.preventDefault();
+
+        draggable.ondragstart = function() {
+          return false;
+        }
       });
     </script>
   </body>
