@@ -30,12 +30,13 @@
     <script>
       const properties = document.getElementById("properties");
 
-      properties.onpointerdown = function(e) {
+      properties.onpointerover = function(e) {
         console.log("pointerId", e.pointerId);
         console.log("pointerType", e.pointerType);
         console.log("isPrimary", e.isPrimary);
         console.log("width", e.width);
         console.log("height", e.height);
+        console.log("pressure", e.pressure);
       };
     </script>
   </body>
