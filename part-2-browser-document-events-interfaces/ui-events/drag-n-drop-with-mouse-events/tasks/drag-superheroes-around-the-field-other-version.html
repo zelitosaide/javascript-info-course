@@ -125,6 +125,7 @@
           shiftY = e.clientY - draggable.getBoundingClientRect().top;
 
           draggable.style.position = "fixed";
+          draggable.style.zIndex = 1000;
 
           moveTo(clientX, clientY);
         }
@@ -138,14 +139,15 @@
         }
 
         function finishDrag() {
-          if (!isDragging) return;
+          // console.log("up");
+          // if (!isDragging) return;
 
-          isDragging = false;
+          // isDragging = false;
 
-          draggable.style.top = parseInt(draggable.style.top) + window.pageYOffset + "px";
-          draggable.style.position = "absolute";
-          document.removeEventListener("mousemove", onMouseMove);
-          draggable.removeEventListener("mouseup", onMouseUp);
+          // draggable.style.top = parseInt(draggable.style.top) + window.pageYOffset + "px";
+          // draggable.style.position = "absolute";
+          // document.removeEventListener("mousemove", onMouseMove);
+          // draggable.removeEventListener("mouseup", onMouseUp);
         }
 
         function moveTo(clientX, clientY) { }
