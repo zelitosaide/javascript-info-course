@@ -138,7 +138,14 @@
         }
 
         function finishDrag() {
-          
+          if (!isDragging) return;
+
+          isDragging = false;
+
+          draggable.style.top = parseInt(draggable.style.top) + window.pageYOffset + "px";
+          draggable.style.position = "absolute";
+          document.removeEventListener("mousemove", onMouseMove);
+          draggable.removeEventListener("mouseup", onMouseUp);
         }
 
         function moveTo(clientX, clientY) { }
