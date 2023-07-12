@@ -123,13 +123,13 @@
 
         moveTo(e.clientX, e.clientY);
 
-        draggable.addEventListener("mousemove", onMouseMove);
+        document.addEventListener("mousemove", onMouseMove);
 
         draggable.onmouseup = function(e) {
           let top = draggable.getBoundingClientRect().top + window.scrollY;
           draggable.style.top = top + "px";
           draggable.style.position = "absolute";
-          draggable.removeEventListener("mousemove", onMouseMove);
+          document.removeEventListener("mousemove", onMouseMove);
         }
 
         function onMouseMove(e) {
