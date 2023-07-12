@@ -164,6 +164,8 @@
             if (scrollY < 0) scrollY = 0;
 
             window.scrollBy(0, scrollY);
+
+            newY = Math.min(newY, document.documentElement.clientHeight - draggable.offsetHeight);
           }
         }
       });
