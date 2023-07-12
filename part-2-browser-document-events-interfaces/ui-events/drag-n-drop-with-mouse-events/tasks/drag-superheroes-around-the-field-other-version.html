@@ -117,6 +117,15 @@
 
           isDragging = true;
 
+          document.addEventListener("mousemove", onMouseMove);
+          draggable.addEventListener("mouseup", onMouseUp);
+
+          function onMouseMove(e) {
+            console.log(e.type);
+          }
+
+          function onMouseUp(e) {}
+
           console.log(elem.nodeName, clientX, clientY);
         }
       });
