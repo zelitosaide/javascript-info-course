@@ -149,7 +149,13 @@
           // draggable.removeEventListener("mouseup", onMouseUp);
         }
 
-        function moveTo(clientX, clientY) { }
+        function moveTo(clientX, clientY) { 
+          let newX = clientX - shiftX;
+          let newY = clientY - shiftY;
+
+          const newBottom = newY + draggable.offsetHeight;
+          console.log(newBottom);
+        }
       });
     </script>
   </body>
