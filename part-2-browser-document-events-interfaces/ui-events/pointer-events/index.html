@@ -3,11 +3,12 @@
   <style>
     .flex {
       display: flex;
+      flex-wrap: wrap;
     }
 
     span {
       background-color: lightpink;
-      margin-right: 12px;
+      margin: 12px;
     }
   </style>
   <body>
@@ -18,6 +19,7 @@
       <span onpointerdown="console.log(event.type)">Pointerdown</span>
       <span onpointerup="console.log(event.type)">Pointerup</span>
       <span onpointerenter="console.log(event.type)">Pointerenter</span>
+      <span onpointerleave="console.log(event.type)">Pointerleave</span>
     </div>
 
     <script>
