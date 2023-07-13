@@ -65,8 +65,7 @@
       
       keyInput.onkeydown = keyInput.onkeyup = keyInput.onkeypress = function(e) {
         if (form.elements[e.type + "Ignore"]?.checked) {
-          console.log("oal")
-          // console.log(form.elements[e.type + "Ignore"].checked);
+          return;
         }
       };
     </script>
