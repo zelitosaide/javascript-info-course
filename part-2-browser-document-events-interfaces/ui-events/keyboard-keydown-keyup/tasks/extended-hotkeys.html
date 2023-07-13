@@ -11,6 +11,10 @@
           pressed.add(e.code);
           console.log(pressed);
         });
+
+        document.addEventListener("keyup", function(e) {
+          pressed.delete(e.code);
+        });
       }
 
       runOnKeys(function() {
