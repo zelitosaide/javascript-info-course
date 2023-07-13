@@ -5,17 +5,23 @@
   </head>
   <body>
     <form onsubmit="return false;">
-      Prevent default for:
+      <p>
+        Prevent default for:
+        <label>
+          <input type="checkbox" name="keydownStop" value="1"> keydown
+        </label>
+        &nbsp;&nbsp;&nbsp;
+        <label>
+          <input type="checkbox" name="keyupStop" value="1"> keyup
+        </label>
+      </p>
 
-      <label>
-        <input type="checkbox" name="keydownStop" value="1"> keydown
-      </label>
-
-      &nbsp;&nbsp;&nbsp;
-
-      <label>
-        <input type="checkbox" name="keyupStop" value="1"> keyup
-      </label>
+      <p>
+        Ignore:
+        <label>
+          <input type="checkbox" name="keydownIgnore" value="1"> keydown
+        </label>
+      </p>
     </form>
 
     <script>
