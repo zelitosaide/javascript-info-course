@@ -75,6 +75,26 @@
         console.log("tiltY", e.tiltY);
         console.log("twist", e.twist);
       };
+
+      const thumb = document.querySelector(".thumb");
+      let shiftX;
+
+      function onThumbDown(e) {
+        e.preventDefault();
+
+        shiftX = event.clientX - thumb.getBoundingClientRect().left;
+
+        thumb.setPointerCapture(e.pointerId);
+
+        thumb.onpointermove = onThumbMove;
+
+        thumb.onpointerup = function() {
+          // dragging finished, no need to track pointer any more
+          // ...any other "drag end" logic here...
+          thumb.onpointermove = null;
+          thumb.onpointerup = null;
+        };
+      }
     </script>
   </body>
 </html>
