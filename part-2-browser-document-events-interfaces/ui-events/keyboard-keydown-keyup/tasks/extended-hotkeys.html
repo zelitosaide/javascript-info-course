@@ -1,8 +1,21 @@
 <!DOCTYPE html>
 <html>
   <body>
+    <p>Press "Q" and "W" together (can be in any language).</p>
+
     <script>
-      console.log("Ola, tudo bem?");
+      function runOnKeys(func, ...codes) {
+        const pressed = new Set();
+
+        document.addEventListener("keydown", function(e) {
+          pressed.add(e.code);
+          console.log(pressed);
+        });
+      }
+
+      runOnKeys(function() {
+        console.log("Hello!");
+      });
     </script>
   </body>
 </html>
