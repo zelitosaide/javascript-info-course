@@ -84,6 +84,14 @@
         if (textarea.value && Date.now() - lastTime > 250) {
           textarea.value += new Array(81).join("-") + "\n";
         }
+
+        lastTime = Date.now();
+
+        textarea.value += text;
+
+        if (form.elements[e.type + "Stop"].checked) {
+          e.preventDefault();
+        }
       };
     </script>
   </body>
