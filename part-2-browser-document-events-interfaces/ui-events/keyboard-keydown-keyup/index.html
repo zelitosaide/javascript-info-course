@@ -6,10 +6,10 @@
       document.onkeydown = function(e) {
         console.log("key", e.key);
         console.log("code", e.code);
-      }
 
-      document.onkeyup = function() {
-        console.log("keyup");
+        if (e.code === "KeyZ" && (e.ctrlKey || e.metaKey)) {
+          console.log("Undo");
+        }
       }
     </script>
   </body>
