@@ -10,7 +10,7 @@
         width: 95%;
       }
 
-      #textarea {
+      textarea {
         width: 95%;
         box-sizing: border-box;
         height: 250px;
@@ -89,7 +89,7 @@
 
         textarea.value += text;
 
-        if (form.elements[e.type + "Stop"].checked) {
+        if (form.elements[e.type + "Stop"]?.checked) {
           e.preventDefault();
         }
       };
