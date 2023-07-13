@@ -52,7 +52,7 @@
 
       <input type="text" placeholder="Press keys here" id="keyinput">
 
-      <textarea id="textarea" readonly></textarea>
+      <textarea readonly></textarea>
 
       <input type="button" value="Clear" onclick="textarea.value = '';">
     </form>
@@ -60,6 +60,7 @@
     <script>
       const keyInput = document.getElementById("keyinput");
       const form = document.querySelector("form");
+      const textarea = document.querySelector("textarea");
 
       let lastTime = Date.now();
       
@@ -67,6 +68,20 @@
         if (form.elements[e.type + "Ignore"]?.checked) {
           return;
         }
+
+        textarea.scrollTop = 1e6;
+
+        const text = e.type +
+          " key=" + e.key +
+          " code=" + e.code +
+          (e.shiftKey ? " shiftKey" : "") +
+          (e.ctrlKey ? " ctrlKey" : "") +
+          (e.altKey ? " altKey" : "") +
+          (e.metaKey ? " metaKey" : "") +
+          (e.repeat ? " (repeat)" : "") +
+          "\n";
+
+        
       };
     </script>
   </body>
