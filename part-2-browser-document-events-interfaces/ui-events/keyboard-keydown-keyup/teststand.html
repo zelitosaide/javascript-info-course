@@ -64,7 +64,10 @@
       let lastTime = Date.now();
       
       keyInput.onkeydown = keyInput.onkeyup = keyInput.onkeypress = function(e) {
-        console.log(form)
+        if (form.elements[e.type + "Ignore"]?.checked) {
+          console.log("oal")
+          // console.log(form.elements[e.type + "Ignore"].checked);
+        }
       };
     </script>
   </body>
