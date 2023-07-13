@@ -1,8 +1,15 @@
 <!DOCTYPE html>
 <html>
   <body>
+    <h2>Keydown and keyup</h2>
     <script>
-      console.log("Ola, tudo bem?");
+      document.onkeydown = function() {
+        console.log("keydown");
+      }
+
+      document.onkeyup = function() {
+        console.log("keyup");
+      }
     </script>
   </body>
 </html>
