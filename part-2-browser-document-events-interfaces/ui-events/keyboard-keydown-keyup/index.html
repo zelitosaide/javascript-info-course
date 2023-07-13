@@ -3,8 +3,9 @@
   <body>
     <h2>Keydown and keyup</h2>
     <script>
-      document.onkeydown = function() {
-        console.log("keydown");
+      document.onkeydown = function(e) {
+        console.log("key", e.key);
+        console.log("code", e.code);
       }
 
       document.onkeyup = function() {
