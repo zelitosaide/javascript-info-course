@@ -59,11 +59,12 @@
 
     <script>
       const keyInput = document.getElementById("keyinput");
+      const form = document.querySelector("form");
 
       let lastTime = Date.now();
       
       keyInput.onkeydown = keyInput.onkeyup = keyInput.onkeypress = function(e) {
-
+        console.log(form)
       };
     </script>
   </body>
