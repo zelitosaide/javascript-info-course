@@ -16,6 +16,13 @@
             }
           }
           func(pressed);
+
+          // during the alert, if the visitor releases the keys,
+          // JavaScript does not get the "keyup" event
+          // and pressed set will keep assuming that the key is pressed
+          // so, to evade "sticky" keys, we reset the status
+          // if the user wants to run the hotkey again - let them press all keys again
+          pressed.clear();
         });
 
         document.addEventListener("keyup", function(e) {
@@ -24,7 +31,7 @@
       }
 
       runOnKeys(function(set) {
-        console.log("Hello!", set);
+        alert("Hello!");
       }, "KeyQ", "KeyW");
     </script>
   </body>
