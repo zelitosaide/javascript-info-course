@@ -19,11 +19,14 @@
       <span style="background-color: lightcoral; margin: 4px;">charCode</span>
       <span style="background-color: lightcoral; margin: 4px;">which</span>
     </p>
+
+    <h2>Mobile Keyboards</h2>
     <script>
       document.onkeydown = function(e) {
         console.log("key", e.key);
         console.log("code", e.code);
         console.log("repeat", e.repeat);
+        console.log("keyCode", e.keyCode);
 
         if (e.code === "KeyZ" && (e.ctrlKey || e.metaKey)) {
           console.log("Undo");
