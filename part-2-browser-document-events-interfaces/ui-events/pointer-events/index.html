@@ -95,6 +95,27 @@
           thumb.onpointerup = null;
         };
       }
+
+      function onThumbMove(event) {
+        let newLeft = event.clientX - shiftX - slider.getBoundingClientRect().left;
+
+        // if the pointer is out of slider => adjust left to be within the boundaries
+        if (newLeft < 0) {
+          newLeft = 0;
+        }
+        let rightEdge = slider.offsetWidth - thumb.offsetWidth;
+        if (newLeft > rightEdge) {
+          newLeft = rightEdge;
+        }
+
+        thumb.style.left = newLeft + 'px';
+      };
+
+      thumb.onpointerdown = onThumbDown;
+
+      thumb.ondragstart = function() {
+        return false;
+      }
     </script>
   </body>
 </html>
