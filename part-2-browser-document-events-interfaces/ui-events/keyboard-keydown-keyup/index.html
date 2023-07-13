@@ -7,6 +7,7 @@
       document.onkeydown = function(e) {
         console.log("key", e.key);
         console.log("code", e.code);
+        console.log("repeat", e.repeat);
 
         if (e.code === "KeyZ" && (e.ctrlKey || e.metaKey)) {
           console.log("Undo");
