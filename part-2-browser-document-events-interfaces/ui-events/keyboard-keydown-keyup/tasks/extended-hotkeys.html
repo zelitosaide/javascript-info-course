@@ -9,7 +9,13 @@
 
         document.addEventListener("keydown", function(e) {
           pressed.add(e.code);
-          console.log(pressed);
+          
+          for (const code of codes) {
+            if (!pressed.has(code)) {
+              return;
+            }
+          }
+          func(pressed);
         });
 
         document.addEventListener("keyup", function(e) {
@@ -17,8 +23,8 @@
         });
       }
 
-      runOnKeys(function() {
-        console.log("Hello!");
+      runOnKeys(function(set) {
+        console.log("Hello!", set);
       }, "KeyQ", "KeyW");
     </script>
   </body>
