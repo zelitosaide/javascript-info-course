@@ -5,7 +5,12 @@
     <h2>Auto-repeat</h2>
     <h2>Default actions</h2>
 
-    <input type="tel" onkeydown="return checkPhoneKey(event.key)" placeholder="Phone, please" id="phone">
+    <input 
+      type="tel" 
+      onkeydown="return checkPhoneKey(event.key);" 
+      placeholder="Phone, please" id="phone"
+      oninput="console.log(this.value);"
+    >
     <script>
       document.onkeydown = function(e) {
         console.log("key", e.key);
