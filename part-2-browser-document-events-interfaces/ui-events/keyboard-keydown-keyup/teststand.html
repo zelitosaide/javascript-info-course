@@ -81,7 +81,9 @@
           (e.repeat ? " (repeat)" : "") +
           "\n";
 
-        
+        if (textarea.value && Date.now() - lastTime > 250) {
+          textarea.value += new Array(81).join("-") + "\n";
+        }
       };
     </script>
   </body>
