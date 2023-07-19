@@ -44,11 +44,13 @@
 
     <script>
       const arrowTop = document.getElementById("arrowTop");
+      arrowTop.onclick = function() {
+        window.scrollTo(0, 0);
+      }
+
       arrowTop.hidden = true;
 
       window.addEventListener("scroll", function() {
-        console.log(document.documentElement.clientHeight, window.scrollY);
-
         if (window.scrollY > document.documentElement.clientHeight) {
           arrowTop.hidden = false;
         } else {
