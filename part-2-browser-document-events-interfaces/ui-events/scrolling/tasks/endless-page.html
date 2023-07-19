@@ -2,8 +2,24 @@
 <html>
   <body>
     <h1>Scroll me</h1>
-    <script>
 
+    <script>
+      function populate() {
+        while (true) {
+          const windowRelativeBottom = document.documentElement.getBoundingClientRect().bottom;
+          const windowHeight = document.documentElement.clientHeight;
+
+          if (windowRelativeBottom > windowHeight + 100) {
+            return;
+          }
+          const date = `<p>Date: ${new Date()}</p>`;
+          document.body.insertAdjacentHTML("beforeend", date);
+        }
+      }
+
+      window.addEventListener("scroll", populate);
+
+      populate();
     </script>
   </body>
 </html>
