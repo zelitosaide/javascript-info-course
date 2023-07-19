@@ -51,11 +51,12 @@
       arrowTop.hidden = true;
 
       window.addEventListener("scroll", function() {
-        if (window.scrollY > document.documentElement.clientHeight) {
-          arrowTop.hidden = false;
-        } else {
-          arrowTop.hidden = true;
-        }
+        // if (window.scrollY > document.documentElement.clientHeight) {
+        //   arrowTop.hidden = false;
+        // } else {
+        //   arrowTop.hidden = true;
+        // }
+        arrowTop.hidden = window.scrollY < document.documentElement.clientHeight;
       });
     </script>
   </body>
