@@ -10,7 +10,7 @@
           const windowHeight = document.documentElement.clientHeight;
 
           if (windowRelativeBottom > windowHeight + 100) {
-            return;
+            break;
           }
           const date = `<p>Date: ${new Date()}</p>`;
           document.body.insertAdjacentHTML("beforeend", date);
