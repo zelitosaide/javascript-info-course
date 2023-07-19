@@ -39,5 +39,22 @@
         }
       </script>
     </div>
+
+    <div id="arrowTop"></div>
+
+    <script>
+      const arrowTop = document.getElementById("arrowTop");
+      arrowTop.hidden = true;
+
+      window.addEventListener("scroll", function() {
+        console.log(document.documentElement.clientHeight, window.scrollY);
+
+        if (window.scrollY > document.documentElement.clientHeight) {
+          arrowTop.hidden = false;
+        } else {
+          arrowTop.hidden = true;
+        }
+      });
+    </script>
   </body>
 </html>
