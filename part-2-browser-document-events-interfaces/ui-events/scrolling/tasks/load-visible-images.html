@@ -1,5 +1,12 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <style>
+      img {
+        border: 1px solid black;
+      }
+    </style>
+  </head>
   <body>
     <p>
       Text and pictures are from https://wikipedia.org.
@@ -226,7 +233,25 @@
 
     <script>
       function isVisible(elem) {
+        // Esta eh a minha solucao
+        const coords = elem.getBoundingClientRect();
+        if (coords.bottom > 0 && coords.top < document.documentElement.clientHeight) {
+          return true;
+        }
 
+        // Esta eh a solucao do javascript.info
+
+        // let coords = elem.getBoundingClientRect();
+
+        // let windowHeight = document.documentElement.clientHeight;
+
+        // // top elem edge is visible?
+        // let topVisible = coords.top > 0 && coords.top < windowHeight;
+
+        // // bottom elem edge is visible?
+        // let bottomVisible = coords.bottom < windowHeight && coords.bottom > 0;
+
+        // return topVisible || bottomVisible;
       }
 
       function showVisible() {
