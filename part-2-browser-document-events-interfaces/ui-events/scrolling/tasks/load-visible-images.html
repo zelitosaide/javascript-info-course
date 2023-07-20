@@ -230,7 +230,18 @@
       }
 
       function showVisible() {
+        for (const img of document.querySelectorAll("img")) {
+          let realSrc = img.dataset.src;
+          if (!realSrc) continue;
 
+          if (isVisible(img)) {
+            // disable caching
+            // this line should be removed in production code
+            realSrc += "?nocache" + Math.random();
+            img.src = realSrc;
+            img.dataset.src = "";
+          }
+        }
       }
 
       window.addEventListener("scroll", showVisible);
