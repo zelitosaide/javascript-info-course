@@ -1,8 +1,12 @@
 <!DOCTYPE html>
 <html>
   <body>
+    <form name="myForm1"></form>
+    <form name="myForm2"></form>
+
     <script>
-      console.log("Ola")
+      console.log(document.forms[0] === document.forms.myForm1);
+      console.log(document.forms[1] === document.forms.myForm2);
     </script>
   </body>
 </html>
