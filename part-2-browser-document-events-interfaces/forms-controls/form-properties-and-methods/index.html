@@ -37,6 +37,12 @@
 
       console.log(agesElem[0].tagName);
       console.log(agesElem[1].tagName);
+
+      const form = document.getElementById("form");
+      
+      for (const control of form.elements) {
+        console.log(control.tagName);
+      }
     </script>
   </body>
 </html>
