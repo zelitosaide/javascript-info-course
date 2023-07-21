@@ -124,10 +124,19 @@
       select.selectedIndex = 2;
 
       const select2 = document.forms.selectForm[1];
-      
-      [...select2.options].forEach((option) => {
-        option.selected = true;
-      });
+
+      // [...select2.options].forEach(function(option) {
+      //   option.selected = true;
+      // });
+
+      const selected = [...select2.options]
+        .filter(function(option) {
+          return option.selected;
+        })
+        .map(function(option) {
+          return option.value;
+        });
+      console.log(selected);
     </script>
   </body>
 </html>
