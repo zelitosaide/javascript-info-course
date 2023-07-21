@@ -14,9 +14,9 @@
       <input type="radio" name="age" value="20">
     </form>
 
-    <form name="heading">
-      <h3>Fieldsets as "subforms"</h3>
-      <input type="text" id="control">
+    <form id="controls">
+      <input type="text" id="control1">
+      <input type="text" id="control2">
     </form>
 
     <form id="form">
@@ -69,7 +69,9 @@
 
       console.log({ login, username, areIquals: login === username });
 
-      console.log(document.querySelector("#control").form);
+      console.log(document.querySelector("#control1").form);
+      console.log(document.querySelector("#control2").form);
+      console.log(document.getElementById("controls").elements);
     </script>
   </body>
 </html>
