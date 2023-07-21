@@ -5,9 +5,13 @@
       <option value="rock">Rock</option>
       <option value="blues" selected>Blues</option>
     </select>
-    
+
     <script>
-      console.log("Ola, tudo bem?");
+      const select = document.getElementById("genres");
+      const selected = select.options[select.selectedIndex];
+      console.log(selected.text, selected.value);
+
+      // <option value="classic">Classic</option>.
     </script>
   </body>
 </html>
