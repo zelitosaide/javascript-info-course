@@ -14,9 +14,15 @@
       <input type="radio" name="age" value="20">
     </form>
 
-    <p>
-      These navigation properties do not depend on the tag structure. All control elements, no matter how deep they are in the form, are available in form.elements.
-    </p>
+    <h3>Fieldsets as "subforms"</h3>
+
+    <form id="form">
+      <input type="checkbox" name="consent">
+      <fieldset name="userFields">
+        <legend>info</legend>
+        <input name="login" type="text">
+      </fieldset>
+    </form>
 
     <script>
       console.log(document.forms[0] === document.forms.myForm1);
