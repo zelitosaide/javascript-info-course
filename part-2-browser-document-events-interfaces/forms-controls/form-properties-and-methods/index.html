@@ -50,6 +50,13 @@
 
       console.log(form[2] === form.elements.login);
       console.log(form.login === form.elements.login);
+
+      console.log("---------");
+      form.login.name = "username";
+
+      // form.elements updated the name:
+      console.log(form.elements.login);
+      console.log(form.elements.username);
     </script>
   </body>
 </html>
