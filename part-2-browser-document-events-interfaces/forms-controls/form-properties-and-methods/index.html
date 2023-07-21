@@ -83,7 +83,11 @@
       console.log(document.getElementById("controls").elements);
 
       const inputTextarea = document.forms["input-textarea"];
-      console.log(inputTextarea);
+      console.log(inputTextarea[0].value);
+      console.log(inputTextarea[1].value);
+
+      inputTextarea[0].value = "Full Name";
+      inputTextarea[1].value = "Resume";
     </script>
   </body>
 </html>
