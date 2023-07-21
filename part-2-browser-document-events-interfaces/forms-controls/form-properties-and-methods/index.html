@@ -39,10 +39,12 @@
       console.log(agesElem[1].tagName);
 
       const form = document.getElementById("form");
-      
+
       for (const control of form.elements) {
         console.log(control.tagName);
       }
+
+      console.log(form.userFields.elements[0]);
     </script>
   </body>
 </html>
