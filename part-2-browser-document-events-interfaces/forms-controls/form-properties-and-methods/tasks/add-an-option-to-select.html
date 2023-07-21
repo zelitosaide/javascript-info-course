@@ -8,12 +8,14 @@
 
     <script>
       const select = document.getElementById("genres");
-      const selected = select.options[select.selectedIndex];
-      console.log(selected.text, selected.value);
+      const selectedOption = select.options[select.selectedIndex];
+      console.log(selectedOption.text, selectedOption.value);
 
       // <option value="classic">Classic</option>.
-      const option = new Option("Classic", "classic");
-      select.append(option);
+      const newOption = new Option("Classic", "classic");
+      select.append(newOption);
+
+      newOption.selected = true;
     </script>
   </body>
 </html>
