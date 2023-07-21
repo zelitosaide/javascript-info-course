@@ -140,6 +140,20 @@
           return option.value;
         });
       console.log(selected);
+
+      const option1 = new Option("text", "value", true, true);
+      const option2 = new Option("text", "value");
+
+      const option3 = document.createElement('option');
+      option3.value = "value";
+      option3.innerText = "Text";
+      console.log(option3);
+
+      const optionProps = {
+        index: option1.index
+      }
+
+      console.log(optionProps);
     </script>
   </body>
 </html>
