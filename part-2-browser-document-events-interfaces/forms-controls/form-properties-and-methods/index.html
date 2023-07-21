@@ -14,7 +14,10 @@
       <input type="radio" name="age" value="20">
     </form>
 
-    <h3>Fieldsets as "subforms"</h3>
+    <form name="heading">
+      <h3>Fieldsets as "subforms"</h3>
+      <input type="text" id="control">
+    </form>
 
     <form id="form">
       <input type="checkbox" name="consent">
@@ -65,6 +68,8 @@
       const username = form.username;
 
       console.log({ login, username, areIquals: login === username });
+
+      console.log(document.querySelector("#control").form);
     </script>
   </body>
 </html>
