@@ -57,6 +57,12 @@
       // form.elements updated the name:
       console.log(form.elements.login);
       console.log(form.elements.username);
+
+      // form allows both names: the new one and the old one
+      const login = form.login;
+      const username = form.username;
+
+      console.log({ login, username, areIquals: login === username });
     </script>
   </body>
 </html>
