@@ -37,7 +37,7 @@
 
     <form name="input-textarea">
       <input type="text" value="fullname">
-      <textarea value="Excerpt"></textarea>
+      <textarea>Excerpt</textarea>
     </form>
 
     <script>
@@ -81,6 +81,9 @@
       console.log(document.querySelector("#control1").form);
       console.log(document.querySelector("#control2").form);
       console.log(document.getElementById("controls").elements);
+
+      const inputTextarea = document.forms["input-textarea"];
+      console.log(inputTextarea);
     </script>
   </body>
 </html>
