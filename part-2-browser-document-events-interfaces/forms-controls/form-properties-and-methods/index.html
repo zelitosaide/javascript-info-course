@@ -42,6 +42,13 @@
     </form>
 
     <h3>Select and option</h3>
+    <form name="selectForm">
+      <select name="select">
+        <option value="apple">Apple</option>
+        <option value="pear">Pear</option>
+        <option value="banana">Banana</option>
+      </select>
+    </form>
 
     <script>
       console.log(document.forms[0] === document.forms.myForm1);
@@ -93,6 +100,17 @@
       inputTextarea[0].value = "Full Name";
       inputTextarea[1].value = "Resume";
       inputTextarea[2].checked = true;
+
+      const select = document.forms.selectForm.select;
+      select.onchange = function() {
+        console.log("select.value", this.value);
+        console.log("select.selectedIndex", this.selectedIndex);
+        console.log("select.options", this.options);
+
+        for (const option of this.options) {
+          console.log(option.value);
+        }
+      }
     </script>
   </body>
 </html>
