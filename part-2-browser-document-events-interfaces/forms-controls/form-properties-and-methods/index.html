@@ -56,6 +56,8 @@
       </select>
     </form>
 
+    <h2>new Option</h2>
+
     <script>
       console.log(document.forms[0] === document.forms.myForm1);
       console.log(document.forms[1] === document.forms.myForm2);
@@ -129,6 +131,7 @@
       //   option.selected = true;
       // });
 
+      // get all selected values from multi-select
       const selected = [...select2.options]
         .filter(function(option) {
           return option.selected;
