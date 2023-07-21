@@ -122,6 +122,12 @@
       select.options[2].selected = true;
       select.value = "banana";
       select.selectedIndex = 2;
+
+      const select2 = document.forms.selectForm[1];
+      
+      [...select2.options].forEach((option) => {
+        option.selected = true;
+      });
     </script>
   </body>
 </html>
