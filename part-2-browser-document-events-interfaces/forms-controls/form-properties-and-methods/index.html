@@ -38,6 +38,7 @@
     <form name="input-textarea">
       <input type="text" value="fullname">
       <textarea>Excerpt</textarea>
+      <input type="checkbox">
     </form>
 
     <script>
@@ -85,9 +86,11 @@
       const inputTextarea = document.forms["input-textarea"];
       console.log(inputTextarea[0].value);
       console.log(inputTextarea[1].value);
+      console.log(inputTextarea[2].checked);
 
       inputTextarea[0].value = "Full Name";
       inputTextarea[1].value = "Resume";
+      inputTextarea[2].checked = true;
     </script>
   </body>
 </html>
