@@ -17,6 +17,10 @@
       :focus {
         outline: 1px dashed green;
       }
+
+      .focused {
+        outline: 1px solid red;
+      }
     </style>
   </head>
   <body>
@@ -55,6 +59,9 @@
     </ul>
 
     <h2>Delegation: focusin/focusout</h2>
+    <form onfocus="this.className='focused'">
+
+    </form>
 
     <script>
       const email = document.getElementById("email");
