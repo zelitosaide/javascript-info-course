@@ -19,9 +19,17 @@
       Your email please: <input type="email" id="email">
     </p>
     <div id="error"></div>
-    
+
     <script>
-      console.log("Ola, tudo bem?");
+      const email = document.getElementById("email");
+      
+      email.onfocus = function() {
+        console.log("focused");
+      }
+
+      email.onblur = function() {
+        console.log("blured");
+      }
     </script>
   </body>
 </html>
