@@ -36,14 +36,18 @@
     </ul>
 
     HTML is allowed.
-    <div class="view" id="view">Text</div>
-
-    <br>
-
-    <textarea class="edit"></textarea>
+    <div class="view" id="view" tabindex="-1">Text</div>
 
     <script>
-      console.log("Ola");
+      const view = document.getElementById("view");
+      const textarea = document.querySelector(".edit");
+      view.onfocus = function() {
+        this.style.display = "none";
+        const textarea = document.createElement("textarea");
+        textarea.classList.add("edit");
+        textarea.value = view.innerHTML;
+        document.body.append(textarea);
+      }
     </script>
   </body>
 </html>
