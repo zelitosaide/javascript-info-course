@@ -2,13 +2,24 @@
 <html>
   <head>
     <style>
-      
+      .invalid {
+        border-color: red;
+      }
+
+      #error {
+        color: red;
+      }
     </style>
   </head>
   <body>
     <button>Focusing: focus/blur</button>
 
     <h2>Events focus/blur</h2>
+    <p>
+      Your email please: <input type="email" id="email">
+    </p>
+    <div id="error"></div>
+    
     <script>
       console.log("Ola, tudo bem?");
     </script>
