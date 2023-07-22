@@ -22,13 +22,17 @@
 
     <script>
       const email = document.getElementById("email");
+      const error = document.getElementById("error");
       
       email.onfocus = function() {
-        console.log("focused");
+        // if () {}
       }
 
       email.onblur = function() {
-        console.log("blured");
+        if (!email.value.includes("@")) {
+          email.classList.add("invalid");
+
+        }
       }
     </script>
   </body>
