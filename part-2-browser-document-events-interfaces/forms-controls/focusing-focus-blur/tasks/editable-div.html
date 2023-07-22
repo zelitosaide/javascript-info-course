@@ -50,6 +50,24 @@
         area = document.createElement("textarea");
         area.className = "edit";
         area.value = view.innerHTML;
+
+        area.onkeydown = function(e) {
+          if (e.code === "Enter") {
+            this.blur();
+          }
+        }
+
+        area.onblur = function() {
+          editEnd();
+        }
+
+        view.replaceWith(area);
+        area.focus();
+      }
+
+      function editEnd() {
+        view.innerHTML = area.value;
+        area.replaceWith(view); 
       }
     </script>
   </body>
