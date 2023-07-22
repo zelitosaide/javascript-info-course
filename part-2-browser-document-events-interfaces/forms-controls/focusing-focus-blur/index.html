@@ -25,13 +25,16 @@
       const error = document.getElementById("error");
       
       email.onfocus = function() {
-        // if () {}
+        if (email.classList.contains("invalid")) {
+          email.classList.remove("invalid");
+          error.innerHTML = "";
+        }
       }
 
       email.onblur = function() {
         if (!email.value.includes("@")) {
           email.classList.add("invalid");
-
+          error.innerHTML = "Please enter a correct email.";
         }
       }
     </script>
