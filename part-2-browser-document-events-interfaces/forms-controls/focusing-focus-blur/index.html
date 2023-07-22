@@ -23,7 +23,11 @@
     <h2>Methods focus/blur</h2>
     <p>
       Your institutional email please: <input type="email" id="inst-email">
-      <input type="text" style="width: 240px;" placeholder="make email invalid and try to focus here">
+      <input 
+        type="text" 
+        style="width: 240px;" 
+        placeholder="make email invalid and try to focus here"
+      >
     </p>
 
     <script>
@@ -54,6 +58,10 @@
           this.style.backgroundColor = "";
         }
       }
+
+      setTimeout(function() {
+        alert("Ola, tudo bem?");
+      }, 5000);
     </script>
   </body>
 </html>
