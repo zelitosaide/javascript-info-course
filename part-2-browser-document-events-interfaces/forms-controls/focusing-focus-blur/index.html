@@ -43,6 +43,17 @@
           error.innerHTML = "Please enter a correct email.";
         }
       }
+
+      const instEmail = document.getElementById("inst-email");
+
+      instEmail.onblur = function() {
+        if (!this.value.includes("@")) {
+          this.style.backgroundColor = "red";
+          instEmail.focus();
+        } else {
+          this.style.backgroundColor = "";
+        }
+      }
     </script>
   </body>
 </html>
