@@ -29,6 +29,7 @@
         placeholder="make email invalid and try to focus here"
         onblur="console.log('blur');"
         onfocus="console.log('focus');"
+        id="pld"
       >
     </p>
 
@@ -61,8 +62,11 @@
         }
       }
 
+      const placeholder = document.getElementById("pld");
+
       setTimeout(function() {
-        alert("Ola, tudo bem?");
+        // prompt("Ola, tudo bem?");
+        placeholder.remove();
       }, 5000);
     </script>
   </body>
