@@ -10,15 +10,19 @@
         color: red;
       }
 
-      h2:focus {
-        border: 2px solid lightcoral;
+      li {
+        cursor: pointer;
+      }
+      
+      :focus {
+        outline: 1px dashed green;
       }
     </style>
   </head>
   <body>
     <button>Focusing: focus/blur</button>
 
-    <h2 onclick="this.focus()">Events focus/blur</h2>
+    <h2>Events focus/blur</h2>
     <p>
       Your email please: <input type="email" id="email">
     </p>
@@ -38,6 +42,17 @@
     </p>
 
     <h2>Allow focusing on any element: tabindex</h2>
+
+    <p>
+      Click the first item and press Tab. Keep track of the order. Please note that many subsequent Tabs can move the focus out of the iframe in the example. 
+    </p>
+
+    <ul>
+      <li tabindex="1">One</li>
+      <li tabindex="0">Zero</li>
+      <li tabindex="2">Two</li>
+      <li tabindex="-1">Minus one</li>
+    </ul>
 
     <script>
       const email = document.getElementById("email");
