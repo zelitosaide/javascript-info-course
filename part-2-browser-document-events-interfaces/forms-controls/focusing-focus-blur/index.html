@@ -71,6 +71,17 @@
       <input type="text" name="surname" value="Surname">
     </form>
 
+    <br>
+
+    <form 
+      name="focusin-out" 
+      onfocusin="this.className='focused';"
+      onfocusout="this.classList.remove('focused');"
+    >
+      <input type="text" name="name" value="Name">
+      <input type="text" name="surname" value="Surname">
+    </form>
+
     <script>
       const email = document.getElementById("email");
       const error = document.getElementById("error");
