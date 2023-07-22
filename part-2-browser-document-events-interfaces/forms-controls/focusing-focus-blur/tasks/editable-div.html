@@ -40,28 +40,16 @@
 
     <script>
       const view = document.getElementById("view");
-      const textarea = document.querySelector(".edit");
-      view.onfocus = function() {
-        view.style.display = "none";
-        const textarea = document.createElement("textarea");
-        textarea.classList.add("edit");
-        textarea.value = view.innerHTML;
-        document.body.append(textarea);
-        textarea.focus();
+      let area = null;
+      
+      view.onclick = function() {
+        editStart();
+      }
 
-        textarea.onblur = function() {
-          view.style.display = "block";
-          view.innerHTML = textarea.value;
-          textarea.style.display = "none";
-        }
-
-        textarea.onkeydown = function(e) {
-          if (e.code === "Enter") {
-            view.style.display = "block";
-            view.innerHTML = textarea.value;
-            textarea.style.display = "none";
-          }
-        }
+      function editStart() {
+        area = document.createElement("textarea");
+        area.className = "edit";
+        area.value = view.innerHTML;
       }
     </script>
   </body>
