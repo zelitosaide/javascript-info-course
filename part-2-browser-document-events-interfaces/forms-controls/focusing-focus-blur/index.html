@@ -66,12 +66,13 @@
 
       setInterval(function() {
         // prompt("Ola, tudo bem?");
+
         if (!placeholder.offsetParent) {
           document.body.append(placeholder);
-        } {
+        } else {
           placeholder.remove();
         }
-      }, 2000);
+      }, 5000);
     </script>
   </body>
 </html>
