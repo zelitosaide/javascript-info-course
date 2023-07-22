@@ -9,12 +9,16 @@
       #error {
         color: red;
       }
+
+      h2:focus {
+        border: 2px solid lightcoral;
+      }
     </style>
   </head>
   <body>
     <button>Focusing: focus/blur</button>
 
-    <h2 tabindex="-1">Events focus/blur</h2>
+    <h2 onclick="this.focus()">Events focus/blur</h2>
     <p>
       Your email please: <input type="email" id="email">
     </p>
