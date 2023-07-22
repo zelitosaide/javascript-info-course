@@ -160,6 +160,10 @@
         console.log("onfocusout");
         focusInOut.classList.remove("focused");
       }
+
+      window.addEventListener("focusin", function() {
+        console.log(document.activeElement);
+      });
     </script>
   </body>
 </html>
