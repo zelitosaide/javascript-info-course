@@ -54,6 +54,14 @@
           view.innerHTML = textarea.value;
           textarea.style.display = "none";
         }
+
+        textarea.onkeydown = function(e) {
+          if (e.code === "Enter") {
+            view.style.display = "block";
+            view.innerHTML = textarea.value;
+            textarea.style.display = "none";
+          }
+        }
       }
     </script>
   </body>
