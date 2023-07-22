@@ -16,6 +16,17 @@
         padding: 2px;
         border: 1px solid black;
       }
+
+      .edit {
+        /* replace padding with border (still 3px not to shift the contents) */
+        border: 3px solid blue;
+        padding: 0px;
+      }
+
+      .edit:focus {
+        /* remove focus border in Safari */
+        outline: none;
+      }
     </style>
   </head>
   <body>
@@ -26,6 +37,10 @@
 
     HTML is allowed.
     <div class="view" id="view">Text</div>
+
+    <br>
+
+    <textarea class="edit"></textarea>
 
     <script>
       console.log("Ola");
