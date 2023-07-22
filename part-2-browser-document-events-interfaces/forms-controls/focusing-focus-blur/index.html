@@ -14,7 +14,7 @@
   <body>
     <button>Focusing: focus/blur</button>
 
-    <h2>Events focus/blur</h2>
+    <h2 tabindex="-1">Events focus/blur</h2>
     <p>
       Your email please: <input type="email" id="email">
     </p>
@@ -65,6 +65,8 @@
       }
 
       const placeholder = document.getElementById("pld");
+
+      document.querySelector("h2").tabIndex = 0;
 
       setInterval(function() {
         // prompt("Ola, tudo bem?");
