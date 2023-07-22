@@ -47,6 +47,7 @@
         textarea.classList.add("edit");
         textarea.value = view.innerHTML;
         document.body.append(textarea);
+        textarea.focus();
 
         textarea.onblur = function() {
           view.style.display = "block";
