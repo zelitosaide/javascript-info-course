@@ -64,6 +64,13 @@
       <input type="text" name="surname" value="Surname">
     </form>
 
+    <br>
+
+    <form name="delegation" onfocus="this.className='focused'">
+      <input type="text" name="name" value="Name">
+      <input type="text" name="surname" value="Surname">
+    </form>
+
     <script>
       const email = document.getElementById("email");
       const error = document.getElementById("error");
@@ -106,6 +113,15 @@
           placeholder.remove();
         }
       }, 5000);
+
+      const delegation = document.forms.delegation;
+      delegation.addEventListener("focus", function() {
+        delegation.classList.add("focused");
+      }, true);
+
+      delegation.addEventListener("blur", function() {
+        delegation.classList.remove("focused");
+      }, true);
     </script>
   </body>
 </html>
