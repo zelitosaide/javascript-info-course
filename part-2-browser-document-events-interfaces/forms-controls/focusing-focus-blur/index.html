@@ -146,13 +146,19 @@
         focusInOut.classList.add("focused");
       });
 
-      focusInOut.addEventListener("focusout", function(e) {
+      focusInOut.addEventListener("focusout", function() {
         focusInOut.classList.remove("focused");
       });
 
       // does not work
       focusInOut.onfocusin = function() {
-        console.log("ola, focusin");
+        console.log("onfocusin");
+        focusInOut.classList.add("focused");
+      }
+
+      focusInOut.onfocusout = function() {
+        console.log("onfocusout");
+        focusInOut.classList.remove("focused");
       }
     </script>
   </body>
