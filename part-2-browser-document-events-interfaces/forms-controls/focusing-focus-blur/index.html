@@ -139,6 +139,21 @@
       delegation.addEventListener("blur", function() {
         delegation.classList.remove("focused");
       }, true);
+
+      const focusInOut = document.forms["focusin-out"];
+
+      focusInOut.addEventListener("focusin", function() {
+        focusInOut.classList.add("focused");
+      });
+
+      focusInOut.addEventListener("focusout", function(e) {
+        focusInOut.classList.remove("focused");
+      });
+
+      // does not work
+      focusInOut.onfocusin = function() {
+        console.log("ola, focusin");
+      }
     </script>
   </body>
 </html>
