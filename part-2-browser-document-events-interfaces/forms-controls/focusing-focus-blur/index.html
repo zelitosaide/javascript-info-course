@@ -64,10 +64,14 @@
 
       const placeholder = document.getElementById("pld");
 
-      setTimeout(function() {
+      setInterval(function() {
         // prompt("Ola, tudo bem?");
-        placeholder.remove();
-      }, 5000);
+        if (!placeholder.offsetParent) {
+          document.body.append(placeholder);
+        } {
+          placeholder.remove();
+        }
+      }, 2000);
     </script>
   </body>
 </html>
