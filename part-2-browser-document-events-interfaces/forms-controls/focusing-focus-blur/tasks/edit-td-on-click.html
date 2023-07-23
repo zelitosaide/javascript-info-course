@@ -122,9 +122,15 @@
 
     <script>
       const table = document.getElementById("bagua-table");
-      
-      table.onclick = function() {
 
+      table.onclick = function(e) {
+        const td = e.target.closest("td");
+
+        if (!td) { return; }
+
+        if (!this.contains(td)) {
+          return;
+        }
       }
     </script>
   </body>
