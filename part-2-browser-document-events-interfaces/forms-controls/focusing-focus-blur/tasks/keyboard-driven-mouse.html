@@ -1,24 +1,38 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <style>
+      #mouse {
+        display: inline-block;
+        cursor: pointer;
+        margin: 0;
+      }
+
+      #mouse:focus {
+        outline: 1px dashed green;
+      }
+    </style>
+  </head>
   <body>
     <p>
       Click on the mouse and move it with arrow keys.
     </p>
 
     <pre id="mouse">
-       _   _
-      (q\_/p)
-       /. .\
-      =\_t_/=   __
-       /   \   (
-      ((   ))   )
-      /\) (/\  /
-      \  Y  /-'
-       nn^nn
+ _   _
+(q\_/p)
+ /. .\
+=\_t_/=   __
+ /   \   (
+((   ))   )
+/\) (/\  /
+\  Y  /-'
+ nn^nn
     </pre>
 
     <script>
-      console.log("Ola");
+      const mouse = document.getElementById("mouse");
+      mouse.tabIndex = -1;
     </script>
   </body>
 </html>
