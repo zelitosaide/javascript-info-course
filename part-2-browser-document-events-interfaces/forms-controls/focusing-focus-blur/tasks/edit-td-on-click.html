@@ -57,6 +57,12 @@
         background-color: #0c3;
         color: #fff;
       }
+
+      /* my styles */
+      .edit-td {
+        position: relative;
+        padding: 0;
+      }
     </style>
   </head>
   <body>
@@ -147,7 +153,7 @@
           data: td.innerHTML
         };
 
-        console.log(editingTd);
+        td.classList.add("edit-td");
       }
     </script>
   </body>
