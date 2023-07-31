@@ -56,6 +56,22 @@
         background-color: #0c3;
         color: #fff;
       }
+
+      .edit-area {
+        border: none;
+        padding: 0;
+        margin: 0;
+        display: block;
+
+        /* remove resizing handle in Firefox */
+        resize: none;
+
+        /* remove outline on focus in Chrome */
+        outline: none;
+
+        /* remove scrollbar in IE */
+        overflow: auto;
+      }
     </style>
   </head>
   <body>
@@ -136,8 +152,12 @@
         }
 
         textarea = document.createElement("textarea");
-        
-        
+        textarea.value = td.innerHTML;
+        textarea.style.width = td.clientWidth + "px";
+        textarea.style.height = td.clientHeight + "px";
+        textarea.className = "edit-area";
+        td.innerHTML = "";
+        td.append(textarea);
       }
     </script>
   </body>
