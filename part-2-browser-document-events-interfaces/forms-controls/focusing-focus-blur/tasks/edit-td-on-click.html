@@ -127,8 +127,14 @@
         const target = e.target.closest(".edit-cancel, .edit-ok, td");
         
         if (!table.contains(target)) return;
-        console.log(target);
-        
+
+        if (target.className === "edit-cancel") {
+
+        } else if (target.className === "edit-ok") {
+
+        } else if (target.nodeName === "TD") {
+
+        }
       }
     </script>
   </body>
