@@ -79,6 +79,10 @@
         /* remove scrollbar in IE */
         overflow: auto;
       }
+
+      .edit-controls {
+        position: absolute;
+      }
     </style>
   </head>
   <body>
@@ -180,6 +184,13 @@
         td.innerHTML = "";
         td.append(textarea);
         textarea.focus();
+
+        td.insertAdjacentHTML("beforeend", `
+          <div class="edit-controls">
+            <button class="edit-ok">OK</button>
+            <button class="edit-cancel">CANCEL</button>
+          </div>
+        `);
       }
     </script>
   </body>
