@@ -3,7 +3,6 @@
   <head>
     <style>
       /* common styles for the table, no need to modify these */
-
       th {
         text-align: center;
         font-weight: bold;
@@ -122,6 +121,12 @@
 
     <script>
       const table = document.getElementById("bagua-table");
+
+      table.onclick = function(e) {
+        // 3 possible targets
+        const target = e.target.closest(".edit-cancel, .edit-ok, td");
+        console.log(target);
+      }
     </script>
   </body>
 </html>
