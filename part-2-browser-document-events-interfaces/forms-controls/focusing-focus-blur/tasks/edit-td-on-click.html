@@ -122,21 +122,22 @@
 
     <script>
       const table = document.getElementById("bagua-table");
-      let area = null;
+      let textarea = null;
 
       table.onclick = function(e) {
         const td = e.target.closest("td");
 
-        if (!td) { return; }
+        if (!td) { 
+          return; 
+        }
 
         if (!this.contains(td)) {
           return;
         }
 
-        area = document.createElement("textarea");
-        area.value = td.innerHTML;
-        td.replaceWith(area);
-        area.focus();
+        textarea = document.createElement("textarea");
+        
+        
       }
     </script>
   </body>
