@@ -135,8 +135,19 @@
         } else if (target.className === "edit-ok") {
 
         } else if (target.nodeName === "TD") {
+          if (editingTd) return; // already editing
 
+          makeTdEditable(target);
         }
+      }
+
+      function makeTdEditable(td) {
+        editingTd = {
+          elem: td,
+          data: td.innerHTML
+        };
+
+        console.log(editingTd);
       }
     </script>
   </body>
