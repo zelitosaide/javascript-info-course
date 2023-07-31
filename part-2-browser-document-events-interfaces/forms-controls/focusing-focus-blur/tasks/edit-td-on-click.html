@@ -122,6 +122,8 @@
     <script>
       const table = document.getElementById("bagua-table");
 
+      let editingTd;
+
       table.onclick = function(e) {
         // 3 possible targets
         const target = e.target.closest(".edit-cancel, .edit-ok, td");
