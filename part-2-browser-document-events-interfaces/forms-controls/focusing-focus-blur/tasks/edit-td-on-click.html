@@ -125,7 +125,10 @@
       table.onclick = function(e) {
         // 3 possible targets
         const target = e.target.closest(".edit-cancel, .edit-ok, td");
+        
+        if (!table.contains(target)) return;
         console.log(target);
+        
       }
     </script>
   </body>
