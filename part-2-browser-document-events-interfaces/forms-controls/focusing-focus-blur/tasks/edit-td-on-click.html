@@ -63,6 +63,22 @@
         position: relative;
         padding: 0;
       }
+
+      .edit-area {
+        border: none;
+        margin: 0;
+        padding: 0;
+        display: block;
+
+        /* remove resizing handle in Firefox */
+        resize: none;
+
+        /* remove outline on focus in Chrome */
+        outline: none;
+
+        /* remove scrollbar in IE */
+        overflow: auto;
+      }
     </style>
   </head>
   <body>
@@ -154,6 +170,16 @@
         };
 
         td.classList.add("edit-td");
+
+        const textarea = document.createElement("textarea");
+        textarea.style.height = td.clientHeight + "px";
+        textarea.style.width = td.clientWidth + "px";
+        textarea.className = "edit-area";
+
+        textarea.value = td.innerHTML;
+        td.innerHTML = "";
+        td.append(textarea);
+        textarea.focus();
       }
     </script>
   </body>
