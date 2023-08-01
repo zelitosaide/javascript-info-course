@@ -26,9 +26,12 @@
     </label>
 
     <h2>Event: input</h2>
+    <input type="text" id="input"> oninput: <span id="result"></span>
 
     <script>
-      console.log("Ola, tudo bem?");
+      document.getElementById("input").oninput = function() {
+        document.getElementById("result").innerHTML = this.value;
+      }
     </script>
   </body>
 </html>
