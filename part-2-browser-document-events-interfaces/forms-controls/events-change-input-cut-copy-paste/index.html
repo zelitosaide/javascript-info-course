@@ -45,7 +45,7 @@
     </p>
 
     <p style="background-color: lightcoral;">
-      <input onchange="console.log(typeof this.value)" type="text">
+      <input id="file" type="text">
     </p>
 
     <script>
@@ -63,6 +63,12 @@
       input.oncut = input.oncopy = function(e) {
         console.log(e.type + "-" + document.getSelection());
         e.preventDefault();
+      }
+
+      const file = document.getElementById("file");
+
+      file.onpaste = function(e) {
+        console.log(e.clipboardData.getData("text"));
       }
     </script>
   </body>
