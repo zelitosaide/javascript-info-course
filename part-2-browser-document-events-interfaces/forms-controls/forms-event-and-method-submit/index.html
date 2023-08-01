@@ -40,7 +40,9 @@
       form.method = "GET";
       form.target = "_blank";
 
-      form.innerHTML = "<input type='text' name='search_query' value='javascript'>"
+      form.innerHTML = "<input type='text' name='search_query' value='javascript'>";
+      document.body.append(form);
+      form.submit();
     </script>
   </body>
 </html>
