@@ -68,7 +68,11 @@
         const initial = +form.money.value;
         if (!initial) return;
 
-        
+        const interest = form.interest.value * 0.01;
+        if (!interest) return;
+
+        const years = form.months.value / 12;
+        if (!years) return;
       }
     </script>
   </body>
