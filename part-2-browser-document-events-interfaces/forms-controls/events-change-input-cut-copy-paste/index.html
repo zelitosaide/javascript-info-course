@@ -14,8 +14,15 @@
     </select>
 
     <h3>input:checkbox, input:radio</h3>
-    <label>
+    <label style="display: block;">
       <input onchange="console.log(event.type, this.nodeName)" type="checkbox"> Agree
+    </label>
+
+    <label>
+      <input onchange="console.log(event.type, this.value)" type="radio" name="genre" value="male"> Male
+    </label>
+    <label>
+      <input onchange="console.log(event.type, this.value)" type="radio" name="genre" value="female"> Female
     </label>
 
     <script>
