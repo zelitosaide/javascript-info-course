@@ -28,9 +28,16 @@
     <h2>Event: input</h2>
     <input type="text" id="input"> oninput: <span id="result"></span>
 
+    <h2>Events: cut, copy and paste</h2>
+    <input type="text" id="copy">
+
     <script>
       document.getElementById("input").oninput = function() {
         document.getElementById("result").innerHTML = this.value;
+      }
+
+      document.onpaste = function(e) {
+        console.log("paste: " + e.clipboardData.getData("text/plain"));
       }
     </script>
   </body>
