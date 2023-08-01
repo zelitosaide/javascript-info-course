@@ -58,7 +58,15 @@
     </table>
       
     <script>
-      console.log("Ola");
+      const form = document.forms.calculator;
+
+      form.money.oninput = calculate;
+      form.months.onchange = calculate;
+      form.interest.oninput = calculate;
+
+      function calculate(e) {
+        
+      }
     </script>
   </body>
 </html>
