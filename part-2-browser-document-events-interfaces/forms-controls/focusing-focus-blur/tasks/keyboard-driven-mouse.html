@@ -32,7 +32,13 @@
 
     <script>
       const mouse = document.getElementById("mouse");
-      mouse.tabIndex = -1;
+      mouse.tabIndex = 0;
+
+      mouse.onclick = function() {
+        this.style.left = this.getBoundingClientRect().left + "px";
+        this.style.top = this.getBoundingClientRect().top + "px";
+        this.style.position = "fixed";
+      }
     </script>
   </body>
 </html>
