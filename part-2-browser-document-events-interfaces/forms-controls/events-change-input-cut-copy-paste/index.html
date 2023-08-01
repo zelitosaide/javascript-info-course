@@ -36,8 +36,15 @@
         document.getElementById("result").innerHTML = this.value;
       }
 
-      document.onpaste = function(e) {
+      const input = document.getElementById("copy");
+
+      input.onpaste = function(e) {
         console.log("paste: " + e.clipboardData.getData("text/plain"));
+        e.preventDefault();
+      }
+
+      input.oncut = input.oncopy = function(e) {
+        console.log(e.type + "-" + document.getSelection());
         e.preventDefault();
       }
     </script>
