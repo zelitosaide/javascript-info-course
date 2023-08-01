@@ -1,7 +1,22 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <style>
+      td select,
+      td input {
+        width: 150px;
+      }
 
+      #diagram td {
+        vertical-align: bottom;
+        text-align: center;
+        padding: 10px;
+      }
+
+      #diagram div {
+        margin: auto;
+      }
+    </style>
   </head>
   <body>
     Deposit calculator.
@@ -77,6 +92,9 @@
         const result = Math.round(initial * (1 + interest) ** years);
         document.getElementById("money-before").innerHTML = initial;
         document.getElementById("money-after").innerHTML = result;
+
+        const height = result / form.money.value * 100 + "px";
+        document.getElementById("height-after").style.height = height;
       }
 
       calculate();
