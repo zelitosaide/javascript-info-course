@@ -39,6 +39,19 @@
         this.style.top = this.getBoundingClientRect().top + "px";
         this.style.position = "fixed";
       }
+
+      mouse.onkeydown = function(e) {
+        switch(e.key) {
+          case "ArrowLeft": 
+            return false;
+          case "ArrowUp":
+            return false;
+          case "ArrowRight":
+            return false;
+          case "ArrowDown":
+            return false;
+        }
+      }
     </script>
   </body>
 </html>
