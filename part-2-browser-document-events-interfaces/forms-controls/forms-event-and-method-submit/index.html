@@ -15,6 +15,12 @@
       Input Image: <input type="image" src="https://picsum.photos/200" alt="">
     </form>
 
+    <h2>Relation between submit and click</h2>
+    <form onsubmit="return false;">
+      <input type="text" size="30" value="Focus here and press enter">
+      <input type="submit" value="Submit" onclick="console.log(event.type)">
+    </form>
+
     <script>
       console.log("Ola");
     </script>
