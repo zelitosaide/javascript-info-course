@@ -73,7 +73,13 @@
 
         const years = form.months.value / 12;
         if (!years) return;
+
+        const result = Math.round(initial * (1 + interest) ** years);
+        document.getElementById("money-before").innerHTML = initial;
+        document.getElementById("money-after").innerHTML = result;
       }
+
+      calculate();
     </script>
   </body>
 </html>
