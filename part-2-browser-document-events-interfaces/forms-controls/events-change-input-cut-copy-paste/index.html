@@ -4,7 +4,15 @@
     <h2>Event: change</h2>
     <input type="text" onchange="console.log(event.type)">
     <input type="button" value="Button">
-    
+
+    <h3>Select</h3>
+    <select onchange="console.log(event.type, this.nodeName)">
+      <option value="">Select something</option>
+      <option value="1">Option 1</option>
+      <option value="2">Option 2</option>
+      <option value="3">Option 3</option>
+    </select>
+
     <script>
       console.log("Ola, tudo bem?");
     </script>
