@@ -38,6 +38,7 @@
 
       document.onpaste = function(e) {
         console.log("paste: " + e.clipboardData.getData("text/plain"));
+        e.preventDefault();
       }
     </script>
   </body>
