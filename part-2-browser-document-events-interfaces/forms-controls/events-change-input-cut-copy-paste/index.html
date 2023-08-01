@@ -40,10 +40,10 @@
     <input type="text" id="copy">
 
     <h2>File</h2>
-    <input onchange="console.log(this.value)" type="file">
-    
+    <input onchange="console.log(typeof this.value)" type="file">
+
     <p>
-      <input type="text">
+      <input onchange="console.log(typeof this.value)" type="text">
     </p>
 
     <script>
