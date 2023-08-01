@@ -5,6 +5,10 @@
       It’s possible to copy/paste not just text, but everything. For instance, we can copy a file in the OS file manager, and paste it.
     </p>
 
+    <p style="background-color: lightcoral; padding: 10px;">
+      That’s because clipboardData implements DataTransfer interface, commonly used for drag’n’drop and copy/pasting. It’s a bit beyond our scope now, but you can find its methods in the DataTransfer specification.
+    </p>
+
     <h2>Event: change</h2>
     <input type="text" onchange="console.log(event.type)">
     <input type="button" value="Button">
