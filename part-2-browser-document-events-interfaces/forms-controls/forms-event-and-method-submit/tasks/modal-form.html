@@ -88,7 +88,9 @@
 
       function showPrompt(text, callback) {
         showCover();
-        const form = document.getElementById("")
+        const form = document.getElementById("prompt-form");
+        const container = document.getElementById("prompt-form-container");
+        document.getElementById("prompt-message").innerHTML = text;
       }
 
       document.getElementById("show-button").onclick = function() {
