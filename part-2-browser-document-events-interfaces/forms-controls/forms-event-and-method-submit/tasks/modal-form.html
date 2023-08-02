@@ -105,6 +105,10 @@
           return false;
         }
 
+        form.cancel.onclick = function() {
+          complete(null);
+        }
+
         container.style.display = "block";
         form.text.focus();
       }
