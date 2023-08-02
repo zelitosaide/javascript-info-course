@@ -103,11 +103,17 @@
 
           complete(value);
           return false;
-        }
+        };
 
         form.cancel.onclick = function() {
           complete(null);
-        }
+        };
+
+        document.onkeydown = function(e) {
+          if (e.key === "Escape") {
+            complete(null);
+          }
+        };
 
         container.style.display = "block";
         form.text.focus();
@@ -117,7 +123,7 @@
         showPrompt("Enter something<br>...smart :)", function(value) {
           alert("You entered: " + value);
         });
-      }
+      };
     </script>
   </body>
 </html>
