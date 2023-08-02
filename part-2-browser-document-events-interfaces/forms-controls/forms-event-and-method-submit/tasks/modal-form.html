@@ -40,11 +40,22 @@
         margin: 5px;
         width: 180px;
       }
+
+      #cover-div {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 9000;
+        width: 100%;
+        height: 100%;
+        background-color: gray;
+        opacity: 0.3;
+      }
     </style>
   </head>
-  <body>
+  <body style="height: 3000px;">
     <h1>Click the button below</h1>
-    <button>Click to show the form</button>
+    <input type="button" value="Click to show the form" id="show-button">
     
     <div id="prompt-form-container">
       <form id="prompt-form">
@@ -58,9 +69,10 @@
       </form>
     </div>
 
-
     <script>
-      console.log("Ola");
+      document.getElementById("show-button").onclick = function() {
+        
+      }
     </script>
   </body>
 </html>
