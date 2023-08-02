@@ -89,6 +89,9 @@
         const container = document.getElementById("prompt-form-container");
         document.getElementById("prompt-message").innerHTML = text;
         form.text.value = "";
+
+        container.style.display = "block";
+        form.text.focus();
       }
 
       document.getElementById("show-button").onclick = function() {
