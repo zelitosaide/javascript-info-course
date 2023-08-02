@@ -118,6 +118,13 @@
         const lastElem = form.elements[form.elements.length - 1];
         const firstElem = form.elements[0];
 
+        lastElem.onkeydown = function(e) {
+          if (e.key === "Tab" && !e.shiftKey) {
+            firstElem.focus();
+            return false;
+          }
+        };
+
         container.style.display = "block";
         form.text.focus();
       }
