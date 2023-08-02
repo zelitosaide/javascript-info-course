@@ -125,6 +125,13 @@
           }
         };
 
+        firstElem.onkeydown = function(e) {
+          if (e.key === "Tab" && e.shiftKey) {
+            lastElem.focus();
+            return false;
+          }
+        };
+
         container.style.display = "block";
         form.text.focus();
       }
