@@ -70,8 +70,14 @@
     </div>
 
     <script>
+      function showPrompt(text, callback) {
+
+      }
+
       document.getElementById("show-button").onclick = function() {
-        
+        showPrompt("Enter something<br>...smart :)", function(value) {
+          alert("You entered: " + value);
+        });
       }
     </script>
   </body>
