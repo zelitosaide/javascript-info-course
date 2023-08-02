@@ -90,6 +90,13 @@
         document.getElementById("prompt-message").innerHTML = text;
         form.text.value = "";
 
+        function complete(value) {
+          hideCover();
+          container.style.display = "none";
+          document.onkeydown = null;
+          callback(value);
+        }
+
         container.style.display = "block";
         form.text.focus();
       }
