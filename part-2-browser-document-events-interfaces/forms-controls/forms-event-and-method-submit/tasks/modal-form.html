@@ -57,7 +57,7 @@
     <h1>Click the button below</h1>
     <input type="button" value="Click to show the form" id="show-button">
     
-    <div id="prompt-form-container">
+    <!-- <div id="prompt-form-container">
       <form id="prompt-form">
         <div id="prompt-message">
           Enter something...
@@ -67,11 +67,11 @@
         <input type="submit" value="Ok">
         <input name="cancel" type="button" value="Cancel">
       </form>
-    </div>
+    </div> -->
 
     <script>
       function showPrompt(text, callback) {
-
+        callback(text);
       }
 
       document.getElementById("show-button").onclick = function() {
