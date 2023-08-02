@@ -97,6 +97,14 @@
           callback(value);
         }
 
+        form.onsubmit = function() {
+          const value = form.text.value;
+          if (value === "") return false;
+
+          complete(value);
+          return false;
+        }
+
         container.style.display = "block";
         form.text.focus();
       }
